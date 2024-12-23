@@ -1,6 +1,5 @@
 from Illuminate.Collections.Collection import Collection as Collection
 from djing.core.AuthorizesRequests import AuthorizesRequests
-from djing.core.Exceptions.InvalidLicenseException import InvalidLicenseException as InvalidLicenseException
 from djing.core.HandleRoutes import HandleRoutes
 from djing.core.Http.Requests.DjingRequest import DjingRequest
 from djing.core.InteractsWithEvents import InteractsWithEvents

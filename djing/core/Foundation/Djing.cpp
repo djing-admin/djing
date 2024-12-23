@@ -1515,7 +1515,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard
 struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key;
 struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard;
 
-/* "djing/core/Foundation/Djing.py":174
+/* "djing/core/Foundation/Djing.py":173
  *         return default_main_menu
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1528,7 +1528,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_ma
 };
 
 
-/* "djing/core/Foundation/Djing.py":268
+/* "djing/core/Foundation/Djing.py":267
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1541,7 +1541,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_vari
 };
 
 
-/* "djing/core/Foundation/Djing.py":277
+/* "djing/core/Foundation/Djing.py":276
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1554,7 +1554,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_
 };
 
 
-/* "djing/core/Foundation/Djing.py":318
+/* "djing/core/Foundation/Djing.py":317
  *         return cls.default_footer(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1567,7 +1567,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_t
 };
 
 
-/* "djing/core/Foundation/Djing.py":439
+/* "djing/core/Foundation/Djing.py":438
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1580,7 +1580,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available
 };
 
 
-/* "djing/core/Foundation/Djing.py":476
+/* "djing/core/Foundation/Djing.py":475
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1593,7 +1593,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_avail
 };
 
 
-/* "djing/core/Foundation/Djing.py":559
+/* "djing/core/Foundation/Djing.py":558
  *         return cls._sort_callback if cls._sort_callback else default_sort_resources_with
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1607,7 +1607,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard
 };
 
 
-/* "djing/core/Foundation/Djing.py":566
+/* "djing/core/Foundation/Djing.py":565
  *         return collect(cls._dashboards).first(authorize_dashboard)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1620,7 +1620,7 @@ struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_
 };
 
 
-/* "djing/core/Foundation/Djing.py":573
+/* "djing/core/Foundation/Djing.py":572
  *         return cls.__resource_collection().first(filter_key)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -1861,22 +1861,6 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject *const *kwvalues
         __Pyx__ArgTypeTest(obj, type, name, exact))
 static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
 
-/* PyObjectCall.proto */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
-#else
-#define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
-#endif
-
-/* PyObjectSetAttrStr.proto */
-#if CYTHON_USE_TYPE_SLOTS
-#define __Pyx_PyObject_DelAttrStr(o,n) __Pyx_PyObject_SetAttrStr(o, n, NULL)
-static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value);
-#else
-#define __Pyx_PyObject_DelAttrStr(o,n)   PyObject_DelAttr(o,n)
-#define __Pyx_PyObject_SetAttrStr(o,n,v) PyObject_SetAttr(o,n,v)
-#endif
-
 /* PyDictVersioning.proto */
 #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
 #define __PYX_DICT_VERSION_INIT  ((PY_UINT64_T) -1)
@@ -1924,31 +1908,6 @@ static PyObject *__Pyx__GetModuleGlobalName(PyObject *name, PY_UINT64_T *dict_ve
 static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name);
 #endif
 
-/* JoinPyUnicode.proto */
-static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
-                                      Py_UCS4 max_char);
-
-/* ListAppend.proto */
-#if CYTHON_USE_PYLIST_INTERNALS && CYTHON_ASSUME_SAFE_MACROS
-static CYTHON_INLINE int __Pyx_PyList_Append(PyObject* list, PyObject* x) {
-    PyListObject* L = (PyListObject*) list;
-    Py_ssize_t len = Py_SIZE(list);
-    if (likely(L->allocated > len) & likely(len > (L->allocated >> 1))) {
-        Py_INCREF(x);
-        #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030d0000
-        L->ob_item[len] = x;
-        #else
-        PyList_SET_ITEM(list, len, x);
-        #endif
-        __Pyx_SET_SIZE(list, len + 1);
-        return 0;
-    }
-    return PyList_Append(list, x);
-}
-#else
-#define __Pyx_PyList_Append(L,x) PyList_Append(L,x)
-#endif
-
 /* PyFunctionFastCall.proto */
 #if CYTHON_FAST_PYCALL
 #if !CYTHON_VECTORCALL
@@ -1984,6 +1943,13 @@ static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, 
 #endif
 #endif
 
+/* PyObjectCall.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
+#else
+#define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
+#endif
+
 /* PyObjectCallMethO.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
@@ -1992,6 +1958,43 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
 /* PyObjectFastCall.proto */
 #define __Pyx_PyObject_FastCall(func, args, nargs)  __Pyx_PyObject_FastCallDict(func, args, (size_t)(nargs), NULL)
 static CYTHON_INLINE PyObject* __Pyx_PyObject_FastCallDict(PyObject *func, PyObject **args, size_t nargs, PyObject *kwargs);
+
+/* RaiseException.proto */
+static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
+
+/* PyObjectSetAttrStr.proto */
+#if CYTHON_USE_TYPE_SLOTS
+#define __Pyx_PyObject_DelAttrStr(o,n) __Pyx_PyObject_SetAttrStr(o, n, NULL)
+static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value);
+#else
+#define __Pyx_PyObject_DelAttrStr(o,n)   PyObject_DelAttr(o,n)
+#define __Pyx_PyObject_SetAttrStr(o,n,v) PyObject_SetAttr(o,n,v)
+#endif
+
+/* JoinPyUnicode.proto */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char);
+
+/* ListAppend.proto */
+#if CYTHON_USE_PYLIST_INTERNALS && CYTHON_ASSUME_SAFE_MACROS
+static CYTHON_INLINE int __Pyx_PyList_Append(PyObject* list, PyObject* x) {
+    PyListObject* L = (PyListObject*) list;
+    Py_ssize_t len = Py_SIZE(list);
+    if (likely(L->allocated > len) & likely(len > (L->allocated >> 1))) {
+        Py_INCREF(x);
+        #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030d0000
+        L->ob_item[len] = x;
+        #else
+        PyList_SET_ITEM(list, len, x);
+        #endif
+        __Pyx_SET_SIZE(list, len + 1);
+        return 0;
+    }
+    return PyList_Append(list, x);
+}
+#else
+#define __Pyx_PyList_Append(L,x) PyList_Append(L,x)
+#endif
 
 /* PyObjectCall2Args.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2);
@@ -2291,9 +2294,6 @@ static CYTHON_INLINE int __Pyx_PyErr_GivenExceptionMatches2(PyObject *err, PyObj
 #define __Pyx_PyErr_ExceptionMatches2(err1, err2)  __Pyx_PyErr_GivenExceptionMatches2(__Pyx_PyErr_CurrentExceptionType(), err1, err2)
 #define __Pyx_PyException_Check(obj) __Pyx_TypeCheck(obj, PyExc_Exception)
 
-/* RaiseException.proto */
-static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
-
 /* SwapException.proto */
 #if CYTHON_FAST_THREAD_STATE
 #define __Pyx_ExceptionSwap(type, value, tb)  __Pyx__ExceptionSwap(__pyx_tstate, type, value, tb)
@@ -2438,9 +2438,9 @@ int __pyx_module_is_main_djing__core__Foundation__Djing = 0;
 
 /* Implementation of "djing.core.Foundation.Djing" */
 /* #### Code section: global_var ### */
-static PyObject *__pyx_builtin_print;
 static PyObject *__pyx_builtin_open;
 static PyObject *__pyx_builtin_KeyError;
+static PyObject *__pyx_builtin_print;
 /* #### Code section: string_decls ### */
 static const char __pyx_k_[] = "/";
 static const char __pyx_k_e[] = "e";
@@ -2514,6 +2514,7 @@ static const char __pyx_k_DEBUG[] = "DEBUG";
 static const char __pyx_k_Djing[] = "Djing";
 static const char __pyx_k_Route[] = "Route";
 static const char __pyx_k_Tuple[] = "Tuple";
+static const char __pyx_k_after[] = "after";
 static const char __pyx_k_bound[] = "bound";
 static const char __pyx_k_cards[] = "cards";
 static const char __pyx_k_class[] = "__class__";
@@ -2688,6 +2689,7 @@ static const char __pyx_k_singular_label[] = "singular_label";
 static const char __pyx_k_username_field[] = "username_field";
 static const char __pyx_k_Djing_main_menu[] = "Djing.main_menu";
 static const char __pyx_k_Djing_resources[] = "Djing.resources";
+static const char __pyx_k_Invalid_license[] = "Invalid license";
 static const char __pyx_k_JSONDecodeError[] = "JSONDecodeError";
 static const char __pyx_k_available_tools[] = "available_tools";
 static const char __pyx_k_dashboard_cards[] = "dashboard_cards";
@@ -3080,6 +3082,7 @@ typedef struct {
   PyObject *__pyx_n_s_Illuminate_Support_builtins;
   PyObject *__pyx_n_s_InteractsWithEvents;
   PyObject *__pyx_n_s_InvalidLicenseException;
+  PyObject *__pyx_kp_u_Invalid_license;
   PyObject *__pyx_n_s_JSONDecodeError;
   PyObject *__pyx_n_s_KeyError;
   PyObject *__pyx_n_s_List;
@@ -3110,6 +3113,7 @@ typedef struct {
   PyObject *__pyx_kp_u__28;
   PyObject *__pyx_kp_u__29;
   PyObject *__pyx_n_s__37;
+  PyObject *__pyx_n_u_after;
   PyObject *__pyx_n_s_alias_middleware;
   PyObject *__pyx_n_s_all;
   PyObject *__pyx_n_s_all_available_dashboard_cards;
@@ -3210,7 +3214,6 @@ typedef struct {
   PyObject *__pyx_n_u_env;
   PyObject *__pyx_n_u_environment;
   PyObject *__pyx_n_s_event;
-  PyObject *__pyx_n_u_event;
   PyObject *__pyx_n_s_exist_ok;
   PyObject *__pyx_n_s_exists;
   PyObject *__pyx_n_s_exit;
@@ -3694,6 +3697,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_Illuminate_Support_builtins);
   Py_CLEAR(clear_module_state->__pyx_n_s_InteractsWithEvents);
   Py_CLEAR(clear_module_state->__pyx_n_s_InvalidLicenseException);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Invalid_license);
   Py_CLEAR(clear_module_state->__pyx_n_s_JSONDecodeError);
   Py_CLEAR(clear_module_state->__pyx_n_s_KeyError);
   Py_CLEAR(clear_module_state->__pyx_n_s_List);
@@ -3724,6 +3728,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u__28);
   Py_CLEAR(clear_module_state->__pyx_kp_u__29);
   Py_CLEAR(clear_module_state->__pyx_n_s__37);
+  Py_CLEAR(clear_module_state->__pyx_n_u_after);
   Py_CLEAR(clear_module_state->__pyx_n_s_alias_middleware);
   Py_CLEAR(clear_module_state->__pyx_n_s_all);
   Py_CLEAR(clear_module_state->__pyx_n_s_all_available_dashboard_cards);
@@ -3824,7 +3829,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_u_env);
   Py_CLEAR(clear_module_state->__pyx_n_u_environment);
   Py_CLEAR(clear_module_state->__pyx_n_s_event);
-  Py_CLEAR(clear_module_state->__pyx_n_u_event);
   Py_CLEAR(clear_module_state->__pyx_n_s_exist_ok);
   Py_CLEAR(clear_module_state->__pyx_n_s_exists);
   Py_CLEAR(clear_module_state->__pyx_n_s_exit);
@@ -4286,6 +4290,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_Illuminate_Support_builtins);
   Py_VISIT(traverse_module_state->__pyx_n_s_InteractsWithEvents);
   Py_VISIT(traverse_module_state->__pyx_n_s_InvalidLicenseException);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Invalid_license);
   Py_VISIT(traverse_module_state->__pyx_n_s_JSONDecodeError);
   Py_VISIT(traverse_module_state->__pyx_n_s_KeyError);
   Py_VISIT(traverse_module_state->__pyx_n_s_List);
@@ -4316,6 +4321,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u__28);
   Py_VISIT(traverse_module_state->__pyx_kp_u__29);
   Py_VISIT(traverse_module_state->__pyx_n_s__37);
+  Py_VISIT(traverse_module_state->__pyx_n_u_after);
   Py_VISIT(traverse_module_state->__pyx_n_s_alias_middleware);
   Py_VISIT(traverse_module_state->__pyx_n_s_all);
   Py_VISIT(traverse_module_state->__pyx_n_s_all_available_dashboard_cards);
@@ -4416,7 +4422,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_u_env);
   Py_VISIT(traverse_module_state->__pyx_n_u_environment);
   Py_VISIT(traverse_module_state->__pyx_n_s_event);
-  Py_VISIT(traverse_module_state->__pyx_n_u_event);
   Py_VISIT(traverse_module_state->__pyx_n_s_exist_ok);
   Py_VISIT(traverse_module_state->__pyx_n_s_exists);
   Py_VISIT(traverse_module_state->__pyx_n_s_exit);
@@ -4888,6 +4893,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_Illuminate_Support_builtins __pyx_mstate_global->__pyx_n_s_Illuminate_Support_builtins
 #define __pyx_n_s_InteractsWithEvents __pyx_mstate_global->__pyx_n_s_InteractsWithEvents
 #define __pyx_n_s_InvalidLicenseException __pyx_mstate_global->__pyx_n_s_InvalidLicenseException
+#define __pyx_kp_u_Invalid_license __pyx_mstate_global->__pyx_kp_u_Invalid_license
 #define __pyx_n_s_JSONDecodeError __pyx_mstate_global->__pyx_n_s_JSONDecodeError
 #define __pyx_n_s_KeyError __pyx_mstate_global->__pyx_n_s_KeyError
 #define __pyx_n_s_List __pyx_mstate_global->__pyx_n_s_List
@@ -4918,6 +4924,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u__28 __pyx_mstate_global->__pyx_kp_u__28
 #define __pyx_kp_u__29 __pyx_mstate_global->__pyx_kp_u__29
 #define __pyx_n_s__37 __pyx_mstate_global->__pyx_n_s__37
+#define __pyx_n_u_after __pyx_mstate_global->__pyx_n_u_after
 #define __pyx_n_s_alias_middleware __pyx_mstate_global->__pyx_n_s_alias_middleware
 #define __pyx_n_s_all __pyx_mstate_global->__pyx_n_s_all
 #define __pyx_n_s_all_available_dashboard_cards __pyx_mstate_global->__pyx_n_s_all_available_dashboard_cards
@@ -5018,7 +5025,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_u_env __pyx_mstate_global->__pyx_n_u_env
 #define __pyx_n_u_environment __pyx_mstate_global->__pyx_n_u_environment
 #define __pyx_n_s_event __pyx_mstate_global->__pyx_n_s_event
-#define __pyx_n_u_event __pyx_mstate_global->__pyx_n_u_event
 #define __pyx_n_s_exist_ok __pyx_mstate_global->__pyx_n_s_exist_ok
 #define __pyx_n_s_exists __pyx_mstate_global->__pyx_n_s_exists
 #define __pyx_n_s_exit __pyx_mstate_global->__pyx_n_s_exit
@@ -5343,7 +5349,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def flush_state(cls, event: str):
- *         print("event", event, cls.__license_checked)
+ *         if event == "after" and not cls.__license_checked:
  */
 
 /* Python wrapper */
@@ -5465,8 +5471,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_flush_state(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_cls, PyObject *__pyx_v_event) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  int __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  unsigned int __pyx_t_7;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -5475,195 +5486,237 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_flush_state(CY
   /* "djing/core/Foundation/Djing.py":53
  *     @classmethod
  *     def flush_state(cls, event: str):
- *         print("event", event, cls.__license_checked)             # <<<<<<<<<<<<<<
- *         # if event == "after" and not cls.__license_checked:
- *         #     raise InvalidLicenseException("Invalid license")
+ *         if event == "after" and not cls.__license_checked:             # <<<<<<<<<<<<<<
+ *             raise InvalidLicenseException("Invalid license")
+ * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__license_checked); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_u_event);
-  __Pyx_GIVEREF(__pyx_n_u_event);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_n_u_event)) __PYX_ERR(0, 53, __pyx_L1_error);
-  __Pyx_INCREF(__pyx_v_event);
-  __Pyx_GIVEREF(__pyx_v_event);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_event)) __PYX_ERR(0, 53, __pyx_L1_error);
-  __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = (__Pyx_PyUnicode_Equals(__pyx_v_event, __pyx_n_u_after, Py_EQ)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 53, __pyx_L1_error)
+  if (__pyx_t_2) {
+  } else {
+    __pyx_t_1 = __pyx_t_2;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__license_checked); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 53, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_4 = (!__pyx_t_2);
+  __pyx_t_1 = __pyx_t_4;
+  __pyx_L4_bool_binop_done:;
+  if (unlikely(__pyx_t_1)) {
 
-  /* "djing/core/Foundation/Djing.py":57
- *         #     raise InvalidLicenseException("Invalid license")
+    /* "djing/core/Foundation/Djing.py":54
+ *     def flush_state(cls, event: str):
+ *         if event == "after" and not cls.__license_checked:
+ *             raise InvalidLicenseException("Invalid license")             # <<<<<<<<<<<<<<
+ * 
+ *         cls._main_menu_callback = None
+ */
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_InvalidLicenseException); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 54, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (unlikely(PyMethod_Check(__pyx_t_5))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_5, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_kp_u_Invalid_license};
+      __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    }
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(0, 54, __pyx_L1_error)
+
+    /* "djing/core/Foundation/Djing.py":53
+ *     @classmethod
+ *     def flush_state(cls, event: str):
+ *         if event == "after" and not cls.__license_checked:             # <<<<<<<<<<<<<<
+ *             raise InvalidLicenseException("Invalid license")
+ * 
+ */
+  }
+
+  /* "djing/core/Foundation/Djing.py":56
+ *             raise InvalidLicenseException("Invalid license")
  * 
  *         cls._main_menu_callback = None             # <<<<<<<<<<<<<<
  *         cls._initial_path_callback = None
  *         cls._sort_callback = None
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_main_menu_callback, Py_None) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_main_menu_callback, Py_None) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":58
+  /* "djing/core/Foundation/Djing.py":57
  * 
  *         cls._main_menu_callback = None
  *         cls._initial_path_callback = None             # <<<<<<<<<<<<<<
  *         cls._sort_callback = None
  *         cls._footer_callback = None
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback, Py_None) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback, Py_None) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":59
+  /* "djing/core/Foundation/Djing.py":58
  *         cls._main_menu_callback = None
  *         cls._initial_path_callback = None
  *         cls._sort_callback = None             # <<<<<<<<<<<<<<
  *         cls._footer_callback = None
  *         cls._with_authentication = False
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_sort_callback, Py_None) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_sort_callback, Py_None) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":60
+  /* "djing/core/Foundation/Djing.py":59
  *         cls._initial_path_callback = None
  *         cls._sort_callback = None
  *         cls._footer_callback = None             # <<<<<<<<<<<<<<
  *         cls._with_authentication = False
  *         cls._with_breadcrumbs = False
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_footer_callback, Py_None) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_footer_callback, Py_None) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":61
+  /* "djing/core/Foundation/Djing.py":60
  *         cls._sort_callback = None
  *         cls._footer_callback = None
  *         cls._with_authentication = False             # <<<<<<<<<<<<<<
  *         cls._with_breadcrumbs = False
  *         cls._global_search_enabled = True
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_with_authentication, Py_False) < 0) __PYX_ERR(0, 61, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_with_authentication, Py_False) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":62
+  /* "djing/core/Foundation/Djing.py":61
  *         cls._footer_callback = None
  *         cls._with_authentication = False
  *         cls._with_breadcrumbs = False             # <<<<<<<<<<<<<<
  *         cls._global_search_enabled = True
  *         cls._resources = []
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs, Py_False) < 0) __PYX_ERR(0, 62, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs, Py_False) < 0) __PYX_ERR(0, 61, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":63
+  /* "djing/core/Foundation/Djing.py":62
  *         cls._with_authentication = False
  *         cls._with_breadcrumbs = False
  *         cls._global_search_enabled = True             # <<<<<<<<<<<<<<
  *         cls._resources = []
  *         cls._dashboards = []
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_global_search_enabled, Py_True) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_global_search_enabled, Py_True) < 0) __PYX_ERR(0, 62, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":64
+  /* "djing/core/Foundation/Djing.py":63
  *         cls._with_breadcrumbs = False
  *         cls._global_search_enabled = True
  *         cls._resources = []             # <<<<<<<<<<<<<<
  *         cls._dashboards = []
  *         cls._tools = []
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_resources, __pyx_t_1) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_resources, __pyx_t_3) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "djing/core/Foundation/Djing.py":65
+  /* "djing/core/Foundation/Djing.py":64
  *         cls._global_search_enabled = True
  *         cls._resources = []
  *         cls._dashboards = []             # <<<<<<<<<<<<<<
  *         cls._tools = []
  *         cls._json_variables = {}
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards, __pyx_t_1) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards, __pyx_t_3) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "djing/core/Foundation/Djing.py":66
+  /* "djing/core/Foundation/Djing.py":65
  *         cls._resources = []
  *         cls._dashboards = []
  *         cls._tools = []             # <<<<<<<<<<<<<<
  *         cls._json_variables = {}
  *         cls._debounce = 0.5
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_tools, __pyx_t_1) < 0) __PYX_ERR(0, 66, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_tools, __pyx_t_3) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "djing/core/Foundation/Djing.py":67
+  /* "djing/core/Foundation/Djing.py":66
  *         cls._dashboards = []
  *         cls._tools = []
  *         cls._json_variables = {}             # <<<<<<<<<<<<<<
  *         cls._debounce = 0.5
  *         cls._scripts = []
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_json_variables, __pyx_t_1) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_json_variables, __pyx_t_3) < 0) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "djing/core/Foundation/Djing.py":68
+  /* "djing/core/Foundation/Djing.py":67
  *         cls._tools = []
  *         cls._json_variables = {}
  *         cls._debounce = 0.5             # <<<<<<<<<<<<<<
  *         cls._scripts = []
  *         cls._styles = []
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_debounce, __pyx_float_0_5) < 0) __PYX_ERR(0, 68, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_debounce, __pyx_float_0_5) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":69
+  /* "djing/core/Foundation/Djing.py":68
  *         cls._json_variables = {}
  *         cls._debounce = 0.5
  *         cls._scripts = []             # <<<<<<<<<<<<<<
  *         cls._styles = []
  *         cls.__license_checked = False
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_scripts, __pyx_t_1) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_scripts, __pyx_t_3) < 0) __PYX_ERR(0, 68, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "djing/core/Foundation/Djing.py":70
+  /* "djing/core/Foundation/Djing.py":69
  *         cls._debounce = 0.5
  *         cls._scripts = []
  *         cls._styles = []             # <<<<<<<<<<<<<<
  *         cls.__license_checked = False
  * 
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_styles, __pyx_t_1) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_styles, __pyx_t_3) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "djing/core/Foundation/Djing.py":71
+  /* "djing/core/Foundation/Djing.py":70
  *         cls._scripts = []
  *         cls._styles = []
  *         cls.__license_checked = False             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__license_checked, Py_False) < 0) __PYX_ERR(0, 71, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__license_checked, Py_False) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
 
   /* "djing/core/Foundation/Djing.py":51
  *     __license_checked = False
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def flush_state(cls, event: str):
- *         print("event", event, cls.__license_checked)
+ *         if event == "after" and not cls.__license_checked:
  */
 
   /* function exit code */
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
   __Pyx_AddTraceback("djing.core.Foundation.Djing.Djing.flush_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -5672,7 +5725,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_flush_state(CY
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":73
+/* "djing/core/Foundation/Djing.py":72
  *         cls.__license_checked = False
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -5739,7 +5792,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 72, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -5747,9 +5800,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 72, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("script", 1, 3, 3, 1); __PYX_ERR(0, 73, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("script", 1, 3, 3, 1); __PYX_ERR(0, 72, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -5757,14 +5810,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 72, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("script", 1, 3, 3, 2); __PYX_ERR(0, 73, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("script", 1, 3, 3, 2); __PYX_ERR(0, 72, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "script") < 0)) __PYX_ERR(0, 73, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "script") < 0)) __PYX_ERR(0, 72, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -5779,7 +5832,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("script", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 73, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("script", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 72, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5793,8 +5846,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_name), (&PyUnicode_Type), 0, "name", 1))) __PYX_ERR(0, 74, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_path), (&PyUnicode_Type), 0, "path", 1))) __PYX_ERR(0, 74, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_name), (&PyUnicode_Type), 0, "name", 1))) __PYX_ERR(0, 73, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_path), (&PyUnicode_Type), 0, "path", 1))) __PYX_ERR(0, 73, __pyx_L1_error)
   __pyx_r = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(__pyx_self, __pyx_v_cls, __pyx_v_name, __pyx_v_path);
 
   /* function exit code */
@@ -5829,30 +5882,30 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("script", 1);
 
-  /* "djing/core/Foundation/Djing.py":75
+  /* "djing/core/Foundation/Djing.py":74
  *     @classmethod
  *     def script(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:             # <<<<<<<<<<<<<<
  *             url = f"http://localhost:5184/static/{name}/{path}"
  *         else:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_settings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_settings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_DEBUG); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_DEBUG); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_3) {
 
-    /* "djing/core/Foundation/Djing.py":76
+    /* "djing/core/Foundation/Djing.py":75
  *     def script(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:
  *             url = f"http://localhost:5184/static/{name}/{path}"             # <<<<<<<<<<<<<<
  *         else:
  *             url = f"/static/{name}/{path}"
  */
-    __pyx_t_2 = PyTuple_New(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_4 = 0;
     __pyx_t_5 = 127;
@@ -5874,13 +5927,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
     __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_v_path);
     __Pyx_GIVEREF(__pyx_v_path);
     PyTuple_SET_ITEM(__pyx_t_2, 3, __pyx_v_path);
-    __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_2, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_2, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_url = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "djing/core/Foundation/Djing.py":75
+    /* "djing/core/Foundation/Djing.py":74
  *     @classmethod
  *     def script(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:             # <<<<<<<<<<<<<<
@@ -5890,7 +5943,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
     goto __pyx_L3;
   }
 
-  /* "djing/core/Foundation/Djing.py":78
+  /* "djing/core/Foundation/Djing.py":77
  *             url = f"http://localhost:5184/static/{name}/{path}"
  *         else:
  *             url = f"/static/{name}/{path}"             # <<<<<<<<<<<<<<
@@ -5898,7 +5951,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
  *         cls._scripts.append({"name": name, "path": path, "url": url})
  */
   /*else*/ {
-    __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 78, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_4 = 0;
     __pyx_t_5 = 127;
@@ -5920,7 +5973,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
     __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_v_path);
     __Pyx_GIVEREF(__pyx_v_path);
     PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_v_path);
-    __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_1, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 78, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_1, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_url = ((PyObject*)__pyx_t_2);
@@ -5928,25 +5981,25 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
   }
   __pyx_L3:;
 
-  /* "djing/core/Foundation/Djing.py":80
+  /* "djing/core/Foundation/Djing.py":79
  *             url = f"/static/{name}/{path}"
  * 
  *         cls._scripts.append({"name": name, "path": path, "url": url})             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_scripts); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_scripts); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_name, __pyx_v_name) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_path, __pyx_v_path) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_url, __pyx_v_url) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_Append(__pyx_t_2, __pyx_t_1); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_name, __pyx_v_name) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_path, __pyx_v_path) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_url, __pyx_v_url) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Append(__pyx_t_2, __pyx_t_1); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":82
+  /* "djing/core/Foundation/Djing.py":81
  *         cls._scripts.append({"name": name, "path": path, "url": url})
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -5973,7 +6026,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
     PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -5981,7 +6034,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":73
+  /* "djing/core/Foundation/Djing.py":72
  *         cls.__license_checked = False
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -6003,7 +6056,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_2script(CYTHON
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":84
+/* "djing/core/Foundation/Djing.py":83
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -6070,7 +6123,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 84, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -6078,9 +6131,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 84, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("style", 1, 3, 3, 1); __PYX_ERR(0, 84, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("style", 1, 3, 3, 1); __PYX_ERR(0, 83, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -6088,14 +6141,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 84, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("style", 1, 3, 3, 2); __PYX_ERR(0, 84, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("style", 1, 3, 3, 2); __PYX_ERR(0, 83, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "style") < 0)) __PYX_ERR(0, 84, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "style") < 0)) __PYX_ERR(0, 83, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -6110,7 +6163,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("style", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 84, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("style", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 83, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6124,8 +6177,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_name), (&PyUnicode_Type), 0, "name", 1))) __PYX_ERR(0, 85, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_path), (&PyUnicode_Type), 0, "path", 1))) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_name), (&PyUnicode_Type), 0, "name", 1))) __PYX_ERR(0, 84, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_path), (&PyUnicode_Type), 0, "path", 1))) __PYX_ERR(0, 84, __pyx_L1_error)
   __pyx_r = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(__pyx_self, __pyx_v_cls, __pyx_v_name, __pyx_v_path);
 
   /* function exit code */
@@ -6160,30 +6213,30 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("style", 1);
 
-  /* "djing/core/Foundation/Djing.py":86
+  /* "djing/core/Foundation/Djing.py":85
  *     @classmethod
  *     def style(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:             # <<<<<<<<<<<<<<
  *             url = f"http://localhost:5184/static/{name}/{path}"
  *         else:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_settings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_settings); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_DEBUG); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_DEBUG); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_3) {
 
-    /* "djing/core/Foundation/Djing.py":87
+    /* "djing/core/Foundation/Djing.py":86
  *     def style(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:
  *             url = f"http://localhost:5184/static/{name}/{path}"             # <<<<<<<<<<<<<<
  *         else:
  *             url = f"/static/{name}/{path}"
  */
-    __pyx_t_2 = PyTuple_New(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_4 = 0;
     __pyx_t_5 = 127;
@@ -6205,13 +6258,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
     __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_v_path);
     __Pyx_GIVEREF(__pyx_v_path);
     PyTuple_SET_ITEM(__pyx_t_2, 3, __pyx_v_path);
-    __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_2, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_2, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_url = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "djing/core/Foundation/Djing.py":86
+    /* "djing/core/Foundation/Djing.py":85
  *     @classmethod
  *     def style(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:             # <<<<<<<<<<<<<<
@@ -6221,7 +6274,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
     goto __pyx_L3;
   }
 
-  /* "djing/core/Foundation/Djing.py":89
+  /* "djing/core/Foundation/Djing.py":88
  *             url = f"http://localhost:5184/static/{name}/{path}"
  *         else:
  *             url = f"/static/{name}/{path}"             # <<<<<<<<<<<<<<
@@ -6229,7 +6282,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
  *         cls._styles.append({"name": name, "path": path, "url": url})
  */
   /*else*/ {
-    __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_4 = 0;
     __pyx_t_5 = 127;
@@ -6251,7 +6304,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
     __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_v_path);
     __Pyx_GIVEREF(__pyx_v_path);
     PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_v_path);
-    __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_1, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_1, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_url = ((PyObject*)__pyx_t_2);
@@ -6259,25 +6312,25 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
   }
   __pyx_L3:;
 
-  /* "djing/core/Foundation/Djing.py":91
+  /* "djing/core/Foundation/Djing.py":90
  *             url = f"/static/{name}/{path}"
  * 
  *         cls._styles.append({"name": name, "path": path, "url": url})             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_styles); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_styles); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_name, __pyx_v_name) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_path, __pyx_v_path) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_url, __pyx_v_url) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_Append(__pyx_t_2, __pyx_t_1); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 91, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_name, __pyx_v_name) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_path, __pyx_v_path) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_url, __pyx_v_url) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Append(__pyx_t_2, __pyx_t_1); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":93
+  /* "djing/core/Foundation/Djing.py":92
  *         cls._styles.append({"name": name, "path": path, "url": url})
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -6304,7 +6357,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
     PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -6312,7 +6365,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":84
+  /* "djing/core/Foundation/Djing.py":83
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -6334,7 +6387,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_4style(CYTHON_
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":95
+/* "djing/core/Foundation/Djing.py":94
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -6401,7 +6454,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 95, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -6409,9 +6462,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 95, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("when_serving", 1, 3, 3, 1); __PYX_ERR(0, 95, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("when_serving", 1, 3, 3, 1); __PYX_ERR(0, 94, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -6419,14 +6472,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 95, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("when_serving", 1, 3, 3, 2); __PYX_ERR(0, 95, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("when_serving", 1, 3, 3, 2); __PYX_ERR(0, 94, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "when_serving") < 0)) __PYX_ERR(0, 95, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "when_serving") < 0)) __PYX_ERR(0, 94, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -6441,7 +6494,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("when_serving", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 95, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("when_serving", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 94, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6483,19 +6536,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("when_serving", 1);
 
-  /* "djing/core/Foundation/Djing.py":97
+  /* "djing/core/Foundation/Djing.py":96
  *     @classmethod
  *     def when_serving(cls, callback, default) -> Any:
  *         if App.bound(DjingRequest):             # <<<<<<<<<<<<<<
  *             return callback(App.make(DjingRequest))
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_App); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_App); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_bound); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_bound); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_DjingRequest); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_DjingRequest); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -6516,15 +6569,15 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_6) {
 
-    /* "djing/core/Foundation/Djing.py":98
+    /* "djing/core/Foundation/Djing.py":97
  *     def when_serving(cls, callback, default) -> Any:
  *         if App.bound(DjingRequest):
  *             return callback(App.make(DjingRequest))             # <<<<<<<<<<<<<<
@@ -6532,12 +6585,12 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
  *         if callable(default):
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_App); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_App); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_make); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_make); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_DjingRequest); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_DjingRequest); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_7 = NULL;
     __pyx_t_5 = 0;
@@ -6558,7 +6611,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -6582,7 +6635,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -6590,7 +6643,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":97
+    /* "djing/core/Foundation/Djing.py":96
  *     @classmethod
  *     def when_serving(cls, callback, default) -> Any:
  *         if App.bound(DjingRequest):             # <<<<<<<<<<<<<<
@@ -6599,17 +6652,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":100
+  /* "djing/core/Foundation/Djing.py":99
  *             return callback(App.make(DjingRequest))
  * 
  *         if callable(default):             # <<<<<<<<<<<<<<
  *             return default(App.make("request"))
  * 
  */
-  __pyx_t_6 = __Pyx_PyCallable_Check(__pyx_v_default); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyCallable_Check(__pyx_v_default); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 99, __pyx_L1_error)
   if (__pyx_t_6) {
 
-    /* "djing/core/Foundation/Djing.py":101
+    /* "djing/core/Foundation/Djing.py":100
  * 
  *         if callable(default):
  *             return default(App.make("request"))             # <<<<<<<<<<<<<<
@@ -6617,9 +6670,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
  *     @classmethod
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_App); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_App); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_make); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_make); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -6640,7 +6693,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
       PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_n_u_request};
       __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
@@ -6664,7 +6717,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
@@ -6672,7 +6725,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":100
+    /* "djing/core/Foundation/Djing.py":99
  *             return callback(App.make(DjingRequest))
  * 
  *         if callable(default):             # <<<<<<<<<<<<<<
@@ -6681,7 +6734,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":95
+  /* "djing/core/Foundation/Djing.py":94
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -6706,7 +6759,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_6when_serving(
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":103
+/* "djing/core/Foundation/Djing.py":102
  *             return default(App.make("request"))
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -6767,12 +6820,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 102, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "with_authentication") < 0)) __PYX_ERR(0, 103, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "with_authentication") < 0)) __PYX_ERR(0, 102, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -6783,7 +6836,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("with_authentication", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 103, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("with_authentication", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 102, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6822,16 +6875,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_8with_authenti
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("with_authentication", 1);
 
-  /* "djing/core/Foundation/Djing.py":105
+  /* "djing/core/Foundation/Djing.py":104
  *     @classmethod
  *     def with_authentication(cls) -> "Djing":
  *         cls._with_authentication = True             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_with_authentication, Py_True) < 0) __PYX_ERR(0, 105, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_with_authentication, Py_True) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":107
+  /* "djing/core/Foundation/Djing.py":106
  *         cls._with_authentication = True
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -6858,7 +6911,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_8with_authenti
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -6866,7 +6919,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_8with_authenti
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":103
+  /* "djing/core/Foundation/Djing.py":102
  *             return default(App.make("request"))
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -6887,7 +6940,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_8with_authenti
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":109
+/* "djing/core/Foundation/Djing.py":108
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -6935,7 +6988,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject **__pyx_pyargnames[] = {&__pyx_n_s_cls,&__pyx_n_s_with_breadcrumbs_2,0};
 
-    /* "djing/core/Foundation/Djing.py":110
+    /* "djing/core/Foundation/Djing.py":109
  * 
  *     @classmethod
  *     def with_breadcrumbs(cls, with_breadcrumbs=True) -> Type["Djing"]:             # <<<<<<<<<<<<<<
@@ -6960,19 +7013,19 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_with_breadcrumbs_2);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "with_breadcrumbs") < 0)) __PYX_ERR(0, 109, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "with_breadcrumbs") < 0)) __PYX_ERR(0, 108, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -6988,7 +7041,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("with_breadcrumbs", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 109, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("with_breadcrumbs", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 108, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7004,7 +7057,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_L4_argument_unpacking_done:;
   __pyx_r = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10with_breadcrumbs(__pyx_self, __pyx_v_cls, __pyx_v_with_breadcrumbs);
 
-  /* "djing/core/Foundation/Djing.py":109
+  /* "djing/core/Foundation/Djing.py":108
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7031,16 +7084,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10with_breadcr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("with_breadcrumbs", 1);
 
-  /* "djing/core/Foundation/Djing.py":111
+  /* "djing/core/Foundation/Djing.py":110
  *     @classmethod
  *     def with_breadcrumbs(cls, with_breadcrumbs=True) -> Type["Djing"]:
  *         cls._with_breadcrumbs = with_breadcrumbs             # <<<<<<<<<<<<<<
  * 
  *         return cls
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs, __pyx_v_with_breadcrumbs) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs, __pyx_v_with_breadcrumbs) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":113
+  /* "djing/core/Foundation/Djing.py":112
  *         cls._with_breadcrumbs = with_breadcrumbs
  * 
  *         return cls             # <<<<<<<<<<<<<<
@@ -7052,7 +7105,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10with_breadcr
   __pyx_r = __pyx_v_cls;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":109
+  /* "djing/core/Foundation/Djing.py":108
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7070,7 +7123,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10with_breadcr
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":115
+/* "djing/core/Foundation/Djing.py":114
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7131,12 +7184,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 115, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 114, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "breadcrumbs_enabled") < 0)) __PYX_ERR(0, 115, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "breadcrumbs_enabled") < 0)) __PYX_ERR(0, 114, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -7147,7 +7200,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("breadcrumbs_enabled", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 115, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("breadcrumbs_enabled", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 114, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7192,34 +7245,34 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12breadcrumbs_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("breadcrumbs_enabled", 1);
 
-  /* "djing/core/Foundation/Djing.py":119
+  /* "djing/core/Foundation/Djing.py":118
  *         status = (
  *             cls._with_breadcrumbs(App.make(DjingRequest))
  *             if callable(cls._with_breadcrumbs)             # <<<<<<<<<<<<<<
  *             else cls._with_breadcrumbs
  *         )
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyCallable_Check(__pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyCallable_Check(__pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_3) {
 
-    /* "djing/core/Foundation/Djing.py":118
+    /* "djing/core/Foundation/Djing.py":117
  *     def breadcrumbs_enabled(cls) -> bool:
  *         status = (
  *             cls._with_breadcrumbs(App.make(DjingRequest))             # <<<<<<<<<<<<<<
  *             if callable(cls._with_breadcrumbs)
  *             else cls._with_breadcrumbs
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_App); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_App); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_make); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 118, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_make); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_DjingRequest); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_DjingRequest); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_8 = NULL;
     __pyx_t_9 = 0;
@@ -7240,7 +7293,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12breadcrumbs_
       __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_9, 1+__pyx_t_9);
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 118, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -7263,7 +7316,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12breadcrumbs_
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_9, 1+__pyx_t_9);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -7271,14 +7324,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12breadcrumbs_
     __pyx_t_2 = 0;
   } else {
 
-    /* "djing/core/Foundation/Djing.py":120
+    /* "djing/core/Foundation/Djing.py":119
  *             cls._with_breadcrumbs(App.make(DjingRequest))
  *             if callable(cls._with_breadcrumbs)
  *             else cls._with_breadcrumbs             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_with_breadcrumbs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -7286,7 +7339,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12breadcrumbs_
   __pyx_v_status = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":123
+  /* "djing/core/Foundation/Djing.py":122
  *         )
  * 
  *         return status             # <<<<<<<<<<<<<<
@@ -7298,7 +7351,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12breadcrumbs_
   __pyx_r = __pyx_v_status;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":115
+  /* "djing/core/Foundation/Djing.py":114
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7324,7 +7377,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12breadcrumbs_
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":125
+/* "djing/core/Foundation/Djing.py":124
  *         return status
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7385,12 +7438,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "without_global_search") < 0)) __PYX_ERR(0, 125, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "without_global_search") < 0)) __PYX_ERR(0, 124, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -7401,7 +7454,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("without_global_search", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 125, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("without_global_search", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 124, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7436,16 +7489,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_14without_glob
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("without_global_search", 1);
 
-  /* "djing/core/Foundation/Djing.py":127
+  /* "djing/core/Foundation/Djing.py":126
  *     @classmethod
  *     def without_global_search(cls) -> Type["Djing"]:
  *         cls._global_search_enabled = False             # <<<<<<<<<<<<<<
  * 
  *         return cls
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_global_search_enabled, Py_False) < 0) __PYX_ERR(0, 127, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_global_search_enabled, Py_False) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":129
+  /* "djing/core/Foundation/Djing.py":128
  *         cls._global_search_enabled = False
  * 
  *         return cls             # <<<<<<<<<<<<<<
@@ -7457,7 +7510,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_14without_glob
   __pyx_r = __pyx_v_cls;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":125
+  /* "djing/core/Foundation/Djing.py":124
  *         return status
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7475,7 +7528,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_14without_glob
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":131
+/* "djing/core/Foundation/Djing.py":130
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7536,12 +7589,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__resource_collection") < 0)) __PYX_ERR(0, 131, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__resource_collection") < 0)) __PYX_ERR(0, 130, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -7552,7 +7605,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__resource_collection", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 131, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__resource_collection", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 130, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7592,7 +7645,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16__resource_c
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__resource_collection", 1);
 
-  /* "djing/core/Foundation/Djing.py":133
+  /* "djing/core/Foundation/Djing.py":132
  *     @classmethod
  *     def __resource_collection(cls) -> ResourceCollection:
  *         return ResourceCollection.make(cls._resources)             # <<<<<<<<<<<<<<
@@ -7600,12 +7653,12 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16__resource_c
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_ResourceCollection); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_ResourceCollection); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_make); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_make); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_resources); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_resources); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -7626,7 +7679,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16__resource_c
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -7634,7 +7687,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16__resource_c
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":131
+  /* "djing/core/Foundation/Djing.py":130
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7656,7 +7709,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16__resource_c
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":135
+/* "djing/core/Foundation/Djing.py":134
  *         return ResourceCollection.make(cls._resources)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7720,7 +7773,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -7728,14 +7781,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("authorized_resources", 1, 2, 2, 1); __PYX_ERR(0, 135, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("authorized_resources", 1, 2, 2, 1); __PYX_ERR(0, 134, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorized_resources") < 0)) __PYX_ERR(0, 135, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorized_resources") < 0)) __PYX_ERR(0, 134, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -7748,7 +7801,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("authorized_resources", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 135, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("authorized_resources", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 134, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7788,7 +7841,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_18authorized_r
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("authorized_resources", 1);
 
-  /* "djing/core/Foundation/Djing.py":137
+  /* "djing/core/Foundation/Djing.py":136
  *     @classmethod
  *     def authorized_resources(cls, request: DjingRequest) -> ResourceCollection:
  *         return cls.__resource_collection().authorized(request)             # <<<<<<<<<<<<<<
@@ -7796,7 +7849,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_18authorized_r
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__resource_collection); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__resource_collection); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -7816,11 +7869,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_18authorized_r
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_authorized); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_authorized); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -7841,7 +7894,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_18authorized_r
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 137, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -7849,7 +7902,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_18authorized_r
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":135
+  /* "djing/core/Foundation/Djing.py":134
  *         return ResourceCollection.make(cls._resources)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7871,7 +7924,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_18authorized_r
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":139
+/* "djing/core/Foundation/Djing.py":138
  *         return cls.__resource_collection().authorized(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -7935,7 +7988,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 138, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -7943,14 +7996,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 138, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("globally_searchable_resources", 1, 2, 2, 1); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("globally_searchable_resources", 1, 2, 2, 1); __PYX_ERR(0, 138, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "globally_searchable_resources") < 0)) __PYX_ERR(0, 139, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "globally_searchable_resources") < 0)) __PYX_ERR(0, 138, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -7963,7 +8016,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("globally_searchable_resources", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 139, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("globally_searchable_resources", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 138, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8005,7 +8058,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20globally_sea
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("globally_searchable_resources", 1);
 
-  /* "djing/core/Foundation/Djing.py":143
+  /* "djing/core/Foundation/Djing.py":142
  *         cls, request: DjingRequest
  *     ) -> List[Tuple[Any, Any]]:
  *         return (             # <<<<<<<<<<<<<<
@@ -8014,14 +8067,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20globally_sea
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "djing/core/Foundation/Djing.py":144
+  /* "djing/core/Foundation/Djing.py":143
  *     ) -> List[Tuple[Any, Any]]:
  *         return (
  *             cls.authorized_resources(request)             # <<<<<<<<<<<<<<
  *             .searchable()
  *             .sort_by(cls.sort_resources_with())
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_authorized_resources); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_authorized_resources); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_7 = 0;
@@ -8041,19 +8094,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20globally_sea
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_request};
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 144, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":145
+  /* "djing/core/Foundation/Djing.py":144
  *         return (
  *             cls.authorized_resources(request)
  *             .searchable()             # <<<<<<<<<<<<<<
  *             .sort_by(cls.sort_resources_with())
  *             .all()
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_searchable); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_searchable); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -8074,22 +8127,22 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20globally_sea
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":146
+  /* "djing/core/Foundation/Djing.py":145
  *             cls.authorized_resources(request)
  *             .searchable()
  *             .sort_by(cls.sort_resources_with())             # <<<<<<<<<<<<<<
  *             .all()
  *         )
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_sort_by); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_sort_by); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_sort_resources_with); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_sort_resources_with); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_6 = NULL;
   __pyx_t_7 = 0;
@@ -8109,7 +8162,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20globally_sea
     PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
@@ -8132,19 +8185,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20globally_sea
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 146, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":147
+  /* "djing/core/Foundation/Djing.py":146
  *             .searchable()
  *             .sort_by(cls.sort_resources_with())
  *             .all()             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -8165,16 +8218,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20globally_sea
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
-  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_1))) __PYX_ERR(0, 147, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_1))) __PYX_ERR(0, 146, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":139
+  /* "djing/core/Foundation/Djing.py":138
  *         return cls.__resource_collection().authorized(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -8198,7 +8251,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20globally_sea
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":150
+/* "djing/core/Foundation/Djing.py":149
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -8259,12 +8312,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "has_globally_searchable_resources") < 0)) __PYX_ERR(0, 150, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "has_globally_searchable_resources") < 0)) __PYX_ERR(0, 149, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -8275,7 +8328,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("has_globally_searchable_resources", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 150, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("has_globally_searchable_resources", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 149, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8320,7 +8373,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_22has_globally
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("has_globally_searchable_resources", 1);
 
-  /* "djing/core/Foundation/Djing.py":152
+  /* "djing/core/Foundation/Djing.py":151
  *     @classmethod
  *     def has_globally_searchable_resources(cls) -> bool:
  *         return (             # <<<<<<<<<<<<<<
@@ -8329,23 +8382,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_22has_globally
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "djing/core/Foundation/Djing.py":153
+  /* "djing/core/Foundation/Djing.py":152
  *     def has_globally_searchable_resources(cls) -> bool:
  *         return (
  *             collect(cls.globally_searchable_resources(App.make(DjingRequest))).count()             # <<<<<<<<<<<<<<
  *             > 0
  *         )
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_collect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_collect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_globally_searchable_resources); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_globally_searchable_resources); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_App); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_App); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_make); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_make); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_DjingRequest); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_DjingRequest); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_9 = NULL;
   __pyx_t_10 = 0;
@@ -8366,7 +8419,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_22has_globally
     __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 153, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   }
@@ -8389,7 +8442,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_22has_globally
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -8412,11 +8465,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_22has_globally
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_count); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_count); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -8437,17 +8490,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_22has_globally
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":150
+  /* "djing/core/Foundation/Djing.py":149
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -8474,7 +8527,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_22has_globally
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":157
+/* "djing/core/Foundation/Djing.py":156
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -8538,7 +8591,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 157, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 156, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -8546,14 +8599,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 157, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 156, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("main_menu", 1, 2, 2, 1); __PYX_ERR(0, 157, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("main_menu", 1, 2, 2, 1); __PYX_ERR(0, 156, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "main_menu") < 0)) __PYX_ERR(0, 157, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "main_menu") < 0)) __PYX_ERR(0, 156, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -8566,7 +8619,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("main_menu", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 157, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("main_menu", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 156, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8605,16 +8658,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_24main_menu(CY
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("main_menu", 1);
 
-  /* "djing/core/Foundation/Djing.py":159
+  /* "djing/core/Foundation/Djing.py":158
  *     @classmethod
  *     def main_menu(cls, callback: Callable[[Any], Any]) -> "Djing":
  *         cls._main_menu_callback = callback             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_main_menu_callback, __pyx_v_callback) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_main_menu_callback, __pyx_v_callback) < 0) __PYX_ERR(0, 158, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":161
+  /* "djing/core/Foundation/Djing.py":160
  *         cls._main_menu_callback = callback
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -8641,7 +8694,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_24main_menu(CY
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -8649,7 +8702,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_24main_menu(CY
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":157
+  /* "djing/core/Foundation/Djing.py":156
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -8670,7 +8723,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_24main_menu(CY
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":163
+/* "djing/core/Foundation/Djing.py":162
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -8734,7 +8787,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 162, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -8742,14 +8795,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 163, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 162, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("resolve_main_menu", 1, 2, 2, 1); __PYX_ERR(0, 163, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("resolve_main_menu", 1, 2, 2, 1); __PYX_ERR(0, 162, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resolve_main_menu") < 0)) __PYX_ERR(0, 163, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resolve_main_menu") < 0)) __PYX_ERR(0, 162, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -8762,7 +8815,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("resolve_main_menu", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 163, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("resolve_main_menu", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 162, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -8805,14 +8858,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_26resolve_main
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("resolve_main_menu", 1);
 
-  /* "djing/core/Foundation/Djing.py":165
+  /* "djing/core/Foundation/Djing.py":164
  *     @classmethod
  *     def resolve_main_menu(cls, request: DjingRequest):
  *         default_main_menu = cls.default_main_menu(request)             # <<<<<<<<<<<<<<
  * 
  *         if cls._main_menu_callback:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_default_main_menu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_default_main_menu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -8832,27 +8885,27 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_26resolve_main
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_default_main_menu = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":167
+  /* "djing/core/Foundation/Djing.py":166
  *         default_main_menu = cls.default_main_menu(request)
  * 
  *         if cls._main_menu_callback:             # <<<<<<<<<<<<<<
  *             return Util.callback_with_dynamic_args(
  *                 cls._main_menu_callback, [request, default_main_menu]
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_main_menu_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_main_menu_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_5) {
 
-    /* "djing/core/Foundation/Djing.py":168
+    /* "djing/core/Foundation/Djing.py":167
  * 
  *         if cls._main_menu_callback:
  *             return Util.callback_with_dynamic_args(             # <<<<<<<<<<<<<<
@@ -8860,29 +8913,29 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_26resolve_main
  *             )
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Util); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 168, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Util); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_callback_with_dynamic_args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 168, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_callback_with_dynamic_args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "djing/core/Foundation/Djing.py":169
+    /* "djing/core/Foundation/Djing.py":168
  *         if cls._main_menu_callback:
  *             return Util.callback_with_dynamic_args(
  *                 cls._main_menu_callback, [request, default_main_menu]             # <<<<<<<<<<<<<<
  *             )
  * 
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_main_menu_callback); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_main_menu_callback); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 168, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
+    __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 168, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_request);
     __Pyx_GIVEREF(__pyx_v_request);
-    if (__Pyx_PyList_SET_ITEM(__pyx_t_6, 0, __pyx_v_request)) __PYX_ERR(0, 169, __pyx_L1_error);
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_6, 0, __pyx_v_request)) __PYX_ERR(0, 168, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_default_main_menu);
     __Pyx_GIVEREF(__pyx_v_default_main_menu);
-    if (__Pyx_PyList_SET_ITEM(__pyx_t_6, 1, __pyx_v_default_main_menu)) __PYX_ERR(0, 169, __pyx_L1_error);
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_6, 1, __pyx_v_default_main_menu)) __PYX_ERR(0, 168, __pyx_L1_error);
     __pyx_t_7 = NULL;
     __pyx_t_4 = 0;
     #if CYTHON_UNPACK_METHODS
@@ -8903,7 +8956,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_26resolve_main
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -8911,7 +8964,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_26resolve_main
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":167
+    /* "djing/core/Foundation/Djing.py":166
  *         default_main_menu = cls.default_main_menu(request)
  * 
  *         if cls._main_menu_callback:             # <<<<<<<<<<<<<<
@@ -8920,7 +8973,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_26resolve_main
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":172
+  /* "djing/core/Foundation/Djing.py":171
  *             )
  * 
  *         return default_main_menu             # <<<<<<<<<<<<<<
@@ -8932,7 +8985,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_26resolve_main
   __pyx_r = __pyx_v_default_main_menu;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":163
+  /* "djing/core/Foundation/Djing.py":162
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -8956,7 +9009,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_26resolve_main
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":174
+/* "djing/core/Foundation/Djing.py":173
  *         return default_main_menu
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -9020,7 +9073,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 173, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -9028,14 +9081,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 173, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("default_main_menu", 1, 2, 2, 1); __PYX_ERR(0, 174, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("default_main_menu", 1, 2, 2, 1); __PYX_ERR(0, 173, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "default_main_menu") < 0)) __PYX_ERR(0, 174, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "default_main_menu") < 0)) __PYX_ERR(0, 173, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -9048,7 +9101,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("default_main_menu", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 174, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("default_main_menu", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 173, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9075,7 +9128,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":176
+/* "djing/core/Foundation/Djing.py":175
  *     @classmethod
  *     def default_main_menu(cls, request: DjingRequest):
  *         def map_tools(tool):             # <<<<<<<<<<<<<<
@@ -9136,12 +9189,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 176, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "map_tools") < 0)) __PYX_ERR(0, 176, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "map_tools") < 0)) __PYX_ERR(0, 175, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -9152,7 +9205,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("map_tools", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 176, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("map_tools", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 175, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9195,7 +9248,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17default_main
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":177
+  /* "djing/core/Foundation/Djing.py":176
  *     def default_main_menu(cls, request: DjingRequest):
  *         def map_tools(tool):
  *             return tool.menu(request)             # <<<<<<<<<<<<<<
@@ -9203,9 +9256,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17default_main
  *         items = (
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_tool, __pyx_n_s_menu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_tool, __pyx_n_s_menu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 176, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 177, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 176, __pyx_L1_error) }
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
@@ -9224,7 +9277,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17default_main
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -9232,7 +9285,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17default_main
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":176
+  /* "djing/core/Foundation/Djing.py":175
  *     @classmethod
  *     def default_main_menu(cls, request: DjingRequest):
  *         def map_tools(tool):             # <<<<<<<<<<<<<<
@@ -9253,7 +9306,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17default_main
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":174
+/* "djing/core/Foundation/Djing.py":173
  *         return default_main_menu
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -9285,7 +9338,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 174, __pyx_L1_error)
+    __PYX_ERR(0, 173, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -9293,28 +9346,28 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_request);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_request);
 
-  /* "djing/core/Foundation/Djing.py":176
+  /* "djing/core/Foundation/Djing.py":175
  *     @classmethod
  *     def default_main_menu(cls, request: DjingRequest):
  *         def map_tools(tool):             # <<<<<<<<<<<<<<
  *             return tool.menu(request)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17default_main_menu_1map_tools, 0, __pyx_n_s_Djing_default_main_menu_locals_m, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17default_main_menu_1map_tools, 0, __pyx_n_s_Djing_default_main_menu_locals_m, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_map_tools = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":180
+  /* "djing/core/Foundation/Djing.py":179
  * 
  *         items = (
  *             collect(cls.available_tools(request)).map(map_tools).filter().values().all()             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_collect); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_collect); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_available_tools); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_available_tools); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_9 = NULL;
   __pyx_t_10 = 0;
@@ -9334,7 +9387,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
     PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_cur_scope->__pyx_v_request};
     __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 180, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   }
@@ -9357,11 +9410,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
     __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 180, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_map); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -9382,11 +9435,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
     PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_map_tools};
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 180, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_filter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_filter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -9407,11 +9460,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 180, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_values); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_values); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -9432,11 +9485,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -9457,14 +9510,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __pyx_v_items = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":183
+  /* "djing/core/Foundation/Djing.py":182
  *         )
  * 
  *         return Menu.make(items)             # <<<<<<<<<<<<<<
@@ -9472,9 +9525,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_Menu); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_Menu); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_make); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_make); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -9495,7 +9548,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_items};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -9503,7 +9556,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":174
+  /* "djing/core/Foundation/Djing.py":173
  *         return default_main_menu
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -9533,7 +9586,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_28default_main
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":185
+/* "djing/core/Foundation/Djing.py":184
  *         return Menu.make(items)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -9594,12 +9647,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 185, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "logo") < 0)) __PYX_ERR(0, 185, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "logo") < 0)) __PYX_ERR(0, 184, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -9610,7 +9663,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("logo", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 185, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("logo", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 184, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9654,34 +9707,34 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("logo", 1);
 
-  /* "djing/core/Foundation/Djing.py":187
+  /* "djing/core/Foundation/Djing.py":186
  *     @classmethod
  *     def logo(cls) -> Optional[str]:
  *         logo = Config.get("djing.brand_logo", None)             # <<<<<<<<<<<<<<
  * 
  *         logo_path = Path(logo) if logo else None
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Config); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Config); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_logo = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":189
+  /* "djing/core/Foundation/Djing.py":188
  *         logo = Config.get("djing.brand_logo", None)
  * 
  *         logo_path = Path(logo) if logo else None             # <<<<<<<<<<<<<<
  * 
  *         if logo_path and logo_path.exists():
  */
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_logo); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 189, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_logo); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 188, __pyx_L1_error)
   if (__pyx_t_3) {
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Path); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 189, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Path); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 188, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     __pyx_t_6 = 0;
@@ -9701,7 +9754,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
       PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_logo};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 189, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 188, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -9714,20 +9767,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
   __pyx_v_logo_path = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":191
+  /* "djing/core/Foundation/Djing.py":190
  *         logo_path = Path(logo) if logo else None
  * 
  *         if logo_path and logo_path.exists():             # <<<<<<<<<<<<<<
  *             return logo_path.read_text()
  * 
  */
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_logo_path); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 191, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_logo_path); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 190, __pyx_L1_error)
   if (__pyx_t_7) {
   } else {
     __pyx_t_3 = __pyx_t_7;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_logo_path, __pyx_n_s_exists); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 191, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_logo_path, __pyx_n_s_exists); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_6 = 0;
@@ -9747,17 +9800,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 190, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 191, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = __pyx_t_7;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_3) {
 
-    /* "djing/core/Foundation/Djing.py":192
+    /* "djing/core/Foundation/Djing.py":191
  * 
  *         if logo_path and logo_path.exists():
  *             return logo_path.read_text()             # <<<<<<<<<<<<<<
@@ -9765,7 +9818,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
  *         return None
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_logo_path, __pyx_n_s_read_text); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_logo_path, __pyx_n_s_read_text); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 191, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_4 = NULL;
     __pyx_t_6 = 0;
@@ -9785,16 +9838,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
-    if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_1))) __PYX_ERR(0, 192, __pyx_L1_error)
+    if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_1))) __PYX_ERR(0, 191, __pyx_L1_error)
     __pyx_r = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":191
+    /* "djing/core/Foundation/Djing.py":190
  *         logo_path = Path(logo) if logo else None
  * 
  *         if logo_path and logo_path.exists():             # <<<<<<<<<<<<<<
@@ -9803,7 +9856,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":194
+  /* "djing/core/Foundation/Djing.py":193
  *             return logo_path.read_text()
  * 
  *         return None             # <<<<<<<<<<<<<<
@@ -9814,7 +9867,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
   __pyx_r = ((PyObject*)Py_None); __Pyx_INCREF(Py_None);
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":185
+  /* "djing/core/Foundation/Djing.py":184
  *         return Menu.make(items)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -9838,7 +9891,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_30logo(CYTHON_
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":196
+/* "djing/core/Foundation/Djing.py":195
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -9899,12 +9952,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 196, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 195, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "brand_colors") < 0)) __PYX_ERR(0, 196, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "brand_colors") < 0)) __PYX_ERR(0, 195, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -9915,7 +9968,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("brand_colors", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 196, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("brand_colors", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 195, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9942,7 +9995,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":198
+/* "djing/core/Foundation/Djing.py":197
  *     @classmethod
  *     def brand_colors(cls) -> list:
  *         def reject_colors(value):             # <<<<<<<<<<<<<<
@@ -10003,12 +10056,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 198, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 197, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "reject_colors") < 0)) __PYX_ERR(0, 198, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "reject_colors") < 0)) __PYX_ERR(0, 197, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -10019,7 +10072,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("reject_colors", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 198, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("reject_colors", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 197, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10056,7 +10109,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12brand_colors
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("reject_colors", 1);
 
-  /* "djing/core/Foundation/Djing.py":199
+  /* "djing/core/Foundation/Djing.py":198
  *     def brand_colors(cls) -> list:
  *         def reject_colors(value):
  *             return not value             # <<<<<<<<<<<<<<
@@ -10064,14 +10117,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12brand_colors
  *         return (
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_value); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 199, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyBool_FromLong((!__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 199, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_value); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyBool_FromLong((!__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":198
+  /* "djing/core/Foundation/Djing.py":197
  *     @classmethod
  *     def brand_colors(cls) -> list:
  *         def reject_colors(value):             # <<<<<<<<<<<<<<
@@ -10090,7 +10143,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_12brand_colors
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":196
+/* "djing/core/Foundation/Djing.py":195
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10114,19 +10167,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32brand_colors
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("brand_colors", 1);
 
-  /* "djing/core/Foundation/Djing.py":198
+  /* "djing/core/Foundation/Djing.py":197
  *     @classmethod
  *     def brand_colors(cls) -> list:
  *         def reject_colors(value):             # <<<<<<<<<<<<<<
  *             return not value
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_12brand_colors_1reject_colors, 0, __pyx_n_s_Djing_brand_colors_locals_reject, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_12brand_colors_1reject_colors, 0, __pyx_n_s_Djing_brand_colors_locals_reject, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_reject_colors = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":201
+  /* "djing/core/Foundation/Djing.py":200
  *             return not value
  * 
  *         return (             # <<<<<<<<<<<<<<
@@ -10135,21 +10188,21 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32brand_colors
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "djing/core/Foundation/Djing.py":202
+  /* "djing/core/Foundation/Djing.py":201
  * 
  *         return (
  *             collect(Config.get("djing.brand_colors", None)).reject(reject_colors).all()             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Config); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Config); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_get); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_get); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -10171,11 +10224,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32brand_colors
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 201, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_reject); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_reject); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -10196,11 +10249,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32brand_colors
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_reject_colors};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 201, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -10221,16 +10274,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32brand_colors
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 202, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 201, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_1))) __PYX_ERR(0, 202, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_1))) __PYX_ERR(0, 201, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":196
+  /* "djing/core/Foundation/Djing.py":195
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10255,7 +10308,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32brand_colors
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":205
+/* "djing/core/Foundation/Djing.py":204
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10316,12 +10369,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 205, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 204, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "username_field") < 0)) __PYX_ERR(0, 205, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "username_field") < 0)) __PYX_ERR(0, 204, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -10332,7 +10385,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("username_field", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 205, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("username_field", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 204, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10369,7 +10422,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_34username_fie
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("username_field", 1);
 
-  /* "djing/core/Foundation/Djing.py":207
+  /* "djing/core/Foundation/Djing.py":206
  *     @classmethod
  *     def username_field(cls) -> str:
  *         return Config.get("djing.auth.username_field", "username")             # <<<<<<<<<<<<<<
@@ -10377,20 +10430,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_34username_fie
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Config); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Config); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_1))) __PYX_ERR(0, 207, __pyx_L1_error)
+  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_1))) __PYX_ERR(0, 206, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":205
+  /* "djing/core/Foundation/Djing.py":204
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10410,7 +10463,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_34username_fie
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":209
+/* "djing/core/Foundation/Djing.py":208
  *         return Config.get("djing.auth.username_field", "username")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10471,12 +10524,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 209, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 208, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "path") < 0)) __PYX_ERR(0, 209, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "path") < 0)) __PYX_ERR(0, 208, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -10487,7 +10540,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("path", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 209, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("path", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 208, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10524,7 +10577,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_36path(CYTHON_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("path", 1);
 
-  /* "djing/core/Foundation/Djing.py":211
+  /* "djing/core/Foundation/Djing.py":210
  *     @classmethod
  *     def path(cls) -> str:
  *         return Config.get("djing.path", "/djing-admin")             # <<<<<<<<<<<<<<
@@ -10532,20 +10585,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_36path(CYTHON_
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Config); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Config); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_1))) __PYX_ERR(0, 211, __pyx_L1_error)
+  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_1))) __PYX_ERR(0, 210, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":209
+  /* "djing/core/Foundation/Djing.py":208
  *         return Config.get("djing.auth.username_field", "username")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10565,7 +10618,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_36path(CYTHON_
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":213
+/* "djing/core/Foundation/Djing.py":212
  *         return Config.get("djing.path", "/djing-admin")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10626,12 +10679,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 213, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "base_directory") < 0)) __PYX_ERR(0, 213, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "base_directory") < 0)) __PYX_ERR(0, 212, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -10642,7 +10695,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("base_directory", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 213, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("base_directory", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 212, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10674,7 +10727,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_38base_directo
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("base_directory", 1);
 
-  /* "djing/core/Foundation/Djing.py":215
+  /* "djing/core/Foundation/Djing.py":214
  *     @classmethod
  *     def base_directory(cls) -> str:
  *         return "djing_admin"             # <<<<<<<<<<<<<<
@@ -10686,7 +10739,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_38base_directo
   __pyx_r = __pyx_n_u_djing_admin_2;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":213
+  /* "djing/core/Foundation/Djing.py":212
  *         return Config.get("djing.path", "/djing-admin")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10701,7 +10754,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_38base_directo
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":217
+/* "djing/core/Foundation/Djing.py":216
  *         return "djing_admin"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10762,12 +10815,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 217, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 216, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "app_directory") < 0)) __PYX_ERR(0, 217, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "app_directory") < 0)) __PYX_ERR(0, 216, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -10778,7 +10831,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("app_directory", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 217, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("app_directory", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 216, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10820,16 +10873,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_40app_director
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("app_directory", 1);
 
-  /* "djing/core/Foundation/Djing.py":219
+  /* "djing/core/Foundation/Djing.py":218
  *     @classmethod
  *     def app_directory(cls) -> Path:
  *         path = App.app_path("Djing")             # <<<<<<<<<<<<<<
  * 
  *         return path if isinstance(path, Path) else Path(path)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_App); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_App); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_app_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_app_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -10850,14 +10903,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_40app_director
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_n_u_Djing};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_path = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":221
+  /* "djing/core/Foundation/Djing.py":220
  *         path = App.app_path("Djing")
  * 
  *         return path if isinstance(path, Path) else Path(path)             # <<<<<<<<<<<<<<
@@ -10865,15 +10918,15 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_40app_director
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyObject_IsInstance(__pyx_v_path, __pyx_t_3); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_t_5 = PyObject_IsInstance(__pyx_v_path, __pyx_t_3); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_5) {
     __Pyx_INCREF(__pyx_v_path);
     __pyx_t_1 = __pyx_v_path;
   } else {
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_6 = NULL;
     __pyx_t_4 = 0;
@@ -10893,7 +10946,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_40app_director
       PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_path};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 221, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 220, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
@@ -10904,7 +10957,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_40app_director
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":217
+  /* "djing/core/Foundation/Djing.py":216
  *         return "djing_admin"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10927,7 +10980,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_40app_director
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":223
+/* "djing/core/Foundation/Djing.py":222
  *         return path if isinstance(path, Path) else Path(path)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -10988,12 +11041,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 223, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "login_path") < 0)) __PYX_ERR(0, 223, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "login_path") < 0)) __PYX_ERR(0, 222, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -11004,7 +11057,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("login_path", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 223, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("login_path", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 222, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11044,14 +11097,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_42login_path(C
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("login_path", 1);
 
-  /* "djing/core/Foundation/Djing.py":225
+  /* "djing/core/Foundation/Djing.py":224
  *     @classmethod
  *     def login_path(cls) -> str:
  *         path = cls.path()             # <<<<<<<<<<<<<<
  * 
  *         return f"{path}/login"
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 225, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -11071,14 +11124,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_42login_path(C
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_path = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":227
+  /* "djing/core/Foundation/Djing.py":226
  *         path = cls.path()
  * 
  *         return f"{path}/login"             # <<<<<<<<<<<<<<
@@ -11086,16 +11139,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_42login_path(C
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_path, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_path, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyUnicode_ConcatInPlace(__pyx_t_1, __pyx_kp_u_login); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyUnicode_ConcatInPlace(__pyx_t_1, __pyx_kp_u_login); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":223
+  /* "djing/core/Foundation/Djing.py":222
  *         return path if isinstance(path, Path) else Path(path)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -11117,7 +11170,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_42login_path(C
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":229
+/* "djing/core/Foundation/Djing.py":228
  *         return f"{path}/login"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -11181,7 +11234,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 228, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -11189,14 +11242,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 229, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 228, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("initial_path", 1, 2, 2, 1); __PYX_ERR(0, 229, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("initial_path", 1, 2, 2, 1); __PYX_ERR(0, 228, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "initial_path") < 0)) __PYX_ERR(0, 229, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "initial_path") < 0)) __PYX_ERR(0, 228, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -11209,7 +11262,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("initial_path", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 229, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("initial_path", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 228, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11248,16 +11301,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_44initial_path
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("initial_path", 1);
 
-  /* "djing/core/Foundation/Djing.py":231
+  /* "djing/core/Foundation/Djing.py":230
  *     @classmethod
  *     def initial_path(cls, callback: Callable[[Any], Any]) -> "Djing":
  *         cls._initial_path_callback = callback             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback, __pyx_v_callback) < 0) __PYX_ERR(0, 231, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback, __pyx_v_callback) < 0) __PYX_ERR(0, 230, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":233
+  /* "djing/core/Foundation/Djing.py":232
  *         cls._initial_path_callback = callback
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -11284,7 +11337,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_44initial_path
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -11292,7 +11345,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_44initial_path
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":229
+  /* "djing/core/Foundation/Djing.py":228
  *         return f"{path}/login"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -11313,7 +11366,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_44initial_path
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":235
+/* "djing/core/Foundation/Djing.py":234
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -11377,7 +11430,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -11385,14 +11438,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 234, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("resolve_initial_path", 1, 2, 2, 1); __PYX_ERR(0, 235, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("resolve_initial_path", 1, 2, 2, 1); __PYX_ERR(0, 234, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resolve_initial_path") < 0)) __PYX_ERR(0, 235, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resolve_initial_path") < 0)) __PYX_ERR(0, 234, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -11405,7 +11458,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("resolve_initial_path", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 235, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("resolve_initial_path", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 234, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11446,7 +11499,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_46resolve_init
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("resolve_initial_path", 1);
 
-  /* "djing/core/Foundation/Djing.py":237
+  /* "djing/core/Foundation/Djing.py":236
  *     @classmethod
  *     def resolve_initial_path(cls, request: DjingRequest) -> str:
  *         initial_path = None             # <<<<<<<<<<<<<<
@@ -11456,32 +11509,32 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_46resolve_init
   __Pyx_INCREF(Py_None);
   __pyx_v_initial_path = Py_None;
 
-  /* "djing/core/Foundation/Djing.py":239
+  /* "djing/core/Foundation/Djing.py":238
  *         initial_path = None
  * 
  *         if isinstance(cls._initial_path_callback, str):             # <<<<<<<<<<<<<<
  *             initial_path = cls._initial_path_callback
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = PyUnicode_Check(__pyx_t_1); 
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "djing/core/Foundation/Djing.py":240
+    /* "djing/core/Foundation/Djing.py":239
  * 
  *         if isinstance(cls._initial_path_callback, str):
  *             initial_path = cls._initial_path_callback             # <<<<<<<<<<<<<<
  * 
  *         if callable(cls._initial_path_callback):
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 240, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 239, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_initial_path, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "djing/core/Foundation/Djing.py":239
+    /* "djing/core/Foundation/Djing.py":238
  *         initial_path = None
  * 
  *         if isinstance(cls._initial_path_callback, str):             # <<<<<<<<<<<<<<
@@ -11490,27 +11543,27 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_46resolve_init
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":242
+  /* "djing/core/Foundation/Djing.py":241
  *             initial_path = cls._initial_path_callback
  * 
  *         if callable(cls._initial_path_callback):             # <<<<<<<<<<<<<<
  *             initial_path = cls._initial_path_callback(request)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyCallable_Check(__pyx_t_1); if (unlikely(__pyx_t_2 == ((int)-1))) __PYX_ERR(0, 242, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyCallable_Check(__pyx_t_1); if (unlikely(__pyx_t_2 == ((int)-1))) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "djing/core/Foundation/Djing.py":243
+    /* "djing/core/Foundation/Djing.py":242
  * 
  *         if callable(cls._initial_path_callback):
  *             initial_path = cls._initial_path_callback(request)             # <<<<<<<<<<<<<<
  * 
  *         return initial_path if initial_path else "/dashboards/main"
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 243, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_initial_path_callback); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -11530,14 +11583,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_46resolve_init
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v_request};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 243, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __Pyx_DECREF_SET(__pyx_v_initial_path, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "djing/core/Foundation/Djing.py":242
+    /* "djing/core/Foundation/Djing.py":241
  *             initial_path = cls._initial_path_callback
  * 
  *         if callable(cls._initial_path_callback):             # <<<<<<<<<<<<<<
@@ -11546,7 +11599,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_46resolve_init
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":245
+  /* "djing/core/Foundation/Djing.py":244
  *             initial_path = cls._initial_path_callback(request)
  * 
  *         return initial_path if initial_path else "/dashboards/main"             # <<<<<<<<<<<<<<
@@ -11554,9 +11607,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_46resolve_init
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_initial_path); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_initial_path); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 244, __pyx_L1_error)
   if (__pyx_t_2) {
-    if (!(likely(PyUnicode_CheckExact(__pyx_v_initial_path))||((__pyx_v_initial_path) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_initial_path))) __PYX_ERR(0, 245, __pyx_L1_error)
+    if (!(likely(PyUnicode_CheckExact(__pyx_v_initial_path))||((__pyx_v_initial_path) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_initial_path))) __PYX_ERR(0, 244, __pyx_L1_error)
     __Pyx_INCREF(__pyx_v_initial_path);
     __pyx_t_1 = __pyx_v_initial_path;
   } else {
@@ -11567,7 +11620,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_46resolve_init
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":235
+  /* "djing/core/Foundation/Djing.py":234
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -11589,7 +11642,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_46resolve_init
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":247
+/* "djing/core/Foundation/Djing.py":246
  *         return initial_path if initial_path else "/dashboards/main"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -11650,12 +11703,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 247, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 246, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "routes") < 0)) __PYX_ERR(0, 247, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "routes") < 0)) __PYX_ERR(0, 246, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -11666,7 +11719,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("routes", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 247, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("routes", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 246, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11706,19 +11759,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_48routes(CYTHO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("routes", 1);
 
-  /* "djing/core/Foundation/Djing.py":249
+  /* "djing/core/Foundation/Djing.py":248
  *     @classmethod
  *     def routes(cls) -> PendingRouteRegistration:
  *         Route.alias_middleware("djing.guest", RedirectIfAuthenticated)             # <<<<<<<<<<<<<<
  * 
  *         return PendingRouteRegistration()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Route); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Route); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 248, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_alias_middleware); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_alias_middleware); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 248, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_RedirectIfAuthenticated); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_RedirectIfAuthenticated); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 248, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -11739,13 +11792,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_48routes(CYTHO
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 2+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 248, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":251
+  /* "djing/core/Foundation/Djing.py":250
  *         Route.alias_middleware("djing.guest", RedirectIfAuthenticated)
  * 
  *         return PendingRouteRegistration()             # <<<<<<<<<<<<<<
@@ -11753,7 +11806,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_48routes(CYTHO
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_PendingRouteRegistration); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 251, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_PendingRouteRegistration); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   __pyx_t_5 = 0;
@@ -11773,7 +11826,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_48routes(CYTHO
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -11781,7 +11834,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_48routes(CYTHO
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":247
+  /* "djing/core/Foundation/Djing.py":246
  *         return initial_path if initial_path else "/dashboards/main"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -11803,7 +11856,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_48routes(CYTHO
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":253
+/* "djing/core/Foundation/Djing.py":252
  *         return PendingRouteRegistration()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -11867,7 +11920,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 253, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 252, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -11875,14 +11928,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 253, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 252, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("tools", 1, 2, 2, 1); __PYX_ERR(0, 253, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("tools", 1, 2, 2, 1); __PYX_ERR(0, 252, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "tools") < 0)) __PYX_ERR(0, 253, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "tools") < 0)) __PYX_ERR(0, 252, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -11895,7 +11948,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("tools", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 253, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("tools", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 252, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11909,7 +11962,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tools), (&PyList_Type), 0, "tools", 1))) __PYX_ERR(0, 254, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tools), (&PyList_Type), 0, "tools", 1))) __PYX_ERR(0, 253, __pyx_L1_error)
   __pyx_r = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_50tools(__pyx_self, __pyx_v_cls, __pyx_v_tools);
 
   /* function exit code */
@@ -11940,16 +11993,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_50tools(CYTHON
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("tools", 1);
 
-  /* "djing/core/Foundation/Djing.py":255
+  /* "djing/core/Foundation/Djing.py":254
  *     @classmethod
  *     def tools(cls, tools: List[Tool]) -> "Djing":
  *         cls._tools = array_merge(cls._tools, tools)             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_array_merge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_array_merge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 254, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_tools); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_tools); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 254, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -11970,14 +12023,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_50tools(CYTHON
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 2+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 255, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 254, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_tools, __pyx_t_1) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_tools, __pyx_t_1) < 0) __PYX_ERR(0, 254, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":257
+  /* "djing/core/Foundation/Djing.py":256
  *         cls._tools = array_merge(cls._tools, tools)
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -12004,7 +12057,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_50tools(CYTHON
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 257, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 256, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -12012,7 +12065,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_50tools(CYTHON
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":253
+  /* "djing/core/Foundation/Djing.py":252
  *         return PendingRouteRegistration()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -12034,7 +12087,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_50tools(CYTHON
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":259
+/* "djing/core/Foundation/Djing.py":258
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -12098,7 +12151,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 259, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 258, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -12106,14 +12159,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 259, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 258, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("user", 1, 2, 2, 1); __PYX_ERR(0, 259, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("user", 1, 2, 2, 1); __PYX_ERR(0, 258, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "user") < 0)) __PYX_ERR(0, 259, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "user") < 0)) __PYX_ERR(0, 258, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -12126,7 +12179,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("user", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 259, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("user", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 258, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12168,14 +12221,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_52user(CYTHON_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("user", 1);
 
-  /* "djing/core/Foundation/Djing.py":261
+  /* "djing/core/Foundation/Djing.py":260
  *     @classmethod
  *     def user(cls, request: DjingRequest):
  *         user = request.user()             # <<<<<<<<<<<<<<
  * 
  *         if user and user.is_authenticated:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_request, __pyx_n_s_user); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_request, __pyx_n_s_user); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 260, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -12195,35 +12248,35 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_52user(CYTHON_
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 261, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 260, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_user = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":263
+  /* "djing/core/Foundation/Djing.py":262
  *         user = request.user()
  * 
  *         if user and user.is_authenticated:             # <<<<<<<<<<<<<<
  *             return user
  * 
  */
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_user); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 263, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_user); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 262, __pyx_L1_error)
   if (__pyx_t_6) {
   } else {
     __pyx_t_5 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_is_authenticated); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 263, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_is_authenticated); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 263, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __pyx_t_6;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_5) {
 
-    /* "djing/core/Foundation/Djing.py":264
+    /* "djing/core/Foundation/Djing.py":263
  * 
  *         if user and user.is_authenticated:
  *             return user             # <<<<<<<<<<<<<<
@@ -12235,7 +12288,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_52user(CYTHON_
     __pyx_r = __pyx_v_user;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":263
+    /* "djing/core/Foundation/Djing.py":262
  *         user = request.user()
  * 
  *         if user and user.is_authenticated:             # <<<<<<<<<<<<<<
@@ -12244,7 +12297,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_52user(CYTHON_
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":266
+  /* "djing/core/Foundation/Djing.py":265
  *             return user
  * 
  *         return None             # <<<<<<<<<<<<<<
@@ -12255,7 +12308,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_52user(CYTHON_
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":259
+  /* "djing/core/Foundation/Djing.py":258
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -12277,7 +12330,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_52user(CYTHON_
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":268
+/* "djing/core/Foundation/Djing.py":267
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -12341,7 +12394,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 268, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 267, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -12349,14 +12402,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 268, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 267, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("json_variables", 1, 2, 2, 1); __PYX_ERR(0, 268, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("json_variables", 1, 2, 2, 1); __PYX_ERR(0, 267, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "json_variables") < 0)) __PYX_ERR(0, 268, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "json_variables") < 0)) __PYX_ERR(0, 267, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -12369,7 +12422,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("json_variables", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 268, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("json_variables", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 267, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12396,7 +12449,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":270
+/* "djing/core/Foundation/Djing.py":269
  *     @classmethod
  *     def json_variables(cls, request: DjingRequest):
  *         def map_json_variables(item):             # <<<<<<<<<<<<<<
@@ -12457,12 +12510,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 270, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 269, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "map_json_variables") < 0)) __PYX_ERR(0, 270, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "map_json_variables") < 0)) __PYX_ERR(0, 269, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -12473,7 +12526,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("map_json_variables", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 270, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("map_json_variables", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 269, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12518,7 +12571,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_14json_variabl
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":271
+  /* "djing/core/Foundation/Djing.py":270
  *     def json_variables(cls, request: DjingRequest):
  *         def map_json_variables(item):
  *             return item(request) if callable(item) else item             # <<<<<<<<<<<<<<
@@ -12526,9 +12579,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_14json_variabl
  *         items = collect(cls._json_variables).map(map_json_variables).all()
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyCallable_Check(__pyx_v_item); if (unlikely(__pyx_t_2 == ((int)-1))) __PYX_ERR(0, 271, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyCallable_Check(__pyx_v_item); if (unlikely(__pyx_t_2 == ((int)-1))) __PYX_ERR(0, 270, __pyx_L1_error)
   if (__pyx_t_2) {
-    if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 271, __pyx_L1_error) }
+    if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 270, __pyx_L1_error) }
     __Pyx_INCREF(__pyx_v_item);
     __pyx_t_4 = __pyx_v_item; __pyx_t_5 = NULL;
     __pyx_t_6 = 0;
@@ -12548,7 +12601,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_14json_variabl
       PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_cur_scope->__pyx_v_request};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 271, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 270, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -12562,7 +12615,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_14json_variabl
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":270
+  /* "djing/core/Foundation/Djing.py":269
  *     @classmethod
  *     def json_variables(cls, request: DjingRequest):
  *         def map_json_variables(item):             # <<<<<<<<<<<<<<
@@ -12584,7 +12637,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_14json_variabl
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":268
+/* "djing/core/Foundation/Djing.py":267
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -12613,7 +12666,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_54json_variabl
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 268, __pyx_L1_error)
+    __PYX_ERR(0, 267, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -12621,28 +12674,28 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_54json_variabl
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_request);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_request);
 
-  /* "djing/core/Foundation/Djing.py":270
+  /* "djing/core/Foundation/Djing.py":269
  *     @classmethod
  *     def json_variables(cls, request: DjingRequest):
  *         def map_json_variables(item):             # <<<<<<<<<<<<<<
  *             return item(request) if callable(item) else item
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_14json_variables_1map_json_variables, 0, __pyx_n_s_Djing_json_variables_locals_map, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_14json_variables_1map_json_variables, 0, __pyx_n_s_Djing_json_variables_locals_map, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_map_json_variables = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":273
+  /* "djing/core/Foundation/Djing.py":272
  *             return item(request) if callable(item) else item
  * 
  *         items = collect(cls._json_variables).map(map_json_variables).all()             # <<<<<<<<<<<<<<
  * 
  *         return items
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_json_variables); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_json_variables); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_7 = 0;
@@ -12663,11 +12716,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_54json_variabl
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 273, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_map); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_map); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -12688,11 +12741,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_54json_variabl
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_map_json_variables};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 273, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -12713,14 +12766,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_54json_variabl
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_v_items = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":275
+  /* "djing/core/Foundation/Djing.py":274
  *         items = collect(cls._json_variables).map(map_json_variables).all()
  * 
  *         return items             # <<<<<<<<<<<<<<
@@ -12732,7 +12785,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_54json_variabl
   __pyx_r = __pyx_v_items;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":268
+  /* "djing/core/Foundation/Djing.py":267
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -12759,7 +12812,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_54json_variabl
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":277
+/* "djing/core/Foundation/Djing.py":276
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -12823,7 +12876,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 277, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 276, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -12831,14 +12884,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 277, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 276, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("resource_information", 1, 2, 2, 1); __PYX_ERR(0, 277, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("resource_information", 1, 2, 2, 1); __PYX_ERR(0, 276, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resource_information") < 0)) __PYX_ERR(0, 277, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resource_information") < 0)) __PYX_ERR(0, 276, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -12851,7 +12904,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("resource_information", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 277, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("resource_information", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 276, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12878,7 +12931,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":279
+/* "djing/core/Foundation/Djing.py":278
  *     @classmethod
  *     def resource_information(cls, request: DjingRequest):
  *         def map_resources(resource: Type[Resource]):             # <<<<<<<<<<<<<<
@@ -12939,12 +12992,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 279, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 278, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "map_resources") < 0)) __PYX_ERR(0, 279, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "map_resources") < 0)) __PYX_ERR(0, 278, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -12955,7 +13008,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("map_resources", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 279, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("map_resources", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 278, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12999,7 +13052,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20resource_inf
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":280
+  /* "djing/core/Foundation/Djing.py":279
  *     def resource_information(cls, request: DjingRequest):
  *         def map_resources(resource: Type[Resource]):
  *             return {             # <<<<<<<<<<<<<<
@@ -13008,16 +13061,50 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20resource_inf
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "djing/core/Foundation/Djing.py":281
+  /* "djing/core/Foundation/Djing.py":280
  *         def map_resources(resource: Type[Resource]):
  *             return {
  *                 "uri_key": resource.uri_key(),             # <<<<<<<<<<<<<<
  *                 "label": resource.label(),
  *                 "singular_label": resource.singular_label(),
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 281, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 280, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_uri_key); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 281, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_uri_key); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 280, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 280, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_uri_key, __pyx_t_2) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "djing/core/Foundation/Djing.py":281
+ *             return {
+ *                 "uri_key": resource.uri_key(),
+ *                 "label": resource.label(),             # <<<<<<<<<<<<<<
+ *                 "singular_label": resource.singular_label(),
+ *                 "searchable": resource.is_searchable(),
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_label); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -13041,17 +13128,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20resource_inf
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_uri_key, __pyx_t_2) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_label, __pyx_t_2) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "djing/core/Foundation/Djing.py":282
- *             return {
  *                 "uri_key": resource.uri_key(),
- *                 "label": resource.label(),             # <<<<<<<<<<<<<<
- *                 "singular_label": resource.singular_label(),
+ *                 "label": resource.label(),
+ *                 "singular_label": resource.singular_label(),             # <<<<<<<<<<<<<<
  *                 "searchable": resource.is_searchable(),
+ *                 "per_page_options": resource.per_page_options(),
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_label); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 282, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_singular_label); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 282, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -13075,17 +13162,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20resource_inf
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_label, __pyx_t_2) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_singular_label, __pyx_t_2) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "djing/core/Foundation/Djing.py":283
- *                 "uri_key": resource.uri_key(),
  *                 "label": resource.label(),
- *                 "singular_label": resource.singular_label(),             # <<<<<<<<<<<<<<
- *                 "searchable": resource.is_searchable(),
+ *                 "singular_label": resource.singular_label(),
+ *                 "searchable": resource.is_searchable(),             # <<<<<<<<<<<<<<
  *                 "per_page_options": resource.per_page_options(),
+ *                 "authorized_to_create": resource.authorized_to_create(request),
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_singular_label); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 283, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_is_searchable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -13109,17 +13196,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20resource_inf
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_singular_label, __pyx_t_2) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_searchable, __pyx_t_2) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "djing/core/Foundation/Djing.py":284
- *                 "label": resource.label(),
  *                 "singular_label": resource.singular_label(),
- *                 "searchable": resource.is_searchable(),             # <<<<<<<<<<<<<<
- *                 "per_page_options": resource.per_page_options(),
+ *                 "searchable": resource.is_searchable(),
+ *                 "per_page_options": resource.per_page_options(),             # <<<<<<<<<<<<<<
  *                 "authorized_to_create": resource.authorized_to_create(request),
+ *                 "debound": resource.debounce * 1000,
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_is_searchable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 284, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_per_page_options); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -13143,53 +13230,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20resource_inf
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_searchable, __pyx_t_2) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_per_page_options, __pyx_t_2) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "djing/core/Foundation/Djing.py":285
- *                 "singular_label": resource.singular_label(),
- *                 "searchable": resource.is_searchable(),
- *                 "per_page_options": resource.per_page_options(),             # <<<<<<<<<<<<<<
- *                 "authorized_to_create": resource.authorized_to_create(request),
- *                 "debound": resource.debounce * 1000,
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_per_page_options); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = NULL;
-  __pyx_t_5 = 0;
-  #if CYTHON_UNPACK_METHODS
-  if (likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-      __pyx_t_5 = 1;
-    }
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  }
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_per_page_options, __pyx_t_2) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "djing/core/Foundation/Djing.py":286
  *                 "searchable": resource.is_searchable(),
  *                 "per_page_options": resource.per_page_options(),
  *                 "authorized_to_create": resource.authorized_to_create(request),             # <<<<<<<<<<<<<<
  *                 "debound": resource.debounce * 1000,
  *             }
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_authorized_to_create); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_authorized_to_create); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 286, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 285, __pyx_L1_error) }
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
   #if CYTHON_UNPACK_METHODS
@@ -13208,32 +13261,32 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20resource_inf
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_cur_scope->__pyx_v_request};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_authorized_to_create, __pyx_t_2) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_authorized_to_create, __pyx_t_2) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "djing/core/Foundation/Djing.py":287
+  /* "djing/core/Foundation/Djing.py":286
  *                 "per_page_options": resource.per_page_options(),
  *                 "authorized_to_create": resource.authorized_to_create(request),
  *                 "debound": resource.debounce * 1000,             # <<<<<<<<<<<<<<
  *             }
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_debounce_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 287, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_debounce_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyInt_MultiplyObjC(__pyx_t_2, __pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 287, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_MultiplyObjC(__pyx_t_2, __pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 286, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_debound, __pyx_t_3) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_debound, __pyx_t_3) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":279
+  /* "djing/core/Foundation/Djing.py":278
  *     @classmethod
  *     def resource_information(cls, request: DjingRequest):
  *         def map_resources(resource: Type[Resource]):             # <<<<<<<<<<<<<<
@@ -13255,7 +13308,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20resource_inf
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":277
+/* "djing/core/Foundation/Djing.py":276
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -13283,7 +13336,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 277, __pyx_L1_error)
+    __PYX_ERR(0, 276, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -13291,31 +13344,31 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_request);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_request);
 
-  /* "djing/core/Foundation/Djing.py":279
+  /* "djing/core/Foundation/Djing.py":278
  *     @classmethod
  *     def resource_information(cls, request: DjingRequest):
  *         def map_resources(resource: Type[Resource]):             # <<<<<<<<<<<<<<
  *             return {
  *                 "uri_key": resource.uri_key(),
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_resource, __pyx_kp_s_Type_Resource) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_20resource_information_1map_resources, 0, __pyx_n_s_Djing_resource_information_local, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_resource, __pyx_kp_s_Type_Resource) < 0) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_20resource_information_1map_resources, 0, __pyx_n_s_Djing_resource_information_local, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_map_resources = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "djing/core/Foundation/Djing.py":290
+  /* "djing/core/Foundation/Djing.py":289
  *             }
  * 
  *         collection = cls.__resource_collection()             # <<<<<<<<<<<<<<
  * 
  *         return collection.map(map_resources).values().all()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__resource_collection); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__resource_collection); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -13335,14 +13388,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 290, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __pyx_v_collection = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "djing/core/Foundation/Djing.py":292
+  /* "djing/core/Foundation/Djing.py":291
  *         collection = cls.__resource_collection()
  * 
  *         return collection.map(map_resources).values().all()             # <<<<<<<<<<<<<<
@@ -13350,7 +13403,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_collection, __pyx_n_s_map); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_collection, __pyx_n_s_map); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_4 = 0;
@@ -13370,11 +13423,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_map_resources};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 292, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 291, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_values); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_values); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -13395,11 +13448,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_all); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_all); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -13420,7 +13473,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
     PyObject *__pyx_callargs[2] = {__pyx_t_1, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 292, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -13428,7 +13481,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":277
+  /* "djing/core/Foundation/Djing.py":276
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -13454,7 +13507,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_56resource_inf
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":294
+/* "djing/core/Foundation/Djing.py":293
  *         return collection.map(map_resources).values().all()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -13518,7 +13571,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 294, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 293, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -13526,14 +13579,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 294, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 293, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("footer", 1, 2, 2, 1); __PYX_ERR(0, 294, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("footer", 1, 2, 2, 1); __PYX_ERR(0, 293, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "footer") < 0)) __PYX_ERR(0, 294, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "footer") < 0)) __PYX_ERR(0, 293, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -13546,7 +13599,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("footer", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 294, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("footer", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 293, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -13581,16 +13634,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_58footer(CYTHO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("footer", 1);
 
-  /* "djing/core/Foundation/Djing.py":296
+  /* "djing/core/Foundation/Djing.py":295
  *     @classmethod
  *     def footer(cls, callback: Callable[[Any], Any]) -> Type["Djing"]:
  *         cls._footer_callback = callback             # <<<<<<<<<<<<<<
  * 
  *         return cls
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_footer_callback, __pyx_v_callback) < 0) __PYX_ERR(0, 296, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_footer_callback, __pyx_v_callback) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":298
+  /* "djing/core/Foundation/Djing.py":297
  *         cls._footer_callback = callback
  * 
  *         return cls             # <<<<<<<<<<<<<<
@@ -13602,7 +13655,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_58footer(CYTHO
   __pyx_r = __pyx_v_cls;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":294
+  /* "djing/core/Foundation/Djing.py":293
  *         return collection.map(map_resources).values().all()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -13620,7 +13673,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_58footer(CYTHO
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":300
+/* "djing/core/Foundation/Djing.py":299
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -13684,7 +13737,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 300, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 299, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -13692,14 +13745,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 300, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 299, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("default_footer", 1, 2, 2, 1); __PYX_ERR(0, 300, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("default_footer", 1, 2, 2, 1); __PYX_ERR(0, 299, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "default_footer") < 0)) __PYX_ERR(0, 300, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "default_footer") < 0)) __PYX_ERR(0, 299, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -13712,7 +13765,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("default_footer", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 300, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("default_footer", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 299, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -13756,14 +13809,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("default_footer", 1);
 
-  /* "djing/core/Foundation/Djing.py":302
+  /* "djing/core/Foundation/Djing.py":301
  *     @classmethod
  *     def default_footer(cls, request: DjingRequest):
  *         version = cls.version()             # <<<<<<<<<<<<<<
  *         year = datetime.now().year
  *         djing_url = "https://djing.vercel.app"
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_version); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_version); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 301, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -13783,23 +13836,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 302, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_version = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":303
+  /* "djing/core/Foundation/Djing.py":302
  *     def default_footer(cls, request: DjingRequest):
  *         version = cls.version()
  *         year = datetime.now().year             # <<<<<<<<<<<<<<
  *         djing_url = "https://djing.vercel.app"
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_datetime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_datetime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_now); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_now); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -13820,17 +13873,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 302, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_year); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_year); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_year = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "djing/core/Foundation/Djing.py":304
+  /* "djing/core/Foundation/Djing.py":303
  *         version = cls.version()
  *         year = datetime.now().year
  *         djing_url = "https://djing.vercel.app"             # <<<<<<<<<<<<<<
@@ -13840,7 +13893,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
   __Pyx_INCREF(__pyx_kp_u_https_djing_vercel_app);
   __pyx_v_djing_url = __pyx_kp_u_https_djing_vercel_app;
 
-  /* "djing/core/Foundation/Djing.py":306
+  /* "djing/core/Foundation/Djing.py":305
  *         djing_url = "https://djing.vercel.app"
  * 
  *         return f"""             # <<<<<<<<<<<<<<
@@ -13848,7 +13901,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
  *             <p class="text-center">&copy; {year} Djing Inc.</p>
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = PyTuple_New(7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = 0;
   __pyx_t_6 = 127;
@@ -13866,7 +13919,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
   __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_kp_u_Djing_a_v);
   __Pyx_GIVEREF(__pyx_kp_u_Djing_a_v);
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_Djing_a_v);
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_version, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_version, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) : __pyx_t_6;
   __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1);
@@ -13877,7 +13930,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
   __pyx_t_5 += 47;
   __Pyx_GIVEREF(__pyx_kp_u_p_p_class_text_center_copy);
   PyTuple_SET_ITEM(__pyx_t_3, 4, __pyx_kp_u_p_p_class_text_center_copy);
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_year, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_year, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) : __pyx_t_6;
   __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1);
@@ -13888,14 +13941,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
   __pyx_t_5 += 24;
   __Pyx_GIVEREF(__pyx_kp_u_Djing_Inc_p);
   PyTuple_SET_ITEM(__pyx_t_3, 6, __pyx_kp_u_Djing_Inc_p);
-  __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_3, 7, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_3, 7, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":300
+  /* "djing/core/Foundation/Djing.py":299
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -13919,7 +13972,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_60default_foot
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":311
+/* "djing/core/Foundation/Djing.py":310
  *         """
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -13983,7 +14036,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 311, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 310, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -13991,14 +14044,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 311, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 310, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("resolve_footer", 1, 2, 2, 1); __PYX_ERR(0, 311, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("resolve_footer", 1, 2, 2, 1); __PYX_ERR(0, 310, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resolve_footer") < 0)) __PYX_ERR(0, 311, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resolve_footer") < 0)) __PYX_ERR(0, 310, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -14011,7 +14064,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("resolve_footer", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 311, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("resolve_footer", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 310, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14051,20 +14104,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("resolve_footer", 1);
 
-  /* "djing/core/Foundation/Djing.py":313
+  /* "djing/core/Foundation/Djing.py":312
  *     @classmethod
  *     def resolve_footer(cls, request: DjingRequest):
  *         if cls._footer_callback:             # <<<<<<<<<<<<<<
  *             return cls._footer_callback(request)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_footer_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_footer_callback); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 313, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "djing/core/Foundation/Djing.py":314
+    /* "djing/core/Foundation/Djing.py":313
  *     def resolve_footer(cls, request: DjingRequest):
  *         if cls._footer_callback:
  *             return cls._footer_callback(request)             # <<<<<<<<<<<<<<
@@ -14072,7 +14125,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
  *         return cls.default_footer(request)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_footer_callback); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_footer_callback); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -14092,7 +14145,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v_request};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -14100,7 +14153,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":313
+    /* "djing/core/Foundation/Djing.py":312
  *     @classmethod
  *     def resolve_footer(cls, request: DjingRequest):
  *         if cls._footer_callback:             # <<<<<<<<<<<<<<
@@ -14109,7 +14162,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":316
+  /* "djing/core/Foundation/Djing.py":315
  *             return cls._footer_callback(request)
  * 
  *         return cls.default_footer(request)             # <<<<<<<<<<<<<<
@@ -14117,7 +14170,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_default_footer); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 316, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_default_footer); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 315, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -14137,7 +14190,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -14145,7 +14198,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":311
+  /* "djing/core/Foundation/Djing.py":310
  *         """
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -14166,7 +14219,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_62resolve_foot
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":318
+/* "djing/core/Foundation/Djing.py":317
  *         return cls.default_footer(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -14230,7 +14283,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 318, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 317, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -14238,14 +14291,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 318, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 317, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("provide_to_script", 1, 2, 2, 1); __PYX_ERR(0, 318, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("provide_to_script", 1, 2, 2, 1); __PYX_ERR(0, 317, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "provide_to_script") < 0)) __PYX_ERR(0, 318, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "provide_to_script") < 0)) __PYX_ERR(0, 317, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -14258,7 +14311,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("provide_to_script", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 318, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("provide_to_script", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 317, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14272,7 +14325,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_variables), (&PyDict_Type), 0, "variables", 1))) __PYX_ERR(0, 319, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_variables), (&PyDict_Type), 0, "variables", 1))) __PYX_ERR(0, 318, __pyx_L1_error)
   __pyx_r = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_script(__pyx_self, __pyx_v_cls, __pyx_v_variables);
 
   /* function exit code */
@@ -14290,7 +14343,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":320
+/* "djing/core/Foundation/Djing.py":319
  *     @classmethod
  *     def provide_to_script(cls, variables: Dict[str, Any]) -> "Djing":
  *         def get_initial_path(request):             # <<<<<<<<<<<<<<
@@ -14351,12 +14404,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 320, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 319, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_initial_path") < 0)) __PYX_ERR(0, 320, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_initial_path") < 0)) __PYX_ERR(0, 319, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -14367,7 +14420,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_initial_path", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 320, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_initial_path", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 319, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14410,7 +14463,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":321
+  /* "djing/core/Foundation/Djing.py":320
  *     def provide_to_script(cls, variables: Dict[str, Any]) -> "Djing":
  *         def get_initial_path(request):
  *             return cls.resolve_initial_path(request)             # <<<<<<<<<<<<<<
@@ -14418,8 +14471,8 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
  *         def get_user_id(request):
  */
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 321, __pyx_L1_error) }
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_resolve_initial_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 321, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 320, __pyx_L1_error) }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_resolve_initial_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -14439,7 +14492,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 321, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 320, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -14447,7 +14500,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":320
+  /* "djing/core/Foundation/Djing.py":319
  *     @classmethod
  *     def provide_to_script(cls, variables: Dict[str, Any]) -> "Djing":
  *         def get_initial_path(request):             # <<<<<<<<<<<<<<
@@ -14468,7 +14521,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":323
+/* "djing/core/Foundation/Djing.py":322
  *             return cls.resolve_initial_path(request)
  * 
  *         def get_user_id(request):             # <<<<<<<<<<<<<<
@@ -14529,12 +14582,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 323, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 322, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_user_id") < 0)) __PYX_ERR(0, 323, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_user_id") < 0)) __PYX_ERR(0, 322, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -14545,7 +14598,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_user_id", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 323, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_user_id", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 322, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14590,7 +14643,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":324
+  /* "djing/core/Foundation/Djing.py":323
  * 
  *         def get_user_id(request):
  *             return cls.user(request).id if cls.user(request) else None             # <<<<<<<<<<<<<<
@@ -14598,8 +14651,8 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
  *         def get_main_menu(request):
  */
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 324, __pyx_L1_error) }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 323, __pyx_L1_error) }
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -14619,15 +14672,15 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v_request};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 324, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 323, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 324, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_6) {
-    if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 324, __pyx_L1_error) }
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 324, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 323, __pyx_L1_error) }
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 323, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -14647,11 +14700,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v_request};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 324, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 323, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 324, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_id); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 323, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_1 = __pyx_t_3;
@@ -14664,7 +14717,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":323
+  /* "djing/core/Foundation/Djing.py":322
  *             return cls.resolve_initial_path(request)
  * 
  *         def get_user_id(request):             # <<<<<<<<<<<<<<
@@ -14686,7 +14739,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":326
+/* "djing/core/Foundation/Djing.py":325
  *             return cls.user(request).id if cls.user(request) else None
  * 
  *         def get_main_menu(request):             # <<<<<<<<<<<<<<
@@ -14747,12 +14800,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_main_menu") < 0)) __PYX_ERR(0, 326, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_main_menu") < 0)) __PYX_ERR(0, 325, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -14763,7 +14816,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_main_menu", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 326, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_main_menu", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 325, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14810,7 +14863,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":327
+  /* "djing/core/Foundation/Djing.py":326
  * 
  *         def get_main_menu(request):
  *             return (             # <<<<<<<<<<<<<<
@@ -14819,15 +14872,15 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "djing/core/Foundation/Djing.py":328
+  /* "djing/core/Foundation/Djing.py":327
  *         def get_main_menu(request):
  *             return (
  *                 Menu.wrap(cls.resolve_main_menu(request)) if cls.user(request) else []             # <<<<<<<<<<<<<<
  *             )
  * 
  */
-  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 328, __pyx_L1_error) }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 327, __pyx_L1_error) }
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 327, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -14847,20 +14900,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v_request};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 328, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 328, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 327, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_6) {
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Menu); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Menu); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_wrap); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 328, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_wrap); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 328, __pyx_L1_error) }
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_resolve_main_menu); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 328, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 327, __pyx_L1_error) }
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_resolve_main_menu); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_8 = NULL;
     __pyx_t_5 = 0;
@@ -14880,7 +14933,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
       PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_request};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 327, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -14903,14 +14956,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 328, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 327, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
   } else {
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 328, __pyx_L1_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -14919,7 +14972,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":326
+  /* "djing/core/Foundation/Djing.py":325
  *             return cls.user(request).id if cls.user(request) else None
  * 
  *         def get_main_menu(request):             # <<<<<<<<<<<<<<
@@ -14943,7 +14996,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":331
+/* "djing/core/Foundation/Djing.py":330
  *             )
  * 
  *         def get_resources(request):             # <<<<<<<<<<<<<<
@@ -15004,12 +15057,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 331, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 330, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_resources") < 0)) __PYX_ERR(0, 331, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_resources") < 0)) __PYX_ERR(0, 330, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -15020,7 +15073,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_resources", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 331, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_resources", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 330, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -15063,7 +15116,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":332
+  /* "djing/core/Foundation/Djing.py":331
  * 
  *         def get_resources(request):
  *             return cls.resource_information(request)             # <<<<<<<<<<<<<<
@@ -15071,8 +15124,8 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
  *         def get_footer(request):
  */
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 332, __pyx_L1_error) }
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_resource_information); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 331, __pyx_L1_error) }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_resource_information); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 331, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -15092,7 +15145,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 331, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -15100,7 +15153,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":331
+  /* "djing/core/Foundation/Djing.py":330
  *             )
  * 
  *         def get_resources(request):             # <<<<<<<<<<<<<<
@@ -15121,7 +15174,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":334
+/* "djing/core/Foundation/Djing.py":333
  *             return cls.resource_information(request)
  * 
  *         def get_footer(request):             # <<<<<<<<<<<<<<
@@ -15182,12 +15235,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 334, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 333, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_footer") < 0)) __PYX_ERR(0, 334, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_footer") < 0)) __PYX_ERR(0, 333, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -15198,7 +15251,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_footer", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 334, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_footer", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 333, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -15241,7 +15294,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":335
+  /* "djing/core/Foundation/Djing.py":334
  * 
  *         def get_footer(request):
  *             return cls.resolve_footer(request)             # <<<<<<<<<<<<<<
@@ -15249,8 +15302,8 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
  *         if not cls._json_variables:
  */
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 335, __pyx_L1_error) }
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_resolve_footer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_cls)) { __Pyx_RaiseClosureNameError("cls"); __PYX_ERR(0, 334, __pyx_L1_error) }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_resolve_footer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 334, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -15270,7 +15323,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -15278,7 +15331,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":334
+  /* "djing/core/Foundation/Djing.py":333
  *             return cls.resource_information(request)
  * 
  *         def get_footer(request):             # <<<<<<<<<<<<<<
@@ -15299,7 +15352,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_s
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":318
+/* "djing/core/Foundation/Djing.py":317
  *         return cls.default_footer(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -15332,7 +15385,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 318, __pyx_L1_error)
+    __PYX_ERR(0, 317, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -15340,90 +15393,124 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_cls);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_cls);
 
-  /* "djing/core/Foundation/Djing.py":320
+  /* "djing/core/Foundation/Djing.py":319
  *     @classmethod
  *     def provide_to_script(cls, variables: Dict[str, Any]) -> "Djing":
  *         def get_initial_path(request):             # <<<<<<<<<<<<<<
  *             return cls.resolve_initial_path(request)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_1get_initial_path, 0, __pyx_n_s_Djing_provide_to_script_locals_g, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_1get_initial_path, 0, __pyx_n_s_Djing_provide_to_script_locals_g, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_get_initial_path = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":323
+  /* "djing/core/Foundation/Djing.py":322
  *             return cls.resolve_initial_path(request)
  * 
  *         def get_user_id(request):             # <<<<<<<<<<<<<<
  *             return cls.user(request).id if cls.user(request) else None
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_3get_user_id, 0, __pyx_n_s_Djing_provide_to_script_locals_g_2, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 323, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_3get_user_id, 0, __pyx_n_s_Djing_provide_to_script_locals_g_2, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_get_user_id = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":326
+  /* "djing/core/Foundation/Djing.py":325
  *             return cls.user(request).id if cls.user(request) else None
  * 
  *         def get_main_menu(request):             # <<<<<<<<<<<<<<
  *             return (
  *                 Menu.wrap(cls.resolve_main_menu(request)) if cls.user(request) else []
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_5get_main_menu, 0, __pyx_n_s_Djing_provide_to_script_locals_g_3, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_5get_main_menu, 0, __pyx_n_s_Djing_provide_to_script_locals_g_3, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 325, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_get_main_menu = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":331
+  /* "djing/core/Foundation/Djing.py":330
  *             )
  * 
  *         def get_resources(request):             # <<<<<<<<<<<<<<
  *             return cls.resource_information(request)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_7get_resources, 0, __pyx_n_s_Djing_provide_to_script_locals_g_4, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_7get_resources, 0, __pyx_n_s_Djing_provide_to_script_locals_g_4, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_get_resources = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":334
+  /* "djing/core/Foundation/Djing.py":333
  *             return cls.resource_information(request)
  * 
  *         def get_footer(request):             # <<<<<<<<<<<<<<
  *             return cls.resolve_footer(request)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_9get_footer, 0, __pyx_n_s_Djing_provide_to_script_locals_g_5, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17provide_to_script_9get_footer, 0, __pyx_n_s_Djing_provide_to_script_locals_g_5, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 333, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_get_footer = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":337
+  /* "djing/core/Foundation/Djing.py":336
  *             return cls.resolve_footer(request)
  * 
  *         if not cls._json_variables:             # <<<<<<<<<<<<<<
  *             cls._json_variables = {
  *                 "brand_logo": cls.logo(),
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_json_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_json_variables); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (!__pyx_t_2);
   if (__pyx_t_3) {
 
-    /* "djing/core/Foundation/Djing.py":339
+    /* "djing/core/Foundation/Djing.py":338
  *         if not cls._json_variables:
  *             cls._json_variables = {
  *                 "brand_logo": cls.logo(),             # <<<<<<<<<<<<<<
  *                 "brand_colors": cls.brand_colors(),
  *                 "auth": {
  */
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(17); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 339, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(17); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_logo); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 339, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_logo); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 338, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = NULL;
+    __pyx_t_7 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_5))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_5, function);
+        __pyx_t_7 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
+      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 338, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    }
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_brand_logo, __pyx_t_4) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+    /* "djing/core/Foundation/Djing.py":339
+ *             cls._json_variables = {
+ *                 "brand_logo": cls.logo(),
+ *                 "brand_colors": cls.brand_colors(),             # <<<<<<<<<<<<<<
+ *                 "auth": {
+ *                     "username_field": cls.username_field(),
+ */
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_brand_colors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 339, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     __pyx_t_7 = 0;
@@ -15447,53 +15534,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_brand_logo, __pyx_t_4) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_brand_colors, __pyx_t_4) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "djing/core/Foundation/Djing.py":340
- *             cls._json_variables = {
- *                 "brand_logo": cls.logo(),
- *                 "brand_colors": cls.brand_colors(),             # <<<<<<<<<<<<<<
- *                 "auth": {
- *                     "username_field": cls.username_field(),
- */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_brand_colors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 340, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = NULL;
-    __pyx_t_7 = 0;
-    #if CYTHON_UNPACK_METHODS
-    if (likely(PyMethod_Check(__pyx_t_5))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_5, function);
-        __pyx_t_7 = 1;
-      }
-    }
-    #endif
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
-      __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 340, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    }
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_brand_colors, __pyx_t_4) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-
-    /* "djing/core/Foundation/Djing.py":342
+    /* "djing/core/Foundation/Djing.py":341
  *                 "brand_colors": cls.brand_colors(),
  *                 "auth": {
  *                     "username_field": cls.username_field(),             # <<<<<<<<<<<<<<
  *                 },
  *                 "with_authentication": cls._with_authentication,
  */
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 342, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 341, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_username_field); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 342, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_username_field); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 341, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_8 = NULL;
     __pyx_t_7 = 0;
@@ -15513,35 +15566,35 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       PyObject *__pyx_callargs[2] = {__pyx_t_8, NULL};
       __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 342, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 341, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_u_username_field, __pyx_t_5) < 0) __PYX_ERR(0, 342, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_u_username_field, __pyx_t_5) < 0) __PYX_ERR(0, 341, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_auth, __pyx_t_4) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_auth, __pyx_t_4) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "djing/core/Foundation/Djing.py":344
+    /* "djing/core/Foundation/Djing.py":343
  *                     "username_field": cls.username_field(),
  *                 },
  *                 "with_authentication": cls._with_authentication,             # <<<<<<<<<<<<<<
  *                 "breadcrumbs_enabled": cls.breadcrumbs_enabled(),
  *                 "global_search_enabled": (
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_with_authentication); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 344, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_with_authentication); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 343, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_with_authentication_2, __pyx_t_4) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_with_authentication_2, __pyx_t_4) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "djing/core/Foundation/Djing.py":345
+    /* "djing/core/Foundation/Djing.py":344
  *                 },
  *                 "with_authentication": cls._with_authentication,
  *                 "breadcrumbs_enabled": cls.breadcrumbs_enabled(),             # <<<<<<<<<<<<<<
  *                 "global_search_enabled": (
  *                     True
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_breadcrumbs_enabled); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 345, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_breadcrumbs_enabled); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 344, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     __pyx_t_7 = 0;
@@ -15561,23 +15614,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
       __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 345, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 344, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_breadcrumbs_enabled, __pyx_t_4) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_breadcrumbs_enabled, __pyx_t_4) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "djing/core/Foundation/Djing.py":348
+    /* "djing/core/Foundation/Djing.py":347
  *                 "global_search_enabled": (
  *                     True
  *                     if cls._global_search_enabled             # <<<<<<<<<<<<<<
  *                     and cls.has_globally_searchable_resources()
  *                     else False
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_global_search_enabled); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 348, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_global_search_enabled); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 347, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 348, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 347, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (__pyx_t_2) {
     } else {
@@ -15585,14 +15638,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       goto __pyx_L4_bool_binop_done;
     }
 
-    /* "djing/core/Foundation/Djing.py":349
+    /* "djing/core/Foundation/Djing.py":348
  *                     True
  *                     if cls._global_search_enabled
  *                     and cls.has_globally_searchable_resources()             # <<<<<<<<<<<<<<
  *                     else False
  *                 ),
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_has_globally_searchable_resource); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 349, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_has_globally_searchable_resource); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_8 = NULL;
     __pyx_t_7 = 0;
@@ -15612,17 +15665,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       PyObject *__pyx_callargs[2] = {__pyx_t_8, NULL};
       __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 349, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 348, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 349, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 348, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_3 = __pyx_t_2;
     __pyx_L4_bool_binop_done:;
     if (__pyx_t_3) {
 
-      /* "djing/core/Foundation/Djing.py":347
+      /* "djing/core/Foundation/Djing.py":346
  *                 "breadcrumbs_enabled": cls.breadcrumbs_enabled(),
  *                 "global_search_enabled": (
  *                     True             # <<<<<<<<<<<<<<
@@ -15633,7 +15686,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       __pyx_t_4 = Py_True;
     } else {
 
-      /* "djing/core/Foundation/Djing.py":350
+      /* "djing/core/Foundation/Djing.py":349
  *                     if cls._global_search_enabled
  *                     and cls.has_globally_searchable_resources()
  *                     else False             # <<<<<<<<<<<<<<
@@ -15643,19 +15696,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       __Pyx_INCREF(Py_False);
       __pyx_t_4 = Py_False;
     }
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_global_search_enabled_2, __pyx_t_4) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_global_search_enabled_2, __pyx_t_4) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "djing/core/Foundation/Djing.py":352
+    /* "djing/core/Foundation/Djing.py":351
  *                     else False
  *                 ),
  *                 "environment": App.make("env"),             # <<<<<<<<<<<<<<
  *                 "base": Config.get("djing.path", "/djing-admin"),
  *                 "debound": cls._debounce * 1000,
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_App); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 352, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_App); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 351, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_make); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 352, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_make); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 351, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -15676,63 +15729,63 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_n_u_env};
       __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 352, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 351, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_environment, __pyx_t_4) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_environment, __pyx_t_4) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "djing/core/Foundation/Djing.py":353
+    /* "djing/core/Foundation/Djing.py":352
  *                 ),
  *                 "environment": App.make("env"),
  *                 "base": Config.get("djing.path", "/djing-admin"),             # <<<<<<<<<<<<<<
  *                 "debound": cls._debounce * 1000,
  *                 "initial_path": get_initial_path,
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Config); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 353, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Config); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 352, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 353, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 352, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 353, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 352, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_base, __pyx_t_4) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_base, __pyx_t_4) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "djing/core/Foundation/Djing.py":354
+    /* "djing/core/Foundation/Djing.py":353
  *                 "environment": App.make("env"),
  *                 "base": Config.get("djing.path", "/djing-admin"),
  *                 "debound": cls._debounce * 1000,             # <<<<<<<<<<<<<<
  *                 "initial_path": get_initial_path,
  *                 "login_path": cls.login_path(),
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_debounce); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 354, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_debounce); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 353, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyInt_MultiplyObjC(__pyx_t_4, __pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 354, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_MultiplyObjC(__pyx_t_4, __pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 353, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_debound, __pyx_t_6) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_debound, __pyx_t_6) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "djing/core/Foundation/Djing.py":355
+    /* "djing/core/Foundation/Djing.py":354
  *                 "base": Config.get("djing.path", "/djing-admin"),
  *                 "debound": cls._debounce * 1000,
  *                 "initial_path": get_initial_path,             # <<<<<<<<<<<<<<
  *                 "login_path": cls.login_path(),
  *                 "user_id": get_user_id,
  */
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_initial_path, __pyx_v_get_initial_path) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_initial_path, __pyx_v_get_initial_path) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
 
-    /* "djing/core/Foundation/Djing.py":356
+    /* "djing/core/Foundation/Djing.py":355
  *                 "debound": cls._debounce * 1000,
  *                 "initial_path": get_initial_path,
  *                 "login_path": cls.login_path(),             # <<<<<<<<<<<<<<
  *                 "user_id": get_user_id,
  *                 "main_menu": get_main_menu,
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_login_path); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 356, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_login_path); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 355, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     __pyx_t_7 = 0;
@@ -15752,84 +15805,84 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
       PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
       __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 356, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 355, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_login_path, __pyx_t_6) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_login_path, __pyx_t_6) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "djing/core/Foundation/Djing.py":357
+    /* "djing/core/Foundation/Djing.py":356
  *                 "initial_path": get_initial_path,
  *                 "login_path": cls.login_path(),
  *                 "user_id": get_user_id,             # <<<<<<<<<<<<<<
  *                 "main_menu": get_main_menu,
  *                 "resources": get_resources,
  */
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_user_id, __pyx_v_get_user_id) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_user_id, __pyx_v_get_user_id) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
 
-    /* "djing/core/Foundation/Djing.py":358
+    /* "djing/core/Foundation/Djing.py":357
  *                 "login_path": cls.login_path(),
  *                 "user_id": get_user_id,
  *                 "main_menu": get_main_menu,             # <<<<<<<<<<<<<<
  *                 "resources": get_resources,
  *                 "footer": get_footer,
  */
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_main_menu, __pyx_v_get_main_menu) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_main_menu, __pyx_v_get_main_menu) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
 
-    /* "djing/core/Foundation/Djing.py":359
+    /* "djing/core/Foundation/Djing.py":358
  *                 "user_id": get_user_id,
  *                 "main_menu": get_main_menu,
  *                 "resources": get_resources,             # <<<<<<<<<<<<<<
  *                 "footer": get_footer,
  *                 "available_scripts": cls._scripts,
  */
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_resources_2, __pyx_v_get_resources) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_resources_2, __pyx_v_get_resources) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
 
-    /* "djing/core/Foundation/Djing.py":360
+    /* "djing/core/Foundation/Djing.py":359
  *                 "main_menu": get_main_menu,
  *                 "resources": get_resources,
  *                 "footer": get_footer,             # <<<<<<<<<<<<<<
  *                 "available_scripts": cls._scripts,
  *                 "available_styles": cls._styles,
  */
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_footer, __pyx_v_get_footer) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_footer, __pyx_v_get_footer) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
 
-    /* "djing/core/Foundation/Djing.py":361
+    /* "djing/core/Foundation/Djing.py":360
  *                 "resources": get_resources,
  *                 "footer": get_footer,
  *                 "available_scripts": cls._scripts,             # <<<<<<<<<<<<<<
  *                 "available_styles": cls._styles,
  *             }
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_scripts); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_scripts); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 360, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_available_scripts, __pyx_t_6) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_available_scripts, __pyx_t_6) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "djing/core/Foundation/Djing.py":362
+    /* "djing/core/Foundation/Djing.py":361
  *                 "footer": get_footer,
  *                 "available_scripts": cls._scripts,
  *                 "available_styles": cls._styles,             # <<<<<<<<<<<<<<
  *             }
  * 
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_styles); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 362, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_styles); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 361, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_available_styles, __pyx_t_6) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_available_styles, __pyx_t_6) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "djing/core/Foundation/Djing.py":338
+    /* "djing/core/Foundation/Djing.py":337
  * 
  *         if not cls._json_variables:
  *             cls._json_variables = {             # <<<<<<<<<<<<<<
  *                 "brand_logo": cls.logo(),
  *                 "brand_colors": cls.brand_colors(),
  */
-    if (__Pyx_PyObject_SetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_json_variables, __pyx_t_1) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_json_variables, __pyx_t_1) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "djing/core/Foundation/Djing.py":337
+    /* "djing/core/Foundation/Djing.py":336
  *             return cls.resolve_footer(request)
  * 
  *         if not cls._json_variables:             # <<<<<<<<<<<<<<
@@ -15838,16 +15891,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":365
+  /* "djing/core/Foundation/Djing.py":364
  *             }
  * 
  *         cls._json_variables = array_merge(cls._json_variables, variables)             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_array_merge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_array_merge); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_json_variables); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_json_variables); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_7 = 0;
@@ -15868,14 +15921,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 365, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_json_variables, __pyx_t_1) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_cur_scope->__pyx_v_cls, __pyx_n_s_json_variables, __pyx_t_1) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":367
+  /* "djing/core/Foundation/Djing.py":366
  *         cls._json_variables = array_merge(cls._json_variables, variables)
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -15902,7 +15955,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 367, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 366, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
@@ -15910,7 +15963,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":318
+  /* "djing/core/Foundation/Djing.py":317
  *         return cls.default_footer(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -15939,7 +15992,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_64provide_to_s
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":369
+/* "djing/core/Foundation/Djing.py":368
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -16000,12 +16053,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "version") < 0)) __PYX_ERR(0, 369, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "version") < 0)) __PYX_ERR(0, 368, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -16016,7 +16069,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("version", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 369, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("version", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 368, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16048,7 +16101,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_66version(CYTH
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("version", 1);
 
-  /* "djing/core/Foundation/Djing.py":371
+  /* "djing/core/Foundation/Djing.py":370
  *     @classmethod
  *     def version(cls):
  *         return "0.1.1"             # <<<<<<<<<<<<<<
@@ -16060,7 +16113,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_66version(CYTH
   __pyx_r = __pyx_kp_u_0_1_1;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":369
+  /* "djing/core/Foundation/Djing.py":368
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -16075,7 +16128,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_66version(CYTH
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":373
+/* "djing/core/Foundation/Djing.py":372
  *         return "0.1.1"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -16136,12 +16189,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 373, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 372, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "check_license_validity") < 0)) __PYX_ERR(0, 373, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "check_license_validity") < 0)) __PYX_ERR(0, 372, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -16152,7 +16205,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("check_license_validity", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 373, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("check_license_validity", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 372, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16192,23 +16245,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_68check_licens
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("check_license_validity", 1);
 
-  /* "djing/core/Foundation/Djing.py":375
+  /* "djing/core/Foundation/Djing.py":374
  *     @classmethod
  *     def check_license_validity(cls) -> bool:
  *         cls.__license_checked = True             # <<<<<<<<<<<<<<
  * 
  *         status_code = cls.check_license()
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__license_checked, Py_True) < 0) __PYX_ERR(0, 375, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__license_checked, Py_True) < 0) __PYX_ERR(0, 374, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":377
+  /* "djing/core/Foundation/Djing.py":376
  *         cls.__license_checked = True
  * 
  *         status_code = cls.check_license()             # <<<<<<<<<<<<<<
  * 
  *         return status_code == 200
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_check_license); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 377, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_check_license); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -16228,14 +16281,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_68check_licens
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 377, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 376, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_status_code = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":379
+  /* "djing/core/Foundation/Djing.py":378
  *         status_code = cls.check_license()
  * 
  *         return status_code == 200             # <<<<<<<<<<<<<<
@@ -16243,13 +16296,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_68check_licens
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_status_code, __pyx_int_200, 0xC8, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 379, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_EqObjC(__pyx_v_status_code, __pyx_int_200, 0xC8, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":373
+  /* "djing/core/Foundation/Djing.py":372
  *         return "0.1.1"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -16271,7 +16324,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_68check_licens
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":381
+/* "djing/core/Foundation/Djing.py":380
  *         return status_code == 200
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -16332,12 +16385,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 381, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 380, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "check_license") < 0)) __PYX_ERR(0, 381, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "check_license") < 0)) __PYX_ERR(0, 380, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -16348,7 +16401,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("check_license", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 381, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("check_license", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 380, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16411,16 +16464,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("check_license", 1);
 
-  /* "djing/core/Foundation/Djing.py":383
+  /* "djing/core/Foundation/Djing.py":382
  *     @classmethod
  *     def check_license(cls) -> int:
  *         request: DjingRequest = App.make("request")             # <<<<<<<<<<<<<<
  * 
  *         user = Djing.user(request)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_App); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_App); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_make); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_make); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -16441,23 +16494,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_n_u_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 383, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 382, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_request = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":385
+  /* "djing/core/Foundation/Djing.py":384
  *         request: DjingRequest = App.make("request")
  * 
  *         user = Djing.user(request)             # <<<<<<<<<<<<<<
  * 
  *         path = str(Path(__file__).resolve().parent / "license")
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Djing); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 385, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Djing); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_user); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_user); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -16478,23 +16531,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 385, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_user = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":387
+  /* "djing/core/Foundation/Djing.py":386
  *         user = Djing.user(request)
  * 
  *         path = str(Path(__file__).resolve().parent / "license")             # <<<<<<<<<<<<<<
  * 
  *         os.makedirs(path, exist_ok=True)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_file); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_file); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_4 = 0;
@@ -16515,11 +16568,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 386, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_resolve); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_resolve); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -16540,61 +16593,61 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 386, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_parent); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_parent); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_3, __pyx_n_u_license); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_3, __pyx_n_u_license); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Unicode(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Unicode(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_path = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "djing/core/Foundation/Djing.py":389
+  /* "djing/core/Foundation/Djing.py":388
  *         path = str(Path(__file__).resolve().parent / "license")
  * 
  *         os.makedirs(path, exist_ok=True)             # <<<<<<<<<<<<<<
  * 
  *         cache_file = f"{path}/{user}.json"
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_os); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_os); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_makedirs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_makedirs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_v_path);
   __Pyx_GIVEREF(__pyx_v_path);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_path)) __PYX_ERR(0, 389, __pyx_L1_error);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_path)) __PYX_ERR(0, 388, __pyx_L1_error);
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exist_ok, Py_True) < 0) __PYX_ERR(0, 389, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 389, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exist_ok, Py_True) < 0) __PYX_ERR(0, 388, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":391
+  /* "djing/core/Foundation/Djing.py":390
  *         os.makedirs(path, exist_ok=True)
  * 
  *         cache_file = f"{path}/{user}.json"             # <<<<<<<<<<<<<<
  * 
  *         cache_duration = 60 * 60 * 24
  */
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_7 = 0;
   __pyx_t_8 = 127;
-  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_v_path, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_v_path, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_8;
   __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
@@ -16605,7 +16658,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
   __pyx_t_7 += 1;
   __Pyx_GIVEREF(__pyx_kp_u_);
   PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_kp_u_);
-  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_v_user, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_v_user, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_8 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_8) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_8;
   __pyx_t_7 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
@@ -16616,13 +16669,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
   __pyx_t_7 += 5;
   __Pyx_GIVEREF(__pyx_kp_u_json);
   PyTuple_SET_ITEM(__pyx_t_5, 3, __pyx_kp_u_json);
-  __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_5, 4, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_5, 4, __pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_cache_file = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "djing/core/Foundation/Djing.py":393
+  /* "djing/core/Foundation/Djing.py":392
  *         cache_file = f"{path}/{user}.json"
  * 
  *         cache_duration = 60 * 60 * 24             # <<<<<<<<<<<<<<
@@ -16631,7 +16684,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
  */
   __pyx_v_cache_duration = 0x15180;
 
-  /* "djing/core/Foundation/Djing.py":395
+  /* "djing/core/Foundation/Djing.py":394
  *         cache_duration = 60 * 60 * 24
  * 
  *         try:             # <<<<<<<<<<<<<<
@@ -16647,7 +16700,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     __Pyx_XGOTREF(__pyx_t_11);
     /*try:*/ {
 
-      /* "djing/core/Foundation/Djing.py":396
+      /* "djing/core/Foundation/Djing.py":395
  * 
  *         try:
  *             with open(cache_file, "r") as file:             # <<<<<<<<<<<<<<
@@ -16655,20 +16708,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
  * 
  */
       /*with:*/ {
-        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 396, __pyx_L3_error)
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_INCREF(__pyx_v_cache_file);
         __Pyx_GIVEREF(__pyx_v_cache_file);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_cache_file)) __PYX_ERR(0, 396, __pyx_L3_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_cache_file)) __PYX_ERR(0, 395, __pyx_L3_error);
         __Pyx_INCREF(__pyx_n_u_r);
         __Pyx_GIVEREF(__pyx_n_u_r);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_n_u_r)) __PYX_ERR(0, 396, __pyx_L3_error);
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 396, __pyx_L3_error)
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_n_u_r)) __PYX_ERR(0, 395, __pyx_L3_error);
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 395, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_12 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_exit); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 396, __pyx_L3_error)
+        __pyx_t_12 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_exit); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 395, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 396, __pyx_L9_error)
+        __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_t_5, __pyx_n_s_enter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 395, __pyx_L9_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_1 = NULL;
         __pyx_t_4 = 0;
@@ -16688,7 +16741,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
           PyObject *__pyx_callargs[2] = {__pyx_t_1, NULL};
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
           __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 396, __pyx_L9_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L9_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
@@ -16707,16 +16760,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
               __pyx_v_file = __pyx_t_3;
               __pyx_t_3 = 0;
 
-              /* "djing/core/Foundation/Djing.py":397
+              /* "djing/core/Foundation/Djing.py":396
  *         try:
  *             with open(cache_file, "r") as file:
  *                 cache_data = json.load(file)             # <<<<<<<<<<<<<<
  * 
  *                 if not cls.should_recheck(cache_data, cache_duration):
  */
-              __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_json_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 397, __pyx_L13_error)
+              __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_json_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 396, __pyx_L13_error)
               __Pyx_GOTREF(__pyx_t_5);
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L13_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 396, __pyx_L13_error)
               __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
               __pyx_t_5 = NULL;
@@ -16737,23 +16790,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
                 PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_file};
                 __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
                 __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L13_error)
+                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 396, __pyx_L13_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
               }
               __pyx_v_cache_data = __pyx_t_3;
               __pyx_t_3 = 0;
 
-              /* "djing/core/Foundation/Djing.py":399
+              /* "djing/core/Foundation/Djing.py":398
  *                 cache_data = json.load(file)
  * 
  *                 if not cls.should_recheck(cache_data, cache_duration):             # <<<<<<<<<<<<<<
  *                     return cache_data["status_code"]
  * 
  */
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_should_recheck); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L13_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_should_recheck); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L13_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_v_cache_duration); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 399, __pyx_L13_error)
+              __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_v_cache_duration); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 398, __pyx_L13_error)
               __Pyx_GOTREF(__pyx_t_5);
               __pyx_t_1 = NULL;
               __pyx_t_4 = 0;
@@ -16774,16 +16827,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
                 __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
                 __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
                 __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L13_error)
+                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L13_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
               }
-              __pyx_t_16 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_16 < 0))) __PYX_ERR(0, 399, __pyx_L13_error)
+              __pyx_t_16 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_16 < 0))) __PYX_ERR(0, 398, __pyx_L13_error)
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
               __pyx_t_17 = (!__pyx_t_16);
               if (__pyx_t_17) {
 
-                /* "djing/core/Foundation/Djing.py":400
+                /* "djing/core/Foundation/Djing.py":399
  * 
  *                 if not cls.should_recheck(cache_data, cache_duration):
  *                     return cache_data["status_code"]             # <<<<<<<<<<<<<<
@@ -16791,14 +16844,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
  *                 return cls.update_license_info(request, cache_file)
  */
                 __Pyx_XDECREF(__pyx_r);
-                __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_cache_data, __pyx_n_u_status_code); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 400, __pyx_L13_error)
+                __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_cache_data, __pyx_n_u_status_code); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L13_error)
                 __Pyx_GOTREF(__pyx_t_3);
-                if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_3))) __PYX_ERR(0, 400, __pyx_L13_error)
+                if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_3))) __PYX_ERR(0, 399, __pyx_L13_error)
                 __pyx_r = ((PyObject*)__pyx_t_3);
                 __pyx_t_3 = 0;
                 goto __pyx_L17_try_return;
 
-                /* "djing/core/Foundation/Djing.py":399
+                /* "djing/core/Foundation/Djing.py":398
  *                 cache_data = json.load(file)
  * 
  *                 if not cls.should_recheck(cache_data, cache_duration):             # <<<<<<<<<<<<<<
@@ -16807,7 +16860,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
  */
               }
 
-              /* "djing/core/Foundation/Djing.py":402
+              /* "djing/core/Foundation/Djing.py":401
  *                     return cache_data["status_code"]
  * 
  *                 return cls.update_license_info(request, cache_file)             # <<<<<<<<<<<<<<
@@ -16815,7 +16868,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
  *             return cls.update_license_info(request, cache_file)
  */
               __Pyx_XDECREF(__pyx_r);
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_update_license_info); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L13_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_update_license_info); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 401, __pyx_L13_error)
               __Pyx_GOTREF(__pyx_t_2);
               __pyx_t_5 = NULL;
               __pyx_t_4 = 0;
@@ -16835,16 +16888,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
                 PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_v_request, __pyx_v_cache_file};
                 __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
                 __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L13_error)
+                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L13_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
               }
-              if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_3))) __PYX_ERR(0, 402, __pyx_L13_error)
+              if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_3))) __PYX_ERR(0, 401, __pyx_L13_error)
               __pyx_r = ((PyObject*)__pyx_t_3);
               __pyx_t_3 = 0;
               goto __pyx_L17_try_return;
 
-              /* "djing/core/Foundation/Djing.py":396
+              /* "djing/core/Foundation/Djing.py":395
  * 
  *         try:
  *             with open(cache_file, "r") as file:             # <<<<<<<<<<<<<<
@@ -16860,20 +16913,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("djing.core.Foundation.Djing.Djing.check_license", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_5) < 0) __PYX_ERR(0, 396, __pyx_L15_except_error)
+              if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_5) < 0) __PYX_ERR(0, 395, __pyx_L15_except_error)
               __Pyx_XGOTREF(__pyx_t_3);
               __Pyx_XGOTREF(__pyx_t_2);
               __Pyx_XGOTREF(__pyx_t_5);
-              __pyx_t_1 = PyTuple_Pack(3, __pyx_t_3, __pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 396, __pyx_L15_except_error)
+              __pyx_t_1 = PyTuple_Pack(3, __pyx_t_3, __pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 395, __pyx_L15_except_error)
               __Pyx_GOTREF(__pyx_t_1);
               __pyx_t_18 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_1, NULL);
               __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 396, __pyx_L15_except_error)
+              if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 395, __pyx_L15_except_error)
               __Pyx_GOTREF(__pyx_t_18);
               __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_18);
               __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-              if (__pyx_t_17 < 0) __PYX_ERR(0, 396, __pyx_L15_except_error)
+              if (__pyx_t_17 < 0) __PYX_ERR(0, 395, __pyx_L15_except_error)
               __pyx_t_16 = (!__pyx_t_17);
               if (unlikely(__pyx_t_16)) {
                 __Pyx_GIVEREF(__pyx_t_3);
@@ -16881,7 +16934,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
                 __Pyx_XGIVEREF(__pyx_t_5);
                 __Pyx_ErrRestoreWithState(__pyx_t_3, __pyx_t_2, __pyx_t_5);
                 __pyx_t_3 = 0; __pyx_t_2 = 0; __pyx_t_5 = 0; 
-                __PYX_ERR(0, 396, __pyx_L15_except_error)
+                __PYX_ERR(0, 395, __pyx_L15_except_error)
               }
               __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -16912,7 +16965,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
             if (__pyx_t_12) {
               __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_tuple__20, NULL);
               __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-              if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 396, __pyx_L3_error)
+              if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 395, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_15);
               __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
             }
@@ -16924,7 +16977,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
             if (__pyx_t_12) {
               __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_tuple__20, NULL);
               __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-              if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 396, __pyx_L3_error)
+              if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 395, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_15);
               __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
             }
@@ -16941,7 +16994,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
         __pyx_L23:;
       }
 
-      /* "djing/core/Foundation/Djing.py":395
+      /* "djing/core/Foundation/Djing.py":394
  *         cache_duration = 60 * 60 * 24
  * 
  *         try:             # <<<<<<<<<<<<<<
@@ -16960,7 +17013,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "djing/core/Foundation/Djing.py":403
+    /* "djing/core/Foundation/Djing.py":402
  * 
  *                 return cls.update_license_info(request, cache_file)
  *         except (FileNotFoundError, KeyError, json.JSONDecodeError):             # <<<<<<<<<<<<<<
@@ -16968,11 +17021,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_5, &__pyx_t_2, &__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_FileNotFoundError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L5_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_FileNotFoundError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L5_except_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_json_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 403, __pyx_L5_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_json_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 402, __pyx_L5_except_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_20 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_JSONDecodeError); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 403, __pyx_L5_except_error)
+    __pyx_t_20 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_JSONDecodeError); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 402, __pyx_L5_except_error)
     __Pyx_GOTREF(__pyx_t_20);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_21 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_5, __pyx_t_1) || __Pyx_PyErr_GivenExceptionMatches(__pyx_t_5, __pyx_builtin_KeyError) || __Pyx_PyErr_GivenExceptionMatches(__pyx_t_5, __pyx_t_20);
@@ -16982,12 +17035,12 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     __pyx_t_5 = 0; __pyx_t_2 = 0; __pyx_t_3 = 0;
     if (__pyx_t_21) {
       __Pyx_AddTraceback("djing.core.Foundation.Djing.Djing.check_license", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_5) < 0) __PYX_ERR(0, 403, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_5) < 0) __PYX_ERR(0, 402, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_3);
       __Pyx_XGOTREF(__pyx_t_2);
       __Pyx_XGOTREF(__pyx_t_5);
 
-      /* "djing/core/Foundation/Djing.py":404
+      /* "djing/core/Foundation/Djing.py":403
  *                 return cls.update_license_info(request, cache_file)
  *         except (FileNotFoundError, KeyError, json.JSONDecodeError):
  *             return cls.update_license_info(request, cache_file)             # <<<<<<<<<<<<<<
@@ -16995,7 +17048,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
  *     @classmethod
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_update_license_info); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 404, __pyx_L5_except_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_update_license_info); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_6 = NULL;
       __pyx_t_4 = 0;
@@ -17015,11 +17068,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
         PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_v_request, __pyx_v_cache_file};
         __pyx_t_20 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 404, __pyx_L5_except_error)
+        if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 403, __pyx_L5_except_error)
         __Pyx_GOTREF(__pyx_t_20);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
-      if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_20))||((__pyx_t_20) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_20))) __PYX_ERR(0, 404, __pyx_L5_except_error)
+      if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_20))||((__pyx_t_20) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_20))) __PYX_ERR(0, 403, __pyx_L5_except_error)
       __pyx_r = ((PyObject*)__pyx_t_20);
       __pyx_t_20 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17029,7 +17082,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     }
     goto __pyx_L5_except_error;
 
-    /* "djing/core/Foundation/Djing.py":395
+    /* "djing/core/Foundation/Djing.py":394
  *         cache_duration = 60 * 60 * 24
  * 
  *         try:             # <<<<<<<<<<<<<<
@@ -17057,7 +17110,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
     __pyx_L8_try_end:;
   }
 
-  /* "djing/core/Foundation/Djing.py":381
+  /* "djing/core/Foundation/Djing.py":380
  *         return status_code == 200
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -17089,7 +17142,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_70check_licens
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":406
+/* "djing/core/Foundation/Djing.py":405
  *             return cls.update_license_info(request, cache_file)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -17156,7 +17209,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 405, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -17164,9 +17217,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 405, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("update_license_info", 1, 3, 3, 1); __PYX_ERR(0, 406, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("update_license_info", 1, 3, 3, 1); __PYX_ERR(0, 405, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -17174,14 +17227,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 405, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("update_license_info", 1, 3, 3, 2); __PYX_ERR(0, 406, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("update_license_info", 1, 3, 3, 2); __PYX_ERR(0, 405, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "update_license_info") < 0)) __PYX_ERR(0, 406, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "update_license_info") < 0)) __PYX_ERR(0, 405, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -17196,7 +17249,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("update_license_info", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 406, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("update_license_info", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 405, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -17210,7 +17263,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cache_file), (&PyUnicode_Type), 0, "cache_file", 1))) __PYX_ERR(0, 407, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cache_file), (&PyUnicode_Type), 0, "cache_file", 1))) __PYX_ERR(0, 406, __pyx_L1_error)
   __pyx_r = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_license_info(__pyx_self, __pyx_v_cls, __pyx_v_request, __pyx_v_cache_file);
 
   /* function exit code */
@@ -17261,7 +17314,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("update_license_info", 1);
 
-  /* "djing/core/Foundation/Djing.py":408
+  /* "djing/core/Foundation/Djing.py":407
  *     @classmethod
  *     def update_license_info(cls, request: DjingRequest, cache_file: str) -> int:
  *         try:             # <<<<<<<<<<<<<<
@@ -17277,40 +17330,40 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "djing/core/Foundation/Djing.py":409
+      /* "djing/core/Foundation/Djing.py":408
  *     def update_license_info(cls, request: DjingRequest, cache_file: str) -> int:
  *         try:
  *             response = requests.post(             # <<<<<<<<<<<<<<
  *                 url="https://djing.vercel.app/api/license",
  *                 json={
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_requests); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 409, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_requests); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 408, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_post); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 409, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_post); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 408, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "djing/core/Foundation/Djing.py":410
+      /* "djing/core/Foundation/Djing.py":409
  *         try:
  *             response = requests.post(
  *                 url="https://djing.vercel.app/api/license",             # <<<<<<<<<<<<<<
  *                 json={
  *                     "url": request.get_host(),
  */
-      __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 410, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 409, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_url, __pyx_kp_u_https_djing_vercel_app_api_licen) < 0) __PYX_ERR(0, 410, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_url, __pyx_kp_u_https_djing_vercel_app_api_licen) < 0) __PYX_ERR(0, 409, __pyx_L3_error)
 
-      /* "djing/core/Foundation/Djing.py":412
+      /* "djing/core/Foundation/Djing.py":411
  *                 url="https://djing.vercel.app/api/license",
  *                 json={
  *                     "url": request.get_host(),             # <<<<<<<<<<<<<<
  *                     "key": Config.get("license_key"),
  *                 },
  */
-      __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 412, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 411, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_request, __pyx_n_s_get_host); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 412, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_request, __pyx_n_s_get_host); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 411, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_9 = NULL;
       __pyx_t_10 = 0;
@@ -17330,23 +17383,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
         PyObject *__pyx_callargs[2] = {__pyx_t_9, NULL};
         __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 412, __pyx_L3_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 411, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
-      if (PyDict_SetItem(__pyx_t_6, __pyx_n_u_url, __pyx_t_7) < 0) __PYX_ERR(0, 412, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_6, __pyx_n_u_url, __pyx_t_7) < 0) __PYX_ERR(0, 411, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "djing/core/Foundation/Djing.py":413
+      /* "djing/core/Foundation/Djing.py":412
  *                 json={
  *                     "url": request.get_host(),
  *                     "key": Config.get("license_key"),             # <<<<<<<<<<<<<<
  *                 },
  *             )
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_Config); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 413, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_Config); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 412, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_get); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 413, __pyx_L3_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_get); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 412, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_8 = NULL;
@@ -17367,53 +17420,53 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
         PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_n_u_license_key};
         __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 413, __pyx_L3_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 412, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       }
-      if (PyDict_SetItem(__pyx_t_6, __pyx_n_u_key, __pyx_t_7) < 0) __PYX_ERR(0, 412, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_6, __pyx_n_u_key, __pyx_t_7) < 0) __PYX_ERR(0, 411, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_json_2, __pyx_t_6) < 0) __PYX_ERR(0, 410, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_json_2, __pyx_t_6) < 0) __PYX_ERR(0, 409, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "djing/core/Foundation/Djing.py":409
+      /* "djing/core/Foundation/Djing.py":408
  *     def update_license_info(cls, request: DjingRequest, cache_file: str) -> int:
  *         try:
  *             response = requests.post(             # <<<<<<<<<<<<<<
  *                 url="https://djing.vercel.app/api/license",
  *                 json={
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 409, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_empty_tuple, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 408, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_v_response = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "djing/core/Foundation/Djing.py":418
+      /* "djing/core/Foundation/Djing.py":417
  * 
  *             cache_data = {
  *                 "status_code": response.status_code,             # <<<<<<<<<<<<<<
  *                 "last_check": time.time(),
  *             }
  */
-      __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 418, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 417, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_response, __pyx_n_s_status_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 418, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_response, __pyx_n_s_status_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 417, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      if (PyDict_SetItem(__pyx_t_6, __pyx_n_u_status_code, __pyx_t_4) < 0) __PYX_ERR(0, 418, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_6, __pyx_n_u_status_code, __pyx_t_4) < 0) __PYX_ERR(0, 417, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "djing/core/Foundation/Djing.py":419
+      /* "djing/core/Foundation/Djing.py":418
  *             cache_data = {
  *                 "status_code": response.status_code,
  *                 "last_check": time.time(),             # <<<<<<<<<<<<<<
  *             }
  * 
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 419, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 418, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_time); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 419, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_time); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 418, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_5 = NULL;
@@ -17434,16 +17487,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
         PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 419, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 418, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
-      if (PyDict_SetItem(__pyx_t_6, __pyx_n_u_last_check, __pyx_t_4) < 0) __PYX_ERR(0, 418, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_6, __pyx_n_u_last_check, __pyx_t_4) < 0) __PYX_ERR(0, 417, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_v_cache_data = ((PyObject*)__pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "djing/core/Foundation/Djing.py":422
+      /* "djing/core/Foundation/Djing.py":421
  *             }
  * 
  *             with open(cache_file, "w") as file:             # <<<<<<<<<<<<<<
@@ -17451,20 +17504,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
  * 
  */
       /*with:*/ {
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 422, __pyx_L3_error)
+        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 421, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_INCREF(__pyx_v_cache_file);
         __Pyx_GIVEREF(__pyx_v_cache_file);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_cache_file)) __PYX_ERR(0, 422, __pyx_L3_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_cache_file)) __PYX_ERR(0, 421, __pyx_L3_error);
         __Pyx_INCREF(__pyx_n_u_w);
         __Pyx_GIVEREF(__pyx_n_u_w);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_n_u_w)) __PYX_ERR(0, 422, __pyx_L3_error);
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 422, __pyx_L3_error)
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_n_u_w)) __PYX_ERR(0, 421, __pyx_L3_error);
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 421, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_11 = __Pyx_PyObject_LookupSpecial(__pyx_t_4, __pyx_n_s_exit); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 422, __pyx_L3_error)
+        __pyx_t_11 = __Pyx_PyObject_LookupSpecial(__pyx_t_4, __pyx_n_s_exit); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 421, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_7 = __Pyx_PyObject_LookupSpecial(__pyx_t_4, __pyx_n_s_enter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 422, __pyx_L9_error)
+        __pyx_t_7 = __Pyx_PyObject_LookupSpecial(__pyx_t_4, __pyx_n_s_enter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 421, __pyx_L9_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_5 = NULL;
         __pyx_t_10 = 0;
@@ -17484,7 +17537,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
           PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
           __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 422, __pyx_L9_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 421, __pyx_L9_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         }
@@ -17503,16 +17556,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
               __pyx_v_file = __pyx_t_7;
               __pyx_t_7 = 0;
 
-              /* "djing/core/Foundation/Djing.py":423
+              /* "djing/core/Foundation/Djing.py":422
  * 
  *             with open(cache_file, "w") as file:
  *                 json.dump(cache_data, file)             # <<<<<<<<<<<<<<
  * 
  *             return cache_data["status_code"]
  */
-              __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_json_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 423, __pyx_L13_error)
+              __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_json_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 422, __pyx_L13_error)
               __Pyx_GOTREF(__pyx_t_4);
-              __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_dump); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 423, __pyx_L13_error)
+              __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_dump); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 422, __pyx_L13_error)
               __Pyx_GOTREF(__pyx_t_6);
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               __pyx_t_4 = NULL;
@@ -17533,13 +17586,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
                 PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_v_cache_data, __pyx_v_file};
                 __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_10, 2+__pyx_t_10);
                 __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-                if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 423, __pyx_L13_error)
+                if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 422, __pyx_L13_error)
                 __Pyx_GOTREF(__pyx_t_7);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
               }
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-              /* "djing/core/Foundation/Djing.py":422
+              /* "djing/core/Foundation/Djing.py":421
  *             }
  * 
  *             with open(cache_file, "w") as file:             # <<<<<<<<<<<<<<
@@ -17560,20 +17613,20 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("djing.core.Foundation.Djing.Djing.update_license_info", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_6, &__pyx_t_4) < 0) __PYX_ERR(0, 422, __pyx_L15_except_error)
+              if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_6, &__pyx_t_4) < 0) __PYX_ERR(0, 421, __pyx_L15_except_error)
               __Pyx_XGOTREF(__pyx_t_7);
               __Pyx_XGOTREF(__pyx_t_6);
               __Pyx_XGOTREF(__pyx_t_4);
-              __pyx_t_5 = PyTuple_Pack(3, __pyx_t_7, __pyx_t_6, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 422, __pyx_L15_except_error)
+              __pyx_t_5 = PyTuple_Pack(3, __pyx_t_7, __pyx_t_6, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 421, __pyx_L15_except_error)
               __Pyx_GOTREF(__pyx_t_5);
               __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_5, NULL);
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
               __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-              if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 422, __pyx_L15_except_error)
+              if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 421, __pyx_L15_except_error)
               __Pyx_GOTREF(__pyx_t_15);
               __pyx_t_16 = __Pyx_PyObject_IsTrue(__pyx_t_15);
               __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-              if (__pyx_t_16 < 0) __PYX_ERR(0, 422, __pyx_L15_except_error)
+              if (__pyx_t_16 < 0) __PYX_ERR(0, 421, __pyx_L15_except_error)
               __pyx_t_17 = (!__pyx_t_16);
               if (unlikely(__pyx_t_17)) {
                 __Pyx_GIVEREF(__pyx_t_7);
@@ -17581,7 +17634,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
                 __Pyx_XGIVEREF(__pyx_t_4);
                 __Pyx_ErrRestoreWithState(__pyx_t_7, __pyx_t_6, __pyx_t_4);
                 __pyx_t_7 = 0; __pyx_t_6 = 0; __pyx_t_4 = 0; 
-                __PYX_ERR(0, 422, __pyx_L15_except_error)
+                __PYX_ERR(0, 421, __pyx_L15_except_error)
               }
               __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -17607,7 +17660,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
             if (__pyx_t_11) {
               __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_tuple__20, NULL);
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 422, __pyx_L3_error)
+              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 421, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_14);
               __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             }
@@ -17622,7 +17675,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
         __pyx_L22:;
       }
 
-      /* "djing/core/Foundation/Djing.py":425
+      /* "djing/core/Foundation/Djing.py":424
  *                 json.dump(cache_data, file)
  * 
  *             return cache_data["status_code"]             # <<<<<<<<<<<<<<
@@ -17630,14 +17683,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
  *             raise e
  */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_cache_data, __pyx_n_u_status_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 425, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_cache_data, __pyx_n_u_status_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 424, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_4))||((__pyx_t_4) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_4))) __PYX_ERR(0, 425, __pyx_L3_error)
+      if (!(likely(__Pyx_Py3Int_CheckExact(__pyx_t_4))||((__pyx_t_4) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_4))) __PYX_ERR(0, 424, __pyx_L3_error)
       __pyx_r = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
       goto __pyx_L7_try_return;
 
-      /* "djing/core/Foundation/Djing.py":408
+      /* "djing/core/Foundation/Djing.py":407
  *     @classmethod
  *     def update_license_info(cls, request: DjingRequest, cache_file: str) -> int:
  *         try:             # <<<<<<<<<<<<<<
@@ -17653,7 +17706,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "djing/core/Foundation/Djing.py":426
+    /* "djing/core/Foundation/Djing.py":425
  * 
  *             return cache_data["status_code"]
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -17663,7 +17716,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
     __pyx_t_18 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
     if (__pyx_t_18) {
       __Pyx_AddTraceback("djing.core.Foundation.Djing.Djing.update_license_info", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_6, &__pyx_t_7) < 0) __PYX_ERR(0, 426, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_6, &__pyx_t_7) < 0) __PYX_ERR(0, 425, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_4);
       __Pyx_XGOTREF(__pyx_t_6);
       __Pyx_XGOTREF(__pyx_t_7);
@@ -17671,7 +17724,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
       __pyx_v_e = __pyx_t_6;
       /*try:*/ {
 
-        /* "djing/core/Foundation/Djing.py":427
+        /* "djing/core/Foundation/Djing.py":426
  *             return cache_data["status_code"]
  *         except Exception as e:
  *             raise e             # <<<<<<<<<<<<<<
@@ -17679,10 +17732,10 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
  *     @classmethod
  */
         __Pyx_Raise(__pyx_v_e, 0, 0, 0);
-        __PYX_ERR(0, 427, __pyx_L28_error)
+        __PYX_ERR(0, 426, __pyx_L28_error)
       }
 
-      /* "djing/core/Foundation/Djing.py":426
+      /* "djing/core/Foundation/Djing.py":425
  * 
  *             return cache_data["status_code"]
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -17728,7 +17781,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
     }
     goto __pyx_L5_except_error;
 
-    /* "djing/core/Foundation/Djing.py":408
+    /* "djing/core/Foundation/Djing.py":407
  *     @classmethod
  *     def update_license_info(cls, request: DjingRequest, cache_file: str) -> int:
  *         try:             # <<<<<<<<<<<<<<
@@ -17749,7 +17802,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
     goto __pyx_L0;
   }
 
-  /* "djing/core/Foundation/Djing.py":406
+  /* "djing/core/Foundation/Djing.py":405
  *             return cls.update_license_info(request, cache_file)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -17777,7 +17830,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_72update_licen
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":429
+/* "djing/core/Foundation/Djing.py":428
  *             raise e
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -17844,7 +17897,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 429, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 428, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -17852,9 +17905,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 429, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 428, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("should_recheck", 1, 3, 3, 1); __PYX_ERR(0, 429, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("should_recheck", 1, 3, 3, 1); __PYX_ERR(0, 428, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -17862,14 +17915,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 429, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 428, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("should_recheck", 1, 3, 3, 2); __PYX_ERR(0, 429, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("should_recheck", 1, 3, 3, 2); __PYX_ERR(0, 428, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "should_recheck") < 0)) __PYX_ERR(0, 429, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "should_recheck") < 0)) __PYX_ERR(0, 428, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -17880,11 +17933,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     }
     __pyx_v_cls = values[0];
     __pyx_v_cache_data = ((PyObject*)values[1]);
-    __pyx_v_cache_duration = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_cache_duration == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 430, __pyx_L3_error)
+    __pyx_v_cache_duration = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_cache_duration == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 429, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("should_recheck", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 429, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("should_recheck", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 428, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -17898,7 +17951,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cache_data), (&PyDict_Type), 0, "cache_data", 1))) __PYX_ERR(0, 430, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cache_data), (&PyDict_Type), 0, "cache_data", 1))) __PYX_ERR(0, 429, __pyx_L1_error)
   __pyx_r = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_74should_recheck(__pyx_self, __pyx_v_cls, __pyx_v_cache_data, __pyx_v_cache_duration);
 
   /* function exit code */
@@ -17928,7 +17981,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_74should_reche
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("should_recheck", 1);
 
-  /* "djing/core/Foundation/Djing.py":431
+  /* "djing/core/Foundation/Djing.py":430
  *     @classmethod
  *     def should_recheck(cls, cache_data: dict, cache_duration: float):
  *         return time.time() - cache_data["last_check"] > cache_duration             # <<<<<<<<<<<<<<
@@ -17936,9 +17989,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_74should_reche
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -17959,26 +18012,26 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_74should_reche
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 430, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_cache_data, __pyx_n_u_last_check); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_cache_data, __pyx_n_u_last_check); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyNumber_Subtract(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Subtract(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_cache_duration); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_cache_duration); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = PyObject_RichCompare(__pyx_t_2, __pyx_t_3, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_t_2, __pyx_t_3, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":429
+  /* "djing/core/Foundation/Djing.py":428
  *             raise e
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -17999,7 +18052,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_74should_reche
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":433
+/* "djing/core/Foundation/Djing.py":432
  *         return time.time() - cache_data["last_check"] > cache_duration
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -18063,7 +18116,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 433, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 432, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -18071,14 +18124,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 433, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 432, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("dashboards", 1, 2, 2, 1); __PYX_ERR(0, 433, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("dashboards", 1, 2, 2, 1); __PYX_ERR(0, 432, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "dashboards") < 0)) __PYX_ERR(0, 433, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "dashboards") < 0)) __PYX_ERR(0, 432, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -18091,7 +18144,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("dashboards", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 433, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("dashboards", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 432, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -18131,16 +18184,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_76dashboards(C
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("dashboards", 1);
 
-  /* "djing/core/Foundation/Djing.py":435
+  /* "djing/core/Foundation/Djing.py":434
  *     @classmethod
  *     def dashboards(cls, dashboards) -> "Djing":
  *         cls._dashboards = array_merge(cls._dashboards, dashboards)             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_array_merge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 435, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_array_merge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 434, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 435, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 434, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -18161,14 +18214,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_76dashboards(C
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 2+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 434, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards, __pyx_t_1) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards, __pyx_t_1) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":437
+  /* "djing/core/Foundation/Djing.py":436
  *         cls._dashboards = array_merge(cls._dashboards, dashboards)
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -18195,7 +18248,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_76dashboards(C
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 436, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -18203,7 +18256,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_76dashboards(C
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":433
+  /* "djing/core/Foundation/Djing.py":432
  *         return time.time() - cache_data["last_check"] > cache_duration
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -18225,7 +18278,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_76dashboards(C
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":439
+/* "djing/core/Foundation/Djing.py":438
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -18289,7 +18342,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 439, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 438, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -18297,14 +18350,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 439, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 438, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("available_dashboards", 1, 2, 2, 1); __PYX_ERR(0, 439, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("available_dashboards", 1, 2, 2, 1); __PYX_ERR(0, 438, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "available_dashboards") < 0)) __PYX_ERR(0, 439, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "available_dashboards") < 0)) __PYX_ERR(0, 438, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -18317,7 +18370,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("available_dashboards", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 439, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("available_dashboards", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 438, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -18344,7 +18397,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":441
+/* "djing/core/Foundation/Djing.py":440
  *     @classmethod
  *     def available_dashboards(cls, request: DjingRequest):
  *         def authorized_available_dashboards(dashboard):             # <<<<<<<<<<<<<<
@@ -18405,12 +18458,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 441, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 440, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorized_available_dashboards") < 0)) __PYX_ERR(0, 441, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorized_available_dashboards") < 0)) __PYX_ERR(0, 440, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -18421,7 +18474,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("authorized_available_dashboards", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 441, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("authorized_available_dashboards", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 440, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -18464,7 +18517,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20available_da
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":442
+  /* "djing/core/Foundation/Djing.py":441
  *     def available_dashboards(cls, request: DjingRequest):
  *         def authorized_available_dashboards(dashboard):
  *             return dashboard.authorize(request)             # <<<<<<<<<<<<<<
@@ -18472,9 +18525,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20available_da
  *         items = collect(cls._dashboards).filter(authorized_available_dashboards).all()
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_authorize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_authorize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 441, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 442, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 441, __pyx_L1_error) }
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
@@ -18493,7 +18546,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20available_da
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 441, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -18501,7 +18554,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20available_da
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":441
+  /* "djing/core/Foundation/Djing.py":440
  *     @classmethod
  *     def available_dashboards(cls, request: DjingRequest):
  *         def authorized_available_dashboards(dashboard):             # <<<<<<<<<<<<<<
@@ -18522,7 +18575,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_20available_da
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":439
+/* "djing/core/Foundation/Djing.py":438
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -18551,7 +18604,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_78available_da
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 439, __pyx_L1_error)
+    __PYX_ERR(0, 438, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -18559,28 +18612,28 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_78available_da
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_request);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_request);
 
-  /* "djing/core/Foundation/Djing.py":441
+  /* "djing/core/Foundation/Djing.py":440
  *     @classmethod
  *     def available_dashboards(cls, request: DjingRequest):
  *         def authorized_available_dashboards(dashboard):             # <<<<<<<<<<<<<<
  *             return dashboard.authorize(request)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_20available_dashboards_1authorized_available_dashboards, 0, __pyx_n_s_Djing_available_dashboards_local, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_20available_dashboards_1authorized_available_dashboards, 0, __pyx_n_s_Djing_available_dashboards_local, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_authorized_available_dashboards = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":444
+  /* "djing/core/Foundation/Djing.py":443
  *             return dashboard.authorize(request)
  * 
  *         items = collect(cls._dashboards).filter(authorized_available_dashboards).all()             # <<<<<<<<<<<<<<
  * 
  *         return items
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_7 = 0;
@@ -18601,11 +18654,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_78available_da
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 444, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_filter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_filter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -18626,11 +18679,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_78available_da
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_authorized_available_dashboards};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -18651,14 +18704,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_78available_da
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 444, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 443, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_v_items = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":446
+  /* "djing/core/Foundation/Djing.py":445
  *         items = collect(cls._dashboards).filter(authorized_available_dashboards).all()
  * 
  *         return items             # <<<<<<<<<<<<<<
@@ -18670,7 +18723,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_78available_da
   __pyx_r = __pyx_v_items;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":439
+  /* "djing/core/Foundation/Djing.py":438
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -18697,7 +18750,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_78available_da
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":448
+/* "djing/core/Foundation/Djing.py":447
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -18761,7 +18814,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 447, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -18769,14 +18822,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 447, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("available_resources", 1, 2, 2, 1); __PYX_ERR(0, 448, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("available_resources", 1, 2, 2, 1); __PYX_ERR(0, 447, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "available_resources") < 0)) __PYX_ERR(0, 448, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "available_resources") < 0)) __PYX_ERR(0, 447, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -18789,7 +18842,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("available_resources", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 448, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("available_resources", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 447, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -18833,14 +18886,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_80available_re
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("available_resources", 1);
 
-  /* "djing/core/Foundation/Djing.py":450
+  /* "djing/core/Foundation/Djing.py":449
  *     @classmethod
  *     def available_resources(cls, request: DjingRequest):
  *         collection = cls.authorized_resources(request)             # <<<<<<<<<<<<<<
  * 
  *         items = collection.sort(cls.sort_resources_with()).all()
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_authorized_resources); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 450, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_authorized_resources); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 449, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -18860,23 +18913,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_80available_re
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 450, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 449, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_collection = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":452
+  /* "djing/core/Foundation/Djing.py":451
  *         collection = cls.authorized_resources(request)
  * 
  *         items = collection.sort(cls.sort_resources_with()).all()             # <<<<<<<<<<<<<<
  * 
  *         return items
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_collection, __pyx_n_s_sort); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_collection, __pyx_n_s_sort); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_sort_resources_with); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_sort_resources_with); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_4 = 0;
@@ -18896,7 +18949,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_80available_re
     PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
     __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 451, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
@@ -18919,11 +18972,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_80available_re
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 452, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 451, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_all); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -18944,14 +18997,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_80available_re
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 451, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_items = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":454
+  /* "djing/core/Foundation/Djing.py":453
  *         items = collection.sort(cls.sort_resources_with()).all()
  * 
  *         return items             # <<<<<<<<<<<<<<
@@ -18963,7 +19016,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_80available_re
   __pyx_r = __pyx_v_items;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":448
+  /* "djing/core/Foundation/Djing.py":447
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -18989,7 +19042,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_80available_re
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":456
+/* "djing/core/Foundation/Djing.py":455
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -19053,7 +19106,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 456, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 455, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -19061,14 +19114,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 456, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 455, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("available_tools", 1, 2, 2, 1); __PYX_ERR(0, 456, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("available_tools", 1, 2, 2, 1); __PYX_ERR(0, 455, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "available_tools") < 0)) __PYX_ERR(0, 456, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "available_tools") < 0)) __PYX_ERR(0, 455, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -19081,7 +19134,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("available_tools", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 456, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("available_tools", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 455, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -19122,14 +19175,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_82available_to
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("available_tools", 1);
 
-  /* "djing/core/Foundation/Djing.py":458
+  /* "djing/core/Foundation/Djing.py":457
  *     @classmethod
  *     def available_tools(cls, request: DjingRequest) -> List[Tool]:
  *         if not cls.user(request):             # <<<<<<<<<<<<<<
  *             return []
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_user); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 458, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_user); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -19149,16 +19202,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_82available_to
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 458, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 457, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 458, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = (!__pyx_t_5);
   if (__pyx_t_6) {
 
-    /* "djing/core/Foundation/Djing.py":459
+    /* "djing/core/Foundation/Djing.py":458
  *     def available_tools(cls, request: DjingRequest) -> List[Tool]:
  *         if not cls.user(request):
  *             return []             # <<<<<<<<<<<<<<
@@ -19166,13 +19219,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_82available_to
  *         return cls._tools
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 459, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 458, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":458
+    /* "djing/core/Foundation/Djing.py":457
  *     @classmethod
  *     def available_tools(cls, request: DjingRequest) -> List[Tool]:
  *         if not cls.user(request):             # <<<<<<<<<<<<<<
@@ -19181,7 +19234,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_82available_to
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":461
+  /* "djing/core/Foundation/Djing.py":460
  *             return []
  * 
  *         return cls._tools             # <<<<<<<<<<<<<<
@@ -19189,14 +19242,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_82available_to
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_tools); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 461, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_tools); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_1))) __PYX_ERR(0, 461, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_1))) __PYX_ERR(0, 460, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":456
+  /* "djing/core/Foundation/Djing.py":455
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -19217,7 +19270,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_82available_to
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":463
+/* "djing/core/Foundation/Djing.py":462
  *         return cls._tools
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -19281,7 +19334,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 463, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 462, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -19289,14 +19342,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 463, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 462, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("boot_tools", 1, 2, 2, 1); __PYX_ERR(0, 463, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("boot_tools", 1, 2, 2, 1); __PYX_ERR(0, 462, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "boot_tools") < 0)) __PYX_ERR(0, 463, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "boot_tools") < 0)) __PYX_ERR(0, 462, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -19309,7 +19362,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("boot_tools", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 463, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("boot_tools", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 462, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -19336,7 +19389,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":465
+/* "djing/core/Foundation/Djing.py":464
  *     @classmethod
  *     def boot_tools(cls, request: DjingRequest):
  *         def boot_each_tool(tool):             # <<<<<<<<<<<<<<
@@ -19397,12 +19450,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 465, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 464, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "boot_each_tool") < 0)) __PYX_ERR(0, 465, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "boot_each_tool") < 0)) __PYX_ERR(0, 464, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -19413,7 +19466,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("boot_each_tool", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 465, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("boot_each_tool", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 464, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -19452,7 +19505,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10boot_tools_b
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("boot_each_tool", 1);
 
-  /* "djing/core/Foundation/Djing.py":466
+  /* "djing/core/Foundation/Djing.py":465
  *     def boot_tools(cls, request: DjingRequest):
  *         def boot_each_tool(tool):
  *             return tool.boot()             # <<<<<<<<<<<<<<
@@ -19460,7 +19513,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10boot_tools_b
  *         collect(cls.available_tools(request)).each(boot_each_tool)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_tool, __pyx_n_s_boot); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 466, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_tool, __pyx_n_s_boot); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -19480,7 +19533,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10boot_tools_b
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 466, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 465, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -19488,7 +19541,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10boot_tools_b
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":465
+  /* "djing/core/Foundation/Djing.py":464
  *     @classmethod
  *     def boot_tools(cls, request: DjingRequest):
  *         def boot_each_tool(tool):             # <<<<<<<<<<<<<<
@@ -19509,7 +19562,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_10boot_tools_b
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":463
+/* "djing/core/Foundation/Djing.py":462
  *         return cls._tools
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -19533,28 +19586,28 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_84boot_tools(C
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("boot_tools", 1);
 
-  /* "djing/core/Foundation/Djing.py":465
+  /* "djing/core/Foundation/Djing.py":464
  *     @classmethod
  *     def boot_tools(cls, request: DjingRequest):
  *         def boot_each_tool(tool):             # <<<<<<<<<<<<<<
  *             return tool.boot()
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_10boot_tools_1boot_each_tool, 0, __pyx_n_s_Djing_boot_tools_locals_boot_eac, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 465, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_10boot_tools_1boot_each_tool, 0, __pyx_n_s_Djing_boot_tools_locals_boot_eac, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_boot_each_tool = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":468
+  /* "djing/core/Foundation/Djing.py":467
  *             return tool.boot()
  * 
  *         collect(cls.available_tools(request)).each(boot_each_tool)             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_collect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_collect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_available_tools); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_available_tools); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_7 = 0;
@@ -19574,7 +19627,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_84boot_tools(C
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_request};
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 468, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 467, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -19597,11 +19650,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_84boot_tools(C
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 468, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 467, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_each); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_each); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -19622,13 +19675,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_84boot_tools(C
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_boot_each_tool};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 468, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":463
+  /* "djing/core/Foundation/Djing.py":462
  *         return cls._tools
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -19655,7 +19708,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_84boot_tools(C
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":470
+/* "djing/core/Foundation/Djing.py":469
  *         collect(cls.available_tools(request)).each(boot_each_tool)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -19719,7 +19772,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 470, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 469, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -19727,14 +19780,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 470, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 469, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("resources", 1, 2, 2, 1); __PYX_ERR(0, 470, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("resources", 1, 2, 2, 1); __PYX_ERR(0, 469, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resources") < 0)) __PYX_ERR(0, 470, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resources") < 0)) __PYX_ERR(0, 469, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -19747,7 +19800,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("resources", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 470, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("resources", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 469, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -19787,16 +19840,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_86resources(CY
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("resources", 1);
 
-  /* "djing/core/Foundation/Djing.py":472
+  /* "djing/core/Foundation/Djing.py":471
  *     @classmethod
  *     def resources(cls, resources) -> "Djing":
  *         cls._resources = array_merge(cls._resources, resources)             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_array_merge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 472, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_array_merge); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_resources); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 472, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_resources); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -19817,14 +19870,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_86resources(CY
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 2+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 472, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_resources, __pyx_t_1) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_resources, __pyx_t_1) < 0) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":474
+  /* "djing/core/Foundation/Djing.py":473
  *         cls._resources = array_merge(cls._resources, resources)
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -19851,7 +19904,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_86resources(CY
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 474, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 473, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -19859,7 +19912,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_86resources(CY
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":470
+  /* "djing/core/Foundation/Djing.py":469
  *         collect(cls.available_tools(request)).each(boot_each_tool)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -19881,7 +19934,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_86resources(CY
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":476
+/* "djing/core/Foundation/Djing.py":475
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -19945,7 +19998,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 476, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 475, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -19953,14 +20006,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 476, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 475, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("all_available_dashboard_cards", 1, 2, 2, 1); __PYX_ERR(0, 476, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("all_available_dashboard_cards", 1, 2, 2, 1); __PYX_ERR(0, 475, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "all_available_dashboard_cards") < 0)) __PYX_ERR(0, 476, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "all_available_dashboard_cards") < 0)) __PYX_ERR(0, 475, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -19973,7 +20026,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("all_available_dashboard_cards", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 476, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("all_available_dashboard_cards", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 475, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -20000,7 +20053,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":478
+/* "djing/core/Foundation/Djing.py":477
  *     @classmethod
  *     def all_available_dashboard_cards(cls, request: DjingRequest) -> Collection:
  *         def authorize_dashboard(dashboard):             # <<<<<<<<<<<<<<
@@ -20061,12 +20114,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 478, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 477, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorize_dashboard") < 0)) __PYX_ERR(0, 478, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorize_dashboard") < 0)) __PYX_ERR(0, 477, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -20077,7 +20130,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("authorize_dashboard", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 478, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("authorize_dashboard", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 477, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -20120,7 +20173,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":479
+  /* "djing/core/Foundation/Djing.py":478
  *     def all_available_dashboard_cards(cls, request: DjingRequest) -> Collection:
  *         def authorize_dashboard(dashboard):
  *             return dashboard.authorize(request)             # <<<<<<<<<<<<<<
@@ -20128,9 +20181,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
  *         def dashboard_cards(dashboard):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_authorize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 479, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_authorize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 478, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 479, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 478, __pyx_L1_error) }
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
@@ -20149,7 +20202,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 479, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 478, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -20157,7 +20210,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":478
+  /* "djing/core/Foundation/Djing.py":477
  *     @classmethod
  *     def all_available_dashboard_cards(cls, request: DjingRequest) -> Collection:
  *         def authorize_dashboard(dashboard):             # <<<<<<<<<<<<<<
@@ -20178,7 +20231,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":481
+/* "djing/core/Foundation/Djing.py":480
  *             return dashboard.authorize(request)
  * 
  *         def dashboard_cards(dashboard):             # <<<<<<<<<<<<<<
@@ -20239,12 +20292,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 481, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 480, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "dashboard_cards") < 0)) __PYX_ERR(0, 481, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "dashboard_cards") < 0)) __PYX_ERR(0, 480, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -20255,7 +20308,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("dashboard_cards", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 481, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("dashboard_cards", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 480, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -20294,7 +20347,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("dashboard_cards", 1);
 
-  /* "djing/core/Foundation/Djing.py":482
+  /* "djing/core/Foundation/Djing.py":481
  * 
  *         def dashboard_cards(dashboard):
  *             return dashboard.cards()             # <<<<<<<<<<<<<<
@@ -20302,7 +20355,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
  *         items = (
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_cards); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 482, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_cards); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 481, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -20322,7 +20375,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 482, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 481, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -20330,7 +20383,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":481
+  /* "djing/core/Foundation/Djing.py":480
  *             return dashboard.authorize(request)
  * 
  *         def dashboard_cards(dashboard):             # <<<<<<<<<<<<<<
@@ -20351,7 +20404,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_29all_availabl
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":476
+/* "djing/core/Foundation/Djing.py":475
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -20384,7 +20437,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 476, __pyx_L1_error)
+    __PYX_ERR(0, 475, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -20392,40 +20445,40 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_request);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_request);
 
-  /* "djing/core/Foundation/Djing.py":478
+  /* "djing/core/Foundation/Djing.py":477
  *     @classmethod
  *     def all_available_dashboard_cards(cls, request: DjingRequest) -> Collection:
  *         def authorize_dashboard(dashboard):             # <<<<<<<<<<<<<<
  *             return dashboard.authorize(request)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_29all_available_dashboard_cards_1authorize_dashboard, 0, __pyx_n_s_Djing_all_available_dashboard_ca, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 478, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_29all_available_dashboard_cards_1authorize_dashboard, 0, __pyx_n_s_Djing_all_available_dashboard_ca, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_authorize_dashboard = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":481
+  /* "djing/core/Foundation/Djing.py":480
  *             return dashboard.authorize(request)
  * 
  *         def dashboard_cards(dashboard):             # <<<<<<<<<<<<<<
  *             return dashboard.cards()
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_29all_available_dashboard_cards_3dashboard_cards, 0, __pyx_n_s_Djing_all_available_dashboard_ca_2, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 481, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_29all_available_dashboard_cards_3dashboard_cards, 0, __pyx_n_s_Djing_all_available_dashboard_ca_2, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 480, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_dashboard_cards = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":485
+  /* "djing/core/Foundation/Djing.py":484
  * 
  *         items = (
  *             collect(cls._dashboards)             # <<<<<<<<<<<<<<
  *             .filter(authorize_dashboard)
  *             .flat_map(dashboard_cards)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_collect); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 485, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_collect); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 485, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_9 = NULL;
   __pyx_t_10 = 0;
@@ -20446,19 +20499,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
     __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 485, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 484, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":486
+  /* "djing/core/Foundation/Djing.py":485
  *         items = (
  *             collect(cls._dashboards)
  *             .filter(authorize_dashboard)             # <<<<<<<<<<<<<<
  *             .flat_map(dashboard_cards)
  *             .unique()
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_filter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 486, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_filter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -20479,19 +20532,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_authorize_dashboard};
     __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 486, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 485, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":487
+  /* "djing/core/Foundation/Djing.py":486
  *             collect(cls._dashboards)
  *             .filter(authorize_dashboard)
  *             .flat_map(dashboard_cards)             # <<<<<<<<<<<<<<
  *             .unique()
  *             .filter(authorize_dashboard)
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_flat_map); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 487, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_flat_map); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -20512,19 +20565,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
     PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_dashboard_cards};
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 487, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 486, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":488
+  /* "djing/core/Foundation/Djing.py":487
  *             .filter(authorize_dashboard)
  *             .flat_map(dashboard_cards)
  *             .unique()             # <<<<<<<<<<<<<<
  *             .filter(authorize_dashboard)
  *             .values()
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_unique); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 488, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_unique); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -20545,19 +20598,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 488, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 487, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":489
+  /* "djing/core/Foundation/Djing.py":488
  *             .flat_map(dashboard_cards)
  *             .unique()
  *             .filter(authorize_dashboard)             # <<<<<<<<<<<<<<
  *             .values()
  *         )
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_filter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 489, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_filter); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -20578,19 +20631,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_authorize_dashboard};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 489, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 488, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":490
+  /* "djing/core/Foundation/Djing.py":489
  *             .unique()
  *             .filter(authorize_dashboard)
  *             .values()             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_values); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 490, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_values); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -20611,14 +20664,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 0+__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 490, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 489, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __pyx_v_items = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":493
+  /* "djing/core/Foundation/Djing.py":492
  *         )
  * 
  *         return items             # <<<<<<<<<<<<<<
@@ -20630,7 +20683,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
   __pyx_r = __pyx_v_items;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":476
+  /* "djing/core/Foundation/Djing.py":475
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -20661,7 +20714,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_88all_availabl
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":495
+/* "djing/core/Foundation/Djing.py":494
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -20725,7 +20778,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 495, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 494, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -20733,14 +20786,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 495, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 494, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("resources_in", 1, 2, 2, 1); __PYX_ERR(0, 495, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("resources_in", 1, 2, 2, 1); __PYX_ERR(0, 494, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resources_in") < 0)) __PYX_ERR(0, 495, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resources_in") < 0)) __PYX_ERR(0, 494, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -20753,7 +20806,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("resources_in", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 495, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("resources_in", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 494, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -20827,7 +20880,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("resources_in", 1);
 
-  /* "djing/core/Foundation/Djing.py":497
+  /* "djing/core/Foundation/Djing.py":496
  *     @classmethod
  *     def resources_in(cls, resource_path: Path):
  *         try:             # <<<<<<<<<<<<<<
@@ -20843,14 +20896,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "djing/core/Foundation/Djing.py":498
+      /* "djing/core/Foundation/Djing.py":497
  *     def resources_in(cls, resource_path: Path):
  *         try:
  *             app_path = resource_path.as_posix().replace("/", ".").strip(".")             # <<<<<<<<<<<<<<
  * 
  *             resources = []
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource_path, __pyx_n_s_as_posix); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 498, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource_path, __pyx_n_s_as_posix); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 497, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = NULL;
       __pyx_t_8 = 0;
@@ -20870,17 +20923,17 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
         __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 498, __pyx_L3_error)
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 497, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_replace); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 498, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_replace); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 497, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 498, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 497, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_strip); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 498, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_strip); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 497, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_5 = NULL;
@@ -20901,33 +20954,33 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_kp_u__26};
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 498, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 497, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __pyx_v_app_path = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "djing/core/Foundation/Djing.py":500
+      /* "djing/core/Foundation/Djing.py":499
  *             app_path = resource_path.as_posix().replace("/", ".").strip(".")
  * 
  *             resources = []             # <<<<<<<<<<<<<<
  * 
  *             for module_path in resource_path.glob("*.py"):
  */
-      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 500, __pyx_L3_error)
+      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 499, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_v_resources = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "djing/core/Foundation/Djing.py":502
+      /* "djing/core/Foundation/Djing.py":501
  *             resources = []
  * 
  *             for module_path in resource_path.glob("*.py"):             # <<<<<<<<<<<<<<
  *                 module_name = module_path.stem
  * 
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource_path, __pyx_n_s_glob); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 502, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource_path, __pyx_n_s_glob); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 501, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_5 = NULL;
       __pyx_t_8 = 0;
@@ -20947,7 +21000,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_kp_u_py};
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 502, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 501, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
@@ -20956,9 +21009,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         __pyx_t_9 = 0;
         __pyx_t_10 = NULL;
       } else {
-        __pyx_t_9 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 502, __pyx_L3_error)
+        __pyx_t_9 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 501, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_10 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_6); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 502, __pyx_L3_error)
+        __pyx_t_10 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_6); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 501, __pyx_L3_error)
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       for (;;) {
@@ -20967,28 +21020,28 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_6);
               #if !CYTHON_ASSUME_SAFE_MACROS
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 502, __pyx_L3_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 501, __pyx_L3_error)
               #endif
               if (__pyx_t_9 >= __pyx_temp) break;
             }
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_4 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_9); __Pyx_INCREF(__pyx_t_4); __pyx_t_9++; if (unlikely((0 < 0))) __PYX_ERR(0, 502, __pyx_L3_error)
+            __pyx_t_4 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_9); __Pyx_INCREF(__pyx_t_4); __pyx_t_9++; if (unlikely((0 < 0))) __PYX_ERR(0, 501, __pyx_L3_error)
             #else
-            __pyx_t_4 = __Pyx_PySequence_ITEM(__pyx_t_6, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 502, __pyx_L3_error)
+            __pyx_t_4 = __Pyx_PySequence_ITEM(__pyx_t_6, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 501, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_4);
             #endif
           } else {
             {
               Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_6);
               #if !CYTHON_ASSUME_SAFE_MACROS
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 502, __pyx_L3_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 501, __pyx_L3_error)
               #endif
               if (__pyx_t_9 >= __pyx_temp) break;
             }
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_9); __Pyx_INCREF(__pyx_t_4); __pyx_t_9++; if (unlikely((0 < 0))) __PYX_ERR(0, 502, __pyx_L3_error)
+            __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_9); __Pyx_INCREF(__pyx_t_4); __pyx_t_9++; if (unlikely((0 < 0))) __PYX_ERR(0, 501, __pyx_L3_error)
             #else
-            __pyx_t_4 = __Pyx_PySequence_ITEM(__pyx_t_6, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 502, __pyx_L3_error)
+            __pyx_t_4 = __Pyx_PySequence_ITEM(__pyx_t_6, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 501, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_4);
             #endif
           }
@@ -20998,7 +21051,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 502, __pyx_L3_error)
+              else __PYX_ERR(0, 501, __pyx_L3_error)
             }
             break;
           }
@@ -21007,29 +21060,29 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         __Pyx_XDECREF_SET(__pyx_v_module_path, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "djing/core/Foundation/Djing.py":503
+        /* "djing/core/Foundation/Djing.py":502
  * 
  *             for module_path in resource_path.glob("*.py"):
  *                 module_name = module_path.stem             # <<<<<<<<<<<<<<
  * 
  *                 if module_name == "Resource":
  */
-        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_module_path, __pyx_n_s_stem); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 503, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_module_path, __pyx_n_s_stem); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 502, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_XDECREF_SET(__pyx_v_module_name, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "djing/core/Foundation/Djing.py":505
+        /* "djing/core/Foundation/Djing.py":504
  *                 module_name = module_path.stem
  * 
  *                 if module_name == "Resource":             # <<<<<<<<<<<<<<
  *                     continue
  * 
  */
-        __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_module_name, __pyx_n_u_Resource, Py_EQ)); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 505, __pyx_L3_error)
+        __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_module_name, __pyx_n_u_Resource, Py_EQ)); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 504, __pyx_L3_error)
         if (__pyx_t_11) {
 
-          /* "djing/core/Foundation/Djing.py":506
+          /* "djing/core/Foundation/Djing.py":505
  * 
  *                 if module_name == "Resource":
  *                     continue             # <<<<<<<<<<<<<<
@@ -21038,7 +21091,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
  */
           goto __pyx_L9_continue;
 
-          /* "djing/core/Foundation/Djing.py":505
+          /* "djing/core/Foundation/Djing.py":504
  *                 module_name = module_path.stem
  * 
  *                 if module_name == "Resource":             # <<<<<<<<<<<<<<
@@ -21047,7 +21100,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
  */
         }
 
-        /* "djing/core/Foundation/Djing.py":508
+        /* "djing/core/Foundation/Djing.py":507
  *                     continue
  * 
  *                 try:             # <<<<<<<<<<<<<<
@@ -21063,23 +21116,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
           __Pyx_XGOTREF(__pyx_t_14);
           /*try:*/ {
 
-            /* "djing/core/Foundation/Djing.py":509
+            /* "djing/core/Foundation/Djing.py":508
  * 
  *                 try:
  *                     module = importlib.import_module(f"{app_path}.{module_name}")             # <<<<<<<<<<<<<<
  * 
  *                     resource_class = getattr(module, module_name, None)
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_importlib); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 509, __pyx_L12_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_importlib); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 508, __pyx_L12_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_import_module); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 509, __pyx_L12_error)
+            __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_import_module); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 508, __pyx_L12_error)
             __Pyx_GOTREF(__pyx_t_7);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_5 = PyTuple_New(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 509, __pyx_L12_error)
+            __pyx_t_5 = PyTuple_New(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 508, __pyx_L12_error)
             __Pyx_GOTREF(__pyx_t_5);
             __pyx_t_15 = 0;
             __pyx_t_16 = 127;
-            __pyx_t_17 = __Pyx_PyObject_FormatSimple(__pyx_v_app_path, __pyx_empty_unicode); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 509, __pyx_L12_error)
+            __pyx_t_17 = __Pyx_PyObject_FormatSimple(__pyx_v_app_path, __pyx_empty_unicode); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 508, __pyx_L12_error)
             __Pyx_GOTREF(__pyx_t_17);
             __pyx_t_16 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_17) > __pyx_t_16) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_17) : __pyx_t_16;
             __pyx_t_15 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_17);
@@ -21090,14 +21143,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
             __pyx_t_15 += 1;
             __Pyx_GIVEREF(__pyx_kp_u__26);
             PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_kp_u__26);
-            __pyx_t_17 = __Pyx_PyObject_FormatSimple(__pyx_v_module_name, __pyx_empty_unicode); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 509, __pyx_L12_error)
+            __pyx_t_17 = __Pyx_PyObject_FormatSimple(__pyx_v_module_name, __pyx_empty_unicode); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 508, __pyx_L12_error)
             __Pyx_GOTREF(__pyx_t_17);
             __pyx_t_16 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_17) > __pyx_t_16) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_17) : __pyx_t_16;
             __pyx_t_15 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_17);
             __Pyx_GIVEREF(__pyx_t_17);
             PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_t_17);
             __pyx_t_17 = 0;
-            __pyx_t_17 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, __pyx_t_15, __pyx_t_16); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 509, __pyx_L12_error)
+            __pyx_t_17 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, __pyx_t_15, __pyx_t_16); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 508, __pyx_L12_error)
             __Pyx_GOTREF(__pyx_t_17);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __pyx_t_5 = NULL;
@@ -21119,56 +21172,56 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
               __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
               __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-              if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 509, __pyx_L12_error)
+              if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 508, __pyx_L12_error)
               __Pyx_GOTREF(__pyx_t_4);
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
             }
             __Pyx_XDECREF_SET(__pyx_v_module, __pyx_t_4);
             __pyx_t_4 = 0;
 
-            /* "djing/core/Foundation/Djing.py":511
+            /* "djing/core/Foundation/Djing.py":510
  *                     module = importlib.import_module(f"{app_path}.{module_name}")
  * 
  *                     resource_class = getattr(module, module_name, None)             # <<<<<<<<<<<<<<
  * 
  *                     if resource_class and issubclass(resource_class, Resource):
  */
-            __pyx_t_4 = __Pyx_GetAttr3(__pyx_v_module, __pyx_v_module_name, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 511, __pyx_L12_error)
+            __pyx_t_4 = __Pyx_GetAttr3(__pyx_v_module, __pyx_v_module_name, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 510, __pyx_L12_error)
             __Pyx_GOTREF(__pyx_t_4);
             __Pyx_XDECREF_SET(__pyx_v_resource_class, __pyx_t_4);
             __pyx_t_4 = 0;
 
-            /* "djing/core/Foundation/Djing.py":513
+            /* "djing/core/Foundation/Djing.py":512
  *                     resource_class = getattr(module, module_name, None)
  * 
  *                     if resource_class and issubclass(resource_class, Resource):             # <<<<<<<<<<<<<<
  *                         resources.append(resource_class)
  *                     else:
  */
-            __pyx_t_18 = __Pyx_PyObject_IsTrue(__pyx_v_resource_class); if (unlikely((__pyx_t_18 < 0))) __PYX_ERR(0, 513, __pyx_L12_error)
+            __pyx_t_18 = __Pyx_PyObject_IsTrue(__pyx_v_resource_class); if (unlikely((__pyx_t_18 < 0))) __PYX_ERR(0, 512, __pyx_L12_error)
             if (__pyx_t_18) {
             } else {
               __pyx_t_11 = __pyx_t_18;
               goto __pyx_L21_bool_binop_done;
             }
-            __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Resource); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 513, __pyx_L12_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Resource); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 512, __pyx_L12_error)
             __Pyx_GOTREF(__pyx_t_4);
-            __pyx_t_18 = PyObject_IsSubclass(__pyx_v_resource_class, __pyx_t_4); if (unlikely(__pyx_t_18 == ((int)-1))) __PYX_ERR(0, 513, __pyx_L12_error)
+            __pyx_t_18 = PyObject_IsSubclass(__pyx_v_resource_class, __pyx_t_4); if (unlikely(__pyx_t_18 == ((int)-1))) __PYX_ERR(0, 512, __pyx_L12_error)
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             __pyx_t_11 = __pyx_t_18;
             __pyx_L21_bool_binop_done:;
             if (__pyx_t_11) {
 
-              /* "djing/core/Foundation/Djing.py":514
+              /* "djing/core/Foundation/Djing.py":513
  * 
  *                     if resource_class and issubclass(resource_class, Resource):
  *                         resources.append(resource_class)             # <<<<<<<<<<<<<<
  *                     else:
  *                         print(
  */
-              __pyx_t_19 = __Pyx_PyList_Append(__pyx_v_resources, __pyx_v_resource_class); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 514, __pyx_L12_error)
+              __pyx_t_19 = __Pyx_PyList_Append(__pyx_v_resources, __pyx_v_resource_class); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 513, __pyx_L12_error)
 
-              /* "djing/core/Foundation/Djing.py":513
+              /* "djing/core/Foundation/Djing.py":512
  *                     resource_class = getattr(module, module_name, None)
  * 
  *                     if resource_class and issubclass(resource_class, Resource):             # <<<<<<<<<<<<<<
@@ -21178,7 +21231,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
               goto __pyx_L20;
             }
 
-            /* "djing/core/Foundation/Djing.py":516
+            /* "djing/core/Foundation/Djing.py":515
  *                         resources.append(resource_class)
  *                     else:
  *                         print(             # <<<<<<<<<<<<<<
@@ -21187,34 +21240,34 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
  */
             /*else*/ {
 
-              /* "djing/core/Foundation/Djing.py":517
+              /* "djing/core/Foundation/Djing.py":516
  *                     else:
  *                         print(
  *                             f"Skipping invalid resource class in module: {module_name}"             # <<<<<<<<<<<<<<
  *                         )
  *                 except Exception as mod_err:
  */
-              __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_module_name, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 517, __pyx_L12_error)
+              __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_module_name, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 516, __pyx_L12_error)
               __Pyx_GOTREF(__pyx_t_4);
-              __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Skipping_invalid_resource_class, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 517, __pyx_L12_error)
+              __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Skipping_invalid_resource_class, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 516, __pyx_L12_error)
               __Pyx_GOTREF(__pyx_t_7);
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-              /* "djing/core/Foundation/Djing.py":516
+              /* "djing/core/Foundation/Djing.py":515
  *                         resources.append(resource_class)
  *                     else:
  *                         print(             # <<<<<<<<<<<<<<
  *                             f"Skipping invalid resource class in module: {module_name}"
  *                         )
  */
-              __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 516, __pyx_L12_error)
+              __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 515, __pyx_L12_error)
               __Pyx_GOTREF(__pyx_t_4);
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             }
             __pyx_L20:;
 
-            /* "djing/core/Foundation/Djing.py":508
+            /* "djing/core/Foundation/Djing.py":507
  *                     continue
  * 
  *                 try:             # <<<<<<<<<<<<<<
@@ -21232,7 +21285,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-          /* "djing/core/Foundation/Djing.py":519
+          /* "djing/core/Foundation/Djing.py":518
  *                             f"Skipping invalid resource class in module: {module_name}"
  *                         )
  *                 except Exception as mod_err:             # <<<<<<<<<<<<<<
@@ -21242,7 +21295,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
           __pyx_t_20 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
           if (__pyx_t_20) {
             __Pyx_AddTraceback("djing.core.Foundation.Djing.Djing.resources_in", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_7, &__pyx_t_17) < 0) __PYX_ERR(0, 519, __pyx_L14_except_error)
+            if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_7, &__pyx_t_17) < 0) __PYX_ERR(0, 518, __pyx_L14_except_error)
             __Pyx_XGOTREF(__pyx_t_4);
             __Pyx_XGOTREF(__pyx_t_7);
             __Pyx_XGOTREF(__pyx_t_17);
@@ -21250,14 +21303,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
             __pyx_v_mod_err = __pyx_t_7;
             /*try:*/ {
 
-              /* "djing/core/Foundation/Djing.py":520
+              /* "djing/core/Foundation/Djing.py":519
  *                         )
  *                 except Exception as mod_err:
  *                     print(f"Error importing module {module_name}: {mod_err}")             # <<<<<<<<<<<<<<
  * 
  *             cls.resources(collect(resources).sort().all())
  */
-              __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 520, __pyx_L28_error)
+              __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 519, __pyx_L28_error)
               __Pyx_GOTREF(__pyx_t_5);
               __pyx_t_15 = 0;
               __pyx_t_16 = 127;
@@ -21265,7 +21318,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
               __pyx_t_15 += 23;
               __Pyx_GIVEREF(__pyx_kp_u_Error_importing_module);
               PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_kp_u_Error_importing_module);
-              __pyx_t_21 = __Pyx_PyObject_FormatSimple(__pyx_v_module_name, __pyx_empty_unicode); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 520, __pyx_L28_error)
+              __pyx_t_21 = __Pyx_PyObject_FormatSimple(__pyx_v_module_name, __pyx_empty_unicode); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 519, __pyx_L28_error)
               __Pyx_GOTREF(__pyx_t_21);
               __pyx_t_16 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_21) > __pyx_t_16) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_21) : __pyx_t_16;
               __pyx_t_15 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_21);
@@ -21276,23 +21329,23 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
               __pyx_t_15 += 2;
               __Pyx_GIVEREF(__pyx_kp_u__28);
               PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_kp_u__28);
-              __pyx_t_21 = __Pyx_PyObject_FormatSimple(__pyx_v_mod_err, __pyx_empty_unicode); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 520, __pyx_L28_error)
+              __pyx_t_21 = __Pyx_PyObject_FormatSimple(__pyx_v_mod_err, __pyx_empty_unicode); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 519, __pyx_L28_error)
               __Pyx_GOTREF(__pyx_t_21);
               __pyx_t_16 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_21) > __pyx_t_16) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_21) : __pyx_t_16;
               __pyx_t_15 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_21);
               __Pyx_GIVEREF(__pyx_t_21);
               PyTuple_SET_ITEM(__pyx_t_5, 3, __pyx_t_21);
               __pyx_t_21 = 0;
-              __pyx_t_21 = __Pyx_PyUnicode_Join(__pyx_t_5, 4, __pyx_t_15, __pyx_t_16); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 520, __pyx_L28_error)
+              __pyx_t_21 = __Pyx_PyUnicode_Join(__pyx_t_5, 4, __pyx_t_15, __pyx_t_16); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 519, __pyx_L28_error)
               __Pyx_GOTREF(__pyx_t_21);
               __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-              __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_21); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 520, __pyx_L28_error)
+              __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_21); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 519, __pyx_L28_error)
               __Pyx_GOTREF(__pyx_t_5);
               __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
               __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             }
 
-            /* "djing/core/Foundation/Djing.py":519
+            /* "djing/core/Foundation/Djing.py":518
  *                             f"Skipping invalid resource class in module: {module_name}"
  *                         )
  *                 except Exception as mod_err:             # <<<<<<<<<<<<<<
@@ -21346,7 +21399,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
           }
           goto __pyx_L14_except_error;
 
-          /* "djing/core/Foundation/Djing.py":508
+          /* "djing/core/Foundation/Djing.py":507
  *                     continue
  * 
  *                 try:             # <<<<<<<<<<<<<<
@@ -21367,7 +21420,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
           __pyx_L19_try_end:;
         }
 
-        /* "djing/core/Foundation/Djing.py":502
+        /* "djing/core/Foundation/Djing.py":501
  *             resources = []
  * 
  *             for module_path in resource_path.glob("*.py"):             # <<<<<<<<<<<<<<
@@ -21378,16 +21431,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "djing/core/Foundation/Djing.py":522
+      /* "djing/core/Foundation/Djing.py":521
  *                     print(f"Error importing module {module_name}: {mod_err}")
  * 
  *             cls.resources(collect(resources).sort().all())             # <<<<<<<<<<<<<<
  *         except Exception as e:
  *             print(f"Error in resources_in: {e}")
  */
-      __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_resources_2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 522, __pyx_L3_error)
+      __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_resources_2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 521, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_17);
-      __Pyx_GetModuleGlobalName(__pyx_t_21, __pyx_n_s_collect); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 522, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_21, __pyx_n_s_collect); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 521, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_21);
       __pyx_t_30 = NULL;
       __pyx_t_8 = 0;
@@ -21407,11 +21460,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         PyObject *__pyx_callargs[2] = {__pyx_t_30, __pyx_v_resources};
         __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_21, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
         __Pyx_XDECREF(__pyx_t_30); __pyx_t_30 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 522, __pyx_L3_error)
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 521, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
       }
-      __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_sort); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 522, __pyx_L3_error)
+      __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_sort); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 521, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_5 = NULL;
@@ -21432,11 +21485,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_21, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 522, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 521, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
       }
-      __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_all); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 522, __pyx_L3_error)
+      __pyx_t_21 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_all); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 521, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_4 = NULL;
@@ -21457,7 +21510,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
         __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_21, __pyx_callargs+1-__pyx_t_8, 0+__pyx_t_8);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 522, __pyx_L3_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 521, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
       }
@@ -21480,13 +21533,13 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
         __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_17, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
         __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 522, __pyx_L3_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 521, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "djing/core/Foundation/Djing.py":497
+      /* "djing/core/Foundation/Djing.py":496
  *     @classmethod
  *     def resources_in(cls, resource_path: Path):
  *         try:             # <<<<<<<<<<<<<<
@@ -21507,7 +21560,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "djing/core/Foundation/Djing.py":523
+    /* "djing/core/Foundation/Djing.py":522
  * 
  *             cls.resources(collect(resources).sort().all())
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -21517,7 +21570,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
     __pyx_t_22 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
     if (__pyx_t_22) {
       __Pyx_AddTraceback("djing.core.Foundation.Djing.Djing.resources_in", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_17, &__pyx_t_7) < 0) __PYX_ERR(0, 523, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_17, &__pyx_t_7) < 0) __PYX_ERR(0, 522, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_6);
       __Pyx_XGOTREF(__pyx_t_17);
       __Pyx_XGOTREF(__pyx_t_7);
@@ -21525,25 +21578,25 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
       __pyx_v_e = __pyx_t_17;
       /*try:*/ {
 
-        /* "djing/core/Foundation/Djing.py":524
+        /* "djing/core/Foundation/Djing.py":523
  *             cls.resources(collect(resources).sort().all())
  *         except Exception as e:
  *             print(f"Error in resources_in: {e}")             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
-        __pyx_t_21 = __Pyx_PyObject_FormatSimple(__pyx_v_e, __pyx_empty_unicode); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 524, __pyx_L40_error)
+        __pyx_t_21 = __Pyx_PyObject_FormatSimple(__pyx_v_e, __pyx_empty_unicode); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 523, __pyx_L40_error)
         __Pyx_GOTREF(__pyx_t_21);
-        __pyx_t_4 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Error_in_resources_in, __pyx_t_21); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 524, __pyx_L40_error)
+        __pyx_t_4 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Error_in_resources_in, __pyx_t_21); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 523, __pyx_L40_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-        __pyx_t_21 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_4); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 524, __pyx_L40_error)
+        __pyx_t_21 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_4); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 523, __pyx_L40_error)
         __Pyx_GOTREF(__pyx_t_21);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
       }
 
-      /* "djing/core/Foundation/Djing.py":523
+      /* "djing/core/Foundation/Djing.py":522
  * 
  *             cls.resources(collect(resources).sort().all())
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -21599,7 +21652,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
     }
     goto __pyx_L5_except_error;
 
-    /* "djing/core/Foundation/Djing.py":497
+    /* "djing/core/Foundation/Djing.py":496
  *     @classmethod
  *     def resources_in(cls, resource_path: Path):
  *         try:             # <<<<<<<<<<<<<<
@@ -21620,7 +21673,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
     __pyx_L8_try_end:;
   }
 
-  /* "djing/core/Foundation/Djing.py":495
+  /* "djing/core/Foundation/Djing.py":494
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -21655,7 +21708,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_90resources_in
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":526
+/* "djing/core/Foundation/Djing.py":525
  *             print(f"Error in resources_in: {e}")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -21719,7 +21772,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 526, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 525, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -21727,14 +21780,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 526, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 525, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("humanize", 1, 2, 2, 1); __PYX_ERR(0, 526, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("humanize", 1, 2, 2, 1); __PYX_ERR(0, 525, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "humanize") < 0)) __PYX_ERR(0, 526, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "humanize") < 0)) __PYX_ERR(0, 525, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -21747,7 +21800,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("humanize", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 526, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("humanize", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 525, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -21789,7 +21842,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("humanize", 1);
 
-  /* "djing/core/Foundation/Djing.py":528
+  /* "djing/core/Foundation/Djing.py":527
  *     @classmethod
  *     def humanize(cls, value) -> str:
  *         if isinstance(value, str):             # <<<<<<<<<<<<<<
@@ -21799,7 +21852,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
   __pyx_t_1 = PyUnicode_Check(__pyx_v_value); 
   if (__pyx_t_1) {
 
-    /* "djing/core/Foundation/Djing.py":529
+    /* "djing/core/Foundation/Djing.py":528
  *     def humanize(cls, value) -> str:
  *         if isinstance(value, str):
  *             return Str.title(Str.snake(value, " "))             # <<<<<<<<<<<<<<
@@ -21807,14 +21860,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
  *         return cls.humanize(value.__class__.__name__)
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Str); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 529, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_Str); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 528, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_title); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 529, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_title); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 528, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Str); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 529, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Str); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 528, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_snake); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 529, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_snake); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 528, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -21835,7 +21888,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
       PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_v_value, __pyx_kp_u__29};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 529, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 528, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
@@ -21858,16 +21911,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 529, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 528, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
-    if (!(likely(PyUnicode_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_2))) __PYX_ERR(0, 529, __pyx_L1_error)
+    if (!(likely(PyUnicode_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_2))) __PYX_ERR(0, 528, __pyx_L1_error)
     __pyx_r = ((PyObject*)__pyx_t_2);
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":528
+    /* "djing/core/Foundation/Djing.py":527
  *     @classmethod
  *     def humanize(cls, value) -> str:
  *         if isinstance(value, str):             # <<<<<<<<<<<<<<
@@ -21876,7 +21929,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":531
+  /* "djing/core/Foundation/Djing.py":530
  *             return Str.title(Str.snake(value, " "))
  * 
  *         return cls.humanize(value.__class__.__name__)             # <<<<<<<<<<<<<<
@@ -21884,11 +21937,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_humanize); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 531, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_humanize); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 530, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_value, __pyx_n_s_class); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 531, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_value, __pyx_n_s_class); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 530, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_name_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 531, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_name_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 530, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -21910,16 +21963,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 531, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 530, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_2))) __PYX_ERR(0, 531, __pyx_L1_error)
+  if (!(likely(PyUnicode_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_t_2))) __PYX_ERR(0, 530, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":526
+  /* "djing/core/Foundation/Djing.py":525
  *             print(f"Error in resources_in: {e}")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -21942,7 +21995,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_92humanize(CYT
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":533
+/* "djing/core/Foundation/Djing.py":532
  *         return cls.humanize(value.__class__.__name__)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -22006,7 +22059,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 533, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 532, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -22014,14 +22067,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 533, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 532, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("grouped_resources_for_navigation", 1, 2, 2, 1); __PYX_ERR(0, 533, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("grouped_resources_for_navigation", 1, 2, 2, 1); __PYX_ERR(0, 532, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "grouped_resources_for_navigation") < 0)) __PYX_ERR(0, 533, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "grouped_resources_for_navigation") < 0)) __PYX_ERR(0, 532, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -22034,7 +22087,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("grouped_resources_for_navigation", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 533, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("grouped_resources_for_navigation", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 532, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22061,7 +22114,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":537
+/* "djing/core/Foundation/Djing.py":536
  *         available_resources = cls.available_resources(request)
  * 
  *         def resource_filter(resource):             # <<<<<<<<<<<<<<
@@ -22122,12 +22175,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 537, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 536, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resource_filter") < 0)) __PYX_ERR(0, 537, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resource_filter") < 0)) __PYX_ERR(0, 536, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -22138,7 +22191,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("resource_filter", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 537, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("resource_filter", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 536, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22177,7 +22230,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32grouped_reso
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("resource_filter", 1);
 
-  /* "djing/core/Foundation/Djing.py":538
+  /* "djing/core/Foundation/Djing.py":537
  * 
  *         def resource_filter(resource):
  *             return resource.count()             # <<<<<<<<<<<<<<
@@ -22185,7 +22238,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32grouped_reso
  *         return (
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 538, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 537, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -22205,7 +22258,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32grouped_reso
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 538, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 537, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -22213,7 +22266,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32grouped_reso
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":537
+  /* "djing/core/Foundation/Djing.py":536
  *         available_resources = cls.available_resources(request)
  * 
  *         def resource_filter(resource):             # <<<<<<<<<<<<<<
@@ -22234,7 +22287,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_32grouped_reso
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":533
+/* "djing/core/Foundation/Djing.py":532
  *         return cls.humanize(value.__class__.__name__)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -22258,14 +22311,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_94grouped_reso
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("grouped_resources_for_navigation", 1);
 
-  /* "djing/core/Foundation/Djing.py":535
+  /* "djing/core/Foundation/Djing.py":534
  *     @classmethod
  *     def grouped_resources_for_navigation(cls, request: DjingRequest):
  *         available_resources = cls.available_resources(request)             # <<<<<<<<<<<<<<
  * 
  *         def resource_filter(resource):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_available_resources); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 535, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_available_resources); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 534, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -22285,26 +22338,26 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_94grouped_reso
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 535, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 534, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_available_resources = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":537
+  /* "djing/core/Foundation/Djing.py":536
  *         available_resources = cls.available_resources(request)
  * 
  *         def resource_filter(resource):             # <<<<<<<<<<<<<<
  *             return resource.count()
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_32grouped_resources_for_navigation_1resource_filter, 0, __pyx_n_s_Djing_grouped_resources_for_navi, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 537, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_32grouped_resources_for_navigation_1resource_filter, 0, __pyx_n_s_Djing_grouped_resources_for_navi, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 536, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_resource_filter = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":540
+  /* "djing/core/Foundation/Djing.py":539
  *             return resource.count()
  * 
  *         return (             # <<<<<<<<<<<<<<
@@ -22313,16 +22366,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_94grouped_reso
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "djing/core/Foundation/Djing.py":541
+  /* "djing/core/Foundation/Djing.py":540
  * 
  *         return (
  *             ResourceCollection.make(available_resources)             # <<<<<<<<<<<<<<
  *             .grouped_for_navigation(request)
  *             .filter(resource_filter)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ResourceCollection); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 541, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_ResourceCollection); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 540, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_make); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 541, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_make); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 540, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -22343,19 +22396,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_94grouped_reso
     PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_available_resources};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 541, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 540, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":542
+  /* "djing/core/Foundation/Djing.py":541
  *         return (
  *             ResourceCollection.make(available_resources)
  *             .grouped_for_navigation(request)             # <<<<<<<<<<<<<<
  *             .filter(resource_filter)
  *         )
  */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_grouped_for_navigation); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 542, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_grouped_for_navigation); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 541, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -22376,19 +22429,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_94grouped_reso
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_request};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 542, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 541, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
 
-  /* "djing/core/Foundation/Djing.py":543
+  /* "djing/core/Foundation/Djing.py":542
  *             ResourceCollection.make(available_resources)
  *             .grouped_for_navigation(request)
  *             .filter(resource_filter)             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_filter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 543, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_filter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 542, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -22409,7 +22462,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_94grouped_reso
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_resource_filter};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 543, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 542, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
@@ -22417,7 +22470,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_94grouped_reso
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":533
+  /* "djing/core/Foundation/Djing.py":532
  *         return cls.humanize(value.__class__.__name__)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -22442,7 +22495,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_94grouped_reso
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":546
+/* "djing/core/Foundation/Djing.py":545
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -22506,7 +22559,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 546, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 545, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -22514,14 +22567,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 546, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 545, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("sort_resources_by", 1, 2, 2, 1); __PYX_ERR(0, 546, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("sort_resources_by", 1, 2, 2, 1); __PYX_ERR(0, 545, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "sort_resources_by") < 0)) __PYX_ERR(0, 546, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "sort_resources_by") < 0)) __PYX_ERR(0, 545, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -22534,7 +22587,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("sort_resources_by", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 546, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("sort_resources_by", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 545, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22573,16 +22626,16 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_96sort_resourc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("sort_resources_by", 1);
 
-  /* "djing/core/Foundation/Djing.py":548
+  /* "djing/core/Foundation/Djing.py":547
  *     @classmethod
  *     def sort_resources_by(cls, callback) -> "Djing":
  *         cls._sort_callback = callback             # <<<<<<<<<<<<<<
  * 
  *         return cls()
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_sort_callback, __pyx_v_callback) < 0) __PYX_ERR(0, 548, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_cls, __pyx_n_s_sort_callback, __pyx_v_callback) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":550
+  /* "djing/core/Foundation/Djing.py":549
  *         cls._sort_callback = callback
  * 
  *         return cls()             # <<<<<<<<<<<<<<
@@ -22609,7 +22662,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_96sort_resourc
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 550, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 549, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -22617,7 +22670,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_96sort_resourc
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":546
+  /* "djing/core/Foundation/Djing.py":545
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -22638,7 +22691,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_96sort_resourc
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":552
+/* "djing/core/Foundation/Djing.py":551
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -22699,12 +22752,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 552, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 551, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "sort_resources_with") < 0)) __PYX_ERR(0, 552, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "sort_resources_with") < 0)) __PYX_ERR(0, 551, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -22715,7 +22768,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("sort_resources_with", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 552, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("sort_resources_with", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 551, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22742,7 +22795,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":554
+/* "djing/core/Foundation/Djing.py":553
  *     @classmethod
  *     def sort_resources_with(cls):
  *         def default_sort_resources_with(resource):             # <<<<<<<<<<<<<<
@@ -22803,12 +22856,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 554, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 553, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "default_sort_resources_with") < 0)) __PYX_ERR(0, 554, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "default_sort_resources_with") < 0)) __PYX_ERR(0, 553, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -22819,7 +22872,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("default_sort_resources_with", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 554, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("default_sort_resources_with", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 553, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22858,7 +22911,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_19sort_resourc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("default_sort_resources_with", 1);
 
-  /* "djing/core/Foundation/Djing.py":555
+  /* "djing/core/Foundation/Djing.py":554
  *     def sort_resources_with(cls):
  *         def default_sort_resources_with(resource):
  *             return resource.label()             # <<<<<<<<<<<<<<
@@ -22866,7 +22919,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_19sort_resourc
  *         return cls._sort_callback if cls._sort_callback else default_sort_resources_with
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_label); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 555, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_label); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 554, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -22886,7 +22939,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_19sort_resourc
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 555, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 554, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -22894,7 +22947,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_19sort_resourc
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":554
+  /* "djing/core/Foundation/Djing.py":553
  *     @classmethod
  *     def sort_resources_with(cls):
  *         def default_sort_resources_with(resource):             # <<<<<<<<<<<<<<
@@ -22915,7 +22968,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_19sort_resourc
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":552
+/* "djing/core/Foundation/Djing.py":551
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -22935,19 +22988,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_98sort_resourc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("sort_resources_with", 1);
 
-  /* "djing/core/Foundation/Djing.py":554
+  /* "djing/core/Foundation/Djing.py":553
  *     @classmethod
  *     def sort_resources_with(cls):
  *         def default_sort_resources_with(resource):             # <<<<<<<<<<<<<<
  *             return resource.label()
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_19sort_resources_with_1default_sort_resources_with, 0, __pyx_n_s_Djing_sort_resources_with_locals, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 554, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_19sort_resources_with_1default_sort_resources_with, 0, __pyx_n_s_Djing_sort_resources_with_locals, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 553, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_default_sort_resources_with = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":557
+  /* "djing/core/Foundation/Djing.py":556
  *             return resource.label()
  * 
  *         return cls._sort_callback if cls._sort_callback else default_sort_resources_with             # <<<<<<<<<<<<<<
@@ -22955,12 +23008,12 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_98sort_resourc
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_sort_callback); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 557, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_sort_callback); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 556, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 557, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 556, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_3) {
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_sort_callback); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 557, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_sort_callback); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 556, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -22972,7 +23025,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_98sort_resourc
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":552
+  /* "djing/core/Foundation/Djing.py":551
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -22993,7 +23046,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_98sort_resourc
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":559
+/* "djing/core/Foundation/Djing.py":558
  *         return cls._sort_callback if cls._sort_callback else default_sort_resources_with
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -23060,7 +23113,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 559, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 558, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -23068,9 +23121,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 559, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 558, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("dashboard_for_key", 1, 3, 3, 1); __PYX_ERR(0, 559, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("dashboard_for_key", 1, 3, 3, 1); __PYX_ERR(0, 558, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -23078,14 +23131,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 559, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 558, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("dashboard_for_key", 1, 3, 3, 2); __PYX_ERR(0, 559, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("dashboard_for_key", 1, 3, 3, 2); __PYX_ERR(0, 558, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "dashboard_for_key") < 0)) __PYX_ERR(0, 559, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "dashboard_for_key") < 0)) __PYX_ERR(0, 558, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -23100,7 +23153,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("dashboard_for_key", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 559, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("dashboard_for_key", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 558, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23127,7 +23180,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":561
+/* "djing/core/Foundation/Djing.py":560
  *     @classmethod
  *     def dashboard_for_key(cls, key, request: DjingRequest):
  *         def authorize_dashboard(dashboard):             # <<<<<<<<<<<<<<
@@ -23188,12 +23241,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 561, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 560, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorize_dashboard") < 0)) __PYX_ERR(0, 561, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorize_dashboard") < 0)) __PYX_ERR(0, 560, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -23204,7 +23257,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("authorize_dashboard", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 561, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("authorize_dashboard", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 560, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23249,7 +23302,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_fo
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":562
+  /* "djing/core/Foundation/Djing.py":561
  *     def dashboard_for_key(cls, key, request: DjingRequest):
  *         def authorize_dashboard(dashboard):
  *             return dashboard.uri_key() == key and dashboard.authorize(request)             # <<<<<<<<<<<<<<
@@ -23257,7 +23310,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_fo
  *         return collect(cls._dashboards).first(authorize_dashboard)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_uri_key); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 562, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_uri_key); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 561, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -23277,14 +23330,14 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_fo
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 562, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 561, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  if (unlikely(!__pyx_cur_scope->__pyx_v_key)) { __Pyx_RaiseClosureNameError("key"); __PYX_ERR(0, 562, __pyx_L1_error) }
-  __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_cur_scope->__pyx_v_key, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 562, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_key)) { __Pyx_RaiseClosureNameError("key"); __PYX_ERR(0, 561, __pyx_L1_error) }
+  __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_cur_scope->__pyx_v_key, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 561, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 562, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 561, __pyx_L1_error)
   if (__pyx_t_6) {
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
@@ -23293,9 +23346,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_fo
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     goto __pyx_L3_bool_binop_done;
   }
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_authorize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 562, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_authorize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 561, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 562, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 561, __pyx_L1_error) }
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
   #if CYTHON_UNPACK_METHODS
@@ -23314,7 +23367,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_fo
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_cur_scope->__pyx_v_request};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 562, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 561, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -23326,7 +23379,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_fo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":561
+  /* "djing/core/Foundation/Djing.py":560
  *     @classmethod
  *     def dashboard_for_key(cls, key, request: DjingRequest):
  *         def authorize_dashboard(dashboard):             # <<<<<<<<<<<<<<
@@ -23348,7 +23401,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_fo
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":559
+/* "djing/core/Foundation/Djing.py":558
  *         return cls._sort_callback if cls._sort_callback else default_sort_resources_with
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -23375,7 +23428,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_100dashboard_f
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 559, __pyx_L1_error)
+    __PYX_ERR(0, 558, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -23386,19 +23439,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_100dashboard_f
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_request);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_request);
 
-  /* "djing/core/Foundation/Djing.py":561
+  /* "djing/core/Foundation/Djing.py":560
  *     @classmethod
  *     def dashboard_for_key(cls, key, request: DjingRequest):
  *         def authorize_dashboard(dashboard):             # <<<<<<<<<<<<<<
  *             return dashboard.uri_key() == key and dashboard.authorize(request)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_for_key_1authorize_dashboard, 0, __pyx_n_s_Djing_dashboard_for_key_locals_a, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 561, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17dashboard_for_key_1authorize_dashboard, 0, __pyx_n_s_Djing_dashboard_for_key_locals_a, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 560, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_authorize_dashboard = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":564
+  /* "djing/core/Foundation/Djing.py":563
  *             return dashboard.uri_key() == key and dashboard.authorize(request)
  * 
  *         return collect(cls._dashboards).first(authorize_dashboard)             # <<<<<<<<<<<<<<
@@ -23406,9 +23459,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_100dashboard_f
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_collect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 564, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_collect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 563, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 564, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboards); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 563, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -23429,11 +23482,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_100dashboard_f
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 564, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 563, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_first); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 564, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_first); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 563, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -23454,7 +23507,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_100dashboard_f
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_authorize_dashboard};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 564, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 563, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -23462,7 +23515,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_100dashboard_f
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":559
+  /* "djing/core/Foundation/Djing.py":558
  *         return cls._sort_callback if cls._sort_callback else default_sort_resources_with
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -23487,7 +23540,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_100dashboard_f
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":566
+/* "djing/core/Foundation/Djing.py":565
  *         return collect(cls._dashboards).first(authorize_dashboard)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -23551,7 +23604,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 566, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 565, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -23559,14 +23612,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 566, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 565, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("resource_for_key", 1, 2, 2, 1); __PYX_ERR(0, 566, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("resource_for_key", 1, 2, 2, 1); __PYX_ERR(0, 565, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resource_for_key") < 0)) __PYX_ERR(0, 566, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "resource_for_key") < 0)) __PYX_ERR(0, 565, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -23579,7 +23632,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("resource_for_key", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 566, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("resource_for_key", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 565, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23606,7 +23659,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":568
+/* "djing/core/Foundation/Djing.py":567
  *     @classmethod
  *     def resource_for_key(cls, key):
  *         def filter_key(resource):             # <<<<<<<<<<<<<<
@@ -23667,12 +23720,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 568, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 567, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "filter_key") < 0)) __PYX_ERR(0, 568, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "filter_key") < 0)) __PYX_ERR(0, 567, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -23683,7 +23736,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("filter_key", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 568, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("filter_key", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 567, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23726,7 +23779,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16resource_for
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":569
+  /* "djing/core/Foundation/Djing.py":568
  *     def resource_for_key(cls, key):
  *         def filter_key(resource):
  *             return resource.uri_key() == key             # <<<<<<<<<<<<<<
@@ -23734,7 +23787,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16resource_for
  *         return cls.__resource_collection().first(filter_key)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_uri_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 569, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_resource, __pyx_n_s_uri_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 568, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -23754,18 +23807,18 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16resource_for
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 569, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 568, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  if (unlikely(!__pyx_cur_scope->__pyx_v_key)) { __Pyx_RaiseClosureNameError("key"); __PYX_ERR(0, 569, __pyx_L1_error) }
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_cur_scope->__pyx_v_key, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 569, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_key)) { __Pyx_RaiseClosureNameError("key"); __PYX_ERR(0, 568, __pyx_L1_error) }
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_cur_scope->__pyx_v_key, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 568, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":568
+  /* "djing/core/Foundation/Djing.py":567
  *     @classmethod
  *     def resource_for_key(cls, key):
  *         def filter_key(resource):             # <<<<<<<<<<<<<<
@@ -23786,7 +23839,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_16resource_for
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":566
+/* "djing/core/Foundation/Djing.py":565
  *         return collect(cls._dashboards).first(authorize_dashboard)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -23812,7 +23865,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_102resource_fo
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 566, __pyx_L1_error)
+    __PYX_ERR(0, 565, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -23820,19 +23873,19 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_102resource_fo
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_key);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_key);
 
-  /* "djing/core/Foundation/Djing.py":568
+  /* "djing/core/Foundation/Djing.py":567
  *     @classmethod
  *     def resource_for_key(cls, key):
  *         def filter_key(resource):             # <<<<<<<<<<<<<<
  *             return resource.uri_key() == key
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_16resource_for_key_1filter_key, 0, __pyx_n_s_Djing_resource_for_key_locals_fi, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 568, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_16resource_for_key_1filter_key, 0, __pyx_n_s_Djing_resource_for_key_locals_fi, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 567, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_filter_key = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":571
+  /* "djing/core/Foundation/Djing.py":570
  *             return resource.uri_key() == key
  * 
  *         return cls.__resource_collection().first(filter_key)             # <<<<<<<<<<<<<<
@@ -23840,7 +23893,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_102resource_fo
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__resource_collection); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 571, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_Djing__resource_collection); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 570, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -23860,11 +23913,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_102resource_fo
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 571, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 570, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_first); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 571, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_first); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 570, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -23885,7 +23938,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_102resource_fo
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_filter_key};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 571, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 570, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -23893,7 +23946,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_102resource_fo
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":566
+  /* "djing/core/Foundation/Djing.py":565
  *         return collect(cls._dashboards).first(authorize_dashboard)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -23917,7 +23970,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_102resource_fo
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":573
+/* "djing/core/Foundation/Djing.py":572
  *         return cls.__resource_collection().first(filter_key)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -23984,7 +24037,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 573, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 572, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -23992,9 +24045,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 573, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 572, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("available_dashboard_cards_for_dashboard", 1, 3, 3, 1); __PYX_ERR(0, 573, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("available_dashboard_cards_for_dashboard", 1, 3, 3, 1); __PYX_ERR(0, 572, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -24002,14 +24055,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 573, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 572, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("available_dashboard_cards_for_dashboard", 1, 3, 3, 2); __PYX_ERR(0, 573, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("available_dashboard_cards_for_dashboard", 1, 3, 3, 2); __PYX_ERR(0, 572, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "available_dashboard_cards_for_dashboard") < 0)) __PYX_ERR(0, 573, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "available_dashboard_cards_for_dashboard") < 0)) __PYX_ERR(0, 572, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
@@ -24024,7 +24077,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("available_dashboard_cards_for_dashboard", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 573, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("available_dashboard_cards_for_dashboard", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 572, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -24051,7 +24104,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":575
+/* "djing/core/Foundation/Djing.py":574
  *     @classmethod
  *     def available_dashboard_cards_for_dashboard(cls, key, request: DjingRequest):
  *         def authorize_card(card):             # <<<<<<<<<<<<<<
@@ -24112,12 +24165,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 575, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 574, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorize_card") < 0)) __PYX_ERR(0, 575, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "authorize_card") < 0)) __PYX_ERR(0, 574, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -24128,7 +24181,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("authorize_card", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 575, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("authorize_card", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 574, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -24171,7 +24224,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
   __pyx_outer_scope = (struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "djing/core/Foundation/Djing.py":576
+  /* "djing/core/Foundation/Djing.py":575
  *     def available_dashboard_cards_for_dashboard(cls, key, request: DjingRequest):
  *         def authorize_card(card):
  *             return card.authorize(request)             # <<<<<<<<<<<<<<
@@ -24179,9 +24232,9 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
  *         def get_available_cards(dashboard):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_card, __pyx_n_s_authorize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 576, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_card, __pyx_n_s_authorize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 575, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 576, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_request)) { __Pyx_RaiseClosureNameError("request"); __PYX_ERR(0, 575, __pyx_L1_error) }
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
   #if CYTHON_UNPACK_METHODS
@@ -24200,7 +24253,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 576, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 575, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -24208,7 +24261,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":575
+  /* "djing/core/Foundation/Djing.py":574
  *     @classmethod
  *     def available_dashboard_cards_for_dashboard(cls, key, request: DjingRequest):
  *         def authorize_card(card):             # <<<<<<<<<<<<<<
@@ -24229,7 +24282,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":578
+/* "djing/core/Foundation/Djing.py":577
  *             return card.authorize(request)
  * 
  *         def get_available_cards(dashboard):             # <<<<<<<<<<<<<<
@@ -24290,12 +24343,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 578, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 577, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_available_cards") < 0)) __PYX_ERR(0, 578, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_available_cards") < 0)) __PYX_ERR(0, 577, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -24306,7 +24359,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_available_cards", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 578, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_available_cards", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 577, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -24347,18 +24400,18 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_available_cards", 1);
 
-  /* "djing/core/Foundation/Djing.py":579
+  /* "djing/core/Foundation/Djing.py":578
  * 
  *         def get_available_cards(dashboard):
  *             if not dashboard:             # <<<<<<<<<<<<<<
  *                 return collect()
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_dashboard); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 579, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_dashboard); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 578, __pyx_L1_error)
   __pyx_t_2 = (!__pyx_t_1);
   if (__pyx_t_2) {
 
-    /* "djing/core/Foundation/Djing.py":580
+    /* "djing/core/Foundation/Djing.py":579
  *         def get_available_cards(dashboard):
  *             if not dashboard:
  *                 return collect()             # <<<<<<<<<<<<<<
@@ -24366,7 +24419,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
  *             return dashboard.cards()
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 580, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 579, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     __pyx_t_6 = 0;
@@ -24386,7 +24439,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
       PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 580, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 579, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -24394,7 +24447,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "djing/core/Foundation/Djing.py":579
+    /* "djing/core/Foundation/Djing.py":578
  * 
  *         def get_available_cards(dashboard):
  *             if not dashboard:             # <<<<<<<<<<<<<<
@@ -24403,7 +24456,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
  */
   }
 
-  /* "djing/core/Foundation/Djing.py":582
+  /* "djing/core/Foundation/Djing.py":581
  *                 return collect()
  * 
  *             return dashboard.cards()             # <<<<<<<<<<<<<<
@@ -24411,7 +24464,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
  *         dashboard = cls.dashboard_for_key(key, request)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_cards); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 582, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_dashboard, __pyx_n_s_cards); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 581, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -24431,7 +24484,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
     PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 582, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 581, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
@@ -24439,7 +24492,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":578
+  /* "djing/core/Foundation/Djing.py":577
  *             return card.authorize(request)
  * 
  *         def get_available_cards(dashboard):             # <<<<<<<<<<<<<<
@@ -24460,7 +24513,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_da
   return __pyx_r;
 }
 
-/* "djing/core/Foundation/Djing.py":573
+/* "djing/core/Foundation/Djing.py":572
  *         return cls.__resource_collection().first(filter_key)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -24490,7 +24543,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_104available_d
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 573, __pyx_L1_error)
+    __PYX_ERR(0, 572, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -24498,38 +24551,38 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_104available_d
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_request);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_request);
 
-  /* "djing/core/Foundation/Djing.py":575
+  /* "djing/core/Foundation/Djing.py":574
  *     @classmethod
  *     def available_dashboard_cards_for_dashboard(cls, key, request: DjingRequest):
  *         def authorize_card(card):             # <<<<<<<<<<<<<<
  *             return card.authorize(request)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_39available_dashboard_cards_for_dashboard_1authorize_card, 0, __pyx_n_s_Djing_available_dashboard_cards, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 575, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_39available_dashboard_cards_for_dashboard_1authorize_card, 0, __pyx_n_s_Djing_available_dashboard_cards, ((PyObject*)__pyx_cur_scope), __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 574, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_authorize_card = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":578
+  /* "djing/core/Foundation/Djing.py":577
  *             return card.authorize(request)
  * 
  *         def get_available_cards(dashboard):             # <<<<<<<<<<<<<<
  *             if not dashboard:
  *                 return collect()
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_39available_dashboard_cards_for_dashboard_3get_available_cards, 0, __pyx_n_s_Djing_available_dashboard_cards_2, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 578, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_39available_dashboard_cards_for_dashboard_3get_available_cards, 0, __pyx_n_s_Djing_available_dashboard_cards_2, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 577, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_get_available_cards = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":584
+  /* "djing/core/Foundation/Djing.py":583
  *             return dashboard.cards()
  * 
  *         dashboard = cls.dashboard_for_key(key, request)             # <<<<<<<<<<<<<<
  * 
  *         cards = get_available_cards(dashboard)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboard_for_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 584, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_dashboard_for_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -24549,32 +24602,32 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_104available_d
     PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_v_key, __pyx_cur_scope->__pyx_v_request};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 584, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_dashboard = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":586
+  /* "djing/core/Foundation/Djing.py":585
  *         dashboard = cls.dashboard_for_key(key, request)
  * 
  *         cards = get_available_cards(dashboard)             # <<<<<<<<<<<<<<
  * 
  *         return collect(cards).filter(authorize_card).values()
  */
-  __pyx_t_1 = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_dashboard_cards_for_dashboard_2get_available_cards(__pyx_v_get_available_cards, __pyx_v_dashboard); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 586, __pyx_L1_error)
+  __pyx_t_1 = __pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_39available_dashboard_cards_for_dashboard_2get_available_cards(__pyx_v_get_available_cards, __pyx_v_dashboard); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 585, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_cards = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "djing/core/Foundation/Djing.py":588
+  /* "djing/core/Foundation/Djing.py":587
  *         cards = get_available_cards(dashboard)
  * 
  *         return collect(cards).filter(authorize_card).values()             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_collect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_collect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 587, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_4 = 0;
@@ -24594,11 +24647,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_104available_d
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_cards};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 588, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 587, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_filter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_filter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 587, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -24619,11 +24672,11 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_104available_d
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_authorize_card};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 588, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 587, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_values); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_values); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 587, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -24644,7 +24697,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_104available_d
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 588, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 587, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -24652,7 +24705,7 @@ static PyObject *__pyx_pf_5djing_4core_10Foundation_5Djing_5Djing_104available_d
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "djing/core/Foundation/Djing.py":573
+  /* "djing/core/Foundation/Djing.py":572
  *         return cls.__resource_collection().first(filter_key)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
@@ -26375,6 +26428,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_Illuminate_Support_builtins, __pyx_k_Illuminate_Support_builtins, sizeof(__pyx_k_Illuminate_Support_builtins), 0, 0, 1, 1},
     {&__pyx_n_s_InteractsWithEvents, __pyx_k_InteractsWithEvents, sizeof(__pyx_k_InteractsWithEvents), 0, 0, 1, 1},
     {&__pyx_n_s_InvalidLicenseException, __pyx_k_InvalidLicenseException, sizeof(__pyx_k_InvalidLicenseException), 0, 0, 1, 1},
+    {&__pyx_kp_u_Invalid_license, __pyx_k_Invalid_license, sizeof(__pyx_k_Invalid_license), 0, 1, 0, 0},
     {&__pyx_n_s_JSONDecodeError, __pyx_k_JSONDecodeError, sizeof(__pyx_k_JSONDecodeError), 0, 0, 1, 1},
     {&__pyx_n_s_KeyError, __pyx_k_KeyError, sizeof(__pyx_k_KeyError), 0, 0, 1, 1},
     {&__pyx_n_s_List, __pyx_k_List, sizeof(__pyx_k_List), 0, 0, 1, 1},
@@ -26405,6 +26459,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u__28, __pyx_k__28, sizeof(__pyx_k__28), 0, 1, 0, 0},
     {&__pyx_kp_u__29, __pyx_k__29, sizeof(__pyx_k__29), 0, 1, 0, 0},
     {&__pyx_n_s__37, __pyx_k__37, sizeof(__pyx_k__37), 0, 0, 1, 1},
+    {&__pyx_n_u_after, __pyx_k_after, sizeof(__pyx_k_after), 0, 1, 0, 1},
     {&__pyx_n_s_alias_middleware, __pyx_k_alias_middleware, sizeof(__pyx_k_alias_middleware), 0, 0, 1, 1},
     {&__pyx_n_s_all, __pyx_k_all, sizeof(__pyx_k_all), 0, 0, 1, 1},
     {&__pyx_n_s_all_available_dashboard_cards, __pyx_k_all_available_dashboard_cards, sizeof(__pyx_k_all_available_dashboard_cards), 0, 0, 1, 1},
@@ -26505,7 +26560,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_u_env, __pyx_k_env, sizeof(__pyx_k_env), 0, 1, 0, 1},
     {&__pyx_n_u_environment, __pyx_k_environment, sizeof(__pyx_k_environment), 0, 1, 0, 1},
     {&__pyx_n_s_event, __pyx_k_event, sizeof(__pyx_k_event), 0, 0, 1, 1},
-    {&__pyx_n_u_event, __pyx_k_event, sizeof(__pyx_k_event), 0, 1, 0, 1},
     {&__pyx_n_s_exist_ok, __pyx_k_exist_ok, sizeof(__pyx_k_exist_ok), 0, 0, 1, 1},
     {&__pyx_n_s_exists, __pyx_k_exists, sizeof(__pyx_k_exists), 0, 0, 1, 1},
     {&__pyx_n_s_exit, __pyx_k_exit, sizeof(__pyx_k_exit), 0, 0, 1, 1},
@@ -26702,9 +26756,9 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 }
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 53, __pyx_L1_error)
-  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 396, __pyx_L1_error)
-  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(0, 403, __pyx_L1_error)
+  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 395, __pyx_L1_error)
+  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(0, 402, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 515, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -26715,854 +26769,854 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "djing/core/Foundation/Djing.py":176
+  /* "djing/core/Foundation/Djing.py":175
  *     @classmethod
  *     def default_main_menu(cls, request: DjingRequest):
  *         def map_tools(tool):             # <<<<<<<<<<<<<<
  *             return tool.menu(request)
  * 
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_n_s_tool); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_n_s_tool); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
-  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_map_tools, 176, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_map_tools, 175, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 175, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":187
+  /* "djing/core/Foundation/Djing.py":186
  *     @classmethod
  *     def logo(cls) -> Optional[str]:
  *         logo = Config.get("djing.brand_logo", None)             # <<<<<<<<<<<<<<
  * 
  *         logo_path = Path(logo) if logo else None
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_kp_u_djing_brand_logo, Py_None); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_kp_u_djing_brand_logo, Py_None); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "djing/core/Foundation/Djing.py":198
+  /* "djing/core/Foundation/Djing.py":197
  *     @classmethod
  *     def brand_colors(cls) -> list:
  *         def reject_colors(value):             # <<<<<<<<<<<<<<
  *             return not value
  * 
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_n_s_value); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_n_s_value); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_reject_colors, 198, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_reject_colors, 197, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 197, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":202
+  /* "djing/core/Foundation/Djing.py":201
  * 
  *         return (
  *             collect(Config.get("djing.brand_colors", None)).reject(reject_colors).all()             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_tuple__7 = PyTuple_Pack(2, __pyx_kp_u_djing_brand_colors, Py_None); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(2, __pyx_kp_u_djing_brand_colors, Py_None); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "djing/core/Foundation/Djing.py":207
+  /* "djing/core/Foundation/Djing.py":206
  *     @classmethod
  *     def username_field(cls) -> str:
  *         return Config.get("djing.auth.username_field", "username")             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
-  __pyx_tuple__8 = PyTuple_Pack(2, __pyx_kp_u_djing_auth_username_field, __pyx_n_u_username); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(2, __pyx_kp_u_djing_auth_username_field, __pyx_n_u_username); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "djing/core/Foundation/Djing.py":211
+  /* "djing/core/Foundation/Djing.py":210
  *     @classmethod
  *     def path(cls) -> str:
  *         return Config.get("djing.path", "/djing-admin")             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
-  __pyx_tuple__9 = PyTuple_Pack(2, __pyx_kp_u_djing_path, __pyx_kp_u_djing_admin); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(2, __pyx_kp_u_djing_path, __pyx_kp_u_djing_admin); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "djing/core/Foundation/Djing.py":270
+  /* "djing/core/Foundation/Djing.py":269
  *     @classmethod
  *     def json_variables(cls, request: DjingRequest):
  *         def map_json_variables(item):             # <<<<<<<<<<<<<<
  *             return item(request) if callable(item) else item
  * 
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_n_s_item); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_n_s_item); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_map_json_variables, 270, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_map_json_variables, 269, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 269, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":279
+  /* "djing/core/Foundation/Djing.py":278
  *     @classmethod
  *     def resource_information(cls, request: DjingRequest):
  *         def map_resources(resource: Type[Resource]):             # <<<<<<<<<<<<<<
  *             return {
  *                 "uri_key": resource.uri_key(),
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_n_s_resource); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_n_s_resource); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 278, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_map_resources, 279, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_map_resources, 278, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 278, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":320
+  /* "djing/core/Foundation/Djing.py":319
  *     @classmethod
  *     def provide_to_script(cls, variables: Dict[str, Any]) -> "Djing":
  *         def get_initial_path(request):             # <<<<<<<<<<<<<<
  *             return cls.resolve_initial_path(request)
  * 
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_n_s_request); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_n_s_request); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_initial_path, 320, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_initial_path, 319, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 319, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":323
+  /* "djing/core/Foundation/Djing.py":322
  *             return cls.resolve_initial_path(request)
  * 
  *         def get_user_id(request):             # <<<<<<<<<<<<<<
  *             return cls.user(request).id if cls.user(request) else None
  * 
  */
-  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_user_id, 323, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 323, __pyx_L1_error)
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_user_id, 322, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 322, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":326
+  /* "djing/core/Foundation/Djing.py":325
  *             return cls.user(request).id if cls.user(request) else None
  * 
  *         def get_main_menu(request):             # <<<<<<<<<<<<<<
  *             return (
  *                 Menu.wrap(cls.resolve_main_menu(request)) if cls.user(request) else []
  */
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_main_menu, 326, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 326, __pyx_L1_error)
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_main_menu, 325, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 325, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":331
+  /* "djing/core/Foundation/Djing.py":330
  *             )
  * 
  *         def get_resources(request):             # <<<<<<<<<<<<<<
  *             return cls.resource_information(request)
  * 
  */
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_resources, 331, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_resources, 330, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 330, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":334
+  /* "djing/core/Foundation/Djing.py":333
  *             return cls.resource_information(request)
  * 
  *         def get_footer(request):             # <<<<<<<<<<<<<<
  *             return cls.resolve_footer(request)
  * 
  */
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_footer, 334, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 334, __pyx_L1_error)
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_footer, 333, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 333, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":396
+  /* "djing/core/Foundation/Djing.py":395
  * 
  *         try:
  *             with open(cache_file, "r") as file:             # <<<<<<<<<<<<<<
  *                 cache_data = json.load(file)
  * 
  */
-  __pyx_tuple__20 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 396, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 395, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
 
-  /* "djing/core/Foundation/Djing.py":441
+  /* "djing/core/Foundation/Djing.py":440
  *     @classmethod
  *     def available_dashboards(cls, request: DjingRequest):
  *         def authorized_available_dashboards(dashboard):             # <<<<<<<<<<<<<<
  *             return dashboard.authorize(request)
  * 
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_n_s_dashboard); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_n_s_dashboard); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
-  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorized_available_dashboards, 441, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorized_available_dashboards, 440, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 440, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":465
+  /* "djing/core/Foundation/Djing.py":464
  *     @classmethod
  *     def boot_tools(cls, request: DjingRequest):
  *         def boot_each_tool(tool):             # <<<<<<<<<<<<<<
  *             return tool.boot()
  * 
  */
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_boot_each_tool, 465, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 465, __pyx_L1_error)
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_boot_each_tool, 464, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 464, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":478
+  /* "djing/core/Foundation/Djing.py":477
  *     @classmethod
  *     def all_available_dashboard_cards(cls, request: DjingRequest) -> Collection:
  *         def authorize_dashboard(dashboard):             # <<<<<<<<<<<<<<
  *             return dashboard.authorize(request)
  * 
  */
-  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorize_dashboard, 478, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 478, __pyx_L1_error)
+  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorize_dashboard, 477, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 477, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":481
+  /* "djing/core/Foundation/Djing.py":480
  *             return dashboard.authorize(request)
  * 
  *         def dashboard_cards(dashboard):             # <<<<<<<<<<<<<<
  *             return dashboard.cards()
  * 
  */
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_dashboard_cards, 481, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 481, __pyx_L1_error)
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_dashboard_cards, 480, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 480, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":498
+  /* "djing/core/Foundation/Djing.py":497
  *     def resources_in(cls, resource_path: Path):
  *         try:
  *             app_path = resource_path.as_posix().replace("/", ".").strip(".")             # <<<<<<<<<<<<<<
  * 
  *             resources = []
  */
-  __pyx_tuple__27 = PyTuple_Pack(2, __pyx_kp_u_, __pyx_kp_u__26); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 498, __pyx_L1_error)
+  __pyx_tuple__27 = PyTuple_Pack(2, __pyx_kp_u_, __pyx_kp_u__26); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__27);
   __Pyx_GIVEREF(__pyx_tuple__27);
 
-  /* "djing/core/Foundation/Djing.py":537
+  /* "djing/core/Foundation/Djing.py":536
  *         available_resources = cls.available_resources(request)
  * 
  *         def resource_filter(resource):             # <<<<<<<<<<<<<<
  *             return resource.count()
  * 
  */
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resource_filter, 537, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 537, __pyx_L1_error)
+  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resource_filter, 536, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 536, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":554
+  /* "djing/core/Foundation/Djing.py":553
  *     @classmethod
  *     def sort_resources_with(cls):
  *         def default_sort_resources_with(resource):             # <<<<<<<<<<<<<<
  *             return resource.label()
  * 
  */
-  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_default_sort_resources_with, 554, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 554, __pyx_L1_error)
+  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_default_sort_resources_with, 553, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 553, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":561
+  /* "djing/core/Foundation/Djing.py":560
  *     @classmethod
  *     def dashboard_for_key(cls, key, request: DjingRequest):
  *         def authorize_dashboard(dashboard):             # <<<<<<<<<<<<<<
  *             return dashboard.uri_key() == key and dashboard.authorize(request)
  * 
  */
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorize_dashboard, 561, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 561, __pyx_L1_error)
+  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorize_dashboard, 560, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 560, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":568
+  /* "djing/core/Foundation/Djing.py":567
  *     @classmethod
  *     def resource_for_key(cls, key):
  *         def filter_key(resource):             # <<<<<<<<<<<<<<
  *             return resource.uri_key() == key
  * 
  */
-  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_filter_key, 568, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(0, 568, __pyx_L1_error)
+  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_filter_key, 567, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(0, 567, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":575
+  /* "djing/core/Foundation/Djing.py":574
  *     @classmethod
  *     def available_dashboard_cards_for_dashboard(cls, key, request: DjingRequest):
  *         def authorize_card(card):             # <<<<<<<<<<<<<<
  *             return card.authorize(request)
  * 
  */
-  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_n_s_card); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 575, __pyx_L1_error)
+  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_n_s_card); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 574, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__34);
   __Pyx_GIVEREF(__pyx_tuple__34);
-  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__34, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorize_card, 575, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 575, __pyx_L1_error)
+  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__34, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorize_card, 574, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 574, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":578
+  /* "djing/core/Foundation/Djing.py":577
  *             return card.authorize(request)
  * 
  *         def get_available_cards(dashboard):             # <<<<<<<<<<<<<<
  *             if not dashboard:
  *                 return collect()
  */
-  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_available_cards, 578, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 578, __pyx_L1_error)
+  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_get_available_cards, 577, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 577, __pyx_L1_error)
 
   /* "djing/core/Foundation/Djing.py":51
  *     __license_checked = False
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def flush_state(cls, event: str):
- *         print("event", event, cls.__license_checked)
+ *         if event == "after" and not cls.__license_checked:
  */
   __pyx_tuple__38 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_event); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__38);
   __Pyx_GIVEREF(__pyx_tuple__38);
   __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_flush_state, 51, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) __PYX_ERR(0, 51, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":73
+  /* "djing/core/Foundation/Djing.py":72
  *         cls.__license_checked = False
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def script(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:
  */
-  __pyx_tuple__40 = PyTuple_Pack(4, __pyx_n_s_cls, __pyx_n_s_name, __pyx_n_s_path, __pyx_n_s_url); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_tuple__40 = PyTuple_Pack(4, __pyx_n_s_cls, __pyx_n_s_name, __pyx_n_s_path, __pyx_n_s_url); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__40);
   __Pyx_GIVEREF(__pyx_tuple__40);
-  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__40, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_script, 73, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__40, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_script, 72, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) __PYX_ERR(0, 72, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":84
+  /* "djing/core/Foundation/Djing.py":83
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def style(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:
  */
-  __pyx_codeobj__42 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__40, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_style, 84, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__42)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_codeobj__42 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__40, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_style, 83, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__42)) __PYX_ERR(0, 83, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":95
+  /* "djing/core/Foundation/Djing.py":94
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def when_serving(cls, callback, default) -> Any:
  *         if App.bound(DjingRequest):
  */
-  __pyx_tuple__43 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_callback, __pyx_n_s_default); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_tuple__43 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_callback, __pyx_n_s_default); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__43);
   __Pyx_GIVEREF(__pyx_tuple__43);
-  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__43, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_when_serving, 95, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__43, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_when_serving, 94, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 94, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":103
+  /* "djing/core/Foundation/Djing.py":102
  *             return default(App.make("request"))
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def with_authentication(cls) -> "Djing":
  *         cls._with_authentication = True
  */
-  __pyx_tuple__45 = PyTuple_Pack(1, __pyx_n_s_cls); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_tuple__45 = PyTuple_Pack(1, __pyx_n_s_cls); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__45);
   __Pyx_GIVEREF(__pyx_tuple__45);
-  __pyx_codeobj__46 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_with_authentication_2, 103, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__46)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_codeobj__46 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_with_authentication_2, 102, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__46)) __PYX_ERR(0, 102, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":109
+  /* "djing/core/Foundation/Djing.py":108
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def with_breadcrumbs(cls, with_breadcrumbs=True) -> Type["Djing"]:
  *         cls._with_breadcrumbs = with_breadcrumbs
  */
-  __pyx_tuple__47 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_with_breadcrumbs_2); if (unlikely(!__pyx_tuple__47)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_tuple__47 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_with_breadcrumbs_2); if (unlikely(!__pyx_tuple__47)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__47);
   __Pyx_GIVEREF(__pyx_tuple__47);
-  __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__47, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_with_breadcrumbs_2, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(0, 109, __pyx_L1_error)
-  __pyx_tuple__49 = PyTuple_Pack(1, ((PyObject *)Py_True)); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__47, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_with_breadcrumbs_2, 108, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(0, 108, __pyx_L1_error)
+  __pyx_tuple__49 = PyTuple_Pack(1, ((PyObject *)Py_True)); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__49);
   __Pyx_GIVEREF(__pyx_tuple__49);
 
-  /* "djing/core/Foundation/Djing.py":115
+  /* "djing/core/Foundation/Djing.py":114
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def breadcrumbs_enabled(cls) -> bool:
  *         status = (
  */
-  __pyx_tuple__50 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_status); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_tuple__50 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_status); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__50);
   __Pyx_GIVEREF(__pyx_tuple__50);
-  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_breadcrumbs_enabled, 115, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_breadcrumbs_enabled, 114, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 114, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":125
+  /* "djing/core/Foundation/Djing.py":124
  *         return status
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def without_global_search(cls) -> Type["Djing"]:
  *         cls._global_search_enabled = False
  */
-  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_without_global_search, 125, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_without_global_search, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(0, 124, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":131
+  /* "djing/core/Foundation/Djing.py":130
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def __resource_collection(cls) -> ResourceCollection:
  *         return ResourceCollection.make(cls._resources)
  */
-  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resource_collection, 131, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(0, 131, __pyx_L1_error)
+  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resource_collection, 130, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(0, 130, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":135
+  /* "djing/core/Foundation/Djing.py":134
  *         return ResourceCollection.make(cls._resources)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def authorized_resources(cls, request: DjingRequest) -> ResourceCollection:
  *         return cls.__resource_collection().authorized(request)
  */
-  __pyx_tuple__54 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_request); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_tuple__54 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_request); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__54);
   __Pyx_GIVEREF(__pyx_tuple__54);
-  __pyx_codeobj__55 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorized_resources, 135, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__55)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_codeobj__55 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_authorized_resources, 134, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__55)) __PYX_ERR(0, 134, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":139
+  /* "djing/core/Foundation/Djing.py":138
  *         return cls.__resource_collection().authorized(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def globally_searchable_resources(
  *         cls, request: DjingRequest
  */
-  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_globally_searchable_resources, 139, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_globally_searchable_resources, 138, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(0, 138, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":150
+  /* "djing/core/Foundation/Djing.py":149
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def has_globally_searchable_resources(cls) -> bool:
  *         return (
  */
-  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_has_globally_searchable_resource, 150, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_has_globally_searchable_resource, 149, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(0, 149, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":157
+  /* "djing/core/Foundation/Djing.py":156
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def main_menu(cls, callback: Callable[[Any], Any]) -> "Djing":
  *         cls._main_menu_callback = callback
  */
-  __pyx_tuple__58 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_callback); if (unlikely(!__pyx_tuple__58)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_tuple__58 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_callback); if (unlikely(!__pyx_tuple__58)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__58);
   __Pyx_GIVEREF(__pyx_tuple__58);
-  __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_main_menu, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_main_menu, 156, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) __PYX_ERR(0, 156, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":163
+  /* "djing/core/Foundation/Djing.py":162
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resolve_main_menu(cls, request: DjingRequest):
  *         default_main_menu = cls.default_main_menu(request)
  */
-  __pyx_tuple__60 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_default_main_menu); if (unlikely(!__pyx_tuple__60)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_tuple__60 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_default_main_menu); if (unlikely(!__pyx_tuple__60)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__60);
   __Pyx_GIVEREF(__pyx_tuple__60);
-  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__60, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resolve_main_menu, 163, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__60, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resolve_main_menu, 162, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 162, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":174
+  /* "djing/core/Foundation/Djing.py":173
  *         return default_main_menu
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def default_main_menu(cls, request: DjingRequest):
  *         def map_tools(tool):
  */
-  __pyx_tuple__62 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_map_tools, __pyx_n_s_map_tools, __pyx_n_s_items); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_tuple__62 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_map_tools, __pyx_n_s_map_tools, __pyx_n_s_items); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__62);
   __Pyx_GIVEREF(__pyx_tuple__62);
-  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__62, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_default_main_menu, 174, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__62, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_default_main_menu, 173, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 173, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":185
+  /* "djing/core/Foundation/Djing.py":184
  *         return Menu.make(items)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def logo(cls) -> Optional[str]:
  *         logo = Config.get("djing.brand_logo", None)
  */
-  __pyx_tuple__64 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_logo, __pyx_n_s_logo_path); if (unlikely(!__pyx_tuple__64)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_tuple__64 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_logo, __pyx_n_s_logo_path); if (unlikely(!__pyx_tuple__64)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__64);
   __Pyx_GIVEREF(__pyx_tuple__64);
-  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__64, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_logo, 185, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__64, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_logo, 184, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 184, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":196
+  /* "djing/core/Foundation/Djing.py":195
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def brand_colors(cls) -> list:
  *         def reject_colors(value):
  */
-  __pyx_tuple__66 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_reject_colors, __pyx_n_s_reject_colors); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_tuple__66 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_reject_colors, __pyx_n_s_reject_colors); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__66);
   __Pyx_GIVEREF(__pyx_tuple__66);
-  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__66, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_brand_colors, 196, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__66, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_brand_colors, 195, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 195, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":205
+  /* "djing/core/Foundation/Djing.py":204
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def username_field(cls) -> str:
  *         return Config.get("djing.auth.username_field", "username")
  */
-  __pyx_codeobj__68 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_username_field, 205, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__68)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_codeobj__68 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_username_field, 204, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__68)) __PYX_ERR(0, 204, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":209
+  /* "djing/core/Foundation/Djing.py":208
  *         return Config.get("djing.auth.username_field", "username")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def path(cls) -> str:
  *         return Config.get("djing.path", "/djing-admin")
  */
-  __pyx_codeobj__69 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_path, 209, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__69)) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_codeobj__69 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_path, 208, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__69)) __PYX_ERR(0, 208, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":213
+  /* "djing/core/Foundation/Djing.py":212
  *         return Config.get("djing.path", "/djing-admin")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def base_directory(cls) -> str:
  *         return "djing_admin"
  */
-  __pyx_codeobj__70 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_base_directory, 213, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__70)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_codeobj__70 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_base_directory, 212, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__70)) __PYX_ERR(0, 212, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":217
+  /* "djing/core/Foundation/Djing.py":216
  *         return "djing_admin"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def app_directory(cls) -> Path:
  *         path = App.app_path("Djing")
  */
-  __pyx_tuple__71 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_path); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_tuple__71 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_path); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__71);
   __Pyx_GIVEREF(__pyx_tuple__71);
-  __pyx_codeobj__72 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__71, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_app_directory, 217, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__72)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_codeobj__72 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__71, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_app_directory, 216, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__72)) __PYX_ERR(0, 216, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":223
+  /* "djing/core/Foundation/Djing.py":222
  *         return path if isinstance(path, Path) else Path(path)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def login_path(cls) -> str:
  *         path = cls.path()
  */
-  __pyx_codeobj__73 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__71, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_login_path, 223, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__73)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_codeobj__73 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__71, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_login_path, 222, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__73)) __PYX_ERR(0, 222, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":229
+  /* "djing/core/Foundation/Djing.py":228
  *         return f"{path}/login"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def initial_path(cls, callback: Callable[[Any], Any]) -> "Djing":
  *         cls._initial_path_callback = callback
  */
-  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_initial_path, 229, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_initial_path, 228, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(0, 228, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":235
+  /* "djing/core/Foundation/Djing.py":234
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resolve_initial_path(cls, request: DjingRequest) -> str:
  *         initial_path = None
  */
-  __pyx_tuple__75 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_initial_path); if (unlikely(!__pyx_tuple__75)) __PYX_ERR(0, 235, __pyx_L1_error)
+  __pyx_tuple__75 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_initial_path); if (unlikely(!__pyx_tuple__75)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__75);
   __Pyx_GIVEREF(__pyx_tuple__75);
-  __pyx_codeobj__76 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__75, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resolve_initial_path, 235, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__76)) __PYX_ERR(0, 235, __pyx_L1_error)
+  __pyx_codeobj__76 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__75, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resolve_initial_path, 234, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__76)) __PYX_ERR(0, 234, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":247
+  /* "djing/core/Foundation/Djing.py":246
  *         return initial_path if initial_path else "/dashboards/main"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def routes(cls) -> PendingRouteRegistration:
  *         Route.alias_middleware("djing.guest", RedirectIfAuthenticated)
  */
-  __pyx_codeobj__77 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_routes, 247, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__77)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_codeobj__77 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_routes, 246, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__77)) __PYX_ERR(0, 246, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":253
+  /* "djing/core/Foundation/Djing.py":252
  *         return PendingRouteRegistration()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def tools(cls, tools: List[Tool]) -> "Djing":
  *         cls._tools = array_merge(cls._tools, tools)
  */
-  __pyx_tuple__78 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_tools_2); if (unlikely(!__pyx_tuple__78)) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_tuple__78 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_tools_2); if (unlikely(!__pyx_tuple__78)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__78);
   __Pyx_GIVEREF(__pyx_tuple__78);
-  __pyx_codeobj__79 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_tools_2, 253, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__79)) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_codeobj__79 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_tools_2, 252, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__79)) __PYX_ERR(0, 252, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":259
+  /* "djing/core/Foundation/Djing.py":258
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def user(cls, request: DjingRequest):
  *         user = request.user()
  */
-  __pyx_tuple__80 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_user); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(0, 259, __pyx_L1_error)
+  __pyx_tuple__80 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_user); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__80);
   __Pyx_GIVEREF(__pyx_tuple__80);
-  __pyx_codeobj__81 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__80, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_user, 259, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__81)) __PYX_ERR(0, 259, __pyx_L1_error)
+  __pyx_codeobj__81 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__80, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_user, 258, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__81)) __PYX_ERR(0, 258, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":268
+  /* "djing/core/Foundation/Djing.py":267
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def json_variables(cls, request: DjingRequest):
  *         def map_json_variables(item):
  */
-  __pyx_tuple__82 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_map_json_variables, __pyx_n_s_map_json_variables, __pyx_n_s_items); if (unlikely(!__pyx_tuple__82)) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_tuple__82 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_map_json_variables, __pyx_n_s_map_json_variables, __pyx_n_s_items); if (unlikely(!__pyx_tuple__82)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__82);
   __Pyx_GIVEREF(__pyx_tuple__82);
-  __pyx_codeobj__83 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_json_variables_2, 268, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__83)) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_codeobj__83 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_json_variables_2, 267, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__83)) __PYX_ERR(0, 267, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":277
+  /* "djing/core/Foundation/Djing.py":276
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resource_information(cls, request: DjingRequest):
  *         def map_resources(resource: Type[Resource]):
  */
-  __pyx_tuple__84 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_map_resources, __pyx_n_s_map_resources, __pyx_n_s_collection); if (unlikely(!__pyx_tuple__84)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __pyx_tuple__84 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_map_resources, __pyx_n_s_map_resources, __pyx_n_s_collection); if (unlikely(!__pyx_tuple__84)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__84);
   __Pyx_GIVEREF(__pyx_tuple__84);
-  __pyx_codeobj__85 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resource_information, 277, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__85)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __pyx_codeobj__85 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resource_information, 276, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__85)) __PYX_ERR(0, 276, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":294
+  /* "djing/core/Foundation/Djing.py":293
  *         return collection.map(map_resources).values().all()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def footer(cls, callback: Callable[[Any], Any]) -> Type["Djing"]:
  *         cls._footer_callback = callback
  */
-  __pyx_codeobj__86 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_footer, 294, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__86)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_codeobj__86 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_footer, 293, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__86)) __PYX_ERR(0, 293, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":300
+  /* "djing/core/Foundation/Djing.py":299
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def default_footer(cls, request: DjingRequest):
  *         version = cls.version()
  */
-  __pyx_tuple__87 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_version, __pyx_n_s_year, __pyx_n_s_djing_url); if (unlikely(!__pyx_tuple__87)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_tuple__87 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_version, __pyx_n_s_year, __pyx_n_s_djing_url); if (unlikely(!__pyx_tuple__87)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__87);
   __Pyx_GIVEREF(__pyx_tuple__87);
-  __pyx_codeobj__88 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__87, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_default_footer, 300, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__88)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_codeobj__88 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__87, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_default_footer, 299, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__88)) __PYX_ERR(0, 299, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":311
+  /* "djing/core/Foundation/Djing.py":310
  *         """
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resolve_footer(cls, request: DjingRequest):
  *         if cls._footer_callback:
  */
-  __pyx_codeobj__89 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resolve_footer, 311, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__89)) __PYX_ERR(0, 311, __pyx_L1_error)
+  __pyx_codeobj__89 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resolve_footer, 310, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__89)) __PYX_ERR(0, 310, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":318
+  /* "djing/core/Foundation/Djing.py":317
  *         return cls.default_footer(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def provide_to_script(cls, variables: Dict[str, Any]) -> "Djing":
  *         def get_initial_path(request):
  */
-  __pyx_tuple__90 = PyTuple_Pack(12, __pyx_n_s_cls, __pyx_n_s_variables, __pyx_n_s_get_initial_path, __pyx_n_s_get_initial_path, __pyx_n_s_get_user_id, __pyx_n_s_get_user_id, __pyx_n_s_get_main_menu, __pyx_n_s_get_main_menu, __pyx_n_s_get_resources, __pyx_n_s_get_resources, __pyx_n_s_get_footer, __pyx_n_s_get_footer); if (unlikely(!__pyx_tuple__90)) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_tuple__90 = PyTuple_Pack(12, __pyx_n_s_cls, __pyx_n_s_variables, __pyx_n_s_get_initial_path, __pyx_n_s_get_initial_path, __pyx_n_s_get_user_id, __pyx_n_s_get_user_id, __pyx_n_s_get_main_menu, __pyx_n_s_get_main_menu, __pyx_n_s_get_resources, __pyx_n_s_get_resources, __pyx_n_s_get_footer, __pyx_n_s_get_footer); if (unlikely(!__pyx_tuple__90)) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__90);
   __Pyx_GIVEREF(__pyx_tuple__90);
-  __pyx_codeobj__91 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__90, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_provide_to_script, 318, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__91)) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_codeobj__91 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__90, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_provide_to_script, 317, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__91)) __PYX_ERR(0, 317, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":369
+  /* "djing/core/Foundation/Djing.py":368
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def version(cls):
  *         return "0.1.1"
  */
-  __pyx_codeobj__92 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_version, 369, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__92)) __PYX_ERR(0, 369, __pyx_L1_error)
+  __pyx_codeobj__92 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_version, 368, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__92)) __PYX_ERR(0, 368, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":373
+  /* "djing/core/Foundation/Djing.py":372
  *         return "0.1.1"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def check_license_validity(cls) -> bool:
  *         cls.__license_checked = True
  */
-  __pyx_tuple__93 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_status_code); if (unlikely(!__pyx_tuple__93)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_tuple__93 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_status_code); if (unlikely(!__pyx_tuple__93)) __PYX_ERR(0, 372, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__93);
   __Pyx_GIVEREF(__pyx_tuple__93);
-  __pyx_codeobj__94 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__93, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_check_license_validity, 373, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__94)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_codeobj__94 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__93, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_check_license_validity, 372, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__94)) __PYX_ERR(0, 372, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":381
+  /* "djing/core/Foundation/Djing.py":380
  *         return status_code == 200
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def check_license(cls) -> int:
  *         request: DjingRequest = App.make("request")
  */
-  __pyx_tuple__95 = PyTuple_Pack(8, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_user, __pyx_n_s_path, __pyx_n_s_cache_file, __pyx_n_s_cache_duration, __pyx_n_s_file_2, __pyx_n_s_cache_data); if (unlikely(!__pyx_tuple__95)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_tuple__95 = PyTuple_Pack(8, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_user, __pyx_n_s_path, __pyx_n_s_cache_file, __pyx_n_s_cache_duration, __pyx_n_s_file_2, __pyx_n_s_cache_data); if (unlikely(!__pyx_tuple__95)) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__95);
   __Pyx_GIVEREF(__pyx_tuple__95);
-  __pyx_codeobj__96 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__95, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_check_license, 381, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__96)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_codeobj__96 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__95, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_check_license, 380, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__96)) __PYX_ERR(0, 380, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":406
+  /* "djing/core/Foundation/Djing.py":405
  *             return cls.update_license_info(request, cache_file)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def update_license_info(cls, request: DjingRequest, cache_file: str) -> int:
  *         try:
  */
-  __pyx_tuple__97 = PyTuple_Pack(7, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_cache_file, __pyx_n_s_response, __pyx_n_s_cache_data, __pyx_n_s_file_2, __pyx_n_s_e); if (unlikely(!__pyx_tuple__97)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_tuple__97 = PyTuple_Pack(7, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_cache_file, __pyx_n_s_response, __pyx_n_s_cache_data, __pyx_n_s_file_2, __pyx_n_s_e); if (unlikely(!__pyx_tuple__97)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__97);
   __Pyx_GIVEREF(__pyx_tuple__97);
-  __pyx_codeobj__98 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__97, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_update_license_info, 406, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__98)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_codeobj__98 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__97, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_update_license_info, 405, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__98)) __PYX_ERR(0, 405, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":429
+  /* "djing/core/Foundation/Djing.py":428
  *             raise e
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def should_recheck(cls, cache_data: dict, cache_duration: float):
  *         return time.time() - cache_data["last_check"] > cache_duration
  */
-  __pyx_tuple__99 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_cache_data, __pyx_n_s_cache_duration); if (unlikely(!__pyx_tuple__99)) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_tuple__99 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_cache_data, __pyx_n_s_cache_duration); if (unlikely(!__pyx_tuple__99)) __PYX_ERR(0, 428, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__99);
   __Pyx_GIVEREF(__pyx_tuple__99);
-  __pyx_codeobj__100 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__99, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_should_recheck, 429, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__100)) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_codeobj__100 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__99, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_should_recheck, 428, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__100)) __PYX_ERR(0, 428, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":433
+  /* "djing/core/Foundation/Djing.py":432
  *         return time.time() - cache_data["last_check"] > cache_duration
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def dashboards(cls, dashboards) -> "Djing":
  *         cls._dashboards = array_merge(cls._dashboards, dashboards)
  */
-  __pyx_tuple__101 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_dashboards_2); if (unlikely(!__pyx_tuple__101)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_tuple__101 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_dashboards_2); if (unlikely(!__pyx_tuple__101)) __PYX_ERR(0, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__101);
   __Pyx_GIVEREF(__pyx_tuple__101);
-  __pyx_codeobj__102 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__101, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_dashboards_2, 433, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__102)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_codeobj__102 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__101, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_dashboards_2, 432, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__102)) __PYX_ERR(0, 432, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":439
+  /* "djing/core/Foundation/Djing.py":438
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def available_dashboards(cls, request: DjingRequest):
  *         def authorized_available_dashboards(dashboard):
  */
-  __pyx_tuple__103 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_authorized_available_dashboards, __pyx_n_s_authorized_available_dashboards, __pyx_n_s_items); if (unlikely(!__pyx_tuple__103)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_tuple__103 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_authorized_available_dashboards, __pyx_n_s_authorized_available_dashboards, __pyx_n_s_items); if (unlikely(!__pyx_tuple__103)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__103);
   __Pyx_GIVEREF(__pyx_tuple__103);
-  __pyx_codeobj__104 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__103, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_available_dashboards, 439, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__104)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_codeobj__104 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__103, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_available_dashboards, 438, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__104)) __PYX_ERR(0, 438, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":448
+  /* "djing/core/Foundation/Djing.py":447
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def available_resources(cls, request: DjingRequest):
  *         collection = cls.authorized_resources(request)
  */
-  __pyx_tuple__105 = PyTuple_Pack(4, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_collection, __pyx_n_s_items); if (unlikely(!__pyx_tuple__105)) __PYX_ERR(0, 448, __pyx_L1_error)
+  __pyx_tuple__105 = PyTuple_Pack(4, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_collection, __pyx_n_s_items); if (unlikely(!__pyx_tuple__105)) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__105);
   __Pyx_GIVEREF(__pyx_tuple__105);
-  __pyx_codeobj__106 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__105, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_available_resources, 448, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__106)) __PYX_ERR(0, 448, __pyx_L1_error)
+  __pyx_codeobj__106 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__105, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_available_resources, 447, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__106)) __PYX_ERR(0, 447, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":456
+  /* "djing/core/Foundation/Djing.py":455
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def available_tools(cls, request: DjingRequest) -> List[Tool]:
  *         if not cls.user(request):
  */
-  __pyx_codeobj__107 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_available_tools, 456, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__107)) __PYX_ERR(0, 456, __pyx_L1_error)
+  __pyx_codeobj__107 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_available_tools, 455, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__107)) __PYX_ERR(0, 455, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":463
+  /* "djing/core/Foundation/Djing.py":462
  *         return cls._tools
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def boot_tools(cls, request: DjingRequest):
  *         def boot_each_tool(tool):
  */
-  __pyx_tuple__108 = PyTuple_Pack(4, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_boot_each_tool, __pyx_n_s_boot_each_tool); if (unlikely(!__pyx_tuple__108)) __PYX_ERR(0, 463, __pyx_L1_error)
+  __pyx_tuple__108 = PyTuple_Pack(4, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_boot_each_tool, __pyx_n_s_boot_each_tool); if (unlikely(!__pyx_tuple__108)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__108);
   __Pyx_GIVEREF(__pyx_tuple__108);
-  __pyx_codeobj__109 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__108, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_boot_tools, 463, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__109)) __PYX_ERR(0, 463, __pyx_L1_error)
+  __pyx_codeobj__109 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__108, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_boot_tools, 462, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__109)) __PYX_ERR(0, 462, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":470
+  /* "djing/core/Foundation/Djing.py":469
  *         collect(cls.available_tools(request)).each(boot_each_tool)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resources(cls, resources) -> "Djing":
  *         cls._resources = array_merge(cls._resources, resources)
  */
-  __pyx_tuple__110 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_resources_2); if (unlikely(!__pyx_tuple__110)) __PYX_ERR(0, 470, __pyx_L1_error)
+  __pyx_tuple__110 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_resources_2); if (unlikely(!__pyx_tuple__110)) __PYX_ERR(0, 469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__110);
   __Pyx_GIVEREF(__pyx_tuple__110);
-  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__110, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resources_2, 470, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 470, __pyx_L1_error)
+  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__110, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resources_2, 469, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 469, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":476
+  /* "djing/core/Foundation/Djing.py":475
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def all_available_dashboard_cards(cls, request: DjingRequest) -> Collection:
  *         def authorize_dashboard(dashboard):
  */
-  __pyx_tuple__112 = PyTuple_Pack(7, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_authorize_dashboard, __pyx_n_s_authorize_dashboard, __pyx_n_s_dashboard_cards, __pyx_n_s_dashboard_cards, __pyx_n_s_items); if (unlikely(!__pyx_tuple__112)) __PYX_ERR(0, 476, __pyx_L1_error)
+  __pyx_tuple__112 = PyTuple_Pack(7, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_authorize_dashboard, __pyx_n_s_authorize_dashboard, __pyx_n_s_dashboard_cards, __pyx_n_s_dashboard_cards, __pyx_n_s_items); if (unlikely(!__pyx_tuple__112)) __PYX_ERR(0, 475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__112);
   __Pyx_GIVEREF(__pyx_tuple__112);
-  __pyx_codeobj__113 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__112, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_all_available_dashboard_cards, 476, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__113)) __PYX_ERR(0, 476, __pyx_L1_error)
+  __pyx_codeobj__113 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__112, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_all_available_dashboard_cards, 475, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__113)) __PYX_ERR(0, 475, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":495
+  /* "djing/core/Foundation/Djing.py":494
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resources_in(cls, resource_path: Path):
  *         try:
  */
-  __pyx_tuple__114 = PyTuple_Pack(10, __pyx_n_s_cls, __pyx_n_s_resource_path, __pyx_n_s_app_path, __pyx_n_s_resources_2, __pyx_n_s_module_path, __pyx_n_s_module_name, __pyx_n_s_module, __pyx_n_s_resource_class, __pyx_n_s_mod_err, __pyx_n_s_e); if (unlikely(!__pyx_tuple__114)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_tuple__114 = PyTuple_Pack(10, __pyx_n_s_cls, __pyx_n_s_resource_path, __pyx_n_s_app_path, __pyx_n_s_resources_2, __pyx_n_s_module_path, __pyx_n_s_module_name, __pyx_n_s_module, __pyx_n_s_resource_class, __pyx_n_s_mod_err, __pyx_n_s_e); if (unlikely(!__pyx_tuple__114)) __PYX_ERR(0, 494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__114);
   __Pyx_GIVEREF(__pyx_tuple__114);
-  __pyx_codeobj__115 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__114, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resources_in, 495, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__115)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_codeobj__115 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__114, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resources_in, 494, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__115)) __PYX_ERR(0, 494, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":526
+  /* "djing/core/Foundation/Djing.py":525
  *             print(f"Error in resources_in: {e}")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def humanize(cls, value) -> str:
  *         if isinstance(value, str):
  */
-  __pyx_tuple__116 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_value); if (unlikely(!__pyx_tuple__116)) __PYX_ERR(0, 526, __pyx_L1_error)
+  __pyx_tuple__116 = PyTuple_Pack(2, __pyx_n_s_cls, __pyx_n_s_value); if (unlikely(!__pyx_tuple__116)) __PYX_ERR(0, 525, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__116);
   __Pyx_GIVEREF(__pyx_tuple__116);
-  __pyx_codeobj__117 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__116, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_humanize, 526, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__117)) __PYX_ERR(0, 526, __pyx_L1_error)
+  __pyx_codeobj__117 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__116, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_humanize, 525, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__117)) __PYX_ERR(0, 525, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":533
+  /* "djing/core/Foundation/Djing.py":532
  *         return cls.humanize(value.__class__.__name__)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def grouped_resources_for_navigation(cls, request: DjingRequest):
  *         available_resources = cls.available_resources(request)
  */
-  __pyx_tuple__118 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_available_resources, __pyx_n_s_resource_filter, __pyx_n_s_resource_filter); if (unlikely(!__pyx_tuple__118)) __PYX_ERR(0, 533, __pyx_L1_error)
+  __pyx_tuple__118 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_request, __pyx_n_s_available_resources, __pyx_n_s_resource_filter, __pyx_n_s_resource_filter); if (unlikely(!__pyx_tuple__118)) __PYX_ERR(0, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__118);
   __Pyx_GIVEREF(__pyx_tuple__118);
-  __pyx_codeobj__119 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__118, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_grouped_resources_for_navigation, 533, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__119)) __PYX_ERR(0, 533, __pyx_L1_error)
+  __pyx_codeobj__119 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__118, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_grouped_resources_for_navigation, 532, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__119)) __PYX_ERR(0, 532, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":546
+  /* "djing/core/Foundation/Djing.py":545
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def sort_resources_by(cls, callback) -> "Djing":
  *         cls._sort_callback = callback
  */
-  __pyx_codeobj__120 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_sort_resources_by, 546, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__120)) __PYX_ERR(0, 546, __pyx_L1_error)
+  __pyx_codeobj__120 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_sort_resources_by, 545, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__120)) __PYX_ERR(0, 545, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":552
+  /* "djing/core/Foundation/Djing.py":551
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def sort_resources_with(cls):
  *         def default_sort_resources_with(resource):
  */
-  __pyx_tuple__121 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_default_sort_resources_with, __pyx_n_s_default_sort_resources_with); if (unlikely(!__pyx_tuple__121)) __PYX_ERR(0, 552, __pyx_L1_error)
+  __pyx_tuple__121 = PyTuple_Pack(3, __pyx_n_s_cls, __pyx_n_s_default_sort_resources_with, __pyx_n_s_default_sort_resources_with); if (unlikely(!__pyx_tuple__121)) __PYX_ERR(0, 551, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__121);
   __Pyx_GIVEREF(__pyx_tuple__121);
-  __pyx_codeobj__122 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__121, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_sort_resources_with, 552, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__122)) __PYX_ERR(0, 552, __pyx_L1_error)
+  __pyx_codeobj__122 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__121, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_sort_resources_with, 551, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__122)) __PYX_ERR(0, 551, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":559
+  /* "djing/core/Foundation/Djing.py":558
  *         return cls._sort_callback if cls._sort_callback else default_sort_resources_with
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def dashboard_for_key(cls, key, request: DjingRequest):
  *         def authorize_dashboard(dashboard):
  */
-  __pyx_tuple__123 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_key, __pyx_n_s_request, __pyx_n_s_authorize_dashboard, __pyx_n_s_authorize_dashboard); if (unlikely(!__pyx_tuple__123)) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_tuple__123 = PyTuple_Pack(5, __pyx_n_s_cls, __pyx_n_s_key, __pyx_n_s_request, __pyx_n_s_authorize_dashboard, __pyx_n_s_authorize_dashboard); if (unlikely(!__pyx_tuple__123)) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__123);
   __Pyx_GIVEREF(__pyx_tuple__123);
-  __pyx_codeobj__124 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__123, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_dashboard_for_key, 559, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__124)) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_codeobj__124 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__123, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_dashboard_for_key, 558, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__124)) __PYX_ERR(0, 558, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":566
+  /* "djing/core/Foundation/Djing.py":565
  *         return collect(cls._dashboards).first(authorize_dashboard)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resource_for_key(cls, key):
  *         def filter_key(resource):
  */
-  __pyx_tuple__125 = PyTuple_Pack(4, __pyx_n_s_cls, __pyx_n_s_key, __pyx_n_s_filter_key, __pyx_n_s_filter_key); if (unlikely(!__pyx_tuple__125)) __PYX_ERR(0, 566, __pyx_L1_error)
+  __pyx_tuple__125 = PyTuple_Pack(4, __pyx_n_s_cls, __pyx_n_s_key, __pyx_n_s_filter_key, __pyx_n_s_filter_key); if (unlikely(!__pyx_tuple__125)) __PYX_ERR(0, 565, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__125);
   __Pyx_GIVEREF(__pyx_tuple__125);
-  __pyx_codeobj__126 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__125, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resource_for_key, 566, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__126)) __PYX_ERR(0, 566, __pyx_L1_error)
+  __pyx_codeobj__126 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__125, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_resource_for_key, 565, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__126)) __PYX_ERR(0, 565, __pyx_L1_error)
 
-  /* "djing/core/Foundation/Djing.py":573
+  /* "djing/core/Foundation/Djing.py":572
  *         return cls.__resource_collection().first(filter_key)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def available_dashboard_cards_for_dashboard(cls, key, request: DjingRequest):
  *         def authorize_card(card):
  */
-  __pyx_tuple__127 = PyTuple_Pack(9, __pyx_n_s_cls, __pyx_n_s_key, __pyx_n_s_request, __pyx_n_s_authorize_card, __pyx_n_s_authorize_card, __pyx_n_s_get_available_cards, __pyx_n_s_get_available_cards, __pyx_n_s_dashboard, __pyx_n_s_cards); if (unlikely(!__pyx_tuple__127)) __PYX_ERR(0, 573, __pyx_L1_error)
+  __pyx_tuple__127 = PyTuple_Pack(9, __pyx_n_s_cls, __pyx_n_s_key, __pyx_n_s_request, __pyx_n_s_authorize_card, __pyx_n_s_authorize_card, __pyx_n_s_get_available_cards, __pyx_n_s_get_available_cards, __pyx_n_s_dashboard, __pyx_n_s_cards); if (unlikely(!__pyx_tuple__127)) __PYX_ERR(0, 572, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__127);
   __Pyx_GIVEREF(__pyx_tuple__127);
-  __pyx_codeobj__128 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__127, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_available_dashboard_cards_for_da, 573, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__128)) __PYX_ERR(0, 573, __pyx_L1_error)
+  __pyx_codeobj__128 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__127, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_djing_core_Foundation_Djing_py, __pyx_n_s_available_dashboard_cards_for_da, 572, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__128)) __PYX_ERR(0, 572, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -27628,15 +27682,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu)) __PYX_ERR(0, 174, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu)) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct__default_main_menu->tp_print = 0;
@@ -27647,15 +27701,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables)) __PYX_ERR(0, 268, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables) < 0) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables)) __PYX_ERR(0, 267, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables) < 0) __PYX_ERR(0, 267, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables) < 0) __PYX_ERR(0, 268, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables) < 0) __PYX_ERR(0, 267, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_1_json_variables->tp_print = 0;
@@ -27666,15 +27720,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information)) __PYX_ERR(0, 277, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information) < 0) __PYX_ERR(0, 277, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information)) __PYX_ERR(0, 276, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information) < 0) __PYX_ERR(0, 276, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information) < 0) __PYX_ERR(0, 277, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information) < 0) __PYX_ERR(0, 276, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_2_resource_information->tp_print = 0;
@@ -27685,15 +27739,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script)) __PYX_ERR(0, 318, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script) < 0) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script)) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script) < 0) __PYX_ERR(0, 318, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_3_provide_to_script->tp_print = 0;
@@ -27704,15 +27758,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards)) __PYX_ERR(0, 439, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards)) __PYX_ERR(0, 438, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards) < 0) __PYX_ERR(0, 438, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards) < 0) __PYX_ERR(0, 438, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_4_available_dashboards->tp_print = 0;
@@ -27723,15 +27777,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards)) __PYX_ERR(0, 476, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards)) __PYX_ERR(0, 475, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards) < 0) __PYX_ERR(0, 475, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards) < 0) __PYX_ERR(0, 475, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_5_all_available_dashboard_cards->tp_print = 0;
@@ -27742,15 +27796,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key)) __PYX_ERR(0, 559, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key) < 0) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key)) __PYX_ERR(0, 558, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key) < 0) __PYX_ERR(0, 558, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key) < 0) __PYX_ERR(0, 559, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key) < 0) __PYX_ERR(0, 558, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_6_dashboard_for_key->tp_print = 0;
@@ -27761,15 +27815,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key)) __PYX_ERR(0, 566, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key) < 0) __PYX_ERR(0, 566, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key)) __PYX_ERR(0, 565, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key) < 0) __PYX_ERR(0, 565, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key) < 0) __PYX_ERR(0, 566, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key) < 0) __PYX_ERR(0, 565, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_7_resource_for_key->tp_print = 0;
@@ -27780,15 +27834,15 @@ static int __Pyx_modinit_type_init_code(void) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard)) __PYX_ERR(0, 573, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard) < 0) __PYX_ERR(0, 573, __pyx_L1_error)
+  __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard_spec, NULL); if (unlikely(!__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard)) __PYX_ERR(0, 572, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard_spec, __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard) < 0) __PYX_ERR(0, 572, __pyx_L1_error)
   #else
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard = &__pyx_type_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard) < 0) __PYX_ERR(0, 573, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard) < 0) __PYX_ERR(0, 572, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_5djing_4core_10Foundation_5Djing___pyx_scope_struct_8_available_dashboard_cards_for_dashboard->tp_print = 0;
@@ -28915,7 +28969,7 @@ if (!__Pyx_RefNanny) {
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def flush_state(cls, event: str):
- *         print("event", event, cls.__license_checked)
+ *         if event == "after" and not cls.__license_checked:
  */
   __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -28930,1047 +28984,1047 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_flush_state, __pyx_t_5) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":73
+  /* "djing/core/Foundation/Djing.py":72
  *         cls.__license_checked = False
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def script(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_name, __pyx_n_s_str) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_path, __pyx_n_s_str) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Self) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_3script, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_script, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 73, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_name, __pyx_n_s_str) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_path, __pyx_n_s_str) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Self) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_3script, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_script, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_script, __pyx_t_5) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_script, __pyx_t_5) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":84
+  /* "djing/core/Foundation/Djing.py":83
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def style(cls, name: str, path: str) -> Self:
  *         if settings.DEBUG:
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_name, __pyx_n_s_str) < 0) __PYX_ERR(0, 84, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_path, __pyx_n_s_str) < 0) __PYX_ERR(0, 84, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Self) < 0) __PYX_ERR(0, 84, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_5style, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_style, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 84, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_name, __pyx_n_s_str) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_path, __pyx_n_s_str) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Self) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_5style, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_style, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 84, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_style, __pyx_t_5) < 0) __PYX_ERR(0, 84, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_style, __pyx_t_5) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":95
+  /* "djing/core/Foundation/Djing.py":94
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def when_serving(cls, callback, default) -> Any:
  *         if App.bound(DjingRequest):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Any) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_7when_serving, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_when_serving, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 95, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Any) < 0) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_7when_serving, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_when_serving, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_when_serving, __pyx_t_5) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_when_serving, __pyx_t_5) < 0) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":103
+  /* "djing/core/Foundation/Djing.py":102
  *             return default(App.make("request"))
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def with_authentication(cls) -> "Djing":
  *         cls._with_authentication = True
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 103, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_9with_authentication, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_with_authentication, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__46)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 103, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_9with_authentication, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_with_authentication, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__46)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_with_authentication_2, __pyx_t_5) < 0) __PYX_ERR(0, 103, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_with_authentication_2, __pyx_t_5) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":109
+  /* "djing/core/Foundation/Djing.py":108
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def with_breadcrumbs(cls, with_breadcrumbs=True) -> Type["Djing"]:
  *         cls._with_breadcrumbs = with_breadcrumbs
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Type_Djing) < 0) __PYX_ERR(0, 109, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_11with_breadcrumbs, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_with_breadcrumbs, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__48)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Type_Djing) < 0) __PYX_ERR(0, 108, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_11with_breadcrumbs, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_with_breadcrumbs, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__48)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_6, __pyx_tuple__49);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_with_breadcrumbs_2, __pyx_t_5) < 0) __PYX_ERR(0, 109, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_with_breadcrumbs_2, __pyx_t_5) < 0) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":115
+  /* "djing/core/Foundation/Djing.py":114
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def breadcrumbs_enabled(cls) -> bool:
  *         status = (
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_bool) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_13breadcrumbs_enabled, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_breadcrumbs_enabled, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_bool) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_13breadcrumbs_enabled, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_breadcrumbs_enabled, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_breadcrumbs_enabled, __pyx_t_5) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_breadcrumbs_enabled, __pyx_t_5) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":125
+  /* "djing/core/Foundation/Djing.py":124
  *         return status
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def without_global_search(cls) -> Type["Djing"]:
  *         cls._global_search_enabled = False
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Type_Djing) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_15without_global_search, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_without_global_search, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__52)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 125, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Type_Djing) < 0) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_15without_global_search, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_without_global_search, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__52)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_without_global_search, __pyx_t_5) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_without_global_search, __pyx_t_5) < 0) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":131
+  /* "djing/core/Foundation/Djing.py":130
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def __resource_collection(cls) -> ResourceCollection:
  *         return ResourceCollection.make(cls._resources)
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 131, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_ResourceCollection) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17__resource_collection, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing___resource_collection, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_ResourceCollection) < 0) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_17__resource_collection, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing___resource_collection, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 131, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_Djing__resource_collection, __pyx_t_5) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_Djing__resource_collection, __pyx_t_5) < 0) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":135
+  /* "djing/core/Foundation/Djing.py":134
  *         return ResourceCollection.make(cls._resources)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def authorized_resources(cls, request: DjingRequest) -> ResourceCollection:
  *         return cls.__resource_collection().authorized(request)
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 135, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_ResourceCollection) < 0) __PYX_ERR(0, 135, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_19authorized_resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_authorized_resources, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__55)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 135, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_ResourceCollection) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_19authorized_resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_authorized_resources, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__55)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_authorized_resources, __pyx_t_5) < 0) __PYX_ERR(0, 135, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_authorized_resources, __pyx_t_5) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":139
+  /* "djing/core/Foundation/Djing.py":138
  *         return cls.__resource_collection().authorized(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def globally_searchable_resources(
  *         cls, request: DjingRequest
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_List_Tuple_Any_Any) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_21globally_searchable_resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_globally_searchable_resour, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 139, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_List_Tuple_Any_Any) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_21globally_searchable_resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_globally_searchable_resour, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_globally_searchable_resources, __pyx_t_5) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_globally_searchable_resources, __pyx_t_5) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":150
+  /* "djing/core/Foundation/Djing.py":149
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def has_globally_searchable_resources(cls) -> bool:
  *         return (
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_bool) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_23has_globally_searchable_resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_has_globally_searchable_re, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__57)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 150, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_bool) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_23has_globally_searchable_resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_has_globally_searchable_re, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__57)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_has_globally_searchable_resource, __pyx_t_5) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_has_globally_searchable_resource, __pyx_t_5) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":157
+  /* "djing/core/Foundation/Djing.py":156
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def main_menu(cls, callback: Callable[[Any], Any]) -> "Djing":
  *         cls._main_menu_callback = callback
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_callback, __pyx_kp_s_Callable_Any_Any) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_25main_menu, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_main_menu, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__59)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 157, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_callback, __pyx_kp_s_Callable_Any_Any) < 0) __PYX_ERR(0, 156, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_25main_menu, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_main_menu, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__59)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_main_menu, __pyx_t_5) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_main_menu, __pyx_t_5) < 0) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":163
+  /* "djing/core/Foundation/Djing.py":162
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resolve_main_menu(cls, request: DjingRequest):
  *         default_main_menu = cls.default_main_menu(request)
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_27resolve_main_menu, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resolve_main_menu, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_27resolve_main_menu, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resolve_main_menu, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resolve_main_menu, __pyx_t_5) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resolve_main_menu, __pyx_t_5) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":174
+  /* "djing/core/Foundation/Djing.py":173
  *         return default_main_menu
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def default_main_menu(cls, request: DjingRequest):
  *         def map_tools(tool):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_29default_main_menu, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_default_main_menu, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 174, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_29default_main_menu, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_default_main_menu, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_default_main_menu, __pyx_t_5) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_default_main_menu, __pyx_t_5) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":185
+  /* "djing/core/Foundation/Djing.py":184
  *         return Menu.make(items)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def logo(cls) -> Optional[str]:
  *         logo = Config.get("djing.brand_logo", None)
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Optional_str) < 0) __PYX_ERR(0, 185, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_31logo, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_logo, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 185, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Optional_str) < 0) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_31logo, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_logo, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_logo, __pyx_t_5) < 0) __PYX_ERR(0, 185, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_logo, __pyx_t_5) < 0) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":196
+  /* "djing/core/Foundation/Djing.py":195
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def brand_colors(cls) -> list:
  *         def reject_colors(value):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_list) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_33brand_colors, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_brand_colors, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__67)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_list) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_33brand_colors, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_brand_colors, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__67)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_brand_colors, __pyx_t_5) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_brand_colors, __pyx_t_5) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":205
+  /* "djing/core/Foundation/Djing.py":204
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def username_field(cls) -> str:
  *         return Config.get("djing.auth.username_field", "username")
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 205, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_35username_field, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_username_field, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__68)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 205, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_35username_field, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_username_field, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__68)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_username_field, __pyx_t_5) < 0) __PYX_ERR(0, 205, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_username_field, __pyx_t_5) < 0) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":209
+  /* "djing/core/Foundation/Djing.py":208
  *         return Config.get("djing.auth.username_field", "username")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def path(cls) -> str:
  *         return Config.get("djing.path", "/djing-admin")
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_37path, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_path, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__69)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 209, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_37path, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_path, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__69)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_path, __pyx_t_5) < 0) __PYX_ERR(0, 209, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_path, __pyx_t_5) < 0) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":213
+  /* "djing/core/Foundation/Djing.py":212
  *         return Config.get("djing.path", "/djing-admin")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def base_directory(cls) -> str:
  *         return "djing_admin"
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 213, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_39base_directory, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_base_directory, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__70)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_39base_directory, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_base_directory, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__70)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_base_directory, __pyx_t_5) < 0) __PYX_ERR(0, 213, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_base_directory, __pyx_t_5) < 0) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":217
+  /* "djing/core/Foundation/Djing.py":216
  *         return "djing_admin"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def app_directory(cls) -> Path:
  *         path = App.app_path("Djing")
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Path) < 0) __PYX_ERR(0, 217, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_41app_directory, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_app_directory, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__72)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 217, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_Path) < 0) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_41app_directory, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_app_directory, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__72)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_app_directory, __pyx_t_5) < 0) __PYX_ERR(0, 217, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_app_directory, __pyx_t_5) < 0) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":223
+  /* "djing/core/Foundation/Djing.py":222
  *         return path if isinstance(path, Path) else Path(path)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def login_path(cls) -> str:
  *         path = cls.path()
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 223, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_43login_path, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_login_path, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__73)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_43login_path, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_login_path, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__73)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_login_path, __pyx_t_5) < 0) __PYX_ERR(0, 223, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_login_path, __pyx_t_5) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":229
+  /* "djing/core/Foundation/Djing.py":228
  *         return f"{path}/login"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def initial_path(cls, callback: Callable[[Any], Any]) -> "Djing":
  *         cls._initial_path_callback = callback
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_callback, __pyx_kp_s_Callable_Any_Any) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_45initial_path, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_initial_path, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 229, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_callback, __pyx_kp_s_Callable_Any_Any) < 0) __PYX_ERR(0, 228, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_45initial_path, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_initial_path, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_initial_path, __pyx_t_5) < 0) __PYX_ERR(0, 229, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_initial_path, __pyx_t_5) < 0) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":235
+  /* "djing/core/Foundation/Djing.py":234
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resolve_initial_path(cls, request: DjingRequest) -> str:
  *         initial_path = None
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 235, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 235, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 235, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_47resolve_initial_path, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resolve_initial_path, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__76)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 235, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_47resolve_initial_path, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resolve_initial_path, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__76)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 235, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resolve_initial_path, __pyx_t_5) < 0) __PYX_ERR(0, 235, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resolve_initial_path, __pyx_t_5) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":247
+  /* "djing/core/Foundation/Djing.py":246
  *         return initial_path if initial_path else "/dashboards/main"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def routes(cls) -> PendingRouteRegistration:
  *         Route.alias_middleware("djing.guest", RedirectIfAuthenticated)
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 246, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_PendingRouteRegistration) < 0) __PYX_ERR(0, 247, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_49routes, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_routes, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__77)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 247, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_n_s_PendingRouteRegistration) < 0) __PYX_ERR(0, 246, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_49routes, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_routes, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__77)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 246, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 246, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_routes, __pyx_t_5) < 0) __PYX_ERR(0, 247, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_routes, __pyx_t_5) < 0) __PYX_ERR(0, 246, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":253
+  /* "djing/core/Foundation/Djing.py":252
  *         return PendingRouteRegistration()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def tools(cls, tools: List[Tool]) -> "Djing":
  *         cls._tools = array_merge(cls._tools, tools)
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_tools_2, __pyx_kp_s_List_Tool) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_51tools, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_tools, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__79)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 253, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_tools_2, __pyx_kp_s_List_Tool) < 0) __PYX_ERR(0, 252, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 252, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_51tools, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_tools, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__79)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_tools_2, __pyx_t_5) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_tools_2, __pyx_t_5) < 0) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":259
+  /* "djing/core/Foundation/Djing.py":258
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def user(cls, request: DjingRequest):
  *         user = request.user()
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 259, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_53user, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_user, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__81)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 259, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 258, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_53user, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_user, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__81)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 259, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_user, __pyx_t_5) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_user, __pyx_t_5) < 0) __PYX_ERR(0, 258, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":268
+  /* "djing/core/Foundation/Djing.py":267
  *         return None
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def json_variables(cls, request: DjingRequest):
  *         def map_json_variables(item):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 268, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_55json_variables, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_json_variables, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__83)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 268, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 267, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_55json_variables, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_json_variables, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__83)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_json_variables_2, __pyx_t_5) < 0) __PYX_ERR(0, 268, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_json_variables_2, __pyx_t_5) < 0) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":277
+  /* "djing/core/Foundation/Djing.py":276
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resource_information(cls, request: DjingRequest):
  *         def map_resources(resource: Type[Resource]):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 277, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_57resource_information, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resource_information, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__85)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 277, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 276, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_57resource_information, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resource_information, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__85)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resource_information, __pyx_t_5) < 0) __PYX_ERR(0, 277, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resource_information, __pyx_t_5) < 0) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":294
+  /* "djing/core/Foundation/Djing.py":293
  *         return collection.map(map_resources).values().all()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def footer(cls, callback: Callable[[Any], Any]) -> Type["Djing"]:
  *         cls._footer_callback = callback
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_callback, __pyx_kp_s_Callable_Any_Any) < 0) __PYX_ERR(0, 294, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Type_Djing) < 0) __PYX_ERR(0, 294, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_59footer, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_footer, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__86)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 294, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_callback, __pyx_kp_s_Callable_Any_Any) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Type_Djing) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_59footer, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_footer, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__86)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_footer, __pyx_t_5) < 0) __PYX_ERR(0, 294, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_footer, __pyx_t_5) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":300
+  /* "djing/core/Foundation/Djing.py":299
  *         return cls
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def default_footer(cls, request: DjingRequest):
  *         version = cls.version()
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 300, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_61default_footer, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_default_footer, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__88)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 300, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_61default_footer, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_default_footer, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__88)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_default_footer, __pyx_t_5) < 0) __PYX_ERR(0, 300, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_default_footer, __pyx_t_5) < 0) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":311
+  /* "djing/core/Foundation/Djing.py":310
  *         """
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resolve_footer(cls, request: DjingRequest):
  *         if cls._footer_callback:
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 310, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 311, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_63resolve_footer, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resolve_footer, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__89)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 311, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_63resolve_footer, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resolve_footer, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__89)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 310, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 310, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resolve_footer, __pyx_t_5) < 0) __PYX_ERR(0, 311, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resolve_footer, __pyx_t_5) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":318
+  /* "djing/core/Foundation/Djing.py":317
  *         return cls.default_footer(request)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def provide_to_script(cls, variables: Dict[str, Any]) -> "Djing":
  *         def get_initial_path(request):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_variables, __pyx_kp_s_Dict_str_Any) < 0) __PYX_ERR(0, 318, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 318, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_65provide_to_script, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_provide_to_script, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__91)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 318, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_variables, __pyx_kp_s_Dict_str_Any) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_65provide_to_script, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_provide_to_script, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__91)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_provide_to_script, __pyx_t_5) < 0) __PYX_ERR(0, 318, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_provide_to_script, __pyx_t_5) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":369
+  /* "djing/core/Foundation/Djing.py":368
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def version(cls):
  *         return "0.1.1"
  */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_67version, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_version, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__92)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 369, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_67version, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_version, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__92)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 368, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 369, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 368, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_version, __pyx_t_6) < 0) __PYX_ERR(0, 369, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_version, __pyx_t_6) < 0) __PYX_ERR(0, 368, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":373
+  /* "djing/core/Foundation/Djing.py":372
  *         return "0.1.1"
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def check_license_validity(cls) -> bool:
  *         cls.__license_checked = True
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 372, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_bool) < 0) __PYX_ERR(0, 373, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_69check_license_validity, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_check_license_validity, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__94)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 373, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_bool) < 0) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_69check_license_validity, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_check_license_validity, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__94)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 372, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 372, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_check_license_validity, __pyx_t_6) < 0) __PYX_ERR(0, 373, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_check_license_validity, __pyx_t_6) < 0) __PYX_ERR(0, 372, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":381
+  /* "djing/core/Foundation/Djing.py":380
  *         return status_code == 200
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def check_license(cls) -> int:
  *         request: DjingRequest = App.make("request")
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_int) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_71check_license, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_check_license, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__96)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 381, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_int) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_71check_license, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_check_license, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__96)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_check_license, __pyx_t_6) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_check_license, __pyx_t_6) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":406
+  /* "djing/core/Foundation/Djing.py":405
  *             return cls.update_license_info(request, cache_file)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def update_license_info(cls, request: DjingRequest, cache_file: str) -> int:
  *         try:
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_cache_file, __pyx_n_s_str) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_int) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_73update_license_info, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_update_license_info, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__98)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 406, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 405, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_cache_file, __pyx_n_s_str) < 0) __PYX_ERR(0, 405, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_int) < 0) __PYX_ERR(0, 405, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_73update_license_info, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_update_license_info, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__98)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_update_license_info, __pyx_t_6) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_update_license_info, __pyx_t_6) < 0) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":429
+  /* "djing/core/Foundation/Djing.py":428
  *             raise e
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def should_recheck(cls, cache_data: dict, cache_duration: float):
  *         return time.time() - cache_data["last_check"] > cache_duration
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 428, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_cache_data, __pyx_n_s_dict) < 0) __PYX_ERR(0, 429, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_cache_duration, __pyx_n_s_float) < 0) __PYX_ERR(0, 429, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_75should_recheck, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_should_recheck, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__100)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 429, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_cache_data, __pyx_n_s_dict) < 0) __PYX_ERR(0, 428, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_cache_duration, __pyx_n_s_float) < 0) __PYX_ERR(0, 428, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_75should_recheck, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_should_recheck, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__100)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 428, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 428, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_should_recheck, __pyx_t_6) < 0) __PYX_ERR(0, 429, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_should_recheck, __pyx_t_6) < 0) __PYX_ERR(0, 428, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":433
+  /* "djing/core/Foundation/Djing.py":432
  *         return time.time() - cache_data["last_check"] > cache_duration
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def dashboards(cls, dashboards) -> "Djing":
  *         cls._dashboards = array_merge(cls._dashboards, dashboards)
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_77dashboards, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_dashboards, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__102)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 433, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 432, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_77dashboards, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_dashboards, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__102)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_dashboards_2, __pyx_t_6) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_dashboards_2, __pyx_t_6) < 0) __PYX_ERR(0, 432, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":439
+  /* "djing/core/Foundation/Djing.py":438
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def available_dashboards(cls, request: DjingRequest):
  *         def authorized_available_dashboards(dashboard):
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_79available_dashboards, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_available_dashboards, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__104)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 439, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 438, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_79available_dashboards, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_available_dashboards, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__104)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_available_dashboards, __pyx_t_6) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_available_dashboards, __pyx_t_6) < 0) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":448
+  /* "djing/core/Foundation/Djing.py":447
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def available_resources(cls, request: DjingRequest):
  *         collection = cls.authorized_resources(request)
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 448, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 448, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_81available_resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_available_resources, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__106)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 448, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 447, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_81available_resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_available_resources, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__106)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 448, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_available_resources, __pyx_t_6) < 0) __PYX_ERR(0, 448, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_available_resources, __pyx_t_6) < 0) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":456
+  /* "djing/core/Foundation/Djing.py":455
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def available_tools(cls, request: DjingRequest) -> List[Tool]:
  *         if not cls.user(request):
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 456, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_List_Tool) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_83available_tools, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_available_tools, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__107)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 456, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_List_Tool) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_83available_tools, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_available_tools, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__107)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 456, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_available_tools, __pyx_t_6) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_available_tools, __pyx_t_6) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":463
+  /* "djing/core/Foundation/Djing.py":462
  *         return cls._tools
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def boot_tools(cls, request: DjingRequest):
  *         def boot_each_tool(tool):
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 463, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 463, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_85boot_tools, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_boot_tools, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__109)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 463, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 462, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_85boot_tools, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_boot_tools, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__109)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 463, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_boot_tools, __pyx_t_6) < 0) __PYX_ERR(0, 463, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_boot_tools, __pyx_t_6) < 0) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":470
+  /* "djing/core/Foundation/Djing.py":469
  *         collect(cls.available_tools(request)).each(boot_each_tool)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resources(cls, resources) -> "Djing":
  *         cls._resources = array_merge(cls._resources, resources)
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 470, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 470, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_87resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resources, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__111)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 470, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 469, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_87resources, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resources, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__111)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 470, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resources_2, __pyx_t_6) < 0) __PYX_ERR(0, 470, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resources_2, __pyx_t_6) < 0) __PYX_ERR(0, 469, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":476
+  /* "djing/core/Foundation/Djing.py":475
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def all_available_dashboard_cards(cls, request: DjingRequest) -> Collection:
  *         def authorize_dashboard(dashboard):
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 476, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_Collection) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_89all_available_dashboard_cards, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_all_available_dashboard_ca_3, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__113)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 476, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 475, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_Collection) < 0) __PYX_ERR(0, 475, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_89all_available_dashboard_cards, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_all_available_dashboard_ca_3, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__113)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 476, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_all_available_dashboard_cards, __pyx_t_6) < 0) __PYX_ERR(0, 476, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_all_available_dashboard_cards, __pyx_t_6) < 0) __PYX_ERR(0, 475, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":495
+  /* "djing/core/Foundation/Djing.py":494
  *         return items
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resources_in(cls, resource_path: Path):
  *         try:
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_resource_path, __pyx_n_s_Path) < 0) __PYX_ERR(0, 495, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_91resources_in, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resources_in, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__115)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 495, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_resource_path, __pyx_n_s_Path) < 0) __PYX_ERR(0, 494, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_91resources_in, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resources_in, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__115)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resources_in, __pyx_t_6) < 0) __PYX_ERR(0, 495, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resources_in, __pyx_t_6) < 0) __PYX_ERR(0, 494, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":526
+  /* "djing/core/Foundation/Djing.py":525
  *             print(f"Error in resources_in: {e}")
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def humanize(cls, value) -> str:
  *         if isinstance(value, str):
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 526, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 525, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 526, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_93humanize, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_humanize, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__117)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 526, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_n_s_str) < 0) __PYX_ERR(0, 525, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_93humanize, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_humanize, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__117)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 525, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 526, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 525, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_humanize, __pyx_t_6) < 0) __PYX_ERR(0, 526, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_humanize, __pyx_t_6) < 0) __PYX_ERR(0, 525, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":533
+  /* "djing/core/Foundation/Djing.py":532
  *         return cls.humanize(value.__class__.__name__)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def grouped_resources_for_navigation(cls, request: DjingRequest):
  *         available_resources = cls.available_resources(request)
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 533, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 533, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_95grouped_resources_for_navigation, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_grouped_resources_for_navi_2, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__119)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 533, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 532, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_95grouped_resources_for_navigation, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_grouped_resources_for_navi_2, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__119)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 533, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_grouped_resources_for_navigation, __pyx_t_6) < 0) __PYX_ERR(0, 533, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_grouped_resources_for_navigation, __pyx_t_6) < 0) __PYX_ERR(0, 532, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":546
+  /* "djing/core/Foundation/Djing.py":545
  *         )
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def sort_resources_by(cls, callback) -> "Djing":
  *         cls._sort_callback = callback
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 546, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 545, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 546, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_97sort_resources_by, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_sort_resources_by, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__120)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 546, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_return, __pyx_kp_s_Djing_2) < 0) __PYX_ERR(0, 545, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_97sort_resources_by, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_sort_resources_by, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__120)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 545, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 546, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 545, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sort_resources_by, __pyx_t_6) < 0) __PYX_ERR(0, 546, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sort_resources_by, __pyx_t_6) < 0) __PYX_ERR(0, 545, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":552
+  /* "djing/core/Foundation/Djing.py":551
  *         return cls()
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def sort_resources_with(cls):
  *         def default_sort_resources_with(resource):
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_99sort_resources_with, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_sort_resources_with, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__122)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 552, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_99sort_resources_with, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_sort_resources_with, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__122)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 551, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 552, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 551, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sort_resources_with, __pyx_t_5) < 0) __PYX_ERR(0, 552, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sort_resources_with, __pyx_t_5) < 0) __PYX_ERR(0, 551, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":559
+  /* "djing/core/Foundation/Djing.py":558
  *         return cls._sort_callback if cls._sort_callback else default_sort_resources_with
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def dashboard_for_key(cls, key, request: DjingRequest):
  *         def authorize_dashboard(dashboard):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 559, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_101dashboard_for_key, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_dashboard_for_key, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__124)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 559, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 558, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_101dashboard_for_key, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_dashboard_for_key, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__124)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_dashboard_for_key, __pyx_t_5) < 0) __PYX_ERR(0, 559, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_dashboard_for_key, __pyx_t_5) < 0) __PYX_ERR(0, 558, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "djing/core/Foundation/Djing.py":566
+  /* "djing/core/Foundation/Djing.py":565
  *         return collect(cls._dashboards).first(authorize_dashboard)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def resource_for_key(cls, key):
  *         def filter_key(resource):
  */
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_103resource_for_key, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resource_for_key, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__126)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 566, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_103resource_for_key, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_resource_for_key, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__126)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 565, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 566, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 565, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resource_for_key, __pyx_t_6) < 0) __PYX_ERR(0, 566, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_resource_for_key, __pyx_t_6) < 0) __PYX_ERR(0, 565, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "djing/core/Foundation/Djing.py":573
+  /* "djing/core/Foundation/Djing.py":572
  *         return cls.__resource_collection().first(filter_key)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def available_dashboard_cards_for_dashboard(cls, key, request: DjingRequest):
  *         def authorize_card(card):
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 573, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 572, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 573, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_105available_dashboard_cards_for_dashboard, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_available_dashboard_cards_3, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__128)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 573, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_request, __pyx_n_s_DjingRequest) < 0) __PYX_ERR(0, 572, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_5djing_4core_10Foundation_5Djing_5Djing_105available_dashboard_cards_for_dashboard, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_Djing_available_dashboard_cards_3, NULL, __pyx_n_s_djing_core_Foundation_Djing, __pyx_d, ((PyObject *)__pyx_codeobj__128)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 572, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 573, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Method_ClassMethod(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 572, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_available_dashboard_cards_for_da, __pyx_t_6) < 0) __PYX_ERR(0, 573, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_available_dashboard_cards_for_da, __pyx_t_6) < 0) __PYX_ERR(0, 572, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "djing/core/Foundation/Djing.py":34
@@ -30677,45 +30731,6 @@ static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *nam
     return 0;
 }
 
-/* PyObjectCall */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
-    PyObject *result;
-    ternaryfunc call = Py_TYPE(func)->tp_call;
-    if (unlikely(!call))
-        return PyObject_Call(func, arg, kw);
-    #if PY_MAJOR_VERSION < 3
-    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
-        return NULL;
-    #else
-    if (unlikely(Py_EnterRecursiveCall(" while calling a Python object")))
-        return NULL;
-    #endif
-    result = (*call)(func, arg, kw);
-    Py_LeaveRecursiveCall();
-    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
-        PyErr_SetString(
-            PyExc_SystemError,
-            "NULL result without error in PyObject_Call");
-    }
-    return result;
-}
-#endif
-
-/* PyObjectSetAttrStr */
-#if CYTHON_USE_TYPE_SLOTS
-static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value) {
-    PyTypeObject* tp = Py_TYPE(obj);
-    if (likely(tp->tp_setattro))
-        return tp->tp_setattro(obj, attr_name, value);
-#if PY_MAJOR_VERSION < 3
-    if (likely(tp->tp_setattr))
-        return tp->tp_setattr(obj, PyString_AS_STRING(attr_name), value);
-#endif
-    return PyObject_SetAttr(obj, attr_name, value);
-}
-#endif
-
 /* PyDictVersioning */
 #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
 static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj) {
@@ -30783,75 +30798,6 @@ static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name)
     PyErr_Clear();
 #endif
     return __Pyx_GetBuiltinName(name);
-}
-
-/* JoinPyUnicode */
-static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
-                                      Py_UCS4 max_char) {
-#if CYTHON_USE_UNICODE_INTERNALS && CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    PyObject *result_uval;
-    int result_ukind, kind_shift;
-    Py_ssize_t i, char_pos;
-    void *result_udata;
-    CYTHON_MAYBE_UNUSED_VAR(max_char);
-#if CYTHON_PEP393_ENABLED
-    result_uval = PyUnicode_New(result_ulength, max_char);
-    if (unlikely(!result_uval)) return NULL;
-    result_ukind = (max_char <= 255) ? PyUnicode_1BYTE_KIND : (max_char <= 65535) ? PyUnicode_2BYTE_KIND : PyUnicode_4BYTE_KIND;
-    kind_shift = (result_ukind == PyUnicode_4BYTE_KIND) ? 2 : result_ukind - 1;
-    result_udata = PyUnicode_DATA(result_uval);
-#else
-    result_uval = PyUnicode_FromUnicode(NULL, result_ulength);
-    if (unlikely(!result_uval)) return NULL;
-    result_ukind = sizeof(Py_UNICODE);
-    kind_shift = (result_ukind == 4) ? 2 : result_ukind - 1;
-    result_udata = PyUnicode_AS_UNICODE(result_uval);
-#endif
-    assert(kind_shift == 2 || kind_shift == 1 || kind_shift == 0);
-    char_pos = 0;
-    for (i=0; i < value_count; i++) {
-        int ukind;
-        Py_ssize_t ulength;
-        void *udata;
-        PyObject *uval = PyTuple_GET_ITEM(value_tuple, i);
-        if (unlikely(__Pyx_PyUnicode_READY(uval)))
-            goto bad;
-        ulength = __Pyx_PyUnicode_GET_LENGTH(uval);
-        if (unlikely(!ulength))
-            continue;
-        if (unlikely((PY_SSIZE_T_MAX >> kind_shift) - ulength < char_pos))
-            goto overflow;
-        ukind = __Pyx_PyUnicode_KIND(uval);
-        udata = __Pyx_PyUnicode_DATA(uval);
-        if (!CYTHON_PEP393_ENABLED || ukind == result_ukind) {
-            memcpy((char *)result_udata + (char_pos << kind_shift), udata, (size_t) (ulength << kind_shift));
-        } else {
-            #if PY_VERSION_HEX >= 0x030d0000
-            if (unlikely(PyUnicode_CopyCharacters(result_uval, char_pos, uval, 0, ulength) < 0)) goto bad;
-            #elif CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030300F0 || defined(_PyUnicode_FastCopyCharacters)
-            _PyUnicode_FastCopyCharacters(result_uval, char_pos, uval, 0, ulength);
-            #else
-            Py_ssize_t j;
-            for (j=0; j < ulength; j++) {
-                Py_UCS4 uchar = __Pyx_PyUnicode_READ(ukind, udata, j);
-                __Pyx_PyUnicode_WRITE(result_ukind, result_udata, char_pos+j, uchar);
-            }
-            #endif
-        }
-        char_pos += ulength;
-    }
-    return result_uval;
-overflow:
-    PyErr_SetString(PyExc_OverflowError, "join() result is too long for a Python string");
-bad:
-    Py_DECREF(result_uval);
-    return NULL;
-#else
-    CYTHON_UNUSED_VAR(max_char);
-    CYTHON_UNUSED_VAR(result_ulength);
-    CYTHON_UNUSED_VAR(value_count);
-    return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
-#endif
 }
 
 /* PyFunctionFastCall */
@@ -30977,6 +30923,31 @@ done:
 }
 #endif
 
+/* PyObjectCall */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
+    PyObject *result;
+    ternaryfunc call = Py_TYPE(func)->tp_call;
+    if (unlikely(!call))
+        return PyObject_Call(func, arg, kw);
+    #if PY_MAJOR_VERSION < 3
+    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
+        return NULL;
+    #else
+    if (unlikely(Py_EnterRecursiveCall(" while calling a Python object")))
+        return NULL;
+    #endif
+    result = (*call)(func, arg, kw);
+    Py_LeaveRecursiveCall();
+    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
+        PyErr_SetString(
+            PyExc_SystemError,
+            "NULL result without error in PyObject_Call");
+    }
+    return result;
+}
+#endif
+
 /* PyObjectCallMethO */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
@@ -31078,6 +31049,250 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_FastCallDict(PyObject *func, PyObj
     #else
     return __Pyx_PyObject_FastCall_fallback(func, args, (size_t)nargs, kwargs);
     #endif
+}
+
+/* RaiseException */
+#if PY_MAJOR_VERSION < 3
+static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
+    __Pyx_PyThreadState_declare
+    CYTHON_UNUSED_VAR(cause);
+    Py_XINCREF(type);
+    if (!value || value == Py_None)
+        value = NULL;
+    else
+        Py_INCREF(value);
+    if (!tb || tb == Py_None)
+        tb = NULL;
+    else {
+        Py_INCREF(tb);
+        if (!PyTraceBack_Check(tb)) {
+            PyErr_SetString(PyExc_TypeError,
+                "raise: arg 3 must be a traceback or None");
+            goto raise_error;
+        }
+    }
+    if (PyType_Check(type)) {
+#if CYTHON_COMPILING_IN_PYPY
+        if (!value) {
+            Py_INCREF(Py_None);
+            value = Py_None;
+        }
+#endif
+        PyErr_NormalizeException(&type, &value, &tb);
+    } else {
+        if (value) {
+            PyErr_SetString(PyExc_TypeError,
+                "instance exception may not have a separate value");
+            goto raise_error;
+        }
+        value = type;
+        type = (PyObject*) Py_TYPE(type);
+        Py_INCREF(type);
+        if (!PyType_IsSubtype((PyTypeObject *)type, (PyTypeObject *)PyExc_BaseException)) {
+            PyErr_SetString(PyExc_TypeError,
+                "raise: exception class must be a subclass of BaseException");
+            goto raise_error;
+        }
+    }
+    __Pyx_PyThreadState_assign
+    __Pyx_ErrRestore(type, value, tb);
+    return;
+raise_error:
+    Py_XDECREF(value);
+    Py_XDECREF(type);
+    Py_XDECREF(tb);
+    return;
+}
+#else
+static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
+    PyObject* owned_instance = NULL;
+    if (tb == Py_None) {
+        tb = 0;
+    } else if (tb && !PyTraceBack_Check(tb)) {
+        PyErr_SetString(PyExc_TypeError,
+            "raise: arg 3 must be a traceback or None");
+        goto bad;
+    }
+    if (value == Py_None)
+        value = 0;
+    if (PyExceptionInstance_Check(type)) {
+        if (value) {
+            PyErr_SetString(PyExc_TypeError,
+                "instance exception may not have a separate value");
+            goto bad;
+        }
+        value = type;
+        type = (PyObject*) Py_TYPE(value);
+    } else if (PyExceptionClass_Check(type)) {
+        PyObject *instance_class = NULL;
+        if (value && PyExceptionInstance_Check(value)) {
+            instance_class = (PyObject*) Py_TYPE(value);
+            if (instance_class != type) {
+                int is_subclass = PyObject_IsSubclass(instance_class, type);
+                if (!is_subclass) {
+                    instance_class = NULL;
+                } else if (unlikely(is_subclass == -1)) {
+                    goto bad;
+                } else {
+                    type = instance_class;
+                }
+            }
+        }
+        if (!instance_class) {
+            PyObject *args;
+            if (!value)
+                args = PyTuple_New(0);
+            else if (PyTuple_Check(value)) {
+                Py_INCREF(value);
+                args = value;
+            } else
+                args = PyTuple_Pack(1, value);
+            if (!args)
+                goto bad;
+            owned_instance = PyObject_Call(type, args, NULL);
+            Py_DECREF(args);
+            if (!owned_instance)
+                goto bad;
+            value = owned_instance;
+            if (!PyExceptionInstance_Check(value)) {
+                PyErr_Format(PyExc_TypeError,
+                             "calling %R should have returned an instance of "
+                             "BaseException, not %R",
+                             type, Py_TYPE(value));
+                goto bad;
+            }
+        }
+    } else {
+        PyErr_SetString(PyExc_TypeError,
+            "raise: exception class must be a subclass of BaseException");
+        goto bad;
+    }
+    if (cause) {
+        PyObject *fixed_cause;
+        if (cause == Py_None) {
+            fixed_cause = NULL;
+        } else if (PyExceptionClass_Check(cause)) {
+            fixed_cause = PyObject_CallObject(cause, NULL);
+            if (fixed_cause == NULL)
+                goto bad;
+        } else if (PyExceptionInstance_Check(cause)) {
+            fixed_cause = cause;
+            Py_INCREF(fixed_cause);
+        } else {
+            PyErr_SetString(PyExc_TypeError,
+                            "exception causes must derive from "
+                            "BaseException");
+            goto bad;
+        }
+        PyException_SetCause(value, fixed_cause);
+    }
+    PyErr_SetObject(type, value);
+    if (tb) {
+      #if PY_VERSION_HEX >= 0x030C00A6
+        PyException_SetTraceback(value, tb);
+      #elif CYTHON_FAST_THREAD_STATE
+        PyThreadState *tstate = __Pyx_PyThreadState_Current;
+        PyObject* tmp_tb = tstate->curexc_traceback;
+        if (tb != tmp_tb) {
+            Py_INCREF(tb);
+            tstate->curexc_traceback = tb;
+            Py_XDECREF(tmp_tb);
+        }
+#else
+        PyObject *tmp_type, *tmp_value, *tmp_tb;
+        PyErr_Fetch(&tmp_type, &tmp_value, &tmp_tb);
+        Py_INCREF(tb);
+        PyErr_Restore(tmp_type, tmp_value, tb);
+        Py_XDECREF(tmp_tb);
+#endif
+    }
+bad:
+    Py_XDECREF(owned_instance);
+    return;
+}
+#endif
+
+/* PyObjectSetAttrStr */
+#if CYTHON_USE_TYPE_SLOTS
+static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value) {
+    PyTypeObject* tp = Py_TYPE(obj);
+    if (likely(tp->tp_setattro))
+        return tp->tp_setattro(obj, attr_name, value);
+#if PY_MAJOR_VERSION < 3
+    if (likely(tp->tp_setattr))
+        return tp->tp_setattr(obj, PyString_AS_STRING(attr_name), value);
+#endif
+    return PyObject_SetAttr(obj, attr_name, value);
+}
+#endif
+
+/* JoinPyUnicode */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char) {
+#if CYTHON_USE_UNICODE_INTERNALS && CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    PyObject *result_uval;
+    int result_ukind, kind_shift;
+    Py_ssize_t i, char_pos;
+    void *result_udata;
+    CYTHON_MAYBE_UNUSED_VAR(max_char);
+#if CYTHON_PEP393_ENABLED
+    result_uval = PyUnicode_New(result_ulength, max_char);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = (max_char <= 255) ? PyUnicode_1BYTE_KIND : (max_char <= 65535) ? PyUnicode_2BYTE_KIND : PyUnicode_4BYTE_KIND;
+    kind_shift = (result_ukind == PyUnicode_4BYTE_KIND) ? 2 : result_ukind - 1;
+    result_udata = PyUnicode_DATA(result_uval);
+#else
+    result_uval = PyUnicode_FromUnicode(NULL, result_ulength);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = sizeof(Py_UNICODE);
+    kind_shift = (result_ukind == 4) ? 2 : result_ukind - 1;
+    result_udata = PyUnicode_AS_UNICODE(result_uval);
+#endif
+    assert(kind_shift == 2 || kind_shift == 1 || kind_shift == 0);
+    char_pos = 0;
+    for (i=0; i < value_count; i++) {
+        int ukind;
+        Py_ssize_t ulength;
+        void *udata;
+        PyObject *uval = PyTuple_GET_ITEM(value_tuple, i);
+        if (unlikely(__Pyx_PyUnicode_READY(uval)))
+            goto bad;
+        ulength = __Pyx_PyUnicode_GET_LENGTH(uval);
+        if (unlikely(!ulength))
+            continue;
+        if (unlikely((PY_SSIZE_T_MAX >> kind_shift) - ulength < char_pos))
+            goto overflow;
+        ukind = __Pyx_PyUnicode_KIND(uval);
+        udata = __Pyx_PyUnicode_DATA(uval);
+        if (!CYTHON_PEP393_ENABLED || ukind == result_ukind) {
+            memcpy((char *)result_udata + (char_pos << kind_shift), udata, (size_t) (ulength << kind_shift));
+        } else {
+            #if PY_VERSION_HEX >= 0x030d0000
+            if (unlikely(PyUnicode_CopyCharacters(result_uval, char_pos, uval, 0, ulength) < 0)) goto bad;
+            #elif CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030300F0 || defined(_PyUnicode_FastCopyCharacters)
+            _PyUnicode_FastCopyCharacters(result_uval, char_pos, uval, 0, ulength);
+            #else
+            Py_ssize_t j;
+            for (j=0; j < ulength; j++) {
+                Py_UCS4 uchar = __Pyx_PyUnicode_READ(ukind, udata, j);
+                __Pyx_PyUnicode_WRITE(result_ukind, result_udata, char_pos+j, uchar);
+            }
+            #endif
+        }
+        char_pos += ulength;
+    }
+    return result_uval;
+overflow:
+    PyErr_SetString(PyExc_OverflowError, "join() result is too long for a Python string");
+bad:
+    Py_DECREF(result_uval);
+    return NULL;
+#else
+    CYTHON_UNUSED_VAR(max_char);
+    CYTHON_UNUSED_VAR(result_ulength);
+    CYTHON_UNUSED_VAR(value_count);
+    return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
+#endif
 }
 
 /* PyObjectCall2Args */
@@ -33124,167 +33339,6 @@ static CYTHON_INLINE int __Pyx_PyErr_GivenExceptionMatches2(PyObject *err, PyObj
         return __Pyx_inner_PyErr_GivenExceptionMatches2(err, exc_type1, exc_type2);
     }
     return (PyErr_GivenExceptionMatches(err, exc_type1) || PyErr_GivenExceptionMatches(err, exc_type2));
-}
-#endif
-
-/* RaiseException */
-#if PY_MAJOR_VERSION < 3
-static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
-    __Pyx_PyThreadState_declare
-    CYTHON_UNUSED_VAR(cause);
-    Py_XINCREF(type);
-    if (!value || value == Py_None)
-        value = NULL;
-    else
-        Py_INCREF(value);
-    if (!tb || tb == Py_None)
-        tb = NULL;
-    else {
-        Py_INCREF(tb);
-        if (!PyTraceBack_Check(tb)) {
-            PyErr_SetString(PyExc_TypeError,
-                "raise: arg 3 must be a traceback or None");
-            goto raise_error;
-        }
-    }
-    if (PyType_Check(type)) {
-#if CYTHON_COMPILING_IN_PYPY
-        if (!value) {
-            Py_INCREF(Py_None);
-            value = Py_None;
-        }
-#endif
-        PyErr_NormalizeException(&type, &value, &tb);
-    } else {
-        if (value) {
-            PyErr_SetString(PyExc_TypeError,
-                "instance exception may not have a separate value");
-            goto raise_error;
-        }
-        value = type;
-        type = (PyObject*) Py_TYPE(type);
-        Py_INCREF(type);
-        if (!PyType_IsSubtype((PyTypeObject *)type, (PyTypeObject *)PyExc_BaseException)) {
-            PyErr_SetString(PyExc_TypeError,
-                "raise: exception class must be a subclass of BaseException");
-            goto raise_error;
-        }
-    }
-    __Pyx_PyThreadState_assign
-    __Pyx_ErrRestore(type, value, tb);
-    return;
-raise_error:
-    Py_XDECREF(value);
-    Py_XDECREF(type);
-    Py_XDECREF(tb);
-    return;
-}
-#else
-static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
-    PyObject* owned_instance = NULL;
-    if (tb == Py_None) {
-        tb = 0;
-    } else if (tb && !PyTraceBack_Check(tb)) {
-        PyErr_SetString(PyExc_TypeError,
-            "raise: arg 3 must be a traceback or None");
-        goto bad;
-    }
-    if (value == Py_None)
-        value = 0;
-    if (PyExceptionInstance_Check(type)) {
-        if (value) {
-            PyErr_SetString(PyExc_TypeError,
-                "instance exception may not have a separate value");
-            goto bad;
-        }
-        value = type;
-        type = (PyObject*) Py_TYPE(value);
-    } else if (PyExceptionClass_Check(type)) {
-        PyObject *instance_class = NULL;
-        if (value && PyExceptionInstance_Check(value)) {
-            instance_class = (PyObject*) Py_TYPE(value);
-            if (instance_class != type) {
-                int is_subclass = PyObject_IsSubclass(instance_class, type);
-                if (!is_subclass) {
-                    instance_class = NULL;
-                } else if (unlikely(is_subclass == -1)) {
-                    goto bad;
-                } else {
-                    type = instance_class;
-                }
-            }
-        }
-        if (!instance_class) {
-            PyObject *args;
-            if (!value)
-                args = PyTuple_New(0);
-            else if (PyTuple_Check(value)) {
-                Py_INCREF(value);
-                args = value;
-            } else
-                args = PyTuple_Pack(1, value);
-            if (!args)
-                goto bad;
-            owned_instance = PyObject_Call(type, args, NULL);
-            Py_DECREF(args);
-            if (!owned_instance)
-                goto bad;
-            value = owned_instance;
-            if (!PyExceptionInstance_Check(value)) {
-                PyErr_Format(PyExc_TypeError,
-                             "calling %R should have returned an instance of "
-                             "BaseException, not %R",
-                             type, Py_TYPE(value));
-                goto bad;
-            }
-        }
-    } else {
-        PyErr_SetString(PyExc_TypeError,
-            "raise: exception class must be a subclass of BaseException");
-        goto bad;
-    }
-    if (cause) {
-        PyObject *fixed_cause;
-        if (cause == Py_None) {
-            fixed_cause = NULL;
-        } else if (PyExceptionClass_Check(cause)) {
-            fixed_cause = PyObject_CallObject(cause, NULL);
-            if (fixed_cause == NULL)
-                goto bad;
-        } else if (PyExceptionInstance_Check(cause)) {
-            fixed_cause = cause;
-            Py_INCREF(fixed_cause);
-        } else {
-            PyErr_SetString(PyExc_TypeError,
-                            "exception causes must derive from "
-                            "BaseException");
-            goto bad;
-        }
-        PyException_SetCause(value, fixed_cause);
-    }
-    PyErr_SetObject(type, value);
-    if (tb) {
-      #if PY_VERSION_HEX >= 0x030C00A6
-        PyException_SetTraceback(value, tb);
-      #elif CYTHON_FAST_THREAD_STATE
-        PyThreadState *tstate = __Pyx_PyThreadState_Current;
-        PyObject* tmp_tb = tstate->curexc_traceback;
-        if (tb != tmp_tb) {
-            Py_INCREF(tb);
-            tstate->curexc_traceback = tb;
-            Py_XDECREF(tmp_tb);
-        }
-#else
-        PyObject *tmp_type, *tmp_value, *tmp_tb;
-        PyErr_Fetch(&tmp_type, &tmp_value, &tmp_tb);
-        Py_INCREF(tb);
-        PyErr_Restore(tmp_type, tmp_value, tb);
-        Py_XDECREF(tmp_tb);
-#endif
-    }
-bad:
-    Py_XDECREF(owned_instance);
-    return;
 }
 #endif
 
