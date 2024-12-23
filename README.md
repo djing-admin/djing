@@ -9,8 +9,9 @@ Djing is a powerful and elegant Django admin panel inspired by Laravel Nova. It 
 - **Metrics & Cards**: Gain insights into your data with dynamic, customizable metrics and cards.
 - **Lenses**: Create focused views to analyze specific subsets of your data.
 - **Resources**: Manage your models and resources effortlessly.
-- **Custom Cards**: Extend the interface with custom-designed cards.
 - **Custom Fields**: Add personalized fields to meet your application's unique needs.
+- **Custom Cards**: Extend the interface with custom-designed cards.
+- **Custom Tools**: Extend the interface with custom-designed tools.
 - **Beautiful UI**: Enjoy a clean, modern, and responsive user interface.
 
 ## Installation
@@ -89,6 +90,8 @@ Available Commands:
         djing:table                Create a new metric (table) class
         djing:field                Create a new custom field
         djing:card                 Create a new custom card
+        djing:tool                 Create a new custom tool
+        djing:resource-tool        Create a new custom resource tool
 ```
 
 ## Customization
