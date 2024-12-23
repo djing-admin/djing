@@ -14,32 +14,32 @@ Djing is a powerful and elegant Django admin panel inspired by Laravel Nova. It 
 - **Custom Tools**: Extend the interface with custom-designed tools.
 - **Beautiful UI**: Enjoy a clean, modern, and responsive user interface.
 
-## Screenshot
+## Screenshots
 
 Below is an example of the Djing admin panel interface:
 
 <table>
   <tr>
     <td>
-      <img src="screenshots/login.png" alt="Djing Admin - Login" width="300"/>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/login.png" alt="Djing Admin - Login" width="300"/>
       <p align="center">Login</p>
     </td>
     <td>
-      <img src="screenshots/resources.png" alt="Djing Admin - Resources" width="300"/>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/resources.png" alt="Djing Admin - Resources" width="300"/>
       <p align="center">Resources</p>
     </td>
     <td>
-      <img src="screenshots/resource-detail.png" alt="Djing Admin - Resource Detail" width="300"/>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/resource-detail.png" alt="Djing Admin - Resource Detail" width="300"/>
       <p align="center">Resource Detail</p>
     </td>
   </tr>
   <tr>
     <td>
-      <img src="screenshots/create-resource.png" alt="Djing Admin - Create Resource" width="300"/>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/create-resource.png" alt="Djing Admin - Create Resource" width="300"/>
       <p align="center">Create Resource</p>
     </td>
     <td>
-      <img src="screenshots/update-resource.png" alt="Djing Admin - Update Resource" width="300"/>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/update-resource.png" alt="Djing Admin - Update Resource" width="300"/>
       <p align="center">Update Resource</p>
     </td>
     <td></td>
