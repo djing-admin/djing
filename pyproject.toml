@@ -29,9 +29,9 @@ mypy = "^1.11.2"
 pytest = "^8.3.2"
 
 [tool.poetry.urls]
-homepage = "https://www.proalgotrader.com"
-repository = "https://github.com/krunaldodiya/djing"
-documentation = "https://djing.gitbook.io/docs"
+homepage = "https://www.djing.vercel.app"
+documentation = "https://www.djing.vercel.app/docs"
+repository = "https://github.com/djing-admin/djing"
 
 [build-system]
 requires = ["poetry-core"]
