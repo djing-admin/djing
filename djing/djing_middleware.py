@@ -25,17 +25,17 @@ class DjingMiddleware:
 
     def __call__(self, request: HttpRequest):
         try:
-            Djing.flush_state("before")
-
             application = djing_application()
 
             request_adapter = DjingRequestAdapter(request)
 
             djing_request = Request.create_from(application, request_adapter)
 
+            Djing.flush_state("before", djing_request)
+
             response = application.handle_request(djing_request)
 
-            Djing.flush_state("after")
+            Djing.flush_state("after", djing_request)
 
             return response
         except UnauthorizedAccessException:
