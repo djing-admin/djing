@@ -18,8 +18,6 @@ find . -name "*.egg-info" -type d -exec rm -rf {} +
 find . -name "__pycache__" -type d -exec rm -rf {} +
 
 # Run npm build before publishing
-rm -rf djing/dist
-rm -rf djing_ui/node_modules
 npm --prefix djing_ui install
 npm --prefix djing_ui run build
 
