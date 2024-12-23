@@ -5,6 +5,7 @@ import CustomError404 from '@/views/CustomError404.vue';
 import CustomError403 from '@/views/CustomError403.vue';
 import CustomAppError from '@/views/CustomAppError.vue';
 import ResourceIndex from '@/views/Index.vue';
+import ResourceLens from '@/views/Lens.vue';
 import ResourceDetail from '@/views/Detail.vue';
 import Attach from '@/views/Attach.vue';
 import UpdateAttached from '@/views/UpdateAttached.vue';
@@ -35,6 +36,7 @@ export async function registerViews(app: any) {
   app.component('CustomError404', CustomError404);
   app.component('CustomAppError', CustomAppError);
   app.component('ResourceIndex', ResourceIndex);
+  app.component('ResourceLens', ResourceLens);
   app.component('ResourceDetail', ResourceDetail);
   app.component('AttachResource', Attach);
   app.component('UpdateAttachedResource', UpdateAttached);
