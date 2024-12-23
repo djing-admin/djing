@@ -71,6 +71,26 @@ Make sure to set the `STATIC_ROOT` in your `settings.py` file before collecting 
 STATIC_ROOT = "<your-static-root-path>"
 ```
 
+Also you need to add `STORAGES`, `MEDIA_ROOT` & `STORAGES` in your `settings.py`.
+
+```python
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "OPTIONS": {
+            "location": BASE_DIR / "media",  # Replace with your media directory path
+        },
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = BASE_DIR / "media"
+```
+
 Run the following command to collect static files:
 
 ```bash
