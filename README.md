@@ -100,7 +100,7 @@ Djing is highly extensible. You can create your own cards, fields, and component
 
 ## Documentation
 
-Comprehensive documentation is available at [Djing Documentation](https://djing.vercel.app) to help you get started and explore advanced features.
+Comprehensive documentation is available at [Djing Documentation](https://djing.vercel.app/docs) to help you get started and explore advanced features.
 
 ## Contribution
 
