@@ -29,8 +29,8 @@ mypy = "^1.11.2"
 pytest = "^8.3.2"
 
 [tool.poetry.urls]
-homepage = "https://www.djing.vercel.app"
-documentation = "https://www.djing.vercel.app/docs"
+homepage = "https://djing.vercel.app"
+documentation = "https://djing.vercel.app/docs"
 repository = "https://github.com/djing-admin/djing"
 
 [build-system]
