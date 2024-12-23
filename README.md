@@ -14,6 +14,18 @@ Djing is a powerful and elegant Django admin panel inspired by Laravel Nova. It 
 - **Custom Tools**: Extend the interface with custom-designed tools.
 - **Beautiful UI**: Enjoy a clean, modern, and responsive user interface.
 
+## Screenshot
+
+Below is an example of the Djing admin panel interface:
+
+![Djing Admin - Login](screenshots/login.png)
+![Djing Admin - Resources](screenshots/resources.png)
+![Djing Admin - Resource Detail](screenshots/resource-detail.png)
+![Djing Admin - Create Resource](screenshots/create-resource.png)
+![Djing Admin - Update Resource](screenshots/update-resource.png)
+
+_The above screenshot showcases the clean and modern UI of the Djing admin panel._
+
 ## Installation
 
 To install Djing, use pip:
