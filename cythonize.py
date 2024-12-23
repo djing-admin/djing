@@ -37,6 +37,7 @@ def find_extensions(
             continue
 
         rel_path = os.path.relpath(root, base_path)
+
         if rel_path == ".":
             package = base_package
         else:
