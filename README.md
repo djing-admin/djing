@@ -105,7 +105,9 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 
 ## License
 
-Djing is open-source software licensed under the [MIT license](LICENSE).
+Djing is open-source software licensed under the [MIT license](LICENSE) **only for development purposes**.
+
+For production use, a valid license key is required. To obtain a production license, visit the [Djing Licensing Page](https://djing.vercel.app/license).
 
 ## Support
 
