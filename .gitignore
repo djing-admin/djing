@@ -3,9 +3,8 @@ logs
 *.log
 
 # Dependency directories
-dist
-!djing/dist
-build
+dist/
+build/
 
 # Local environment files
 *.local

@@ -48,6 +48,8 @@ class DjingApplicationServiceProvider(ServiceProvider):
 
             valid_license = Djing.check_license_validity()
 
+            print("valid_license", valid_license)
+
             if not valid_license:
                 raise InvalidLicenseException("Invalid license")
 
