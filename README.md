@@ -51,7 +51,8 @@ python manage.py djing:install
 Ensure that the `django_project_name` is set in the `.env` file. If not specified, it defaults to `myproject`:
 
 ```env
-DJANGO_PROJECT_NAME=myproject
+DJANGO_PROJECT_NAME=<your-project-name>
+DJING_LICENSE_KEY=<your-license-key>
 ```
 
 ### Commands
