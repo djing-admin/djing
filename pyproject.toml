@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "djing"
-version = "0.8.6"
+version = "0.8.7"
 description = "djing admin panel"
 authors = ["Krunal Dodiya <kunal.dodiya1@gmail.com>"]
 readme = "README.md"
