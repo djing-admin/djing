@@ -1,0 +1,9 @@
+from djing.core.Dashboards.Main import Main as Dashboard
+
+
+class {{name}}(Dashboard):
+    def cards(self):
+        return []
+
+    def uri_key(self):
+        return "uri-key"

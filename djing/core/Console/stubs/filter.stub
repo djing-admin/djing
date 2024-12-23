@@ -1,0 +1,13 @@
+from djing.core.Filters.Filter import Filter
+from djing.core.Http.Requests.DjingRequest import DjingRequest
+from django.db.models import QuerySet
+
+
+class {{name}}(Filter):
+    component = "select-filter"
+
+    def apply(self, request: DjingRequest, query: QuerySet, value):
+        return query
+
+    def options(self, request: DjingRequest):
+        return {}

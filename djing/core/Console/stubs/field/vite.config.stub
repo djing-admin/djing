@@ -1,0 +1,44 @@
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
+
+export default defineConfig({
+  plugins: [
+    vue(),
+  ],
+  root: resolve("./src"),
+  base: "/static/{{kebab_name}}",
+  server: {
+    host: "localhost",
+    port: 5184,
+    open: false,
+    watch: {
+      usePolling: true,
+      disableGlobbing: false,
+    },
+  },
+  resolve: {
+    alias: {
+      "@": resolve("src"),
+    },
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".vue", ".json"],
+  },
+  optimizeDeps: {
+    include: ["vue"],
+  },
+  build: {
+    outDir: resolve("../dist"),
+    emptyOutDir: true,
+    target: "es2015",
+    rollupOptions: {
+      input: ["./src/js/field.js", "./src/css/field.css"],
+      output: {
+        entryFileNames: "{{kebab_name}}/js/[name].js",
+        assetFileNames: "{{kebab_name}}/[ext]/[name].[ext]",
+        compact: true,
+        manualChunks: undefined,
+        inlineDynamicImports: false,
+      },
+    },
+  },
+});

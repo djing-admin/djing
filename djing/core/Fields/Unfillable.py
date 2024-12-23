@@ -1,0 +1,2 @@
+class Unfillable:
+    pass

@@ -1,0 +1,20 @@
+from typing import Optional
+from django.db.models import Model
+from djing.core.Metrics.Value import Value
+from djing.core.Http.Requests.DjingRequest import DjingRequest
+
+
+class {{name}}(Value):
+    def calculate(self, request: DjingRequest, model: Optional[Model] = None):
+        return self.count(request, model)
+
+    def ranges(self):
+        return {
+            30: "30 Days",
+            60: "60 Days",
+            365: "365 Days",
+            "TODAY": "Today",
+            "MTD": "Month To Date",
+            "QTD": "Quarter To Date",
+            "YTD": "Year To Date",
+        }
