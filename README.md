@@ -65,13 +65,15 @@ INSTALLED_APPS = [
 ]
 ```
 
-Make sure to set the `STATIC_ROOT` in your `settings.py` file before collecting static files:
+Make sure to set the `STATIC_ROOT` & `STATIC_URL` in your `settings.py` file before collecting static files:
 
 ```python
-STATIC_ROOT = "<your-static-root-path>"
+STATIC_URL = "/static/"
+
+STATIC_ROOT = BASE_DIR / "static"
 ```
 
-Also you need to add `STORAGES`, `MEDIA_ROOT` & `STORAGES` in your `settings.py`.
+Also you need to add `STORAGES`, `MEDIA_ROOT` & `MEDIA_URL` in your `settings.py`.
 
 ```python
 STORAGES = {

@@ -68,11 +68,11 @@ class InertiaApplication:
     def get_static_dirs(self) -> list:
         DJANGO_VITE_ASSETS_PATH = getattr(django_settings, "DJANGO_VITE_ASSETS_PATH")
 
-        components_path = Path(os.path.join(os.getcwd(), "djing_components/dist"))
-
         dirs = [
             DJANGO_VITE_ASSETS_PATH,
         ]
+
+        components_path = Path(os.path.join(os.getcwd(), "djing_components/dist"))
 
         if components_path.exists():
             dirs.append(components_path)
