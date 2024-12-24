@@ -4,7 +4,7 @@ logs
 
 # Dependency directories
 dist/
-!djing/dist
+!djing/dist/
 build/
 
 # Local environment files
