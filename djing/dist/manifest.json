@@ -1,0 +1,36 @@
+{
+  "_vue.js": {
+    "file": "djing/js/vue.js",
+    "name": "vue"
+  },
+  "components.ts": {
+    "file": "djing/js/components.js",
+    "name": "components",
+    "src": "components.ts",
+    "isEntry": true,
+    "imports": [
+      "_vue.js"
+    ],
+    "css": [
+      "djing/css/components.css"
+    ]
+  },
+  "index.css": {
+    "file": "djing/css/index2.css",
+    "src": "index.css",
+    "isEntry": true
+  },
+  "index.ts": {
+    "file": "djing/js/index.js",
+    "name": "index",
+    "src": "index.ts",
+    "isEntry": true,
+    "imports": [
+      "components.ts",
+      "_vue.js"
+    ],
+    "css": [
+      "djing/css/index.css"
+    ]
+  }
+}

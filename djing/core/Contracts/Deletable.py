@@ -1,0 +1,2 @@
+class Deletable:
+    pass

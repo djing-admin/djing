@@ -1,0 +1,48 @@
+<script lang="ts" setup>
+import { onMounted } from "vue";
+
+defineProps({
+  lens: {
+    default: null,
+    type: String || null,
+  },
+  card: {
+    type: Object,
+    required: true,
+  },
+  index: {
+    type: Number,
+    required: true,
+  },
+  resource: {
+    type: Object,
+    required: false,
+  },
+  resource_name: {
+    type: String,
+    default: "",
+  },
+  resource_id: {
+    type: [Number, String],
+    default: "",
+  },
+});
+
+onMounted(async () => {
+  try {
+    const response = await fetch("/djing-vendor/{{kebab_name}}/status");
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.log(error);
+  }
+});
+</script>
+
+<template>
+  <Card class="flex flex-col items-center justify-center">
+    <div class="px-3 py-3">
+      <h1 class="text-center text-3xl text-gray-500 font-light">{{pascal_name}}</h1>
+    </div>
+  </Card>
+</template>

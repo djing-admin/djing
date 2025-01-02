@@ -1,0 +1,17 @@
+from Illuminate.Support.ServiceProvider import ServiceProvider
+from djing.core.Facades.Djing import Djing
+
+
+class FieldServiceProvider(ServiceProvider):
+    def __init__(self, app):
+        self.app = app
+
+    def register(self):
+        pass
+
+    def boot(self):
+        Djing.serving(self._boot_field)
+
+    def _boot_field(self):
+        Djing.script("{{kebab_name}}", "js/field.js")
+        Djing.style("{{kebab_name}}", "css/field.css")

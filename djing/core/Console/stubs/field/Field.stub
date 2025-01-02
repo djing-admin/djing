@@ -1,0 +1,5 @@
+from djing.core.Fields.Field import Field
+
+
+class {{pascal_name}}(Field):
+    component = "{{kebab_name}}"

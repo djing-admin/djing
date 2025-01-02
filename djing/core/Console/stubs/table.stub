@@ -1,0 +1,18 @@
+from typing import Optional
+from django.db.models import Model
+from djing.core.Metrics.MetricTableRow import MetricTableRow
+from djing.core.Metrics.Table import Table
+from djing.core.Http.Requests.DjingRequest import DjingRequest
+
+
+class {{name}}(Table):
+    def calculate(self, request: DjingRequest, model: Optional[Model] = None):
+        return [
+            (
+                MetricTableRow.make()
+                .icon("circle")
+                .icon_class("text-green-500")
+                .title("title")
+                .subtitle("sub title")
+            )
+        ]

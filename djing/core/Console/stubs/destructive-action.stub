@@ -1,0 +1,13 @@
+from typing import List
+from django.db.models import base
+from djing.core.Actions.DestructiveAction import DestructiveAction
+from djing.core.Fields.ActionFields import ActionFields
+from djing.core.Http.Requests.DjingRequest import DjingRequest
+
+
+class {{name}}(DestructiveAction):
+    def handle(self, fields: ActionFields, models: List[base.Model]):
+        pass
+
+    def fields(self, request: DjingRequest):
+        return []

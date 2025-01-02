@@ -1,0 +1,35 @@
+from Illuminate.Support.ServiceProvider import ServiceProvider
+from Illuminate.Support.Facades.Route import Route
+from django.http import JsonResponse
+from djing.core.Facades.Djing import Djing
+
+
+class CardServiceProvider(ServiceProvider):
+    def __init__(self, app):
+        self.app = app
+
+    def register(self):
+        pass
+
+    def boot(self):
+        self.app.booted(self._register_routes)
+
+        Djing.serving(self._boot_asset)
+    
+    def _register_routes(self, app):
+        config = {
+            "prefix": 'djing-vendor/{{kebab_name}}',
+            "middleware": ['djing'],
+        }
+
+        Route.group(config, self._load_routes)
+
+    def _load_routes(self, router):
+        def check_status():
+            return JsonResponse(data={"status": "okay"})
+
+        router.get("/status", check_status)
+    
+    def _boot_asset(self):
+        Djing.script("{{kebab_name}}", "js/card.js")
+        Djing.style("{{kebab_name}}", "css/card.css")

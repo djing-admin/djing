@@ -1,0 +1,9 @@
+import IndexField from "./components/IndexField.vue";
+import DetailField from "./components/DetailField.vue";
+import FormField from "./components/FormField.vue";
+
+Djing.booting((app) => {
+  app.component("index-{{kebab_name}}", IndexField);
+  app.component("detail-{{kebab_name}}", DetailField);
+  app.component("form-{{kebab_name}}", FormField);
+});

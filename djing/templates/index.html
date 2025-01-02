@@ -1,0 +1,48 @@
+{% load static %} {% load django_vite %} {% load embed_assets %}
+
+<!DOCTYPE html>
+<html lang="en" class="h-full font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% vite_hmr_client %}
+
+    <link rel="stylesheet" href="{% vite_asset_url 'index.css' %}" />
+  </head>
+
+  <body
+    class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-900"
+  >
+    {% block inertia %}{% endblock %} {% vite_asset 'index.ts' %}
+
+    <script type="module">
+      const pageElement = document.getElementById("app");
+
+      const pageData = JSON.parse(pageElement.dataset.page);
+
+      const config = pageData.props.djing_config;
+
+      window.Djing = createDjingApp(config);
+
+      window.Djing.countdown();
+    </script>
+
+    <script type="module">
+      const chosen_theme = Djing.get_system_theme();
+
+      if (chosen_theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    {% embed_styles %} {% embed_scripts %}
+
+    <script type="module" defer>
+      window.Djing.liftOff();
+    </script>
+  </body>
+</html>

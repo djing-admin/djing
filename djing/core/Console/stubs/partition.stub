@@ -1,0 +1,12 @@
+from typing import Optional
+from django.db.models import Model
+from djing.core.Metrics.Partition import Partition
+from djing.core.Http.Requests.DjingRequest import DjingRequest
+
+
+class {{name}}(Partition):
+    def calculate(self, request: DjingRequest, model: Optional[Model] = None):
+        return self.count(request, model, group_by_column='group_by_column')
+
+    def uri_key(self):
+        return 'uri-key'

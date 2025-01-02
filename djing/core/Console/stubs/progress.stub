@@ -1,0 +1,15 @@
+from typing import Optional
+from django.db.models import Model, QuerySet
+from djing.core.Metrics.Progress import Progress
+from djing.core.Http.Requests.DjingRequest import DjingRequest
+
+
+class {{name}}(Progress):
+    def calculate(self, request: DjingRequest, model: Optional[Model] = None):
+        def progress(query: QuerySet) -> QuerySet:
+            return query
+
+        return self.count(request, model, progress, target=100)
+
+    def uri_key(self):
+        return '{{uri_key}}'

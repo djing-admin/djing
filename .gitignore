@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+dist/
+!djing/dist/
+build/
+
+# Local environment files
+*.local
+
+# IDE/Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python-related files
+static/
+__pycache__/
+**/__pycache__/
+*.egg-info/
+.mypy_cache
+
+# Environment and cache files
+.venv/
+.env
+.pytest_cache/
+
+/media
+db.sqlite3
+
+node_modules/
+djing_admin/
+djing_components/
+djing/core/Foundation/license/
+djing/core/Foundation/Djing.py
+djing/core/Foundation/Djing.cpp

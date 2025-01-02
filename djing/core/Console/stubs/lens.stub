@@ -1,0 +1,32 @@
+from djing.core.Fields.ID import ID
+from djing.core.Http.Requests.DjingRequest import DjingRequest
+from djing.core.Http.Requests.LensRequest import LensRequest
+from djing.core.Lenses.Lens import Lens
+from django.db.models import QuerySet
+
+
+class {{name}}(Lens):
+    search = [
+        "id",
+    ]
+
+    @classmethod
+    def query(cls, request: LensRequest, query: QuerySet):
+        return query
+
+    def fields(self, request: DjingRequest):
+        return [
+            ID.make("ID").sortable(),
+        ]
+
+    def cards(self, request: DjingRequest):
+        return []
+
+    def filters(self, request: DjingRequest):
+        return []
+
+    def actions(self, request: DjingRequest):
+        return super().actions(request)
+    
+    def uri_key(self):
+        return "{{uri_key}}"

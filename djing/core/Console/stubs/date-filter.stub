@@ -1,0 +1,10 @@
+from djing.core.Filters.DateFilter import DateFilter
+from djing.core.Http.Requests.DjingRequest import DjingRequest
+from django.db.models import QuerySet
+
+
+class {{name}}(DateFilter):
+    component = "date-filter"
+
+    def apply(self, request: DjingRequest, query: QuerySet, value):
+        return query
