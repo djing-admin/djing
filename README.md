@@ -27,9 +27,36 @@ Djing is a powerful and elegant Django admin panel inspired by Laravel Nova. It 
 
 Below is an example of the Djing admin panel interface:
 
-| <p><img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/login.png" alt="Djing Admin - Login"></p><p>Login</p>                               | <p><img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/resources.png" alt="Djing Admin - Resources"></p><p>Resources</p>                   | <p><img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/resource-detail.png" alt="Djing Admin - Resource Detail"></p><p>Resource Detail</p> |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <p><img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/create-resource.png" alt="Djing Admin - Create Resource"></p><p>Create Resource</p> | <p><img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/update-resource.png" alt="Djing Admin - Update Resource"></p><p>Update Resource</p> |                                                                                                                                                                                  |
+<table>
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/login.png" alt="Djing Admin - Login" width="300"/>
+      <p align="center">Login</p>
+    </td>
+    <td>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/resources.png" alt="Djing Admin - Resources" width="300"/>
+      <p align="center">Resources</p>
+    </td>
+    <td>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/resource-detail.png" alt="Djing Admin - Resource Detail" width="300"/>
+      <p align="center">Resource Detail</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/create-resource.png" alt="Djing Admin - Create Resource" width="300"/>
+      <p align="center">Create Resource</p>
+    </td>
+    <td>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/update-resource.png" alt="Djing Admin - Update Resource" width="300"/>
+      <p align="center">Update Resource</p>
+    </td>
+    <td>
+      <img src="https://raw.githubusercontent.com/djing-admin/djing/refs/heads/main/screenshots/resource-metrics.png" alt="Djing Admin - Update Resource" width="300"/>
+        <p align="center">Resource Metrics</p>
+    </td>
+  </tr>
+</table>
 
 _The above screenshot showcases the clean and modern UI of the Djing admin panel._
 

@@ -88,7 +88,7 @@ const handle_user_action = async () => {
 
       <div class="flex-row mt-4">
         <div class="flex justify-between">
-          <div class="flex-1 flex-col max-h-20 overflow-auto">
+          <div class="flex-1 flex-col max-h-40 overflow-auto">
             <table
               class="table w-full border-y border-y-gray-200 dark:border-y-gray-700"
             >

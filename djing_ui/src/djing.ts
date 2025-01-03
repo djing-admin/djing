@@ -255,10 +255,12 @@ export class Djing {
 
   public preventRouterIfDirty(resourceFormStore: any) {
     let removeStartEventListener = this.$router.on("before", (event: any) => {
-      if (resourceFormStore.form.is_dirty && !confirm("Do you really want to leave? You have unsaved changes.")) {
-        event.preventDefault();
-      } else {
-        removeStartEventListener();
+      if (resourceFormStore.form.is_dirty) {
+        if (confirm("Do you really want to leave? You have unsaved changes.")) {
+          removeStartEventListener();
+        } else {
+          event.preventDefault();
+        }
       }
     });
   }

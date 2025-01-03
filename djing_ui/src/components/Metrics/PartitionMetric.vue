@@ -103,7 +103,7 @@ const items = computed(() => {
 
       <div class="flex-row mt-4">
         <div class="flex justify-between">
-          <div class="flex-1 flex-col max-h-20 overflow-auto mr-2">
+          <div class="flex-1 flex-col max-h-40 overflow-auto mr-2">
             <div v-for="item in items">
               <span
                 :style="{
