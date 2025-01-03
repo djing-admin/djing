@@ -183,7 +183,13 @@ const handle_action_response = async (data: any) => {
 
             <Button
               type="submit"
-              class="px-4 py-2 rounded-md bg-primary-500 dark:bg-primary-500 text-white dark:text-black hover:bg-primary-400 dark:hover:bg-primary-400"
+              class="px-4 py-2 rounded-md"
+              :class="{
+                'text-white dark:text-black hover:bg-primary-400 dark:hover:bg-primary-400 bg-primary-500 dark:bg-primary-500':
+                  !action.destructive,
+                'text-white dark:text-white hover:bg-red-400 dark:hover:bg-red-400 bg-red-500 dark:bg-red-500':
+                  action.destructive,
+              }"
             >
               {{ action.confirm_button_text }}
             </Button>
