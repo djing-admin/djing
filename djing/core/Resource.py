@@ -117,6 +117,9 @@ class Resource(
 
         return getattr(self.resource, title_attribute)
 
+    def subtitle(self):
+        pass
+
     @classmethod
     def is_searchable(cls):
         return cls.searchable and cls.searchable_columns()

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { useFetchAvailableResources } from "@/composables/useFetchAvailableResources";
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
 
-const { field, form } = defineProps({
+const { resource_name, field, form } = defineProps({
   resource_name: {
     required: true,
     type: String,
@@ -31,7 +31,7 @@ const { field, form } = defineProps({
 });
 
 const { fetchAvailableResources } = useFetchAvailableResources(
-  field.resource_name,
+  resource_name,
   field.attribute
 );
 
@@ -39,11 +39,23 @@ onMounted(async () => {
   await initialize_component();
 });
 
+const available_resources = ref();
+
 const initialize_component = async () => {
   try {
     const data = await fetchAvailableResources();
-  } catch (error) {
-    console.log({ error });
+
+    const items = data.map((action: any) => {
+      return {
+        label: action.display,
+        value: action.value,
+        disabled: false,
+      };
+    });
+
+    available_resources.value = items;
+  } catch (error: any) {
+    Djing.error(error);
   }
 };
 
@@ -90,12 +102,13 @@ const handle_change = async (value: any) => {
     :show_help_text="show_help_text"
     :mode="mode"
     :errors="form.errors"
+    v-if="available_resources"
   >
     <template #field>
       <div class="space-y-1">
         <SelectControl
           v-model:selected="field.value"
-          :options="[]"
+          :options="available_resources"
           @handle_change="handle_change"
           v-bind="extra_attributes"
         >

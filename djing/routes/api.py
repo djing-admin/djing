@@ -1,5 +1,6 @@
 from Illuminate.Support.Facades.Route import Route
 from djing.core.Http.Controllers.ActionController import ActionController
+from djing.core.Http.Controllers.AssociatableController import AssociatableController
 from djing.core.Http.Controllers.CardController import CardController
 from djing.core.Http.Controllers.CreationFieldController import CreationFieldController
 from djing.core.Http.Controllers.DashboardController import DashboardController
@@ -68,3 +69,6 @@ Route.put(":resource/:resource_id", ResourceUpdateController)
 Route.get(":resource/:resource_id", ResourceShowController)
 Route.post(":resource", ResourceStoreController)
 Route.delete(":resource", ResourceDestroyController)
+
+# Associatable Resources
+Route.get(":resource/associatable/:field_attribute", AssociatableController)

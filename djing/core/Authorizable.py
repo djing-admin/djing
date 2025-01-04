@@ -95,6 +95,17 @@ class Authorizable:
     def authorized_to_force_delete(self, request: DjingRequest):
         return self.authorized_to(request, "force_delete")
 
+    def authorized_to_add(self, request: DjingRequest, model):
+        gate = Gate.get_policy_for(self.resource)
+
+        method = model.__class__.__name__.lower()
+
+        if not self.authorizable():
+            return True
+
+        if gate and hasattr(gate, method):
+            return Gate.for_user(Djing.user(request)).check(method, self.resource)
+
     def authorize_to(self, request: DjingRequest, ability):
         if self.authorizable():
             Gate.for_user(Djing.user(request)).authorize(ability, self.resource)

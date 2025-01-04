@@ -2,6 +2,7 @@ from Illuminate.Support.builtins import array_merge
 from djing.core.Contracts.FilterableField import FilterableField
 from djing.core.Contracts.RelatableField import RelatableField
 from djing.core.Fields.Field import Field
+from djing.core.Http.Requests.DjingRequest import DjingRequest
 from djing_admin.app.Djing.Resource import Resource
 
 
@@ -47,6 +48,18 @@ class BelongsTo(Field, FilterableField, RelatableField):
             self.belongs_to_id = Resource.get_key(self.belongs_to_resource)
 
             self.value = self._format_display_value(self.belongs_to_resource)
+
+    def build_associatable_query(self, request: DjingRequest):
+        queryset = self.resource_class.get_queryset()
+
+        return [item for item in queryset.all()]
+
+    def format_associatable_resource(self, request: DjingRequest, resource: Resource):
+        return {
+            "display": self._format_display_value(resource),
+            "subtitle": resource.subtitle(),
+            "value": Resource.get_key(resource),
+        }
 
     def json_serialize(self):
         return array_merge(
