@@ -21,7 +21,7 @@ const { resource_name, resource_id, field, value, form } = defineProps({
   },
   value: {
     required: true,
-    type: Object,
+    type: [Object, String],
   },
   form: {
     required: true,
