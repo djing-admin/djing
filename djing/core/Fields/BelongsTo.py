@@ -37,6 +37,27 @@ class BelongsTo(Field, FilterableField, RelatableField):
 
         return resource.get_title()
 
+    def _display(self, callback):
+        return self
+
+    def display_using(self, callback):
+        return self._display(callback)
+
+    def fill(self, request, model):
+        field = model._meta.get_field(self.attribute)
+
+        return super().fill_into(request, model, field.column)
+
+    def fill_attribute_from_request(self, request, request_attribute, model, attribute):
+        if request_attribute in request.all():
+            value = request.all().get(request_attribute)
+
+            try:
+                if self.has_fillable_value(value):
+                    setattr(model, attribute, value)
+            except:
+                pass
+
     def resolve(self, resource, attribute=None):
         super().resolve(resource, attribute)
 

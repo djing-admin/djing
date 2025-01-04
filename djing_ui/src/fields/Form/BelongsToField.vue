@@ -49,7 +49,7 @@ const initialize_component = async () => {
       return {
         label: action.display,
         value: action.value,
-        disabled: false,
+        disabled: action.authorized_to_add === false,
       };
     });
 
