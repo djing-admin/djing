@@ -59,8 +59,6 @@ class BelongsTo(Field, FilterableField, RelatableField):
                 pass
 
     def resolve(self, resource, attribute=None):
-        super().resolve(resource, attribute)
-
         value = getattr(resource, attribute)
 
         if value:

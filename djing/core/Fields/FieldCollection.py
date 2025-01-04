@@ -68,7 +68,7 @@ class FieldCollection(Collection, Makeable):
     def resolve(self, resource):
         def should_resolve_field(field):
             if isinstance(field, Resolvable):
-                field.resolve(resource)
+                field.resolve(resource, field.attribute)
 
         return self.each(should_resolve_field)
 

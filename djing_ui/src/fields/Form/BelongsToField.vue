@@ -107,7 +107,7 @@ const handle_change = async (value: any) => {
     <template #field>
       <div class="space-y-1">
         <SelectControl
-          v-model:selected="field.value"
+          v-model:selected="field.belongs_to_id"
           :options="available_resources"
           @handle_change="handle_change"
           v-bind="extra_attributes"
