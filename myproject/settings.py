@@ -25,7 +25,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "djing",
+    "users",
     "products",
+    "addresses",
 ]
 
 MIDDLEWARE = [
@@ -128,6 +130,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 STATIC_DIRS = [
     MEDIA_ROOT,
 ]
+
+AUTH_USER_MODEL = "users.User"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

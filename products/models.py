@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
+UserModel = get_user_model()
 
 
 class Product(models.Model):
@@ -10,7 +12,7 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=10, decimal_places=4, default=None, blank=True, null=True
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey(UserModel, on_delete=models.CASCADE, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

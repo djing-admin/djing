@@ -31,6 +31,10 @@ class BelongsTo(Field, FilterableField, RelatableField):
     def relationship_type(self):
         return "belongs_to"
 
+    def authorize(self, request: DjingRequest):
+        if hasattr(self.resource_class, "authorized_to_view_any"):
+            return super().authorize(request)
+
     def _format_display_value(self, resource):
         if not isinstance(resource, Resource):
             resource = Resource.new_resource_with(resource)
@@ -86,7 +90,6 @@ class BelongsTo(Field, FilterableField, RelatableField):
                 "relationship_type": self.relationship_type(),
                 "relationship_name": self.relationship_name(),
                 "label": self.resource_class.label(),
-                "resource_name": self.resource_name,
                 "resource_name": self.resource_name,
                 "belongs_to_id": self.belongs_to_id,
             },

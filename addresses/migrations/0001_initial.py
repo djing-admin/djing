@@ -15,12 +15,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name='Address',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=255)),
-                ('image', models.FileField(blank=True, default=None, max_length=255, null=True, upload_to='')),
-                ('price', models.DecimalField(blank=True, decimal_places=4, default=None, max_digits=10, null=True)),
+                ('address_line_1', models.CharField(max_length=255)),
+                ('address_line_2', models.CharField(max_length=255)),
+                ('area', models.CharField(max_length=255)),
+                ('pin', models.CharField(max_length=255)),
+                ('city', models.CharField(max_length=255)),
+                ('state', models.CharField(max_length=255)),
+                ('country', models.CharField(max_length=255)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('user', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
