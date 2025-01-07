@@ -63,7 +63,7 @@ class BelongsTo(Field, FilterableField, RelatableField):
                 pass
 
     def resolve(self, resource, attribute=None):
-        value = getattr(resource, attribute)
+        value = getattr(resource, attribute, None)
 
         if value:
             self.belongs_to_resource = self.resource_class(value)

@@ -1,13 +1,15 @@
 from Illuminate.Support.builtins import array_merge
+from djing.core.Contracts.BehavesAsPanel import BehavesAsPanel
 from djing.core.Contracts.FilterableField import FilterableField
 from djing.core.Contracts.RelatableField import RelatableField
 from djing.core.Fields.Field import Field
 from djing.core.Fields.ID import ID
 from djing.core.Http.Requests.DjingRequest import DjingRequest
+from djing.core.Panel import Panel
 from djing_admin.app.Djing.Resource import Resource
 
 
-class HasOne(Field, FilterableField, RelatableField):
+class HasOne(Field, BehavesAsPanel, RelatableField):
     component = "has-one-field"
 
     def __init__(self, name, attribute=None, resource=None):
@@ -25,6 +27,17 @@ class HasOne(Field, FilterableField, RelatableField):
         self.has_one_relationship = attribute
         self.singular_label = name
         self.has_one_id = None
+
+    def as_panel(self):
+        return (
+            Panel.make(self.name, [self])
+            .with_meta({"prefix_component": True})
+            .help(self._help_text)
+            .with_component("relationship-panel")
+        )
+
+    def is_shown_on_index(self, request, resource):
+        return False
 
     def relationship_name(self):
         return self.has_one_relationship
@@ -64,9 +77,7 @@ class HasOne(Field, FilterableField, RelatableField):
                 pass
 
     def resolve(self, resource, attribute=None):
-        print("sku", getattr(resource, "sku"))
-
-        value = getattr(resource, attribute)
+        value = getattr(resource, attribute, None)
 
         if value:
             self.has_one_resource = self.resource_class(value)
