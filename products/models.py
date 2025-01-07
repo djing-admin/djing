@@ -12,6 +12,7 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=10, decimal_places=4, default=None, blank=True, null=True
     )
+
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)

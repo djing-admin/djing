@@ -64,6 +64,8 @@ class HasOne(Field, FilterableField, RelatableField):
                 pass
 
     def resolve(self, resource, attribute=None):
+        print("sku", getattr(resource, "sku"))
+
         value = getattr(resource, attribute)
 
         if value:
