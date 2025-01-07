@@ -16,7 +16,13 @@ class Address(models.Model):
     state = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
 
-    user = models.ForeignKey(UserModel, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey(
+        UserModel,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="user",
+    )
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
