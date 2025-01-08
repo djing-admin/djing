@@ -5,7 +5,7 @@ import { useFetchResourceDetail } from "@/composables/useFetchResourceDetail";
 import { useResourceDetailStore } from "@/stores/resource_detail";
 import { mapProps } from "@/util/propTypes";
 import { Head, Link } from "@inertiajs/vue3";
-import { find, isNil } from "lodash";
+import { find, isNil, filter, forEach } from "lodash";
 import { computed, onBeforeUnmount, onMounted } from "vue";
 
 const { resource_name, resource_id } = defineProps(
@@ -61,6 +61,15 @@ const handleFetchResourceDetail = async () => {
     resourceDetailStore.update_data("panels", data.panels);
     resourceDetailStore.update_data("title", data.title);
 
+    const relationship_panels = filter(
+      data.panels,
+      (panel) => panel.component == "relationship-panel"
+    );
+
+    forEach(relationship_panels, async (panel) => {
+      await handleFetchRelatedResources(panel);
+    });
+
     resourceDetailStore.loading = false;
   } catch (error: any) {
     Djing.error(error.response.data.data);
@@ -78,6 +87,14 @@ const handleFetchActions = async () => {
     });
 
     resourceDetailStore.update_data("actions", data.actions);
+  } catch (error: any) {
+    Djing.error(error.response.data.data);
+  }
+};
+
+const handleFetchRelatedResources = async (panel) => {
+  try {
+    console.log("fetching panel", panel);
   } catch (error: any) {
     Djing.error(error.response.data.data);
   }
@@ -140,45 +157,47 @@ const handle_action_executed = async () => {
         'mt-6': should_show_card,
       }"
     >
-      <component
-        v-for="panel in panels"
-        :is="resolve_component_name(panel)"
-        :key="panel.id"
-        :panel="panel"
-        :resource="resource"
-        :resource_id="resource_id"
-        :resource_name="resource_name"
-        class="mb-8"
-      >
-        <div v-if="panel.show_toolbar" class="md:flex items-center mb-3">
-          <div class="flex flex-auto truncate items-center">
-            <Heading :level="1" v-text="panel.name" />
-          </div>
+      <div v-for="panel in panels">
+        <component
+          v-if="panel.component == 'panel'"
+          :is="resolve_component_name(panel)"
+          :key="panel.id"
+          :panel="panel"
+          :resource="resource"
+          :resource_id="resource_id"
+          :resource_name="resource_name"
+          class="mb-8"
+        >
+          <div class="md:flex items-center mb-3">
+            <div class="flex flex-auto truncate items-center">
+              <Heading :level="1" v-text="panel.name" />
+            </div>
 
-          <div class="ml-auto flex items-center space-x-2">
-            <DetailActionDropdown
-              :lens="null"
-              :actions="actions"
-              :resource="resource"
-              :resource_id="resource_id"
-              :resource_name="resource_name"
-              @on_action_executed="handle_action_executed"
-            />
+            <div class="ml-auto flex items-center space-x-2">
+              <DetailActionDropdown
+                :lens="null"
+                :actions="actions"
+                :resource="resource"
+                :resource_id="resource_id"
+                :resource_name="resource_name"
+                @on_action_executed="handle_action_executed"
+              />
 
-            <Link
-              @click.stop
-              :href="
-                edit_url(`/resources/${resource_name}/${resource_id}/edit`)
-              "
-              v-if="resource.authorized_to_update"
-            >
-              <Button>
-                <Icon type="pencil-alt" />
-              </Button>
-            </Link>
+              <Link
+                @click.stop
+                :href="
+                  edit_url(`/resources/${resource_name}/${resource_id}/edit`)
+                "
+                v-if="resource.authorized_to_update"
+              >
+                <Button>
+                  <Icon type="pencil-alt" />
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
-      </component>
+        </component>
+      </div>
     </div>
   </LoadingView>
 </template>

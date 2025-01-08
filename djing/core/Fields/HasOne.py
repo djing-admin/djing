@@ -94,11 +94,11 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
         value = getattr(resource, attribute, None)
 
         if value:
-            self.already_filled_when(lambda: True)
+            self.already_filled_when(lambda request: True)
 
             self.has_one_resource = self.resource_class(value)
 
-            id_for_resource = ID.for_resource(self.resource_class)
+            id_for_resource = ID.for_resource(self.has_one_resource)
 
             self.has_one_id = (
                 id_for_resource
