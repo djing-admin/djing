@@ -121,6 +121,12 @@ class Resource(
         pass
 
     @classmethod
+    def create_button_label(cls):
+        resource_name = cls.singular_label()
+
+        return f"Create {resource_name}"
+
+    @classmethod
     def is_searchable(cls):
         return cls.searchable and cls.searchable_columns()
 

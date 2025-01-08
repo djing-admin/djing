@@ -1,6 +1,7 @@
+from typing import Any, Callable, Self
 from Illuminate.Support.builtins import array_merge
+from Illuminate.Support.Facades.App import App
 from djing.core.Contracts.BehavesAsPanel import BehavesAsPanel
-from djing.core.Contracts.FilterableField import FilterableField
 from djing.core.Contracts.RelatableField import RelatableField
 from djing.core.Fields.Field import Field
 from djing.core.Fields.ID import ID
@@ -25,8 +26,10 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
         self.resource_name = resource.uri_key()
         self.attribute = attribute
         self.has_one_relationship = attribute
+        self.has_one_resource = None
         self.singular_label = name
         self.has_one_id = None
+        self._filled_callback: Callable[..., Any] = None
 
     def as_panel(self):
         return (
@@ -48,6 +51,17 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
     def authorize(self, request: DjingRequest):
         if hasattr(self.resource_class, "authorized_to_view_any"):
             return super().authorize(request)
+
+    def authorized_to_relate(self, request: DjingRequest):
+        resource = request.find_resource_or_fail()
+
+        authorized_to_add = resource.authorized_to_add(
+            request, self.resource_class.new_model()
+        )
+
+        authorized_to_create = self.resource_class.authorized_to_create(request)
+
+        return authorized_to_add and authorized_to_create
 
     def _format_display_value(self, resource):
         if not isinstance(resource, Resource):
@@ -80,6 +94,8 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
         value = getattr(resource, attribute, None)
 
         if value:
+            self.already_filled_when(lambda: True)
+
             self.has_one_resource = self.resource_class(value)
 
             id_for_resource = ID.for_resource(self.resource_class)
@@ -89,8 +105,6 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
                 if id_for_resource
                 else Resource.get_key(self.has_one_resource)
             )
-
-            print(self.has_one_id)
 
             self.value = self.has_one_id
 
@@ -106,14 +120,41 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
             "value": Resource.get_key(resource),
         }
 
+    def already_filled_when(self, callback: Callable) -> Self:
+        self._filled_callback = callback
+
+        return self
+
+    def already_filled(self, request: DjingRequest):
+        return (
+            self._filled_callback(request) if callable(self._filled_callback) else False
+        )
+
     def json_serialize(self):
+        request: DjingRequest = App.make(DjingRequest)
+
         return array_merge(
             {
                 "relationship_type": self.relationship_type(),
                 "relationship_name": self.relationship_name(),
                 "label": self.resource_class.label(),
                 "resource_name": self.resource_name,
+                "relation_id": self.has_one_id,
                 "has_one_id": self.has_one_id,
+                "relatable": True,
+                "already_filled": self.already_filled(request),
+                "authorized_to_view": (
+                    self.has_one_resource.authorized_to_view(request)
+                    if self.has_one_resource
+                    else True
+                ),
+                "authorized_to_create": self.authorized_to_relate(request),
+                "create_button_label": self.resource_class.create_button_label(),
+                "from": {
+                    "via_resource": request.route_param("resource"),
+                    "via_resource_id": request.route_param("resource_id"),
+                    "via_relationship": self.attribute,
+                },
             },
             super().json_serialize(),
         )
