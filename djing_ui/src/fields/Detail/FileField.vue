@@ -12,7 +12,7 @@ const { resource_name, resource_id, field } = defineProps({
   },
   resource_id: {
     required: true,
-    type: String,
+    type: [Number, String],
   },
   index: {
     required: true,

@@ -17,7 +17,7 @@ const { resource_name, resource_id } = defineProps({
     type: String,
   },
   resource_id: {
-    type: String,
+    type: [Number, String],
   },
   should_override_meta: {
     type: Boolean,

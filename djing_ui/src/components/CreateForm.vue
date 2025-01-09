@@ -11,7 +11,7 @@ const { resource_name, from_resource_id } = defineProps({
     type: String,
   },
   from_resource_id: {
-    type: String,
+    type: [Number, String],
     default: null,
   },
   resource_name: {

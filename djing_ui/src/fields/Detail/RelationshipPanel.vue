@@ -12,7 +12,7 @@ const { panel } = defineProps({
   },
   resource_id: {
     required: true,
-    type: String,
+    type: [Number, String],
   },
   resource_name: {
     required: true,

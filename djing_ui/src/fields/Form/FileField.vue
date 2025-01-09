@@ -9,7 +9,7 @@ const { resource_name, resource_id, field, value, form } = defineProps({
     type: String,
   },
   resource_id: {
-    type: String,
+    type: [Number, String],
   },
   field: {
     required: true,

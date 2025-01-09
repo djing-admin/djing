@@ -1,10 +1,4 @@
 <script lang="ts" setup>
-import { useFetchRelatedResources } from "@/composables/useFetchRelatedResources";
-import { isNil } from "lodash";
-import { onMounted, ref } from "vue";
-
-const { fetchRelatedResources } = useFetchRelatedResources();
-
 const { field } = defineProps({
   resource: {
     required: true,
@@ -16,7 +10,7 @@ const { field } = defineProps({
   },
   resource_id: {
     required: true,
-    type: String,
+    type: [Number, String],
   },
   index: {
     required: true,
@@ -27,34 +21,6 @@ const { field } = defineProps({
     type: Object,
   },
 });
-
-onMounted(async () => {
-  if (field.has_one_id) {
-    await handleFetchRelatedResources();
-  }
-});
-
-const related_resource = ref();
-const related_resource_panels = ref();
-const related_resource_title = ref();
-
-const handleFetchRelatedResources = async () => {
-  try {
-    const data = await fetchRelatedResources(field);
-
-    related_resource.value = data.resource;
-    related_resource_panels.value = data.panels;
-    related_resource_title.value = data.title;
-  } catch (error: any) {
-    Djing.error(error.response.data.data);
-  }
-};
-
-const resolve_component_name = (panel: any) => {
-  return isNil(panel.prefix_component) || panel.prefix_component
-    ? "detail-" + panel.component
-    : panel.component;
-};
 </script>
 
 <template>
@@ -66,22 +32,14 @@ const resolve_component_name = (panel: any) => {
     />
 
     <div v-else>
-      <div v-for="panel in related_resource_panels">
-        <Card class="-m-6 p-6 divide-y divide-gray-100 dark:divide-gray-700">
-          <component
-            v-for="(field, index) in panel.fields"
-            :key="index"
-            :index="index"
-            :is="resolve_component_name(field)"
-            :resource="resource"
-            :resource_name="resource_name"
-            :resource_id="resource_id"
-            :field="field"
-          >
-            {{ resolve_component_name(field) }}
-          </component>
-        </Card>
-      </div>
+      <ResourceDetail
+        :resource_name="field.resource_name"
+        :resource_id="field.has_one_id"
+        :via_resource="resource_name"
+        :via_resource_id="resource_id"
+        :via_relationship="field.has_one_relationship"
+        :via_relationship_type="field.relationship_type"
+      />
     </div>
   </div>
 </template>

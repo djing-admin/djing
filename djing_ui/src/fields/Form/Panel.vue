@@ -15,7 +15,7 @@ defineProps({
     type: String,
   },
   resource_id: {
-    type: String,
+    type: [Number, String],
   },
   form_unique_id: {
     type: String,

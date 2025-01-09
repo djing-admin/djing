@@ -22,7 +22,7 @@ const { actions, resource, resource_name, resource_id } = defineProps({
   },
   resource_id: {
     required: true,
-    type: Number,
+    type: [Number, String],
   },
 });
 

@@ -2,17 +2,44 @@
 import { useFetchActions } from "@/composables/useFetchActions";
 import { useFetchCards } from "@/composables/useFetchCards";
 import { useFetchResourceDetail } from "@/composables/useFetchResourceDetail";
-import { useResourceDetailStore } from "@/stores/resource_detail";
 import { mapProps } from "@/util/propTypes";
 import { Head, Link } from "@inertiajs/vue3";
-import { find, isNil } from "lodash";
-import { computed, onBeforeUnmount, onMounted } from "vue";
+import { filter, find, isNil } from "lodash";
+import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
 
-const { resource_name, resource_id } = defineProps(
-  mapProps(["resource_name", "resource_id", "should_override_meta"])
-);
+const {
+  via_resource,
+  via_resource_id,
+  via_relationship,
+  via_relationship_type,
+  resource_name,
+  resource_id,
+} = defineProps({
+  via_resource: {
+    type: String,
+    default: null,
+  },
+  via_resource_id: {
+    type: [String, Number],
+    default: null,
+  },
+  via_relationship: {
+    type: String,
+    default: null,
+  },
+  via_relationship_type: {
+    type: String,
+    default: null,
+  },
+  ...mapProps(["resource_name", "resource_id", "should_override_meta"]),
+});
 
-const resourceDetailStore = useResourceDetailStore();
+const default_store_data = {
+  loading: false,
+  data: { cards: [], panels: [], actions: [], title: null, resource: {} },
+};
+
+const resourceDetailStore = reactive(default_store_data);
 
 const { fetchCards } = useFetchCards(resource_name, null);
 
@@ -34,7 +61,8 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(async () => {
-  resourceDetailStore.reset();
+  resourceDetailStore.loading = default_store_data.loading;
+  resourceDetailStore.data = default_store_data.data;
 });
 
 const resourceInformation = computed(() => {
@@ -47,7 +75,7 @@ const handleFetchCards = async () => {
   try {
     const { cards } = await fetchCards({ resource_id });
 
-    resourceDetailStore.update_data("cards", cards);
+    resourceDetailStore.data.cards = cards;
   } catch (error: any) {
     Djing.error(error.response.data.data);
   }
@@ -55,11 +83,16 @@ const handleFetchCards = async () => {
 
 const handleFetchResourceDetail = async () => {
   try {
-    const data = await fetchResourceDetail();
+    const data = await fetchResourceDetail({
+      via_resource,
+      via_resource_id,
+      via_relationship,
+      via_relationship_type,
+    });
 
-    resourceDetailStore.update_data("resource", data.resource);
-    resourceDetailStore.update_data("panels", data.panels);
-    resourceDetailStore.update_data("title", data.title);
+    resourceDetailStore.data.resource = data.resource;
+    resourceDetailStore.data.panels = data.panels;
+    resourceDetailStore.data.title = data.title;
 
     resourceDetailStore.loading = false;
   } catch (error: any) {
@@ -77,13 +110,13 @@ const handleFetchActions = async () => {
       display: "detail",
     });
 
-    resourceDetailStore.update_data("actions", data.actions);
+    resourceDetailStore.data.actions = data.actions;
   } catch (error: any) {
     Djing.error(error.response.data.data);
   }
 };
 
-const cards = computed(() => {
+const cards: any = computed(() => {
   return resourceDetailStore.data.cards;
 });
 
@@ -91,11 +124,15 @@ const should_show_card = computed(() => {
   return cards && cards.value.length > 0;
 });
 
-const resource = computed(() => {
+const has_only_detail_cards = computed(() => {
+  return filter(cards, (card) => card.only_on_detail == true);
+});
+
+const resource: any = computed(() => {
   return resourceDetailStore.data.resource;
 });
 
-const panels = computed(() => {
+const panels: any = computed(() => {
   return resourceDetailStore.data.panels;
 });
 
@@ -124,10 +161,13 @@ const handle_action_executed = async () => {
 
 <template>
   <LoadingView :loading="resourceDetailStore.loading">
-    <Head :title="`${resourceInformation.singular_label} Detail: ${title}`" />
+    <Head
+      v-if="should_override_meta && resourceInformation && title"
+      :title="`${resourceInformation.singular_label} Detail: ${title}`"
+    />
 
     <Cards
-      v-if="should_show_card"
+      v-if="should_show_card && has_only_detail_cards"
       :lens="null"
       :cards="cards"
       :resource_name="resource_name"
@@ -137,7 +177,7 @@ const handle_action_executed = async () => {
 
     <div
       :class="{
-        'mt-6': should_show_card,
+        'mt-6': should_show_card && has_only_detail_cards,
       }"
     >
       <div v-for="panel in panels">

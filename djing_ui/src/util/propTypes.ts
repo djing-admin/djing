@@ -6,7 +6,7 @@ const propTypes = {
     required: true,
   },
   resource_id: {
-    type: String,
+    type: [Number, String],
     required: false,
   },
   should_override_meta: {
