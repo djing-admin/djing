@@ -1,5 +1,5 @@
 import { Component, createApp, h } from "vue";
-import { createInertiaApp, usePage } from "@inertiajs/vue3";
+import { createInertiaApp, Head, Link, usePage } from "@inertiajs/vue3";
 import "vite/modulepreload-polyfill";
 
 import { createPinia } from "pinia";
@@ -93,14 +93,9 @@ export class Djing {
       resolve: (name): any => {
         const page: any = this.pages[name] || this.pages["Djing.Error404"];
 
-        // Ensure layout is applied during the rendering setup.
-        return {
-          ...page,
-          default: {
-            ...page.default,
-            layout: page.default.layout || Layout,
-          },
-        };
+        page.default.layout = page.default.layout || Layout
+
+        return page
       },
       setup: ({ el, App, props, plugin }) => {
         this.mountTo = el;
@@ -125,13 +120,15 @@ export class Djing {
   public async liftOff() {
     this.log(`We have lift-off!`);
 
-    registerViews(this);
-
-    registerFields(this);
-
     this.boot();
 
     this.app.mixin(localization);
+
+    this.app.mixin({
+      methods: {
+        $url: (path: any, parameters: any) => this.url(path, parameters),
+      },
+    })
 
     this.$router.on("before", () => {
       this.assignPropsFromInertia();
@@ -140,6 +137,13 @@ export class Djing {
     this.$router.on("navigate", () => {
       this.assignPropsFromInertia();
     });
+
+    this.component('Link', Link)
+    this.component('InertiaLink', Link)
+    this.component('Head', Head)
+
+    registerViews(this);
+    registerFields(this);
 
     this.app.mount(this.mountTo);
 
