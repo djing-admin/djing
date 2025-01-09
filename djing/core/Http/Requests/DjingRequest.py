@@ -1,4 +1,7 @@
 from Illuminate.Foundation.Http.FormRequest import FormRequest
+from djing.core.Http.Requests.InteractsWithRelatedResources import (
+    InteractsWithRelatedResources,
+)
 from djing.core.Http.Requests.InteractsWithResources import InteractsWithResources
 from djing.core.Http.Requests.InteractsWithResourcesSelection import (
     InteractsWithResourcesSelection,
@@ -8,6 +11,7 @@ from djing.core.Http.Requests.InteractsWithResourcesSelection import (
 class DjingRequest(
     FormRequest,
     InteractsWithResources,
+    InteractsWithRelatedResources,
     InteractsWithResourcesSelection,
 ):
     def is_resource_index_request(self):

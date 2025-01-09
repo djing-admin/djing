@@ -63,9 +63,7 @@ const resolve_component_name = (field: any) => {
         :resource_name="resource_name"
         :resource_id="resource_id"
         :field="field"
-      >
-        {{ resolve_component_name(field) }}
-      </component>
+      />
     </Card>
   </div>
 </template>

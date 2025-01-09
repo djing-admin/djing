@@ -28,6 +28,7 @@ const field = computed(() => {
 <template>
   <component
     :key="`${field.attribute}:${resource_id}`"
+    :index="0"
     :is="`detail-${field.component}`"
     :resource="resource"
     :resource_name="resource_name"

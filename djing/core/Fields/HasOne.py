@@ -144,6 +144,7 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
                 "relationship_name": self.relationship_name(),
                 "label": self.resource_class.label(),
                 "resource_name": self.resource_name,
+                "has_one_relationship": self.has_one_relationship,
                 "relation_id": self.has_one_id,
                 "has_one_id": self.has_one_id,
                 "relatable": True,

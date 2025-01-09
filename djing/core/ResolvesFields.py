@@ -139,7 +139,9 @@ class ResolvesFields:
 
     def detail_fields_within_panels(self, request: DjingRequest, resource: Resource):
         return self.detail_fields(request).assign_default_panel(
-            Panel.default_name_for_detail(resource)
+            Panel.default_name_for_via_relationship(resource, request)
+            if request.via_relationship() and request.is_resource_detail_request()
+            else Panel.default_name_for_detail(resource)
         )
 
     def available_panels_for_detail(
@@ -148,7 +150,11 @@ class ResolvesFields:
         items = self.resolve_panels_from_fields(
             request,
             fields,
-            Panel.default_name_for_detail(resource),
+            (
+                Panel.default_name_for_via_relationship(resource, request)
+                if request.via_relationship() and request.is_resource_detail_request()
+                else Panel.default_name_for_detail(resource)
+            ),
         )
 
         return items.all()

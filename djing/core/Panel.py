@@ -5,8 +5,9 @@ from Illuminate.Contracts.Support.JsonSerializable import JsonSerializable
 from Illuminate.Support.Str import Str
 from Illuminate.Support.builtins import array_merge
 from Illuminate.Support.helpers import tap
+from djing.core.Contracts.RelatableField import RelatableField
 from djing.core.Fields.Collapsable import Collapsable
-from djing.core.Http.Resources.Resource import Resource
+from djing.core.Http.Requests.DjingRequest import DjingRequest
 from djing.core.Makeable import Makeable
 from djing.core.MergeValue import MergeValue
 from djing.core.Metable import Metable
@@ -15,6 +16,7 @@ from djing.core.ResourceToolElement import ResourceToolElement
 
 if TYPE_CHECKING:
     from djing.core.Fields.FieldCollection import FieldCollection
+    from djing.core.Resource import Resource
 
 
 class Panel(MergeValue, HasHelpText, Makeable, Metable, Collapsable, JsonSerializable):
@@ -30,7 +32,29 @@ class Panel(MergeValue, HasHelpText, Makeable, Metable, Collapsable, JsonSeriali
         super().__init__(self.prepare_fields(fields))
 
     @classmethod
-    def default_name_for_detail(cls, resource: Resource):
+    def default_name_for_via_relationship(
+        cls, resource: "Resource", request: DjingRequest
+    ):
+        resource = request.new_resource_via()
+
+        def filter_related_field(field: "FieldCollection"):
+            if not isinstance(field, RelatableField):
+                return False
+
+            if field.resource_name != request.route_param("resource"):
+                return False
+
+            if field.relationship_name() != request.query_param("via_relationship"):
+                return False
+
+            return True
+
+        field = resource.available_fields(request).filter(filter_related_field).first()
+
+        return field.name
+
+    @classmethod
+    def default_name_for_detail(cls, resource: "Resource"):
         label = resource.singular_label()
 
         title = resource.get_title()
@@ -38,7 +62,7 @@ class Panel(MergeValue, HasHelpText, Makeable, Metable, Collapsable, JsonSeriali
         return f"{label} Details: {title}"
 
     @classmethod
-    def default_name_for_update(cls, resource: Resource):
+    def default_name_for_update(cls, resource: "Resource"):
         label = resource.singular_label()
 
         title = resource.get_title()
@@ -46,7 +70,7 @@ class Panel(MergeValue, HasHelpText, Makeable, Metable, Collapsable, JsonSeriali
         return f"Update {label}: {title}"
 
     @classmethod
-    def default_name_for_create(cls, resource: Resource):
+    def default_name_for_create(cls, resource: "Resource"):
         label = resource.singular_label()
 
         return f"Create {label}"
