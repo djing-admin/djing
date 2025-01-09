@@ -2,6 +2,7 @@
 import { useFetchActions } from "@/composables/useFetchActions";
 import { useFetchCards } from "@/composables/useFetchCards";
 import { useFetchResourceDetail } from "@/composables/useFetchResourceDetail";
+import { useFetchRelatedResources } from "@/composables/useFetchRelatedResources";
 import { useResourceDetailStore } from "@/stores/resource_detail";
 import { mapProps } from "@/util/propTypes";
 import { Head, Link } from "@inertiajs/vue3";
@@ -22,6 +23,8 @@ const { fetchResourceDetail } = useFetchResourceDetail(
 );
 
 const { fetchActions } = useFetchActions(resource_name, null);
+
+const { fetchRelatedResources } = useFetchRelatedResources();
 
 onMounted(async () => {
   resourceDetailStore.loading = true;
@@ -67,7 +70,9 @@ const handleFetchResourceDetail = async () => {
     );
 
     forEach(relationship_panels, async (panel) => {
-      await handleFetchRelatedResources(panel);
+      forEach(panel.fields, async (field) => {
+        await handleFetchRelatedResources(panel, field);
+      });
     });
 
     resourceDetailStore.loading = false;
@@ -92,9 +97,13 @@ const handleFetchActions = async () => {
   }
 };
 
-const handleFetchRelatedResources = async (panel) => {
+const handleFetchRelatedResources = async (panel, field) => {
   try {
-    console.log("fetching panel", panel);
+    const data = await fetchRelatedResources(field);
+
+    data.panels.forEach((panel) => {
+      resourceDetailStore.data.panels.push(panel);
+    });
   } catch (error: any) {
     Djing.error(error.response.data.data);
   }

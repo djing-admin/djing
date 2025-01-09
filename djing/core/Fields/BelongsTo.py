@@ -2,6 +2,7 @@ from Illuminate.Support.builtins import array_merge
 from djing.core.Contracts.FilterableField import FilterableField
 from djing.core.Contracts.RelatableField import RelatableField
 from djing.core.Fields.Field import Field
+from djing.core.Fields.ResourceRelationshipGuesser import ResourceRelationshipGuesser
 from djing.core.Http.Requests.DjingRequest import DjingRequest
 from djing_admin.app.Djing.Resource import Resource
 
@@ -12,13 +13,17 @@ class BelongsTo(Field, FilterableField, RelatableField):
     def __init__(self, name, attribute=None, resource=None):
         super().__init__(name, attribute)
 
-        if not resource or not issubclass(resource, Resource):
-            raise Exception("Invalid Djing Resource")
-
         if not attribute:
             raise Exception("Invalid Resource attribute")
 
-        self.resource_class = resource
+        if resource:
+            if not issubclass(resource, Resource):
+                raise Exception("Invalid Djing Resource")
+            else:
+                self.resource_class = resource
+        else:
+            self.resource_class = ResourceRelationshipGuesser.guess_resource(name)
+
         self.resource_name = resource.uri_key()
         self.attribute = attribute
         self.belongs_to_relationship = attribute

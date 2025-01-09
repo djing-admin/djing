@@ -5,6 +5,7 @@ from djing.core.Contracts.BehavesAsPanel import BehavesAsPanel
 from djing.core.Contracts.RelatableField import RelatableField
 from djing.core.Fields.Field import Field
 from djing.core.Fields.ID import ID
+from djing.core.Fields.ResourceRelationshipGuesser import ResourceRelationshipGuesser
 from djing.core.Http.Requests.DjingRequest import DjingRequest
 from djing.core.Panel import Panel
 from djing_admin.app.Djing.Resource import Resource
@@ -16,13 +17,19 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
     def __init__(self, name, attribute=None, resource=None):
         super().__init__(name, attribute)
 
-        if not resource or not issubclass(resource, Resource):
-            raise Exception("Invalid Djing Resource")
-
         if not attribute:
             raise Exception("Invalid Resource attribute")
 
-        self.resource_class = resource
+        if resource:
+            if not issubclass(resource, Resource):
+                raise Exception("Invalid Djing Resource")
+            else:
+                self.resource_class = resource
+        else:
+            self.resource_class = ResourceRelationshipGuesser.guess_resource(name)
+
+        print(self.resource_class)
+
         self.resource_name = resource.uri_key()
         self.attribute = attribute
         self.has_one_relationship = attribute
