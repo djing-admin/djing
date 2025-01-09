@@ -2,11 +2,10 @@
 import { useFetchActions } from "@/composables/useFetchActions";
 import { useFetchCards } from "@/composables/useFetchCards";
 import { useFetchResourceDetail } from "@/composables/useFetchResourceDetail";
-import { useFetchRelatedResources } from "@/composables/useFetchRelatedResources";
 import { useResourceDetailStore } from "@/stores/resource_detail";
 import { mapProps } from "@/util/propTypes";
 import { Head, Link } from "@inertiajs/vue3";
-import { find, isNil, filter, forEach } from "lodash";
+import { find, isNil } from "lodash";
 import { computed, onBeforeUnmount, onMounted } from "vue";
 
 const { resource_name, resource_id } = defineProps(
@@ -23,8 +22,6 @@ const { fetchResourceDetail } = useFetchResourceDetail(
 );
 
 const { fetchActions } = useFetchActions(resource_name, null);
-
-const { fetchRelatedResources } = useFetchRelatedResources();
 
 onMounted(async () => {
   resourceDetailStore.loading = true;
@@ -64,17 +61,6 @@ const handleFetchResourceDetail = async () => {
     resourceDetailStore.update_data("panels", data.panels);
     resourceDetailStore.update_data("title", data.title);
 
-    const relationship_panels = filter(
-      data.panels,
-      (panel) => panel.component == "relationship-panel"
-    );
-
-    forEach(relationship_panels, async (panel) => {
-      forEach(panel.fields, async (field) => {
-        await handleFetchRelatedResources(panel, field);
-      });
-    });
-
     resourceDetailStore.loading = false;
   } catch (error: any) {
     Djing.error(error.response.data.data);
@@ -92,18 +78,6 @@ const handleFetchActions = async () => {
     });
 
     resourceDetailStore.update_data("actions", data.actions);
-  } catch (error: any) {
-    Djing.error(error.response.data.data);
-  }
-};
-
-const handleFetchRelatedResources = async (panel, field) => {
-  try {
-    const data = await fetchRelatedResources(field);
-
-    data.panels.forEach((panel) => {
-      resourceDetailStore.data.panels.push(panel);
-    });
   } catch (error: any) {
     Djing.error(error.response.data.data);
   }
@@ -168,7 +142,6 @@ const handle_action_executed = async () => {
     >
       <div v-for="panel in panels">
         <component
-          v-if="panel.component == 'panel'"
           :is="resolve_component_name(panel)"
           :key="panel.id"
           :panel="panel"

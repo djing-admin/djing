@@ -28,9 +28,7 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
         else:
             self.resource_class = ResourceRelationshipGuesser.guess_resource(name)
 
-        print(self.resource_class)
-
-        self.resource_name = resource.uri_key()
+        self.resource_name = self.resource_class.uri_key()
         self.attribute = attribute
         self.has_one_relationship = attribute
         self.has_one_resource = None
@@ -162,6 +160,7 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
                     "via_resource_id": request.route_param("resource_id"),
                     "via_relationship": self.attribute,
                 },
+                "singular_label": self.singular_label,
             },
             super().json_serialize(),
         )

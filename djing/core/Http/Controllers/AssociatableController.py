@@ -28,7 +28,6 @@ class AssociatableController:
             data = (
                 collect(data)
                 .map_into(field.resource_class)
-                .filter(lambda field: field.authorized_to_add(request, request.model()))
                 .map(
                     lambda resource: field.format_associatable_resource(
                         request, resource

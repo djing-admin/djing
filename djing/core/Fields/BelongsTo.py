@@ -24,7 +24,7 @@ class BelongsTo(Field, FilterableField, RelatableField):
         else:
             self.resource_class = ResourceRelationshipGuesser.guess_resource(name)
 
-        self.resource_name = resource.uri_key()
+        self.resource_name = self.resource_class.uri_key()
         self.attribute = attribute
         self.belongs_to_relationship = attribute
         self.singular_label = name
@@ -97,6 +97,7 @@ class BelongsTo(Field, FilterableField, RelatableField):
                 "label": self.resource_class.label(),
                 "resource_name": self.resource_name,
                 "belongs_to_id": self.belongs_to_id,
+                "singular_label": self.singular_label,
             },
             super().json_serialize(),
         )
