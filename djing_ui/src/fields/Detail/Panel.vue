@@ -38,6 +38,8 @@ const resolve_component_name = (field: any) => {
     <slot>
       <div class="flex items-center">
         <Heading :level="1" v-text="panel.name" />
+
+        <Button v-if="panel.collapsable">collapse</Button>
       </div>
 
       <p
@@ -53,8 +55,8 @@ const resolve_component_name = (field: any) => {
       v-if="!collapsed && fields.length > 0"
     >
       <component
-        v-for="(field, index) in fields"
         :key="index"
+        v-for="(field, index) in fields"
         :index="index"
         :is="resolve_component_name(field)"
         :resource="resource"

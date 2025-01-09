@@ -111,11 +111,15 @@ const handleFetchResourceDetail = async () => {
     resourceDetailStore.data.panels = data.panels;
     resourceDetailStore.data.title = data.title;
 
-    resourceDetailStore.loading = false;
+    handleResourceLoaded();
   } catch (error: any) {
     Djing.error(error.response.data.data);
     resourceDetailStore.loading = false;
   }
+};
+
+const handleResourceLoaded = () => {
+  resourceDetailStore.loading = false;
 };
 
 const handleFetchActions = async () => {
