@@ -84,9 +84,10 @@ Make sure to set the `STATIC_ROOT` & `STATIC_URL` in your `settings.py` file bef
 ```python
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "static"
-STATIC_DIRS = [
-    MEDIA_ROOT,
-]
+
+Also make sure to update urlpatterns in urls.py
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
 after then you can collect static files
