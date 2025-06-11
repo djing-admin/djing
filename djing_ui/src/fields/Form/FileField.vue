@@ -176,7 +176,7 @@ const remove_file = async () => {
 
           <div class="text-xs py-2">
             <span v-if="is_blob_type">
-              {{ value.file_name }}
+              {{ typeof value === "string" ? value : value.file_name }}
             </span>
 
             <span v-else>

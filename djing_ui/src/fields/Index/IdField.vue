@@ -19,7 +19,7 @@ defineProps({
   },
 });
 
-const get_url = (resource_name, resource_id) => {
+const get_url = (resource_name: string, resource_id: string) => {
   return Djing.url(`/resources/${resource_name}/${resource_id}`);
 };
 </script>
