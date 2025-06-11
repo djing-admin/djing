@@ -80,10 +80,12 @@ class Util:
     @classmethod
     def validate_model_path(cls, model_module_path: str):
         try:
+            print("model_module_path", model_module_path)
+
             model_data = model_module_path.rsplit(".", 1)
 
             if len(model_data) != 2:
-                raise Exception("Invalid Django Model", model_module_path)
+                raise Exception("Invalid Django Model 1", model_module_path)
 
             model_path, model_name = model_data
 
@@ -92,8 +94,8 @@ class Util:
             model_class = getattr(model_module, model_name)
 
             if not isinstance(model_class, ModelBase):
-                raise Exception("Invalid Django Model", model_module_path)
+                raise Exception("Invalid Django Model 2", model_module_path)
 
             return model_path, model_name
         except (ModuleNotFoundError, ImportError):
-            raise Exception("Invalid Django Model", model_module_path)
+            raise Exception("Invalid Django Model 3", model_module_path)

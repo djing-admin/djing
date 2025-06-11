@@ -14,4 +14,6 @@ class ResourceRelationshipGuesser:
 
             return resource
         except (ModuleNotFoundError, ImportError):
-            raise Exception("Invalid Django Model", name)
+            raise Exception(
+                "Invalid Django Model: ResourceRelationshipGuesser@guess_resource", name
+            )

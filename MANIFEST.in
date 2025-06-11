@@ -1,0 +1,4 @@
+include README.md
+recursive-include djing *
+exclude djing/core/Foundation/Djing.py
+exclude djing/core/Foundation/*.cpp

@@ -1,45 +1,41 @@
-[tool.poetry]
+[project]
 name = "djing"
 version = "0.9.4"
 description = "djing admin panel"
-authors = ["Krunal Dodiya <kunal.dodiya1@gmail.com>"]
+authors = [{ name = "Krunal Dodiya", email = "kunal.dodiya1@gmail.com" }]
 readme = "README.md"
-license = "MIT"
-packages = [{include = "djing"}]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+scripts = { commander = "djing.djing_commands:handle_command" }
+dependencies = [
+    "django-vite>=3.0.4,<4.0.0",
+    "inertia-django>=0.6.0,<1.0.0",
+    "django>=5.1.1,<6.0.0",
+    "whitenoise>=6.7.0,<7.0.0",
+    "python-dotenv>=1.0.1,<2.0.0",
+    "babel>=2.16.0,<3.0.0",
+    "cython>=3.0.11,<4.0.0",
+    "pycryptodome>=3.21.0,<4.0.0",
+    "pyjinx>=0.2.4,<1.0.0"
+]
 
-include = ["djing"]
-exclude = ["djing/core/Foundation/Djing.py", "djing/core/Foundation/*.cpp"]
+[dependency-groups]
+dev = [
+  "cython>=3.0.11,<4.0.0",
+  "twine>=5.1.1,<6.0.0",
+  "wheel>=0.44.0,<1.0.0",
+  "mypy>=1.11.2,<2.0.0",
+  "pytest>=8.3.2,<9.0.0",
+  "setuptools>=80.9.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-django-vite = "^3.0.4"
-inertia-django = "^0.6.0"
-django = "^5.1.1"
-whitenoise = "^6.7.0"
-python-dotenv = "^1.0.1"
-babel = "^2.16.0"
-cython = "^3.0.11"
-pycryptodome = "^3.21.0"
-pyjinx = "^0.2.4"
-
-[tool.poetry.group.dev.dependencies]
-cython = "^3.0.11"
-twine = "^5.1.1"
-wheel = "^0.44.0"
-mypy = "^1.11.2"
-pytest = "^8.3.2"
-
-[tool.poetry.urls]
+[project.urls]
 homepage = "https://djing.vercel.app"
 documentation = "https://djing.gitbook.io/docs"
 repository = "https://github.com/djing-admin/djing"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.scripts]
-commander = "djing.djing_commands:handle_command"
-
 [tool.mypy]
 ignore_missing_imports = true
+
+[tool.uv.sources]
+djing = { workspace = true }
