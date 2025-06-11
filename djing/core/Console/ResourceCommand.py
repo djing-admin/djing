@@ -38,9 +38,11 @@ class ResourceCommand(GeneratorCommand):
 
         model = self.option("model")
 
-        model_path, model_name = Util.validate_model_path(model)
-
-        model_namespace = f"'{model_path}.{model_name}'"
+        if self.get_name_input() == "User":
+            model_namespace = self.get_name_input()
+        else:
+            model_path, model_name = Util.validate_model_path(model)
+            model_namespace = f"'{model_path}.{model_name}'"
 
         return {
             "name": name,

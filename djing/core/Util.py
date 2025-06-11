@@ -80,8 +80,6 @@ class Util:
     @classmethod
     def validate_model_path(cls, model_module_path: str):
         try:
-            print("model_module_path", model_module_path)
-
             model_data = model_module_path.rsplit(".", 1)
 
             if len(model_data) != 2:
