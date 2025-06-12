@@ -10,14 +10,6 @@ class Product(models.Model):
         max_digits=10, decimal_places=4, default=None, blank=True, null=True
     )
 
-    sku = models.ForeignKey(
-        "skus.Sku",
-        on_delete=models.CASCADE,
-        related_name="product",
-        blank=True,
-        null=True,
-    )
-
     user = models.ForeignKey(
         "users.User",
         on_delete=models.CASCADE,
