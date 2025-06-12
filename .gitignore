@@ -37,8 +37,6 @@ __pycache__/
 db.sqlite3
 
 node_modules/
-djing_admin/
-djing_components/
 djing/core/Foundation/license/
 djing/core/Foundation/Djing.py
 djing/core/Foundation/Djing.cpp
