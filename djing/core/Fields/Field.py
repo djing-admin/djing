@@ -1,3 +1,4 @@
+from numbers import Number
 from typing import Any, Self
 from Illuminate.Contracts.Support.JsonSerializable import JsonSerializable
 from Illuminate.Contracts.Resolvable import Resolvable
@@ -10,7 +11,6 @@ from djing.core.Fields.HandlesValidation import HandlesValidation
 from djing.core.Fields.SupportsFullWidth import SupportsFullWidth
 from djing.core.Http.Requests.DjingRequest import DjingRequest
 from django.db.models.query_utils import DeferredAttribute
-
 from djing.core.Metrics.HasHelpText import HasHelpText
 
 
@@ -322,7 +322,7 @@ class Field(
     def has_resolvable_value(self, request: DjingRequest) -> bool:
         return self.value is not None and isinstance(
             self.value,
-            (list, dict, set, tuple, str, int, float, bool, JsonSerializable),
+            (list, dict, set, tuple, str, int, float, Number, bool, JsonSerializable),
         )
 
     def json_serialize(self):
