@@ -8,7 +8,7 @@ from djing.core.Fields.ID import ID
 from djing.core.Fields.ResourceRelationshipGuesser import ResourceRelationshipGuesser
 from djing.core.Http.Requests.DjingRequest import DjingRequest
 from djing.core.Panel import Panel
-from djing_admin.app.Djing.Resource import Resource
+from djing.core.Resource import Resource
 
 
 class HasOne(Field, BehavesAsPanel, RelatableField):
@@ -32,9 +32,14 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
         self.attribute = attribute
         self.has_one_relationship = attribute
         self.has_one_resource = None
-        self.singular_label = name
         self.has_one_id = None
+        self._singular_label = name
         self._filled_callback: Callable[..., Any] = None
+
+    def singular_label(self, label: str) -> Self:
+        self._singular_label = label
+
+        return self
 
     def as_panel(self):
         return (
@@ -161,7 +166,7 @@ class HasOne(Field, BehavesAsPanel, RelatableField):
                     "via_resource_id": request.route_param("resource_id"),
                     "via_relationship": self.attribute,
                 },
-                "singular_label": self.singular_label,
+                "singular_label": self._singular_label,
             },
             super().json_serialize(),
         )

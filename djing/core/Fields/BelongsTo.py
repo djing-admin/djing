@@ -3,8 +3,7 @@ from djing.core.Contracts.FilterableField import FilterableField
 from djing.core.Contracts.RelatableField import RelatableField
 from djing.core.Fields.Field import Field
 from djing.core.Fields.ResourceRelationshipGuesser import ResourceRelationshipGuesser
-from djing.core.Http.Requests.DjingRequest import DjingRequest
-from djing_admin.app.Djing.Resource import Resource
+from djing.core.Resource import Resource
 
 
 class BelongsTo(Field, FilterableField, RelatableField):

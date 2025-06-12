@@ -9,7 +9,7 @@ from djing.core.Http.Requests.DjingRequest import DjingRequest
 from djing.core.Util import Util
 
 if TYPE_CHECKING:
-    from djing_admin.app.Djing.Resource import Resource
+    from djing.core.Resource import Resource
 
 
 class ID(Field):
