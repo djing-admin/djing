@@ -2,6 +2,7 @@ from typing import Any, Callable, Self
 from Illuminate.Support.builtins import array_merge
 from djing.core.Contracts.ListableField import ListableField
 from djing.core.Contracts.RelatableField import RelatableField
+from djing.core.Fields.Collapsable import Collapsable
 from djing.core.Fields.Field import Field
 from djing.core.Fields.ResourceRelationshipGuesser import ResourceRelationshipGuesser
 from djing.core.Http.Requests.DjingRequest import DjingRequest
@@ -9,7 +10,7 @@ from djing.core.Panel import Panel
 from djing.core.Resource import Resource
 
 
-class HasMany(Field, ListableField, RelatableField):
+class HasMany(Field, ListableField, RelatableField, Collapsable):
     component = "has-many-field"
 
     def __init__(self, name, attribute=None, resource=None):
@@ -65,7 +66,7 @@ class HasMany(Field, ListableField, RelatableField):
         return array_merge(
             {
                 "collapsable": self._collapsable,
-                "collapsable_by_default": self._collapsable_by_default,
+                "collapsed_by_default": self._collapsed_by_default,
                 "relationship_type": self.relationship_type(),
                 "relationship_name": self.relationship_name(),
                 "label": self.resource_class.label(),
