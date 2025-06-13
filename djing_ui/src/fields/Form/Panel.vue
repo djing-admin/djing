@@ -17,6 +17,21 @@ defineProps({
   resource_id: {
     type: [Number, String],
   },
+  related_resource_name: {
+    type: String,
+  },
+  related_resource_id: {
+    type: [Number, String],
+  },
+  via_resource: {
+    type: String,
+  },
+  via_resource_id: {
+    type: [Number, String],
+  },
+  via_relationship: {
+    type: String,
+  },
   form_unique_id: {
     type: String,
   },
@@ -59,6 +74,11 @@ defineEmits<{
         :is="`form-${field.component}`"
         :resource_name="resource_name"
         :resource_id="resource_id"
+        :related_resource_name="resource_name"
+        :related_resource_id="resource_id"
+        :via_resource="via_resource"
+        :via_resource_id="via_resource_id"
+        :via_relationship="via_relationship"
         :form_unique_id="form_unique_id"
         :form="resourceFormStore.form"
         :field="field"
