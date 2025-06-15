@@ -24,8 +24,8 @@ class Product(DjingResource):
             Text.make("Name"),
             Image.make("Image"),
             Currency.make("Price"),
-            HasOne.make("Sku", "sku", Sku),
             BelongsTo.make("User", "user", User),
+            HasOne.make("Sku", "sku", Sku),
         ]
 
     def cards(self, request: DjingRequest):
