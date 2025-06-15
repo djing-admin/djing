@@ -101,9 +101,14 @@ const initialize_component = async () => {
 
 const available_fields = computed(() => {
   return reject(fields.value, (field) => {
+    const should_include_key =
+      field.fields && field.fields[0].relationship_type
+        ? field.fields[0].relationship_type
+        : "";
+
     return (
       (["relationship_panel"].includes(field.component) &&
-        ["has_one"].includes(field.fields[0].relationship_type)) ||
+        ["has_one"].includes(should_include_key)) ||
       field.readonly
     );
   });
