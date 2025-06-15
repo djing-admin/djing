@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { useFetchAvailableResources } from "@/composables/useFetchAvailableResources";
 import { useResourceFormStore } from "@/stores/resource_form";
+import { minimum } from "@/util/minimum";
+import { reject } from "lodash";
 import { computed, onMounted, ref } from "vue";
 
 const {
@@ -47,66 +48,89 @@ const {
   },
 });
 
+const fields = ref([]);
+
 const resourceFormStore = useResourceFormStore();
 
-const { fetchAvailableResources } = useFetchAvailableResources(
-  via_resource,
-  field.attribute
-);
+const resource_fields_endpoint = computed(() => {
+  return `/djing-api/${resource_name}/${resource_id}/update-fields`;
+});
+
+const edit_mode = computed(() => {
+  return field.has_one_id === null ? "create" : "update";
+});
+
+const get_fields = async () => {
+  try {
+    const {
+      data: { data },
+    } = await minimum(
+      Djing.request().get(resource_fields_endpoint.value, {
+        cancelToken: Djing.cancelToken(),
+        params: {
+          editing: true,
+          edit_mode: edit_mode.value,
+        },
+      }),
+      300
+    );
+
+    fields.value = data.fields;
+  } catch (error: any) {
+    Djing.error(error.response.data.data);
+    resourceFormStore.loading = false;
+  }
+};
 
 onMounted(async () => {
   await initialize_component();
 });
 
-const available_resources = ref();
-
 const initialize_component = async () => {
   try {
-    const data = await fetchAvailableResources();
-
-    const items = data.map((action: any) => {
-      return {
-        label: action.display,
-        value: action.value,
-        disabled: action.authorized_to_add === false,
-      };
-    });
-
-    available_resources.value = items;
+    await get_fields();
   } catch (error: any) {
     Djing.error(error);
   }
 };
 
 const available_fields = computed(() => {
-  return [];
+  return reject(fields.value, (field) => {
+    return (
+      (["relationship_panel"].includes(field.component) &&
+        ["has_one"].includes(field.fields[0].relationship_type)) ||
+      field.readonly
+    );
+  });
 });
 </script>
 
 <template>
-  <component
-    v-for="(field, index) in available_fields"
-    :key="index"
-    :index="index"
-    :is="`form-${field.component}`"
-    :resource_name="resource_name"
-    :resource_id="resource_id"
-    :related_resource_name="resource_name"
-    :related_resource_id="resource_id"
-    :via_resource="via_resource"
-    :via_resource_id="via_resource_id"
-    :via_relationship="via_relationship"
-    :form_unique_id="form_unique_id"
-    :form="resourceFormStore.form"
-    :field="field"
-    :mode="mode"
-    :show_help_text="show_help_text"
-    @field_changed="
-      $emit('field_changed', {
-        attribute: field.attribute,
-        value: $event,
-      })
-    "
-    :value="resourceFormStore.get_field_default_value(field)"
-  />
+  <Card class="my-3 py-2 px-6 divide-y divide-gray-100 dark:divide-gray-700">
+    <component
+      v-for="(field, index) in available_fields"
+      :key="index"
+      :index="index"
+      :is="`form-${field.component}`"
+      :resource_name="resource_name"
+      :resource_id="resource_id"
+      :related_resource_name="resource_name"
+      :related_resource_id="resource_id"
+      :via_resource="via_resource"
+      :via_resource_id="via_resource_id"
+      :via_relationship="via_relationship"
+      :form_unique_id="form_unique_id"
+      :form="resourceFormStore.form"
+      :field="field"
+      :mode="mode"
+      :show_help_text="show_help_text"
+      @field_changed="
+        $emit('field_changed', {
+          attribute: field.attribute,
+          value: $event,
+        })
+      "
+      :value="resourceFormStore.get_field_default_value(field)"
+    />
+  </Card>
 </template>
