@@ -1,8 +1,16 @@
 <script lang="ts" setup>
 import { useFetchAvailableResources } from "@/composables/useFetchAvailableResources";
+import { useResourceFormStore } from "@/stores/resource_form";
 import { computed, onMounted, ref } from "vue";
 
-const { resource_name, field, form } = defineProps({
+const {
+  resource_name,
+  resource_id,
+  field,
+  via_resource,
+  via_resource_id,
+  via_relationship,
+} = defineProps({
   resource_name: {
     required: true,
     type: String,
@@ -21,17 +29,28 @@ const { resource_name, field, form } = defineProps({
   value: {
     required: true,
   },
-  form: {
-    required: true,
-    type: Object,
+  via_resource: {
+    type: String,
+  },
+  via_resource_id: {
+    type: [Number, String],
+  },
+  via_relationship: {
+    type: String,
+  },
+  form_unique_id: {
+    type: String,
   },
   mode: {
     required: true,
+    type: String,
   },
 });
 
+const resourceFormStore = useResourceFormStore();
+
 const { fetchAvailableResources } = useFetchAvailableResources(
-  resource_name,
+  via_resource,
   field.attribute
 );
 
@@ -59,62 +78,35 @@ const initialize_component = async () => {
   }
 };
 
-const emit = defineEmits<{
-  (e: "field_changed", value: any): void;
-}>();
-
-const has_error = computed(() => {
-  return form.errors.hasOwnProperty(field.attribute);
+const available_fields = computed(() => {
+  return [];
 });
-
-const error_class = computed(() => {
-  return has_error.value ? ["form-control-bordered-error"] : [];
-});
-
-const default_attributes = computed(() => {
-  return {
-    required: field.required,
-    name: field.attribute,
-    placeholder: field.placeholder || field.attribute,
-    class: error_class.value,
-    autocomplete: "off",
-    autosave: "off",
-  };
-});
-
-const extra_attributes = computed(() => {
-  const attrs = field.extra_attributes || {};
-
-  return {
-    ...default_attributes.value,
-    ...attrs,
-  };
-});
-
-const handle_change = async (value: any) => {
-  emit("field_changed", value);
-};
 </script>
 
 <template>
-  <DefaultField
+  <component
+    v-for="(field, index) in available_fields"
+    :key="index"
+    :index="index"
+    :is="`form-${field.component}`"
+    :resource_name="resource_name"
+    :resource_id="resource_id"
+    :related_resource_name="resource_name"
+    :related_resource_id="resource_id"
+    :via_resource="via_resource"
+    :via_resource_id="via_resource_id"
+    :via_relationship="via_relationship"
+    :form_unique_id="form_unique_id"
+    :form="resourceFormStore.form"
     :field="field"
-    :show_help_text="show_help_text"
     :mode="mode"
-    :errors="form.errors"
-    v-if="available_resources"
-  >
-    <template #field>
-      <div class="space-y-1">
-        <SelectControl
-          v-model:selected="field.belongs_to_id"
-          :options="available_resources"
-          @handle_change="handle_change"
-          v-bind="extra_attributes"
-        >
-          <option value="">—</option>
-        </SelectControl>
-      </div>
-    </template>
-  </DefaultField>
+    :show_help_text="show_help_text"
+    @field_changed="
+      $emit('field_changed', {
+        attribute: field.attribute,
+        value: $event,
+      })
+    "
+    :value="resourceFormStore.get_field_default_value(field)"
+  />
 </template>
